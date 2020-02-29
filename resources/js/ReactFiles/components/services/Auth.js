@@ -3,22 +3,17 @@ import secureStorage from "../services/Storage";
 
 //Move to Process.env
 const baseUrl = process.env.MIX_BASEURL;
-
+const loginRoute = process.env.MIX_AUTH_LOGIN;
+const meRoute = process.env.MIX_AUTH_ME;
 export const JWTLogin = async data => {
+    console.log(data);
     return axios
-        .post(baseUrl + "/jwt-auth/v1/token", data)
+        .post(baseUrl + "/auth/login", data)
         .then(res => {
-            secureStorage.setItem("jwt", res.data.token);
-            secureStorage.setItem("niceName", res.data.user_nicename);
-            secureStorage.setItem("username", data.username);
-            secureStorage.setItem("password", data.password);
-            secureStorage.setItem("email", res.data.user_email);
-            console.log(res);
+            secureStorage.setItem("jwt", res.data.access_token);
+            console.log(res.data.access_token, secureStorage.getItem("jwt"));
             return {
-                token: res.data.token,
-                status: res.status,
-                email: res.data.user_email,
-                niceName: res.data.user_nicename
+                status: res.status
             };
         })
         .catch(err => {
@@ -30,26 +25,44 @@ export const JWTLogin = async data => {
 };
 
 export const JWTLogout = () => {
-    secureStorage.clear();
-    window.location.href = "/wordpress/";
+    return new Promise((resolve, reject) => {
+        return axios
+            .post(baseUrl + "/auth/logout", {}, JWTHeader())
+            .then(res => {
+                secureStorage.clear();
+                console.log("storage cleared");
+                return resolve({ status: res.status });
+            })
+            .catch(err => {
+                return reject({ status: err.status });
+            });
+    });
 };
 
 export const JWTValidate = async () => {
-    console.log(JWTHeader());
-    return await axios
-        .post(baseUrl + "/jwt-auth/v1/token/validate", {}, JWTHeader())
-        .then(res => {
-            console.log(res);
-            return {
-                status: res.status
-            };
-        })
-        .catch(err => {
-            console.log(err.response);
-            return {
-                status: err.response.status
-            };
-        });
+    console.log("header USED", JWTHeader());
+    console.log(baseUrl + "/auth/me");
+
+    return new Promise((resolve, reject) => {
+        return axios
+            .post(baseUrl + "/auth/me", {}, JWTHeader())
+            .then(res => {
+                secureStorage.setItem("name", res.data.name);
+                secureStorage.setItem("phonenumber", res.data.phonenumber);
+                console.log("Authenticated in AUTH", res);
+                return resolve({
+                    statusText: res.statusText,
+                    name: res.data.name,
+                    phonenumber: res.data.phonenumber
+                });
+            })
+            .catch(err => {
+                console.log("sdsdsadad", err.response);
+                return reject(err);
+            });
+    });
+
+    return;
 };
 
 export const JWTCheck = async () => {
@@ -66,7 +79,8 @@ export const JWTCheck = async () => {
 export const JWTHeader = () => {
     return {
         headers: {
-            "Access-Control-Allow-Origin": "*",
+            // "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
             Authorization: "Bearer " + secureStorage.getItem("jwt")
         }
     };

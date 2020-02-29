@@ -11,16 +11,16 @@ function Navbar() {
     );
     const [Navbar, setNavbar] = useState([]);
 
-    const navbar = process.env.NAVBAR;
+    const navbar = process.env.MIX_NAVBAR;
     const baseUrl = process.env.MIX_BASEURL;
 
     //Navbar useEffect
-    console.log(baseUrl + navbar);
+    console.log("http://127.0.0.1:8000/api/navbar");
     useEffect(() => {
         Axios.get(baseUrl + navbar)
             .then(res => {
-                console.log(res.data.items);
-                setNavbar(res.data.items);
+                console.log(res.data);
+                setNavbar(res.data);
             })
             .catch(e => console.log(e.response));
 
@@ -86,7 +86,7 @@ function Navbar() {
                                 <li className="nav-item">
                                     <Link
                                         className="nav-link font3 p-sm-1 px-md-2"
-                                        to={"/wordpress" + item.url}
+                                        to={item.url}
                                     >
                                         {item.post_title}
                                     </Link>

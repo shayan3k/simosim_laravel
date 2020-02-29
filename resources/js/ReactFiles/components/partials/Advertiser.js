@@ -37,7 +37,7 @@ export default function Advertiser(props) {
                 </div>
 
                 {contactnumber.map((item, index) => {
-                    console.log(item);
+                    // console.log(item);
                     return (
                         <p
                             className="col-6 m-0 p-0 py-1 white-space-nowrap"

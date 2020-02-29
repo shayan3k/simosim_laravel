@@ -14,6 +14,11 @@ export default function MegaMenu() {
     const [samanTel, setSamanTel] = useState();
 
     const logedIn = useStoreState(state => state.auth.logedIn);
+    const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);
+    const setPhoneNumber = useStoreActions(
+        actions => actions.auth.setPhoneNumber
+    );
+    const setNiceName = useStoreActions(actions => actions.auth.setNiceName);
 
     const [AnimationHamraheAval, setAnimationHamraheAval] = useState(
         new TimelineLite({
@@ -52,6 +57,23 @@ export default function MegaMenu() {
     useEffect(() => {
         componentUpdateConfig();
     });
+
+    const handleLogoutBtn = () => {
+        console.log("Logout Clicked");
+        JWTLogout()
+            .then(res => {
+                if (res.status === 200) {
+                    setLogedIn(false);
+                    setPhoneNumber("");
+                    setNiceName("");
+                    console.log("Loged out");
+                } else {
+                    console.log("can not sign out at this momendadt!");
+                }
+                console.log(res);
+            })
+            .catch(e => console.log("can not sign out at this moment!", e));
+    };
 
     const componentMountConfig = () => {
         hamraheAvalConfig();
@@ -220,7 +242,6 @@ export default function MegaMenu() {
         setSamanTel(!samanTel);
     };
 
-    console.log(logedIn);
     return (
         <>
             <div
@@ -231,24 +252,21 @@ export default function MegaMenu() {
                     <div className="px-1 d-inline">
                         {logedIn ? (
                             <div className="d-flex justify-content-between align-items-center">
-                                <Link
+                                <span
                                     className="logout-btn font3 d-flex justify-content-center align-items-center px-2 "
-                                    onClick={() => JWTLogout()}
+                                    onClick={() => handleLogoutBtn()}
                                 >
                                     <i className="fas fa-sign-out-alt fa-2x"></i>
-                                </Link>
+                                </span>
                                 <Link
                                     className="login-btn font2 px-2"
-                                    to="/wordpress/dashboard"
+                                    to="/dashboard"
                                 >
                                     داشبورد
                                 </Link>
                             </div>
                         ) : (
-                            <Link
-                                className="login-btn font3"
-                                to="/wordpress/login"
-                            >
+                            <Link className="login-btn font3" to="/login">
                                 <i className="fas fa-sign-in-alt fa-rotate-180 fa-2x"></i>
                                 ورود/ثبت نام
                             </Link>

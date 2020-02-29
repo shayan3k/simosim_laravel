@@ -11,8 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-})->name('app');
 
-Auth::routes();
+
+Route::get('/{path?}', [
+    'uses' => 'ReactController@show',
+    'as' => 'react',
+    'where' => ['path' => '.*']
+])->name('app');
+
+// Route::get('/', function () {
+//     return view('app');
+// })->name('app');
+
+// Auth::routes();

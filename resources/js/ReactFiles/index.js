@@ -11,7 +11,7 @@ import App from "./App";
 const store = createStore({
     auth: {
         logedIn: false,
-        Email: null,
+        Phonenumber: null,
         Nicename: null,
 
         setLogedIn: action((state, payload) => {
@@ -20,8 +20,8 @@ const store = createStore({
         setNiceName: action((state, payload) => {
             state.Nicename = payload;
         }),
-        setEmail: action((state, payload) => {
-            state.Email = payload;
+        setPhoneNumber: action((state, payload) => {
+            state.Phonenumber = payload;
         })
     },
     google: {
@@ -32,14 +32,14 @@ const store = createStore({
             console.log(state.token);
         })
     },
-    urls: {
-        baseUrl: "http://mytestapplication.gigfa.com/wp-json",
-        postUri: "/custom-routes/v1/advertisments",
-        postsUri: "/wp/v2/advertisement/",
-        userUri: "/wp/v2/users/me",
-        navbar: "/menus/v1/menus/navbar1",
-        vipAdvertiser: "/wp/v2/pages"
-    },
+    // urls: {
+    //     baseUrl: "http://mytestapplication.gigfa.com/wp-json",
+    //     postUri: "/custom-routes/v1/advertisments",
+    //     postsUri: "/wp/v2/advertisement/",
+    //     userUri: "/wp/v2/users/me",
+    //     navbar: "/menus/v1/menus/navbar1",
+    //     vipAdvertiser: "/wp/v2/pages"
+    // },
     message: {
         msg: "",
         status: "",

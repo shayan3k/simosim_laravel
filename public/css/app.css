@@ -327,6 +327,7 @@ font3-4 {
 .login-btn,
 .logout-btn {
   color: black;
+  cursor: pointer !important;
 }
 
 .navbar3-items {

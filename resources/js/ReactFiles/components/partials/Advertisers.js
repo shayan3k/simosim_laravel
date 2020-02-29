@@ -13,11 +13,11 @@ function Advertisers() {
             .get("http://127.0.0.1:8000/api/advertisers")
             .then(res => {
                 setAdvertisers(res.data);
-                console.log(res.data);
+                // console.log(res.data);
             })
             .catch(err => console.log(err.response));
     }, []);
-    console.log("Advertisers=", advertisers);
+    // console.log("Advertisers=", advertisers);
     return (
         <div className="container mx-auto py-0 AdvertisersToggler">
             <div className="row bg-custom pb-5">

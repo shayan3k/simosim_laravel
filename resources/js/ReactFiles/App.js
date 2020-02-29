@@ -13,39 +13,43 @@ import Ghavanin from "./components/Ghavanin";
 import LoginPage from "./components/LoginPage";
 import Dashboard from "./components/Dashboard";
 import PageNotFound from "./components/PageNotFound";
-import { JWTCheck, JWTValidate } from "./components/services/Auth";
+import { JWTValidate } from "./components/services/Auth";
 import secureStorage from "./components/services/Storage";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
 function App() {
     const logedIn = useStoreState(state => state.auth.logedIn);
     const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);
-    const setEmail = useStoreActions(actions => actions.auth.setEmail);
+    const setPhoneNumber = useStoreActions(
+        actions => actions.auth.setPhoneNumber
+    );
     const setNiceName = useStoreActions(actions => actions.auth.setNiceName);
     const islogedIn = () => {
         console.log("Authenticating ... ");
         JWTValidate()
             .then(res => {
                 console.log(res);
-                if (res.status === 200) {
+                if (res.statusText === "OK") {
                     setLogedIn(true);
-                    setEmail(secureStorage.getItem("email"));
-                    setNiceName(secureStorage.getItem("niceName"));
+                    setPhoneNumber(res.phonenumber);
+                    setNiceName(res.name);
+                    console.log("AUTHORIZED in APP", res);
                 } else {
+                    console.log("NOT AUTHORIZED in appp");
                 }
             })
             .catch(e => {
-                console.log(e);
+                console.log("NOT AUTHORIZED in APP", e);
                 secureStorage.clear();
                 setLogedIn(false);
-                setEmail("");
+                setPhoneNumber("");
                 setNiceName("");
             });
     };
 
     useEffect(() => {
         islogedIn();
-    });
+    }, []);
 
     const PrivateRoute = ({ component: Component, ...rest }) => (
         <Route

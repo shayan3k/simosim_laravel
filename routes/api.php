@@ -25,6 +25,7 @@ Route::group([
 
 ], function ($router) {
 
+    Route::post('register', 'RegisterUserController@register');
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
@@ -38,3 +39,14 @@ Route::post('/advertisments', 'AdvertismentController@create')->middleware('auth
 
 Route::get('/advertisers', 'AdvertiserController@show');
 Route::get('/vipadvertisers', 'AdvertiserController@vipshow');
+
+Route::get('/navbar', function () {
+
+    return [
+        ['post_title' => 'تبلیغات/تماس با ما', 'url' => '/contact-us'],
+        ['post_title' => 'قوانین', 'url' => '/ghavanin'],
+        ['post_title' => 'راهنما', 'url' => '/rahnama'],
+        ['post_title' => 'داشبورد', 'url' => '/dashboard'],
+        ['post_title' => 'خانه', 'url' => '/'],
+    ];
+});
