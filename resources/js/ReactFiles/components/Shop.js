@@ -14,8 +14,8 @@ import Seperator from "./partials/Seperator";
 import { useStoreState } from "easy-peasy";
 
 export default function Shop() {
-    const postsUri = process.env.MIX_POSTSURI;
-
+    // const postsUri = process.env.MIX_POSTSURI;
+    const postsUri = "/advertisments";
     return (
         <>
             <Navbar />

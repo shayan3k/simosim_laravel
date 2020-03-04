@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use App\User;
-use Illuminate\Support\Facades\Hash;
+
 use JWTAuth;
+
 use JWTFactory;
+
 
 class AuthController extends Controller
 {
@@ -35,6 +36,8 @@ class AuthController extends Controller
         //$credentials = $request->only('email', 'password');
         // $credentials = $request->only('username', 'password');
         $credentials = $request->only('phonenumber', 'password');
+        return response()->json(['error' => $credentials], 401);
+
         if ($token = JWTAuth::attempt($credentials)) {
             return $this->respondWithToken($token);
         }

@@ -53,10 +53,43 @@ class AdvertismentController extends Controller
     public function create(Request $request)
     {
         var_dump($request);
-        $data = $request->only('phonenumber', 'password');
-        // if ($token = JWTAuth::attempt($credentials)) {
-        //     return $this->respondWithToken($token);
-        // }
-        return response()->json(['error' => 'Unauthorized'], 401);
+
+
+        // $advertisment = new Advertisment();
+        // $advertisment->phonenumber = $request->phonenumber;
+        // $advertisment->location = $request->location;
+        // $advertisment->text = $request->text;
+        // $advertisment->price =  $request->price;
+        // $advertisment->secondprice = $request->secondprice;
+        // $advertisment->value = $request->value;
+        // $advertisment->operator = $request->operator;
+        // $advertisment->code = $request->code;
+        // $advertisment->rond =  $request->rond;
+        // $advertisment->simstatus = $request->simstatus;
+        // $advertisment->sale = $request->sale;
+        // $advertisment->published =  false;
+        // $advertisment->created_at = NOW();
+        // $advertisment->updated_at = NOW();
+
+
+
+        // $advertisment->save();
+
+
+        // phonenumber: PhoneNumber,
+        //                 operator: "همراه اول",
+        //                 code: Code,
+        //                 value: Sale ? "" : Value,
+        //                 rond: Rond,
+        //                 location: Location,
+        //                 simstatus: SimStatus,
+        //                 text: Text.trim(),
+        //                 price: Price * 1000,
+        //                 sale: Sale ? "فوری" : "",
+        //                 secondprice: Sale ? SecondPrice * 1000 : 0,
+        //                 modifed: new Date().toISOString()
+
+
+
     }
 }

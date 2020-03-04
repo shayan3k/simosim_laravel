@@ -11,13 +11,13 @@ function Navbar() {
     );
     const [Navbar, setNavbar] = useState([]);
 
-    const navbar = process.env.MIX_NAVBAR;
+    // const navbar = process.env.MIX_NAVBAR;
     const baseUrl = process.env.MIX_BASEURL;
 
     //Navbar useEffect
     console.log("http://127.0.0.1:8000/api/navbar");
     useEffect(() => {
-        Axios.get(baseUrl + navbar)
+        Axios.get(baseUrl + "/navbar")
             .then(res => {
                 console.log(res.data);
                 setNavbar(res.data);

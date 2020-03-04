@@ -4,6 +4,7 @@ import secureStorage from "../services/Storage";
 //Move to Process.env
 const baseUrl = process.env.MIX_BASEURL;
 const loginRoute = process.env.MIX_AUTH_LOGIN;
+// const logoutRoute = process.enc.MIX_AUTH_LOGOUT;
 const meRoute = process.env.MIX_AUTH_ME;
 export const JWTLogin = async data => {
     console.log(data);
@@ -13,10 +14,13 @@ export const JWTLogin = async data => {
             secureStorage.setItem("jwt", res.data.access_token);
             console.log(res.data.access_token, secureStorage.getItem("jwt"));
             return {
-                status: res.status
+                status: res.status,
+                message: "خوش آمدید"
             };
         })
         .catch(err => {
+            console.log("The Error", err);
+            console.log("The Error1", err.response);
             return {
                 status: err.response.status,
                 message: err.response.data.message

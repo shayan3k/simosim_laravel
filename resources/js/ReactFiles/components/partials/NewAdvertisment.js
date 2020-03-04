@@ -32,7 +32,8 @@ export default function NewAdvertisment() {
     const [Text, setText] = useState("");
 
     const baseUrl = process.env.MIX_BASEURL;
-    const newAdUrl = process.env.MIX_NEWADURL;
+    const newAdUrl = process.env.MIX_ADVERTISMENT;
+
     const SelectConfig = () => {
         const Selects = customSelect("select");
         setSelects(Selects);
