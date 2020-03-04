@@ -18,6 +18,7 @@ $factory->define(Advertisment::class, function (Faker $faker) {
         "rond" => "رند",
         "simstatus" => "صفر",
         "sale" => "",
+        'published' => false,
         'created_at' => date('Y-m-d H:i:s'),
         'updated_at' => date('Y-m-d H:i:s'),
     ];

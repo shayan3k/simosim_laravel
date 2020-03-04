@@ -26,6 +26,7 @@ class CreateAdvertismentsTable extends Migration
             $table->string('rond');
             $table->string('simstatus');
             $table->string('sale');
+            $table->boolean('published');
             $table->timestamps();
             $table->integer('user_id');
         });
