@@ -12,7 +12,9 @@ export const JWTLogin = async data => {
         .post(baseUrl + "/auth/login", data)
         .then(res => {
             secureStorage.setItem("jwt", res.data.access_token);
-            console.log(res.data.access_token, secureStorage.getItem("jwt"));
+            secureStorage.setItem("name", res.data.name);
+            secureStorage.setItem("phonenumber", res.data.phonenumber);
+            console.log(res);
             return {
                 status: res.status,
                 message: "خوش آمدید"
@@ -20,10 +22,9 @@ export const JWTLogin = async data => {
         })
         .catch(err => {
             console.log("The Error", err);
-            console.log("The Error1", err.response);
             return {
                 status: err.response.status,
-                message: err.response.data.message
+                message: err
             };
         });
 };

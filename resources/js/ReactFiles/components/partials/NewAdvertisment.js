@@ -144,31 +144,28 @@ export default function NewAdvertisment() {
         }
 
         if (!flag) {
-            Axios.post(
-                baseUrl + newAdUrl,
-                {
-                    fields: {
-                        phonenumber: PhoneNumber,
-                        operator: "همراه اول",
-                        code: Code,
-                        value: Sale ? "" : Value,
-                        rond: Rond,
-                        location: Location,
-                        simstatus: SimStatus,
-                        text: Text.trim(),
-                        price: Price * 1000,
-                        sale: Sale ? "فوری" : "",
-                        secondprice: Sale ? SecondPrice * 1000 : 0,
-                        modifed: new Date().toISOString()
-                    }
-                },
-                JWTHeader()
-            )
+            var data = {
+                phonenumber: PhoneNumber,
+                operator: "همراه اول",
+                code: Code,
+                value: Value,
+                rond: Rond,
+                location: Location,
+                simstatus: SimStatus,
+                text: Text.trim(),
+                price: Price * 1000,
+                sale: Sale ? "فوری" : "",
+                secondprice: Sale ? SecondPrice * 1000 : 0,
+                modifed: new Date().toISOString()
+            };
+
+            Axios.post(baseUrl + newAdUrl, data, JWTHeader())
                 .then(e => {
                     console.log(e);
 
                     setError({
-                        msg: "موفق",
+                        msg:
+                            "سیمکارت شما با موفقیت ثبت شد. تا دقایقی دیگر آگهی ثبت شده نمایش داده میشود",
                         status: "success"
                     });
                 })
@@ -180,6 +177,7 @@ export default function NewAdvertisment() {
                         status: "danger"
                     });
                 });
+            console.log(data);
         } else {
             setError({
                 msg,

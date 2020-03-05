@@ -33,7 +33,12 @@ Route::group([
 });
 
 
-Route::get('/advertisments', 'AdvertismentController@show');
+Route::get('/advertisments', 'AdvertismentController@showAll');
+Route::get('/advertisments-sale', 'AdvertismentController@showSale');
+Route::get('/advertisments-gold', 'AdvertismentController@showGold');
+Route::get('/advertisments-silver', 'AdvertismentController@showSilver');
+Route::get('/advertisments-bronze', 'AdvertismentController@showBronze');
+Route::get('/advertisments-me', 'AdvertismentController@showMe')->middleware('auth:api');
 Route::post('/advertisments', 'AdvertismentController@create')->middleware('auth:api');
 
 

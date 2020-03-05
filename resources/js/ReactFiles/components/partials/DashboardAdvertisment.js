@@ -6,29 +6,17 @@ import axios from "axios";
 
 function DashboardAdvertisment(props) {
     const [posts, setPosts] = useState([]);
-    const postUri = process.env.MIX_POSTURI;
-    const userUri = process.env.MIX_USERURI;
+    // const postUri = process.env.MIX_ADVERTISMENT_ME;
     const baseUrl = process.env.MIX_BASEURL;
+    const postUri = "/advertisments-me";
 
     useEffect(() => {
         axios
-            .get(baseUrl + userUri, JWTHeader())
-            .then(user => {
-                console.log(user.data.id);
-                axios
-                    .get(baseUrl + postUri)
-                    .then(res => {
-                        console.log(user.data.id);
+            .get(baseUrl + postUri, JWTHeader())
+            .then(res => {
+                console.log(res);
 
-                        setPosts(
-                            res.data.filter(
-                                item => item.author.id === user.data.id
-                            )
-                        );
-                    })
-                    .catch(e => {
-                        console.log(e.response);
-                    });
+                setPosts(res.data);
             })
             .catch(err => {
                 console.log(err.response);
@@ -62,19 +50,19 @@ function DashboardAdvertisment(props) {
                     >
                         <Advertisment
                             phoneNumber={item.phonenumber}
-                            status={item.simstatus}
-                            rond={item.rond}
-                            code={item.code}
-                            value={item.value}
-                            operator={item.operator}
                             location={item.location}
-                            price={item.price}
                             text={item.text}
-                            sellerPhoneNumber={item.author.username}
-                            sellerName={item.author.display_name}
-                            id={item.id}
-                            sale={item.sale}
+                            price={item.price}
                             secondPrice={item.secondprice}
+                            code={item.code}
+                            operator={item.operator}
+                            value={item.value}
+                            rond={item.rond}
+                            status={item.simstatus}
+                            sale={item.sale}
+                            sellerPhoneNumber={item.sellerphonenumber}
+                            sellerName={item.sellername}
+                            id={item.id}
                             handleDeleteBtn={handleDeleteBtn}
                         />
                     </div>

@@ -36,7 +36,6 @@ class AuthController extends Controller
         //$credentials = $request->only('email', 'password');
         // $credentials = $request->only('username', 'password');
         $credentials = $request->only('phonenumber', 'password');
-        return response()->json(['error' => $credentials], 401);
 
         if ($token = JWTAuth::attempt($credentials)) {
             return $this->respondWithToken($token);
@@ -88,6 +87,8 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
+            'name' => $this->guard()->user()->name,
+            'phonenumber' => $this->guard()->user()->phonenumber,
             'expires_in' => $this->guard()->factory()->getTTL() * 60
         ]);
     }

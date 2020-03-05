@@ -15,7 +15,9 @@ class UserWithAdvertismentSeeder extends Seeder
         $users = factory(App\User::class, 10)
             ->create()
             ->each(function ($user) {
-                $user->advertisments()->save(factory(Advertisment::class)->make());
+
+                for ($i = 0; $i < 20; $i++)
+                    $user->advertisments()->save(factory(Advertisment::class)->make());
             });
     }
 }
