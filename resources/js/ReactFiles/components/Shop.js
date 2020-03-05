@@ -16,6 +16,9 @@ import { useStoreState } from "easy-peasy";
 export default function Shop() {
     // const postsUri = process.env.MIX_POSTSURI;
     const postsUri = "/advertisments";
+    const postsUriGold = "/advertisments-gold";
+    const postsUriSilver = "/advertisments-silver";
+    const postsUriBronze = "/advertisments-bronze";
     return (
         <>
             <Navbar />
@@ -39,18 +42,18 @@ export default function Shop() {
 
             <div className="SpecialOffersWrapepr">
                 <SpecialOffers
-                    uri={postsUri}
+                    uri={postsUriGold}
                     sale={false}
                     flagController="طلایی"
                 />
                 <SpecialOffers
                     ltr={true}
-                    uri={postsUri}
+                    uri={postsUriSilver}
                     sale={false}
                     flagController="نقره ای"
                 />
                 <SpecialOffers
-                    uri={postsUri}
+                    uri={postsUriBronze}
                     sale={false}
                     flagController="برنز"
                 />

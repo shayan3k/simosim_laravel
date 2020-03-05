@@ -10,8 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/admin/dashboardformamad', function () {
+    return view('dfhfh');
+});
 
-
+Auth::routes();
 
 Route::get('/{path?}', [
     'uses' => 'ReactController@show',
@@ -22,5 +25,3 @@ Route::get('/{path?}', [
 // Route::get('/', function () {
 //     return view('app');
 // })->name('app');
-
-// Auth::routes();

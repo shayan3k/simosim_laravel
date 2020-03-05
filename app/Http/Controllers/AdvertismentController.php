@@ -17,7 +17,7 @@ class AdvertismentController extends Controller
     public function showAll()
     {
         $data = [];
-        $advertisments = Advertisment::take(10)->get();
+        $advertisments = Advertisment::take(50)->get();
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
@@ -37,7 +37,6 @@ class AdvertismentController extends Controller
                 'sellerphonenumber' => $user->phonenumber,
                 'sallername' => $user->name
             ];
-
             array_push($data, $new);
         }
 
@@ -89,7 +88,7 @@ class AdvertismentController extends Controller
     public function showGold()
     {
         $data = [];
-        $advertisments = Advertisment::where('value', 'طلایی')->take(10)->get();
+        $advertisments = Advertisment::where('value', 'طلایی')->take(30)->get();
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
@@ -127,7 +126,7 @@ class AdvertismentController extends Controller
     public function showSilver()
     {
         $data = [];
-        $advertisments = Advertisment::where('value', 'نقره ای')->take(10)->get();
+        $advertisments = Advertisment::where('value', 'نقره ای')->take(30)->get();
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
@@ -165,7 +164,7 @@ class AdvertismentController extends Controller
     public function showBronze()
     {
         $data = [];
-        $advertisments = Advertisment::where('value', 'برنز')->take(10)->get();
+        $advertisments = Advertisment::where('value', 'برنز')->take(30)->get();
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
