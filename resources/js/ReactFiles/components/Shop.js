@@ -16,6 +16,7 @@ import { useStoreState } from "easy-peasy";
 export default function Shop() {
     // const postsUri = process.env.MIX_POSTSURI;
     const postsUri = "/advertisments";
+    const postsUriSale = "/advertisments-sale";
     const postsUriGold = "/advertisments-gold";
     const postsUriSilver = "/advertisments-silver";
     const postsUriBronze = "/advertisments-bronze";
@@ -29,7 +30,11 @@ export default function Shop() {
                 title="فروشهای فوری"
                 collapse="specialOffersToggler"
             />
-            <SpecialOffers uri={postsUri} sale={true} flagController="فوری" />
+            <SpecialOffers
+                uri={postsUriSale}
+                sale={true}
+                flagController="فوری"
+            />
             <SectionTitle title="جستجو" collapse="searchBox" />
             <SearchBox />
             <SectionTitle title="سیم کارت یافت شده" collapse="mainAdsToggler" />

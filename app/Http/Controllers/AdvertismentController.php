@@ -52,7 +52,7 @@ class AdvertismentController extends Controller
     public function showSale()
     {
         $data = [];
-        $advertisments = Advertisment::where('sale', 'فوری')->take(10)->get();
+        $advertisments = Advertisment::where('sale', 'فوری')->take(15)->get();
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;

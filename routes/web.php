@@ -10,9 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/admin/dashboardformamad', function () {
-    return view('dfhfh');
-});
+// Route::get('/admin/dashboardformamad', function () {
+//     return view('dfhfh');
+// });
 
 Auth::routes();
 
