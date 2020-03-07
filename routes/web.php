@@ -10,9 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/admin/dash', function () {
-    return backpack_view('dashboard');
+
+// Route::auth();
+
+
+Route::get('/admin/dashboard', function () {
+    return view('vendor/backpack/base/dashboard');
 });
+
 
 // Auth::routes();
 

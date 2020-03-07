@@ -2,17 +2,17 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>elFinder 2.0 - CKEditor</title>
+    <title>elFinder 2.0 - Standalone Popup</title>
 
     <!-- jQuery and jQuery UI (REQUIRED) -->
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/smoothness/jquery-ui.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
     <!-- elFinder CSS (REQUIRED) -->
     <link rel="stylesheet" type="text/css" href="<?= asset($dir.'/css/elfinder.min.css') ?>">
     <!-- <link rel="stylesheet" type="text/css" href="<?= asset($dir.'/css/theme.css') ?>"> -->
-    <link rel="stylesheet" type="text/css" href="<?= asset('packages/backpack/base/css/elfinder.backpack.theme.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?= asset('vendor/backpack/elfinder/elfinder.backpack.theme.css') ?>">
 
     <!-- elFinder JS (REQUIRED) -->
     <script src="<?= asset($dir.'/js/elfinder.min.js') ?>"></script>
@@ -23,23 +23,12 @@
         <script src="<?= asset($dir."/js/i18n/elfinder.$locale.js") ?>"></script>
     <?php
 } ?>
+    <!-- Include jQuery, jQuery UI, elFinder (REQUIRED) -->
 
-    <!-- elFinder initialization (REQUIRED) -->
-    <script type="text/javascript" charset="utf-8">
-        // Helper function to get parameters from the query string.
-        function getUrlParam(paramName) {
-            var reParam = new RegExp('(?:[\?&]|&amp;)' + paramName + '=([^&]+)', 'i') ;
-            var match = window.location.search.match(reParam) ;
-
-            return (match && match.length > 1) ? match[1] : '' ;
-        }
-
-        $().ready(function() {
-            var funcNum = getUrlParam('CKEditorFuncNum');
-
+    <script type="text/javascript">
+        $().ready(function () {
             var elf = $('#elfinder').elfinder({
                 // set your elFinder options here
-                resizable: false,
                 <?php if ($locale) {
         ?>
                     lang: '<?= $locale ?>', // locale
@@ -49,9 +38,16 @@
                     _token: '<?= csrf_token() ?>'
                 },
                 url: '<?= route('elfinder.connector') ?>',  // connector URL
-                getFileCallback : function(file) {
-                    window.opener.CKEDITOR.tools.callFunction(funcNum, file.url);
-                    window.close();
+                dialog: {width: 900, modal: true, title: 'Select a file'},
+                resizable: false,
+                commandsOptions: {
+                    getfile: {
+                        oncomplete: 'destroy'
+                    }
+                },
+                getFileCallback: function (file) {
+                    window.parent.processSelectedFile(file.path, '<?= $input_id?>');
+                    parent.jQuery.colorbox.close();
                 }
             }).elfinder('instance');
         });
@@ -62,9 +58,12 @@
             }
         });
     </script>
+
+
 </head>
 <body class="elfinder">
-    <!-- Element where elFinder will be created (REQUIRED) -->
-    <div id="elfinder"></div>
+<!-- Element where elFinder will be created (REQUIRED) -->
+<div id="elfinder"></div>
+
 </body>
 </html>

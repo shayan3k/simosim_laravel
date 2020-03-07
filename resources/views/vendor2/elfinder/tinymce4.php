@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>elFinder 2.0 - TinyMCE</title>
+    <title>elFinder 2.0 - TinyMCE4</title>
 
     <!-- jQuery and jQuery UI (REQUIRED) -->
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
@@ -13,13 +12,10 @@
     <!-- elFinder CSS (REQUIRED) -->
     <link rel="stylesheet" type="text/css" href="<?= asset($dir.'/css/elfinder.min.css') ?>">
     <!-- <link rel="stylesheet" type="text/css" href="<?= asset($dir.'/css/theme.css') ?>"> -->
-    <link rel="stylesheet" type="text/css" href="<?= asset('packages/backpack/base/css/elfinder.backpack.theme.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?= asset('vendor/backpack/elfinder/elfinder.backpack.theme.css') ?>">
 
     <!-- elFinder JS (REQUIRED) -->
     <script src="<?= asset($dir.'/js/elfinder.min.js') ?>"></script>
-
-    <!-- TinyMCE Popup class (REQUIRED) -->
-    <script type="text/javascript" src="<?= asset($dir.'/js/tiny_mce_popup.js') ?>"></script>
 
     <?php if ($locale) {
     ?>
@@ -28,36 +24,20 @@
     <?php
 } ?>
 
-
+    <!-- elFinder initialization (REQUIRED) -->
     <script type="text/javascript">
         var FileBrowserDialogue = {
             init: function() {
                 // Here goes your code for setting your custom things onLoad.
             },
             mySubmit: function (URL) {
-                var win = tinyMCEPopup.getWindowArg('window');
-
                 // pass selected file path to TinyMCE
-                win.document.getElementById(tinyMCEPopup.getWindowArg('input')).value = URL;
-
-                // are we an image browser?
-                if (typeof(win.ImageDialog) != 'undefined') {
-                    // update image dimensions
-                    if (win.ImageDialog.getImageData) {
-                        win.ImageDialog.getImageData();
-                    }
-                    // update preview if necessary
-                    if (win.ImageDialog.showPreviewImage) {
-                        win.ImageDialog.showPreviewImage(URL);
-                    }
-                }
+                parent.tinymce.activeEditor.windowManager.getParams().setUrl(URL);
 
                 // close popup window
-                tinyMCEPopup.close();
+                parent.tinymce.activeEditor.windowManager.close();
             }
         }
-
-        tinyMCEPopup.onInit.add(FileBrowserDialogue.init, FileBrowserDialogue);
 
         $().ready(function() {
             var elf = $('#elfinder').elfinder({
@@ -71,7 +51,7 @@
                 customData: {
                     _token: '<?= csrf_token() ?>'
                 },
-                url : '<?= route('elfinder.connector') ?>',  // connector URL
+                url: '<?= route('elfinder.connector') ?>',  // connector URL
                 getFileCallback: function(file) { // editor callback
                     FileBrowserDialogue.mySubmit(file.url); // pass selected file path to TinyMCE
                 }
@@ -84,12 +64,9 @@
             }
         });
     </script>
-
 </head>
 <body class="elfinder">
-
-<!-- Element where elFinder will be created (REQUIRED) -->
-<div id="elfinder"></div>
-
+    <!-- Element where elFinder will be created (REQUIRED) -->
+    <div id="elfinder"></div>
 </body>
 </html>
