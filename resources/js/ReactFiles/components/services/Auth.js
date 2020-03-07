@@ -1,5 +1,5 @@
 import axios from "axios";
-import secureStorage from "../services/Storage";
+import secureStorage from "./Storage";
 
 //Move to Process.env
 const baseUrl = process.env.MIX_BASEURL;
@@ -14,6 +14,10 @@ export const JWTLogin = async data => {
             secureStorage.setItem("jwt", res.data.access_token);
             secureStorage.setItem("name", res.data.name);
             secureStorage.setItem("phonenumber", res.data.phonenumber);
+            secureStorage.setItem(
+                "is_admin",
+                res.data.is_admin ? "true" : "false"
+            );
             console.log(res);
             return {
                 status: res.status,
@@ -54,6 +58,10 @@ export const JWTValidate = async () => {
             .then(res => {
                 secureStorage.setItem("name", res.data.name);
                 secureStorage.setItem("phonenumber", res.data.phonenumber);
+                secureStorage.setItem(
+                    "is_admin",
+                    res.data.is_admin ? "true" : "false"
+                );
                 console.log("Authenticated in AUTH", res);
                 return resolve({
                     statusText: res.statusText,
@@ -62,7 +70,7 @@ export const JWTValidate = async () => {
                 });
             })
             .catch(err => {
-                console.log("sdsdsadad", err.response);
+                console.log("NOT Authenticated in AUTH", err.response);
                 return reject(err);
             });
     });

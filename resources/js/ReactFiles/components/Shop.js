@@ -11,7 +11,6 @@ import SectionTitle from "./partials/SectionTitle";
 import FooterSeperator from "./partials/FooterSeperator";
 import Logo from "./partials/Logo";
 import Seperator from "./partials/Seperator";
-import { useStoreState } from "easy-peasy";
 
 export default function Shop() {
     // const postsUri = process.env.MIX_POSTSURI;

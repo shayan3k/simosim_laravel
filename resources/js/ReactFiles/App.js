@@ -13,11 +13,15 @@ import Ghavanin from "./components/Ghavanin";
 import LoginPage from "./components/LoginPage";
 import Dashboard from "./components/Dashboard";
 import PageNotFound from "./components/PageNotFound";
+import AdminPage from "./components/AdminPage";
 import { JWTValidate } from "./components/services/Auth";
 import secureStorage from "./components/services/Storage";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
 function App() {
+    // const adminSecretKey = process.env.MIX_ADMIN_SECRET_KEY;
+    const adminSecretKey = "true";
+
     const logedIn = useStoreState(state => state.auth.logedIn);
     const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);
     const setPhoneNumber = useStoreActions(
@@ -69,6 +73,19 @@ function App() {
         />
     );
 
+    const AdminRoute = ({ component: Component, ...rest }) => (
+        <Route
+            {...rest}
+            render={props =>
+                secureStorage.getItem("is_admin") == adminSecretKey ? (
+                    <Component {...props} />
+                ) : (
+                    <Redirect to="/login" />
+                )
+            }
+        />
+    );
+
     return (
         <>
             <Router>
@@ -77,6 +94,7 @@ function App() {
                     <Rahnama path="/rahnama" />
                     <ContactUs path="/contact-us" />
                     <AboutUs path="/about-us" />
+                    <AdminRoute path="/admin" component={AdminPage} />
                     <Ghavanin path="/ghavanin" />
                     <PrivateRoute path="/dashboard" component={Dashboard} />
                     <AuthenticatedRoute path="/login" component={LoginPage} />

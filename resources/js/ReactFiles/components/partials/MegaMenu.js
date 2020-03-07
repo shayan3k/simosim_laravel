@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
-import ReactMegaMenu from "react-mega-menu";
 import { Link } from "react-router-dom";
 import { TimelineLite } from "gsap";
-import { JWTLogout, JWTCheck, JWTValidate } from "../services/Auth";
+import { JWTLogout } from "../services/Auth";
 import { useStoreState, useStoreActions } from "easy-peasy";
+import secureStorage from "../services/Storage";
 
 export default function MegaMenu() {
-    const [direction, setDirection] = useState("LEFT");
+    // const adminSecretKey = process.env.MIX_ADMIN_SECRET_KEY;
+    const adminSecretKey = "true";
+
     const [hamraheAval, setHamraheAval] = useState(false);
     const [irancell, setIrancell] = useState();
     const [rightel, setRightel] = useState();
     const [talia, setTalia] = useState();
     const [samanTel, setSamanTel] = useState();
-
     const logedIn = useStoreState(state => state.auth.logedIn);
     const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);
     const setPhoneNumber = useStoreActions(
@@ -68,7 +69,7 @@ export default function MegaMenu() {
                     setNiceName("");
                     console.log("Loged out");
                 } else {
-                    console.log("can not sign out at this momendadt!");
+                    console.log("can not sign out at this moment!");
                 }
                 console.log(res);
             })
@@ -252,23 +253,45 @@ export default function MegaMenu() {
                     <div className="px-1 d-inline">
                         {logedIn ? (
                             <div className="d-flex justify-content-between align-items-center">
-                                <span
-                                    className="logout-btn font3 d-flex justify-content-center align-items-center px-2 "
-                                    onClick={() => handleLogoutBtn()}
-                                >
-                                    <i className="fas fa-sign-out-alt fa-2x"></i>
-                                </span>
-                                <Link
-                                    className="login-btn font2 px-2"
-                                    to="/dashboard"
-                                >
-                                    داشبورد
-                                </Link>
+                                {secureStorage.getItem("is_admin") ==
+                                adminSecretKey ? (
+                                    <>
+                                        <span
+                                            className="login-btn p-0 m-0"
+                                            onClick={() => handleLogoutBtn()}
+                                        >
+                                            <i className="fas fa-sign-out-alt fa-2x"></i>
+                                        </span>
+                                        <Link
+                                            className="login-btn font2 px-3"
+                                            to="/admin"
+                                        >
+                                            Admin
+                                        </Link>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span
+                                            className="login-btn p-0 m-0"
+                                            onClick={() => handleLogoutBtn()}
+                                        >
+                                            <i className="fas fa-sign-out-alt fa-2x"></i>
+                                        </span>
+                                        <Link
+                                            className="login-btn font2 d-inline-block"
+                                            to="/dashboard"
+                                        >
+                                            <span className=" font2 px-3">
+                                                داشبورد
+                                            </span>
+                                        </Link>
+                                    </>
+                                )}
                             </div>
                         ) : (
                             <Link className="login-btn font3" to="/login">
                                 <i className="fas fa-sign-in-alt fa-rotate-180 fa-2x"></i>
-                                ورود/ثبت نام
+                                <span className="px-3"> ورود/ثبت نام</span>
                             </Link>
                         )}
                     </div>

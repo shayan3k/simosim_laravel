@@ -11,15 +11,6 @@
 |
 */
 
-// Route::auth();
-
-
-Route::get('/admin/dashboard', function () {
-    return view('vendor/backpack/base/dashboard');
-});
-
-
-// Auth::routes();
 
 Route::get('/{path?}', [
     'uses' => 'ReactController@show',
