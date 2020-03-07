@@ -2,6 +2,7 @@ import React, { Component, Suspense } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import * as router from "react-router-dom";
 import { Container } from "reactstrap";
+import "./App.scss";
 
 import {
     AppAside,
@@ -19,11 +20,6 @@ import {
 import navigation from "./_nav";
 // routes config
 import routes from "./routes";
-
-//sjbfskfvksvfbksvfksvfkvsfkvssssfffffffffffffffffffffffffffffffffff
-
-import "./index.css";
-// import "./App.scss";
 
 import DefaultAside from "./containers/DefaultAside";
 import DefaultFooter from "./containers/DefaultFooter";
@@ -78,7 +74,7 @@ export default function Admin(props) {
                                         />
                                     ) : null;
                                 })}
-                                <Redirect from="/" to="/dashboard" />
+                                {/* <Redirect from="/" to="/dashboard" /> */}
                             </Switch>
                         </Suspense>
                     </Container>

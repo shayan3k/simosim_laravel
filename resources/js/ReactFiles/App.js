@@ -13,7 +13,7 @@ import Ghavanin from "./components/Ghavanin";
 import LoginPage from "./components/LoginPage";
 import Dashboard from "./components/Dashboard";
 import PageNotFound from "./components/PageNotFound";
-import AdminPage from "./components/admin/Admin";
+import AdminPage from "./components/AdminPage";
 import { JWTValidate } from "./components/services/Auth";
 import secureStorage from "./components/services/Storage";
 import { useStoreState, useStoreActions } from "easy-peasy";
@@ -24,10 +24,10 @@ function App() {
 
     const logedIn = useStoreState(state => state.auth.logedIn);
     const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);
+    const setNiceName = useStoreActions(actions => actions.auth.setNiceName);
     const setPhoneNumber = useStoreActions(
         actions => actions.auth.setPhoneNumber
     );
-    const setNiceName = useStoreActions(actions => actions.auth.setNiceName);
     const islogedIn = () => {
         console.log("Authenticating ... ");
         JWTValidate()

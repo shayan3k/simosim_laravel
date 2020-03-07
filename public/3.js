@@ -1,431 +1,1120 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],{
 
-/***/ "./node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/umd/custom-tooltips.js":
-/*!************************************************************************************************!*\
-  !*** ./node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/umd/custom-tooltips.js ***!
-  \************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./resources/js/ReactFiles/components/admin/views/Widgets/Widget01.js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/ReactFiles/components/admin/views/Widgets/Widget01.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-(function (global, factory) {
-   true ? factory(exports) :
-  undefined;
-}(this, function (exports) { 'use strict';
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap/lib/utils */ "./node_modules/reactstrap/lib/utils.js");
+/* harmony import */ var reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-  /**
-   * --------------------------------------------------------------------------
-   * CoreUI Plugins - Custom Tooltips for Chart.js (v1.3.1): custom-tooltips.js
-   * Licensed under MIT (https://coreui.io/license)
-   * --------------------------------------------------------------------------
-   */
-  function CustomTooltips(tooltipModel) {
-    var _this = this;
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-    // Add unique id if not exist
-    var _setCanvasId = function _setCanvasId() {
-      var _idMaker = function _idMaker() {
-        var _hex = 16;
-        var _multiplier = 0x10000;
-        return ((1 + Math.random()) * _multiplier | 0).toString(_hex);
-      };
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
-      var _canvasId = "_canvas-" + (_idMaker() + _idMaker());
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-      _this._chart.canvas.id = _canvasId;
-      return _canvasId;
-    };
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-    var ClassName = {
-      ABOVE: 'above',
-      BELOW: 'below',
-      CHARTJS_TOOLTIP: 'chartjs-tooltip',
-      NO_TRANSFORM: 'no-transform',
-      TOOLTIP_BODY: 'tooltip-body',
-      TOOLTIP_BODY_ITEM: 'tooltip-body-item',
-      TOOLTIP_BODY_ITEM_COLOR: 'tooltip-body-item-color',
-      TOOLTIP_BODY_ITEM_LABEL: 'tooltip-body-item-label',
-      TOOLTIP_BODY_ITEM_VALUE: 'tooltip-body-item-value',
-      TOOLTIP_HEADER: 'tooltip-header',
-      TOOLTIP_HEADER_ITEM: 'tooltip-header-item'
-    };
-    var Selector = {
-      DIV: 'div',
-      SPAN: 'span',
-      TOOLTIP: (this._chart.canvas.id || _setCanvasId()) + "-tooltip"
-    };
-    var tooltip = document.getElementById(Selector.TOOLTIP);
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-    if (!tooltip) {
-      tooltip = document.createElement('div');
-      tooltip.id = Selector.TOOLTIP;
-      tooltip.className = ClassName.CHARTJS_TOOLTIP;
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-      this._chart.canvas.parentNode.appendChild(tooltip);
-    } // Hide if no tooltip
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-    if (tooltipModel.opacity === 0) {
-      tooltip.style.opacity = 0;
-      return;
-    } // Set caret Position
 
 
-    tooltip.classList.remove(ClassName.ABOVE, ClassName.BELOW, ClassName.NO_TRANSFORM);
-
-    if (tooltipModel.yAlign) {
-      tooltip.classList.add(tooltipModel.yAlign);
-    } else {
-      tooltip.classList.add(ClassName.NO_TRANSFORM);
-    } // Set Text
 
 
-    if (tooltipModel.body) {
-      var titleLines = tooltipModel.title || [];
-      var tooltipHeader = document.createElement(Selector.DIV);
-      tooltipHeader.className = ClassName.TOOLTIP_HEADER;
-      titleLines.forEach(function (title) {
-        var tooltipHeaderTitle = document.createElement(Selector.DIV);
-        tooltipHeaderTitle.className = ClassName.TOOLTIP_HEADER_ITEM;
-        tooltipHeaderTitle.innerHTML = title;
-        tooltipHeader.appendChild(tooltipHeaderTitle);
-      });
-      var tooltipBody = document.createElement(Selector.DIV);
-      tooltipBody.className = ClassName.TOOLTIP_BODY;
-      var tooltipBodyItems = tooltipModel.body.map(function (item) {
-        return item.lines;
-      });
-      tooltipBodyItems.forEach(function (item, i) {
-        var tooltipBodyItem = document.createElement(Selector.DIV);
-        tooltipBodyItem.className = ClassName.TOOLTIP_BODY_ITEM;
-        var colors = tooltipModel.labelColors[i];
-        var tooltipBodyItemColor = document.createElement(Selector.SPAN);
-        tooltipBodyItemColor.className = ClassName.TOOLTIP_BODY_ITEM_COLOR;
-        tooltipBodyItemColor.style.backgroundColor = colors.backgroundColor;
-        tooltipBodyItem.appendChild(tooltipBodyItemColor);
+var propTypes = {
+  header: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  mainText: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  smallText: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  color: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  cssModule: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
+  variant: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+var defaultProps = {
+  header: '89.9%',
+  mainText: 'Lorem ipsum...',
+  smallText: 'Lorem ipsum dolor sit amet enim.',
+  // color: '',
+  value: '25',
+  variant: ''
+};
 
-        if (item[0].split(':').length > 1) {
-          var tooltipBodyItemLabel = document.createElement(Selector.SPAN);
-          tooltipBodyItemLabel.className = ClassName.TOOLTIP_BODY_ITEM_LABEL;
-          tooltipBodyItemLabel.innerHTML = item[0].split(': ')[0];
-          tooltipBodyItem.appendChild(tooltipBodyItemLabel);
-          var tooltipBodyItemValue = document.createElement(Selector.SPAN);
-          tooltipBodyItemValue.className = ClassName.TOOLTIP_BODY_ITEM_VALUE;
-          tooltipBodyItemValue.innerHTML = item[0].split(': ').pop();
-          tooltipBodyItem.appendChild(tooltipBodyItemValue);
-        } else {
-          var _tooltipBodyItemValue = document.createElement(Selector.SPAN);
+var Widget01 =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Widget01, _Component);
 
-          _tooltipBodyItemValue.className = ClassName.TOOLTIP_BODY_ITEM_VALUE;
-          _tooltipBodyItemValue.innerHTML = item[0];
-          tooltipBodyItem.appendChild(_tooltipBodyItemValue);
-        }
+  function Widget01() {
+    _classCallCheck(this, Widget01);
 
-        tooltipBody.appendChild(tooltipBodyItem);
-      });
-      tooltip.innerHTML = '';
-      tooltip.appendChild(tooltipHeader);
-      tooltip.appendChild(tooltipBody);
-    }
-
-    var position = this._chart.canvas.getBoundingClientRect();
-
-    var positionY = this._chart.canvas.offsetTop;
-    var positionX = this._chart.canvas.offsetLeft;
-    var positionLeft = positionX + tooltipModel.caretX;
-    var positionTop = positionY + tooltipModel.caretY; // eslint-disable-next-line
-
-    var halfWidth = tooltipModel.width / 2;
-
-    if (positionLeft + halfWidth > position.width) {
-      positionLeft -= halfWidth;
-    } else if (positionLeft < halfWidth) {
-      positionLeft += halfWidth;
-    } // Display, position, and set styles for font
-
-
-    tooltip.style.opacity = 1;
-    tooltip.style.left = positionLeft + "px";
-    tooltip.style.top = positionTop + "px";
+    return _possibleConstructorReturn(this, _getPrototypeOf(Widget01).apply(this, arguments));
   }
 
-  var customTooltips = CustomTooltips; // TODO: camel-case
+  _createClass(Widget01, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          className = _this$props.className,
+          cssModule = _this$props.cssModule,
+          header = _this$props.header,
+          mainText = _this$props.mainText,
+          smallText = _this$props.smallText,
+          color = _this$props.color,
+          value = _this$props.value,
+          children = _this$props.children,
+          variant = _this$props.variant,
+          attributes = _objectWithoutProperties(_this$props, ["className", "cssModule", "header", "mainText", "smallText", "color", "value", "children", "variant"]); // demo purposes only
 
-  exports.CustomTooltips = CustomTooltips;
-  exports.customTooltips = customTooltips;
 
-  Object.defineProperty(exports, '__esModule', { value: true });
+      var progress = {
+        style: '',
+        color: color,
+        value: value
+      };
+      var card = {
+        style: '',
+        bgColor: ''
+      };
 
-}));
-//# sourceMappingURL=custom-tooltips.js.map
+      if (variant === 'inverse') {
+        progress.style = 'progress-white';
+        progress.color = '';
+        card.style = 'text-white';
+        card.bgColor = 'bg-' + color;
+      }
 
+      var classes = Object(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4__["mapToCssModules"])(classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, card.style, card.bgColor), cssModule);
+      progress.style = classnames__WEBPACK_IMPORTED_MODULE_3___default()('progress-xs my-3', progress.style);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], _extends({
+        className: classes
+      }, attributes), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "h4 m-0"
+      }, header), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mainText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Progress"], {
+        className: progress.style,
+        color: progress.color,
+        value: progress.value
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        className: "text-muted"
+      }, smallText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, children)));
+    }
+  }]);
+
+  return Widget01;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+Widget01.propTypes = propTypes;
+Widget01.defaultProps = defaultProps;
+/* harmony default export */ __webpack_exports__["default"] = (Widget01);
 
 /***/ }),
 
-/***/ "./node_modules/@coreui/coreui/dist/js/coreui-utilities.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/@coreui/coreui/dist/js/coreui-utilities.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./resources/js/ReactFiles/components/admin/views/Widgets/Widget02.js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/ReactFiles/components/admin/views/Widgets/Widget02.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/*!
-  * CoreUI v3.0.0-beta.4 (https://coreui.io)
-  * Copyright 2020 Łukasz Holeczek
-  * Licensed under MIT (https://coreui.io)
-  */
-(function (global, factory) {
-   true ? factory(exports) :
-  undefined;
-}(this, (function (exports) { 'use strict';
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap/lib/utils */ "./node_modules/reactstrap/lib/utils.js");
+/* harmony import */ var reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-  /**
-   * --------------------------------------------------------------------------
-   * CoreUI Utilities (v3.0.0-beta.4): classes.js
-   * Licensed under MIT (https://coreui.io/license)
-   * --------------------------------------------------------------------------
-   */
-  var sidebarCssClasses = ['sidebar-show', 'sidebar-sm-show', 'sidebar-md-show', 'sidebar-lg-show', 'sidebar-xl-show'];
-  var asideMenuCssClasses = ['aside-menu-show', 'aside-menu-sm-show', 'aside-menu-md-show', 'aside-menu-lg-show', 'aside-menu-xl-show'];
-  var validBreakpoints = ['sm', 'md', 'lg', 'xl'];
-  function checkBreakpoint(breakpoint, list) {
-    return list.indexOf(breakpoint) > -1;
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var propTypes = {
+  header: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  mainText: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  icon: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  color: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  variant: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  footer: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  link: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  cssModule: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object
+};
+var defaultProps = {
+  header: '$1,999.50',
+  mainText: 'Income',
+  icon: 'fa fa-cogs',
+  color: 'primary',
+  variant: '0',
+  link: '#'
+};
+
+var Widget02 =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Widget02, _Component);
+
+  function Widget02() {
+    _classCallCheck(this, Widget02);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Widget02).apply(this, arguments));
   }
 
-  /**
-   * --------------------------------------------------------------------------
-   * CoreUI Utilities (v3.0.0-beta.4): deep-objects-merge.js
-   * Licensed under MIT (https://coreui.io/license)
-   * --------------------------------------------------------------------------
-   */
-  var deepObjectsMerge = function deepObjectsMerge(target, source) {
-    // Iterate through `source` properties and if an `Object` set property to merge of `target` and `source` properties
-    for (var _i = 0, _Object$keys = Object.keys(source); _i < _Object$keys.length; _i++) {
-      var key = _Object$keys[_i];
+  _createClass(Widget02, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          className = _this$props.className,
+          cssModule = _this$props.cssModule,
+          header = _this$props.header,
+          mainText = _this$props.mainText,
+          icon = _this$props.icon,
+          color = _this$props.color,
+          footer = _this$props.footer,
+          link = _this$props.link,
+          children = _this$props.children,
+          variant = _this$props.variant,
+          attributes = _objectWithoutProperties(_this$props, ["className", "cssModule", "header", "mainText", "icon", "color", "footer", "link", "children", "variant"]); // demo purposes only
 
-      if (source[key] instanceof Object) {
-        Object.assign(source[key], deepObjectsMerge(target[key], source[key]));
-      }
-    } // Join `target` and modified `source`
 
+      var padding = variant === '0' ? {
+        card: 'p-3',
+        icon: 'p-3',
+        lead: 'mt-2'
+      } : variant === '1' ? {
+        card: 'p-0',
+        icon: 'p-4',
+        lead: 'pt-3'
+      } : {
+        card: 'p-0',
+        icon: 'p-4 px-5',
+        lead: 'pt-3'
+      };
+      var card = {
+        style: 'clearfix',
+        color: color,
+        icon: icon,
+        classes: ''
+      };
+      card.classes = Object(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4__["mapToCssModules"])(classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, card.style, padding.card), cssModule);
+      var lead = {
+        style: 'h5 mb-0',
+        color: color,
+        classes: ''
+      };
+      lead.classes = classnames__WEBPACK_IMPORTED_MODULE_3___default()(lead.style, 'text-' + card.color, padding.lead);
 
-    Object.assign(target || {}, source);
-    return target;
-  };
+      var blockIcon = function blockIcon(icon) {
+        var classes = classnames__WEBPACK_IMPORTED_MODULE_3___default()(icon, 'bg-' + card.color, padding.icon, 'font-2xl mr-3 float-left');
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: classes
+        });
+      };
 
-  /**
-   * --------------------------------------------------------------------------
-   * CoreUI Utilities (v3.0.0-beta.4): get-css-custom-properties.js
-   * Licensed under MIT (https://coreui.io/license)
-   * @returns {string} css custom property name
-   * --------------------------------------------------------------------------
-   */
-  var getCssCustomProperties = function getCssCustomProperties() {
-    var cssCustomProperties = {};
-    var sheets = document.styleSheets;
-    var cssText = '';
-
-    for (var i = sheets.length - 1; i > -1; i--) {
-      var rules = sheets[i].cssRules;
-
-      for (var j = rules.length - 1; j > -1; j--) {
-        if (rules[j].selectorText === '.ie-custom-properties') {
-          // eslint-disable-next-line prefer-destructuring
-          cssText = rules[j].cssText;
-          break;
+      var cardFooter = function cardFooter() {
+        if (footer) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardFooter"], {
+            className: "px-3 py-2"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+            className: "font-weight-bold font-xs btn-block text-muted",
+            href: link
+          }, "View More", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fa fa-angle-right float-right font-lg"
+          })));
         }
+      };
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], _extends({
+        className: card.classes
+      }, attributes), blockIcon(card.icon), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: lead.classes
+      }, header), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-muted text-uppercase font-weight-bold font-xs"
+      }, mainText)), cardFooter());
+    }
+  }]);
+
+  return Widget02;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+Widget02.propTypes = propTypes;
+Widget02.defaultProps = defaultProps;
+/* harmony default export */ __webpack_exports__["default"] = (Widget02);
+
+/***/ }),
+
+/***/ "./resources/js/ReactFiles/components/admin/views/Widgets/Widget03.js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/ReactFiles/components/admin/views/Widgets/Widget03.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap/lib/utils */ "./node_modules/reactstrap/lib/utils.js");
+/* harmony import */ var reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_3__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  cssModule: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
+  dataBox: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
+var defaultProps = {
+  dataBox: function dataBox() {
+    return {
+      variant: 'facebook',
+      friends: '-',
+      feeds: '-'
+    };
+  }
+};
+
+var Widget03 =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Widget03, _Component);
+
+  function Widget03() {
+    _classCallCheck(this, Widget03);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Widget03).apply(this, arguments));
+  }
+
+  _createClass(Widget03, [{
+    key: "render",
+    value: function render() {
+      // eslint-disable-next-line
+      var _this$props = this.props,
+          children = _this$props.children,
+          className = _this$props.className,
+          cssModule = _this$props.cssModule,
+          dataBox = _this$props.dataBox,
+          attributes = _objectWithoutProperties(_this$props, ["children", "className", "cssModule", "dataBox"]); // demo purposes only
+
+
+      var data = dataBox();
+      var variant = data.variant;
+
+      if (!variant || ['facebook', 'twitter', 'linkedin', 'google-plus'].indexOf(variant) < 0) {
+        return null;
       }
 
-      if (cssText) {
-        break;
+      var back = 'bg-' + variant;
+      var icon = 'fa fa-' + variant;
+      var keys = Object.keys(data);
+      var vals = Object.values(data);
+      var classCard = 'brand-card';
+      var classCardHeader = classnames__WEBPACK_IMPORTED_MODULE_2___default()("".concat(classCard, "-header"), back);
+      var classCardBody = classnames__WEBPACK_IMPORTED_MODULE_2___default()("".concat(classCard, "-body"));
+      var classes = Object(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_3__["mapToCssModules"])(classnames__WEBPACK_IMPORTED_MODULE_2___default()(classCard, className), cssModule);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: classes
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: classCardHeader
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: icon
+      }), children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: classCardBody
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-value"
+      }, vals[1]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-uppercase text-muted small"
+      }, keys[1])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-value"
+      }, vals[2]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-uppercase text-muted small"
+      }, keys[2]))));
+    }
+  }]);
+
+  return Widget03;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+Widget03.propTypes = propTypes;
+Widget03.defaultProps = defaultProps;
+/* harmony default export */ __webpack_exports__["default"] = (Widget03);
+
+/***/ }),
+
+/***/ "./resources/js/ReactFiles/components/admin/views/Widgets/Widget04.js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/ReactFiles/components/admin/views/Widgets/Widget04.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap/lib/utils */ "./node_modules/reactstrap/lib/utils.js");
+/* harmony import */ var reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var propTypes = {
+  header: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  icon: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  color: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  cssModule: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
+  invert: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool
+};
+var defaultProps = {
+  header: '87.500',
+  icon: 'icon-people',
+  color: 'info',
+  value: '25',
+  children: 'Visitors',
+  invert: false
+};
+
+var Widget04 =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Widget04, _Component);
+
+  function Widget04() {
+    _classCallCheck(this, Widget04);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Widget04).apply(this, arguments));
+  }
+
+  _createClass(Widget04, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          className = _this$props.className,
+          cssModule = _this$props.cssModule,
+          header = _this$props.header,
+          icon = _this$props.icon,
+          color = _this$props.color,
+          value = _this$props.value,
+          children = _this$props.children,
+          invert = _this$props.invert,
+          attributes = _objectWithoutProperties(_this$props, ["className", "cssModule", "header", "icon", "color", "value", "children", "invert"]); // demo purposes only
+
+
+      var progress = {
+        style: '',
+        color: color,
+        value: value
+      };
+      var card = {
+        style: '',
+        bgColor: '',
+        icon: icon
+      };
+
+      if (invert) {
+        progress.style = 'progress-white';
+        progress.color = '';
+        card.style = 'text-white';
+        card.bgColor = 'bg-' + color;
       }
-    } // eslint-disable-next-line unicorn/prefer-string-slice
+
+      var classes = Object(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4__["mapToCssModules"])(classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, card.style, card.bgColor), cssModule);
+      progress.style = classnames__WEBPACK_IMPORTED_MODULE_3___default()('progress-xs mt-3 mb-0', progress.style);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], _extends({
+        className: classes
+      }, attributes), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "h1 text-muted text-right mb-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: card.icon
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "h4 mb-0"
+      }, header), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        className: "text-muted text-uppercase font-weight-bold"
+      }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Progress"], {
+        className: progress.style,
+        color: progress.color,
+        value: progress.value
+      })));
+    }
+  }]);
+
+  return Widget04;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+Widget04.propTypes = propTypes;
+Widget04.defaultProps = defaultProps;
+/* harmony default export */ __webpack_exports__["default"] = (Widget04);
+
+/***/ }),
+
+/***/ "./resources/js/ReactFiles/components/admin/views/Widgets/Widgets.js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/ReactFiles/components/admin/views/Widgets/Widgets.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var _Widget01__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Widget01 */ "./resources/js/ReactFiles/components/admin/views/Widgets/Widget01.js");
+/* harmony import */ var _Widget02__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Widget02 */ "./resources/js/ReactFiles/components/admin/views/Widgets/Widget02.js");
+/* harmony import */ var _Widget03__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Widget03 */ "./resources/js/ReactFiles/components/admin/views/Widgets/Widget03.js");
+/* harmony import */ var _Widget04__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Widget04 */ "./resources/js/ReactFiles/components/admin/views/Widgets/Widget04.js");
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-chartjs-2 */ "./node_modules/react-chartjs-2/es/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-    cssText = cssText.substring(cssText.lastIndexOf('{') + 1, cssText.lastIndexOf('}'));
-    cssText.split(';').forEach(function (property) {
-      if (property) {
-        var name = property.split(': ')[0];
-        var value = property.split(': ')[1];
 
-        if (name && value) {
-          cssCustomProperties["--" + name.trim()] = value.trim();
+
+
+
+
+ // Brand Card Chart
+
+var makeSocialBoxData = function makeSocialBoxData(dataSetNo) {
+  var socialBoxData = [{
+    data: [65, 59, 84, 84, 51, 55, 40],
+    label: 'facebook'
+  }, {
+    data: [1, 13, 9, 17, 34, 41, 38],
+    label: 'twitter'
+  }, {
+    data: [78, 81, 80, 45, 34, 12, 40],
+    label: 'linkedin'
+  }, {
+    data: [35, 23, 56, 22, 97, 23, 64],
+    label: 'google'
+  }];
+  var dataset = socialBoxData[dataSetNo];
+  var data = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [{
+      backgroundColor: 'rgba(255,255,255,.1)',
+      borderColor: 'rgba(255,255,255,.55)',
+      pointHoverBackgroundColor: '#fff',
+      borderWidth: 2,
+      data: dataset.data,
+      label: dataset.label
+    }]
+  };
+  return function () {
+    return data;
+  };
+};
+
+var socialChartOpts = {
+  responsive: true,
+  maintainAspectRatio: false,
+  legend: {
+    display: false
+  },
+  scales: {
+    xAxes: [{
+      display: false
+    }],
+    yAxes: [{
+      display: false
+    }]
+  },
+  elements: {
+    point: {
+      radius: 0,
+      hitRadius: 10,
+      hoverRadius: 4,
+      hoverBorderWidth: 3
+    }
+  }
+};
+
+var Widgets =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Widgets, _Component);
+
+  function Widgets() {
+    _classCallCheck(this, Widgets);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Widgets).apply(this, arguments));
+  }
+
+  _createClass(Widgets, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "animated fadeIn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        color: "success",
+        header: "89.9%"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        color: "info",
+        header: "12.124"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        color: "warning",
+        header: "$98.111,00",
+        smallText: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        className: "text-muted"
+      }, "Excepteur sint occaecat..."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        color: "danger",
+        value: "95",
+        header: "1.9 TB",
+        mainText: "Danger!",
+        smallText: "This is your final warning..."
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        color: "primary",
+        variant: "inverse",
+        header: "89.9%"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        color: "warning",
+        variant: "inverse",
+        header: "12.124"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        color: "danger",
+        variant: "inverse",
+        header: "$98.111,00",
+        smallText: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        className: "text-muted"
+      }, "Excepteur sint occaecat..."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        color: "info",
+        variant: "inverse",
+        value: "95",
+        header: "1.9 TB",
+        mainText: "Danger!",
+        smallText: "This is your final warning..."
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-cogs",
+        color: "primary"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-laptop",
+        color: "info"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-moon-o",
+        color: "warning"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-bell",
+        color: "danger"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-cogs",
+        color: "primary",
+        footer: true,
+        link: "#/charts"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-laptop",
+        color: "info",
+        footer: true
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-moon-o",
+        color: "warning",
+        footer: true
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-bell",
+        color: "danger",
+        footer: true
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-cogs",
+        color: "primary",
+        variant: "1"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-laptop",
+        color: "info",
+        variant: "1"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-moon-o",
+        color: "warning",
+        variant: "1"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-bell",
+        color: "danger",
+        variant: "1"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-cogs",
+        color: "primary",
+        variant: "2"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-laptop",
+        color: "info",
+        variant: "2"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-moon-o",
+        color: "warning",
+        variant: "2"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        sm: "6",
+        lg: "3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        header: "$1.999,50",
+        mainText: "Income",
+        icon: "fa fa-bell",
+        color: "danger",
+        variant: "2"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: 12,
+        sm: 6,
+        md: 3
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget03__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        dataBox: function dataBox() {
+          return {
+            variant: 'facebook',
+            friends: '89k',
+            feeds: '459'
+          };
         }
-      }
-    });
-    return cssCustomProperties;
-  };
-
-  /**
-   * --------------------------------------------------------------------------
-   * CoreUI Utilities (v3.0.0-beta.4): get-style.js
-   * Licensed under MIT (https://coreui.io/license)
-   * --------------------------------------------------------------------------
-   */
-  var minIEVersion = 10;
-
-  var isIE1x = function isIE1x() {
-    return Boolean(document.documentMode) && document.documentMode >= minIEVersion;
-  };
-
-  var isCustomProperty = function isCustomProperty(property) {
-    return property.match(/^--.*/i);
-  };
-
-  var getStyle = function getStyle(property, element) {
-    if (element === void 0) {
-      element = document.body;
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "chart-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__["Line"], {
+        data: makeSocialBoxData(0),
+        options: socialChartOpts,
+        height: 90
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: 12,
+        sm: 6,
+        md: 3
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget03__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        dataBox: function dataBox() {
+          return {
+            variant: 'twitter',
+            followers: '973k',
+            tweets: '1.792'
+          };
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "chart-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__["Line"], {
+        data: makeSocialBoxData(1),
+        options: socialChartOpts,
+        height: 90
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: 12,
+        sm: 6,
+        md: 3
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget03__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        dataBox: function dataBox() {
+          return {
+            variant: 'linkedin',
+            contacts: '500+',
+            feeds: '292'
+          };
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "chart-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__["Line"], {
+        data: makeSocialBoxData(2),
+        options: socialChartOpts,
+        height: 90
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: 12,
+        sm: 6,
+        md: 3
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget03__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        dataBox: function dataBox() {
+          return {
+            variant: 'google-plus',
+            followers: '894',
+            circles: '92'
+          };
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "chart-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__["Line"], {
+        data: makeSocialBoxData(3),
+        options: socialChartOpts,
+        height: 90
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardGroup"], {
+        className: "mb-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-people",
+        color: "info",
+        header: "87.500",
+        value: "25"
+      }, "Visitors"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-user-follow",
+        color: "success",
+        header: "385",
+        value: "25"
+      }, "New Clients"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-basket-loaded",
+        color: "warning",
+        header: "1238",
+        value: "25"
+      }, "Products sold"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-pie-chart",
+        color: "primary",
+        header: "28%",
+        value: "25"
+      }, "Returning Visitors"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-speedometer",
+        color: "danger",
+        header: "5:34:11",
+        value: "25"
+      }, "Avg. Time")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        sm: "6",
+        md: "2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-people",
+        color: "info",
+        header: "87.500",
+        value: "25"
+      }, "Visitors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        sm: "6",
+        md: "2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-user-follow",
+        color: "success",
+        header: "385",
+        value: "25"
+      }, "New Clients")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        sm: "6",
+        md: "2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-basket-loaded",
+        color: "warning",
+        header: "1238",
+        value: "25"
+      }, "Products sold")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        sm: "6",
+        md: "2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-pie-chart",
+        color: "primary",
+        header: "28%",
+        value: "25"
+      }, "Returning Visitors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        sm: "6",
+        md: "2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-speedometer",
+        color: "danger",
+        header: "5:34:11",
+        value: "25"
+      }, "Avg. Time")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        sm: "6",
+        md: "2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-speech",
+        color: "info",
+        header: "972",
+        value: "25"
+      }, "Comments"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        sm: "6",
+        md: "2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-people",
+        color: "info",
+        header: "87.500",
+        value: "25",
+        invert: true
+      }, "Visitors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        sm: "6",
+        md: "2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-user-follow",
+        color: "success",
+        header: "385",
+        value: "25",
+        invert: true
+      }, "New Clients")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        sm: "6",
+        md: "2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-basket-loaded",
+        color: "warning",
+        header: "1238",
+        value: "25",
+        invert: true
+      }, "Products sold")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        sm: "6",
+        md: "2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-pie-chart",
+        color: "primary",
+        header: "28%",
+        value: "25",
+        invert: true
+      }, "Returning Visitors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        sm: "6",
+        md: "2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-speedometer",
+        color: "danger",
+        header: "5:34:11",
+        value: "25",
+        invert: true
+      }, "Avg. Time")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        sm: "6",
+        md: "2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        icon: "icon-speech",
+        color: "info",
+        header: "972",
+        value: "25",
+        invert: true
+      }, "Comments"))));
     }
+  }]);
 
-    var style;
+  return Widgets;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-    if (isCustomProperty(property) && isIE1x()) {
-      var cssCustomProperties = getCssCustomProperties();
-      style = cssCustomProperties[property];
-    } else {
-      style = window.getComputedStyle(element, null).getPropertyValue(property).replace(/^\s/, '');
-    }
-
-    return style;
-  };
-
-  /**
-   * --------------------------------------------------------------------------
-   * CoreUI Utilities (v3.0.0-beta.4): get-color.js
-   * Licensed under MIT (https://coreui.io/license)
-   * --------------------------------------------------------------------------
-   */
-
-  var getColor = function getColor(rawProperty, element) {
-    if (element === void 0) {
-      element = document.body;
-    }
-
-    var property = "--" + rawProperty;
-    var style = getStyle(property, element);
-    return style ? style : rawProperty;
-  };
-
-  /**
-   * --------------------------------------------------------------------------
-   * CoreUI Utilities (v3.0.0-beta.4): hex-to-rgb.js
-   * Licensed under MIT (https://coreui.io/license)
-   * --------------------------------------------------------------------------
-   */
-
-  /* eslint-disable no-magic-numbers */
-  var hexToRgb = function hexToRgb(color) {
-    if (typeof color === 'undefined') {
-      throw new TypeError('Hex color is not defined');
-    }
-
-    var hex = color.match(/^#(?:[0-9a-f]{3}){1,2}$/i);
-
-    if (!hex) {
-      throw new Error(color + " is not a valid hex color");
-    }
-
-    var r;
-    var g;
-    var b;
-
-    if (color.length === 7) {
-      r = parseInt(color.slice(1, 3), 16);
-      g = parseInt(color.slice(3, 5), 16);
-      b = parseInt(color.slice(5, 7), 16);
-    } else {
-      r = parseInt(color.slice(1, 2), 16);
-      g = parseInt(color.slice(2, 3), 16);
-      b = parseInt(color.slice(3, 5), 16);
-    }
-
-    return "rgba(" + r + ", " + g + ", " + b + ")";
-  };
-
-  /**
-   * --------------------------------------------------------------------------
-   * CoreUI Utilities (v3.0.0-beta.4): hex-to-rgba.js
-   * Licensed under MIT (https://coreui.io/license)
-   * --------------------------------------------------------------------------
-   */
-
-  /* eslint-disable no-magic-numbers */
-  var hexToRgba = function hexToRgba(color, opacity) {
-    if (opacity === void 0) {
-      opacity = 100;
-    }
-
-    if (typeof color === 'undefined') {
-      throw new TypeError('Hex color is not defined');
-    }
-
-    var hex = color.match(/^#(?:[0-9a-f]{3}){1,2}$/i);
-
-    if (!hex) {
-      throw new Error(color + " is not a valid hex color");
-    }
-
-    var r;
-    var g;
-    var b;
-
-    if (color.length === 7) {
-      r = parseInt(color.slice(1, 3), 16);
-      g = parseInt(color.slice(3, 5), 16);
-      b = parseInt(color.slice(5, 7), 16);
-    } else {
-      r = parseInt(color.slice(1, 2), 16);
-      g = parseInt(color.slice(2, 3), 16);
-      b = parseInt(color.slice(3, 5), 16);
-    }
-
-    return "rgba(" + r + ", " + g + ", " + b + ", " + opacity / 100 + ")";
-  };
-
-  /**
-   * --------------------------------------------------------------------------
-   * CoreUI (v3.0.0-beta.4): rgb-to-hex.js
-   * Licensed under MIT (https://coreui.io/license)
-   * --------------------------------------------------------------------------
-   */
-
-  /* eslint-disable no-magic-numbers */
-  var rgbToHex = function rgbToHex(color) {
-    if (typeof color === 'undefined') {
-      throw new TypeError('Hex color is not defined');
-    }
-
-    if (color === 'transparent') {
-      return '#00000000';
-    }
-
-    var rgb = color.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
-
-    if (!rgb) {
-      throw new Error(color + " is not a valid rgb color");
-    }
-
-    var r = "0" + parseInt(rgb[1], 10).toString(16);
-    var g = "0" + parseInt(rgb[2], 10).toString(16);
-    var b = "0" + parseInt(rgb[3], 10).toString(16);
-    return "#" + r.slice(-2) + g.slice(-2) + b.slice(-2);
-  };
-
-  exports.asideMenuCssClasses = asideMenuCssClasses;
-  exports.checkBreakpoint = checkBreakpoint;
-  exports.deepObjectsMerge = deepObjectsMerge;
-  exports.getColor = getColor;
-  exports.getStyle = getStyle;
-  exports.hexToRgb = hexToRgb;
-  exports.hexToRgba = hexToRgba;
-  exports.rgbToHex = rgbToHex;
-  exports.sidebarCssClasses = sidebarCssClasses;
-  exports.validBreakpoints = validBreakpoints;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
-//# sourceMappingURL=coreui-utilities.js.map
-
+/* harmony default export */ __webpack_exports__["default"] = (Widgets);
 
 /***/ })
 

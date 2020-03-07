@@ -1,7 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
+import Admin from "./admin/Admin";
 
-useEffect(() => console.log("Admin Page Rendered"));
-
-export default function AdminPage() {
-    return <div>Hello from admin page</div>;
-}
+export default Admin;

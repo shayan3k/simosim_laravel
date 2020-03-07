@@ -1,43 +1,5 @@
-$brand-primary: #18fc9d;
-$brand-secondary: rgb(255, 255, 255);
-$brand-background: hsl(214, 19%, 93%);
-$brand-navbar: #41658a;
-$brand-navbar-items: gray;
-$brand-navbar-items-hover: #eee;
-$brand-navbar-items-hover-text: black;
-$brand-seperator: #86bbbd;
-$brand-fourthly: blue;
-$brand-hover: #466060;
-$brand-footer: #86bbbd;
-$brand-mega-menu: #f4fad1;
-$brand-mega-menu-items: rgb(15, 12, 12);
-$brand-primary-lighter: #b6faca;
-$brand-whitish: #eee;
-$brand-section-title-toggler: #c6da97;
-$brand-section-title: #f4fad1;
-$brand-card-rond: rgba(255, 0, 0, 0.87);
-$brand-card-nime-rond: rgba(255, 0, 0, 0.87);
-$brand-advertisers: rgb(236, 246, 250);
-$brand-vip-advertisers: #c5d2db;
-$brand-vip-advertisers-second: #a686f0;
-$brand-search-box: #f4fad1;
-$brand-main-ads: #f4fad1;
-$brand-custom: #f4fad1;
-$brand-select-bg: transparent;
-$brand-select-panel: white;
-$brand-select-hover: rgb(88, 88, 88);
-$brand-black: #000000;
-$brand-white: #f0f0f0;
-$brand-text-white: rgb(243, 241, 241);
-$brand-text-black: black;
-$brand-navbar2: rgb(46, 48, 49);
-$search-options-item: rgba(250, 182, 104, 0.534);
-$btn-search-option: rgba(41, 88, 160, 0.767);
-$btn-search: rgba(250, 140, 140, 0.87);
-$font-datePicker: 0.6rem;
-
+@import "_variables.scss";
 //BG CONFIG
-
 .bg-vip-advertisers-sim {
     background: $brand-vip-advertisers;
     font-weight: 700;
