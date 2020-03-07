@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import {
     BrowserRouter as Router,
     Switch,
@@ -13,7 +13,7 @@ import Ghavanin from "./components/Ghavanin";
 import LoginPage from "./components/LoginPage";
 import Dashboard from "./components/Dashboard";
 import PageNotFound from "./components/PageNotFound";
-import AdminPage from "./components/AdminPage";
+import AdminPage from "./components/admin/Admin";
 import { JWTValidate } from "./components/services/Auth";
 import secureStorage from "./components/services/Storage";
 import { useStoreState, useStoreActions } from "easy-peasy";
@@ -80,26 +80,40 @@ function App() {
                 secureStorage.getItem("is_admin") == adminSecretKey ? (
                     <Component {...props} />
                 ) : (
-                    <Redirect to="/login" />
+                    <Redirect to="/afdv" />
                 )
             }
         />
     );
 
+    const loading = () => (
+        <div className="animated fadeIn pt-3 text-center">Loading...</div>
+    );
+
     return (
         <>
             <Router>
-                <Switch>
-                    <Shop exact path="/" />
-                    <Rahnama path="/rahnama" />
-                    <ContactUs path="/contact-us" />
-                    <AboutUs path="/about-us" />
-                    <AdminRoute path="/admin" component={AdminPage} />
-                    <Ghavanin path="/ghavanin" />
-                    <PrivateRoute path="/dashboard" component={Dashboard} />
-                    <AuthenticatedRoute path="/login" component={LoginPage} />
-                    <Route component={PageNotFound} />
-                </Switch>
+                <Suspense fallback={loading()}>
+                    <Switch>
+                        <Shop exact path="/" />
+                        <Rahnama exact path="/rahnama" />
+                        <ContactUs exact path="/contact-us" />
+                        <AboutUs exact path="/about-us" />
+                        <AdminRoute exact path="/admin" component={AdminPage} />
+                        <Ghavanin exact path="/ghavanin" />
+                        <PrivateRoute
+                            exact
+                            path="/dashboard"
+                            component={Dashboard}
+                        />
+                        <AuthenticatedRoute
+                            exact
+                            path="/login"
+                            component={LoginPage}
+                        />
+                        <Route component={PageNotFound} />
+                    </Switch>
+                </Suspense>
             </Router>
         </>
     );

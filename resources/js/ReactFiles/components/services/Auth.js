@@ -18,7 +18,7 @@ export const JWTLogin = async data => {
                 "is_admin",
                 res.data.is_admin ? "true" : "false"
             );
-            console.log(res);
+            console.log("IS_ADMIN", res.data.is_admin ? "true" : "false");
             return {
                 status: res.status,
                 message: "خوش آمدید"

@@ -395,23 +395,23 @@ export default function NewAdvertisment() {
                             </div>
                             <div className="col-12 col-md-7 order-md-1 py-3">
                                 <textarea
-                                    class="form-control w-100 mh-100px"
+                                    className="form-control w-100 mh-100px"
                                     id="exampleFormControlTextarea1"
                                     placeholder="متن تبلیغ"
                                     value={Text}
                                     maxLength="150"
                                     onChange={handleTextOnChange}
                                 ></textarea>
-                                <div class="col-12 form-check row m-0 p-0 py-2 px-3">
+                                <div className="col-12 form-check row m-0 p-0 py-2 px-3">
                                     <label
-                                        class="col-10 form-check-label font2"
-                                        for="checkBox"
+                                        className="col-10 form-check-label font2"
+                                        htmlFor="checkBox"
                                     >
                                         فروش فوری؟
                                     </label>
                                     <input
                                         type="checkbox"
-                                        class="col-2 form-check-input"
+                                        className="col-2 form-check-input"
                                         data-toggle="collapse"
                                         data-target="#collapsediv1"
                                         onChange={e => {
@@ -424,7 +424,7 @@ export default function NewAdvertisment() {
                                 <div
                                     className=" col-12"
                                     id="collapsediv1"
-                                    class="collapse div1"
+                                    className="collapse div1"
                                 >
                                     <div className="input-group m-0 p-0 d-flex justify-content-center align-content-end">
                                         <p className="mt-auto m-0 mr-5 mr-md-3 d-inline-block">

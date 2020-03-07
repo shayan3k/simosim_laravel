@@ -69,7 +69,7 @@ function Login() {
                         name="username"
                         placeholder="شماره موبایل"
                         type="text"
-                        maxlength="11"
+                        maxLength="11"
                         value={username}
                         onChange={handleUserNameOnChange}
                     />

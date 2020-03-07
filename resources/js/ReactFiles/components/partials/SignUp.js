@@ -199,7 +199,7 @@ function SignUp() {
                 <div className="form-check row m-0 p-0 ">
                     <label
                         className="col-11 form-check-label font2"
-                        for="checkBox"
+                        htmlFor="checkBox"
                     >
                         قوانین مطالعه کردم
                     </label>
