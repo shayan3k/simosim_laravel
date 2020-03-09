@@ -4,25 +4,29 @@ namespace App\Http\Controllers;
 
 use App\Advertiser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 class AdvertiserController extends Controller
 {
     /**
      * Show Advertisments.
      *
+     *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function show()
     {
         $data = [];
-        $advertiser = Advertiser::take(10)->get();
+        $advertiser = Advertiser::all();
         foreach ($advertiser as $item) {
 
             $new = [
-                'advertisername' => $item->name,
+                'id' => $item->id,
+                'name' => $item->name,
                 'shopname' => $item->shopname,
-                'phonenumbers' => unserialize($item->phonenumbers),
-                'contactnumber' => unserialize($item->contactnumbers),
+                'phonenumbers' => json_decode($item->phonenumbers),
+                'contactnumbers' => json_decode($item->contactnumbers),
             ];
 
             array_push($data, $new);
@@ -31,26 +35,86 @@ class AdvertiserController extends Controller
         return response()->json($data, 200);
     }
 
+
     /**
-     * Show VIP Advertisments.
+     * DELETE Advertisments.
+     *
+     * @param  \Illuminate\Http\Request  $request
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function vipshow()
+    public function delete(Request $request)
     {
 
+        $is_admin = Auth::guard()->user()->is_admin;
 
-        $data = [
-            'title' => 'بهترین سیمکارتهای همراه اول',
-            'advertisername' => 'دکتر عباسی',
-            'text' => 'همه نابغه‌اند اما اگر شما نبوغ یک ماهی را با توانایی‌اش ست که یک کودن تمام‌عیار است',
-            'shopname' => 'سارینا',
-            'phonenumbers' => ['09121111111', '09122222222', '09123333333', '09124444444', '09125555555', '09126666666', '09127777777'],
-            'contactnumber' => ['09129090909', '09127170125'],
-        ];
+        if ($is_admin == 1) {
+            $item = Advertiser::findOrFail($request->id)->delete();
+            return response()->json('Item was deleted seccessfully', 200);
+        }
+
+        return response()->json('Permission Error', 201);
+    }
 
 
 
-        return response()->json($data, 200);
+    /**
+     * UPDATE Advertisments.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function update(Request $request)
+    {
+
+        $is_admin = Auth::guard()->user()->is_admin;
+
+        if ($is_admin == 1) {
+
+            $item = Advertiser::findorfail($request->id);
+            $item->name = htmlspecialchars($request->name);
+            $item->shopname = htmlspecialchars($request->shopname);
+            $item->phonenumbers = json_encode(gettype($request->phonenumbers) == 'array' ? $request->phonenumbers : explode(",", $request->phonenumbers));
+            $item->contactnumbers = json_encode(gettype($request->contactnumbers) == 'array' ? $request->contactnumbers : explode(",", $request->contactnumbers));
+            $item->save();
+            return response()->json(
+                $item,
+                200
+            );
+        }
+
+        return response()->json('Permission Error', 201);
+    }
+
+
+
+    /**
+     * CREATE Advertisments.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function create(Request $request)
+    {
+
+        $is_admin = Auth::guard()->user()->is_admin;
+
+        if ($is_admin == 1) {
+
+            $item = new Advertiser();
+            $item->name = htmlspecialchars($request->name);
+            $item->shopname = htmlspecialchars($request->shopname);
+            $item->phonenumbers = json_encode(gettype($request->phonenumbers) == 'array' ? $request->phonenumbers : explode(",", $request->phonenumbers));
+            $item->contactnumbers = json_encode(gettype($request->contactnumbers) == 'array' ? $request->contactnumbers : explode(",", $request->contactnumbers));
+            $item->save();
+            return response()->json(
+                $item,
+                200
+            );
+        }
+
+        return response()->json('Permission Error', 201);
     }
 }

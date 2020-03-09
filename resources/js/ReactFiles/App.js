@@ -99,7 +99,7 @@ function App() {
                         <Rahnama exact path="/rahnama" />
                         <ContactUs exact path="/contact-us" />
                         <AboutUs exact path="/about-us" />
-                        <AdminRoute exact path="/admin" component={AdminPage} />
+                        <AdminRoute path="/admin" component={AdminPage} />
                         <Ghavanin exact path="/ghavanin" />
                         <PrivateRoute
                             exact

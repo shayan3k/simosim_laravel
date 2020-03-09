@@ -43,6 +43,10 @@
   background: #2e3031;
 }
 
+.bg-admin-advertisers {
+  background-color: #f7e2a8 !important;
+}
+
 .white-space-nowrap {
   white-space: nowrap !important;
 }

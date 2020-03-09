@@ -3,7 +3,8 @@ import persianJs from "persianjs";
 import flag from "../images/sim-card.png";
 
 export default function Advertiser(props) {
-    const { AdvertiserName, ShopName, PhoneNumbers, contactnumber } = props;
+    const { Name, ShopName, PhoneNumbers, ContactNumbers } = props;
+    console.log("jbfkjslbsfsffjlsbf", props);
 
     return (
         <div className="card w-100 h-100 border-0 position-relative">
@@ -31,12 +32,10 @@ export default function Advertiser(props) {
 
             <div className="card-footer font2-3 row p-0 m-0 d-flex justify-content-between align-items-center card-body-advertiser">
                 <div className="col-12">
-                    <div className="font2 text-right py-1">
-                        {AdvertiserName}
-                    </div>
+                    <div className="font2 text-right py-1">{Name}</div>
                 </div>
 
-                {contactnumber.map((item, index) => {
+                {ContactNumbers.map((item, index) => {
                     // console.log(item);
                     return (
                         <p

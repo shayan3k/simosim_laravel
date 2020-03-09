@@ -21,8 +21,6 @@ import navigation from "./_nav";
 // routes config
 import routes from "./routes";
 
-import DefaultAside from "./containers/DefaultAside";
-import DefaultFooter from "./containers/DefaultFooter";
 import DefaultHeader from "./containers/DefaultHeader";
 
 export default function Admin(props) {
@@ -44,7 +42,6 @@ export default function Admin(props) {
             </AppHeader>
             <div className="app-body">
                 <AppSidebar fixed display="lg">
-                    <AppSidebarHeader />
                     <AppSidebarForm />
                     <Suspense>
                         <AppSidebarNav
@@ -53,11 +50,9 @@ export default function Admin(props) {
                             router={router}
                         />
                     </Suspense>
-                    <AppSidebarFooter />
                     <AppSidebarMinimizer />
                 </AppSidebar>
                 <main className="main">
-                    <AppBreadcrumb appRoutes={routes} router={router} />
                     <Container fluid>
                         <Suspense fallback={loading()}>
                             <Switch>
@@ -74,22 +69,11 @@ export default function Admin(props) {
                                         />
                                     ) : null;
                                 })}
-                                {/* <Redirect from="/" to="/dashboard" /> */}
                             </Switch>
                         </Suspense>
                     </Container>
                 </main>
-                <AppAside fixed>
-                    <Suspense fallback={loading()}>
-                        <DefaultAside />
-                    </Suspense>
-                </AppAside>
             </div>
-            <AppFooter>
-                <Suspense fallback={loading()}>
-                    <DefaultFooter />
-                </Suspense>
-            </AppFooter>
         </div>
     );
 }

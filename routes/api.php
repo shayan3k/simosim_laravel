@@ -43,7 +43,12 @@ Route::post('/advertisments', 'AdvertismentController@create')->middleware('auth
 
 
 Route::get('/advertisers', 'AdvertiserController@show');
-Route::get('/vipadvertisers', 'AdvertiserController@vipshow');
+Route::post('/advertisers', 'AdvertiserController@update')->middleware('auth:api');
+Route::post('/advertisers/create', 'AdvertiserController@create')->middleware('auth:api');
+Route::delete('/advertisers', 'AdvertiserController@delete')->middleware('auth:api');
+
+Route::get('/vipadvertisers', 'VipadvertiserController@show');
+Route::post('/vipadvertisers', 'VipadvertiserController@update')->middleware('auth:api');
 
 Route::get('/navbar', function () {
 

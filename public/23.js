@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[23],{
 
-/***/ "./resources/js/ReactFiles/components/admin/views/Base/Tabs/Tabs.js":
-/*!**************************************************************************!*\
-  !*** ./resources/js/ReactFiles/components/admin/views/Base/Tabs/Tabs.js ***!
-  \**************************************************************************/
+/***/ "./resources/js/ReactFiles/components/admin/views/Base/Switches/Switches.js":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/ReactFiles/components/admin/views/Base/Switches/Switches.js ***!
+  \**********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12,8 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _coreui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @coreui/react */ "./node_modules/@coreui/react/es/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24,9 +23,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -36,193 +35,1463 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Tabs =
+var Switches =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(Tabs, _Component);
+  _inherits(Switches, _Component);
 
-  function Tabs(props) {
-    var _this;
+  function Switches() {
+    _classCallCheck(this, Switches);
 
-    _classCallCheck(this, Tabs);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Tabs).call(this, props));
-    _this.toggle = _this.toggle.bind(_assertThisInitialized(_this));
-    _this.state = {
-      activeTab: new Array(4).fill('1')
-    };
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Switches).apply(this, arguments));
   }
 
-  _createClass(Tabs, [{
-    key: "lorem",
-    value: function lorem() {
-      return 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.';
-    }
-  }, {
-    key: "toggle",
-    value: function toggle(tabPane, tab) {
-      var newArray = this.state.activeTab.slice();
-      newArray[tabPane] = tab;
-      this.setState({
-        activeTab: newArray
-      });
-    }
-  }, {
-    key: "tabPane",
-    value: function tabPane() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["TabPane"], {
-        tabId: "1"
-      }, "1. ".concat(this.lorem())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["TabPane"], {
-        tabId: "2"
-      }, "2. ".concat(this.lorem())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["TabPane"], {
-        tabId: "3"
-      }, "3. ".concat(this.lorem())));
-    }
-  }, {
+  _createClass(Switches, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "animated fadeIn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
-        md: "6",
-        className: "mb-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], {
-        tabs: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        active: this.state.activeTab[0] === '1',
-        onClick: function onClick() {
-          _this2.toggle(0, '1');
-        }
-      }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        active: this.state.activeTab[0] === '2',
-        onClick: function onClick() {
-          _this2.toggle(0, '2');
-        }
-      }, "Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        active: this.state.activeTab[0] === '3',
-        onClick: function onClick() {
-          _this2.toggle(0, '3');
-        }
-      }, "Messages"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["TabContent"], {
-        activeTab: this.state.activeTab[0]
-      }, this.tabPane())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch default"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'secondary',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'success',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'warning',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'info',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'danger',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'light',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'dark',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
-        md: "6",
-        className: "mb-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], {
-        tabs: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        active: this.state.activeTab[1] === '1',
-        onClick: function onClick() {
-          _this2.toggle(1, '1');
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "icon-calculator"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        active: this.state.activeTab[1] === '2',
-        onClick: function onClick() {
-          _this2.toggle(1, '2');
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "icon-basket-loaded"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        active: this.state.activeTab[1] === '3',
-        onClick: function onClick() {
-          _this2.toggle(1, '3');
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "icon-pie-chart"
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["TabContent"], {
-        activeTab: this.state.activeTab[1]
-      }, this.tabPane())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch pills"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'secondary',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'success',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'warning',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'info',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'danger',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'light',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'dark',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
-        md: "6",
-        className: "mb-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], {
-        tabs: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        active: this.state.activeTab[2] === '1',
-        onClick: function onClick() {
-          _this2.toggle(2, '1');
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "icon-calculator"
-      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: this.state.activeTab[2] === '1' ? '' : 'd-none'
-      }, " Calculator"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        active: this.state.activeTab[2] === '2',
-        onClick: function onClick() {
-          _this2.toggle(2, '2');
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "icon-basket-loaded"
-      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: this.state.activeTab[2] === '2' ? '' : 'd-none'
-      }, " Shopping cart"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        className: classnames__WEBPACK_IMPORTED_MODULE_2___default()({
-          active: this.state.activeTab[2] === '3'
-        }),
-        onClick: function onClick() {
-          _this2.toggle(2, '3');
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "icon-pie-chart"
-      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: this.state.activeTab[2] === '3' ? '' : 'd-none'
-      }, " Charts")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["TabContent"], {
-        activeTab: this.state.activeTab[2]
-      }, this.tabPane())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "3d Switch", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'primary',
+        defaultChecked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'secondary',
+        defaultChecked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'success',
+        defaultChecked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'warning',
+        defaultChecked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'info',
+        defaultChecked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'danger',
+        defaultChecked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'light',
+        defaultChecked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'dark',
+        defaultChecked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'primary'
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
-        md: "6",
-        className: "mb-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], {
-        tabs: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        active: this.state.activeTab[3] === '1',
-        onClick: function onClick() {
-          _this2.toggle(3, '1');
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "icon-calculator"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: this.state.activeTab[3] === '1' ? '' : 'd-none'
-      }, " Calc"), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
-        color: "success"
-      }, "New"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        active: this.state.activeTab[3] === '2',
-        onClick: function onClick() {
-          _this2.toggle(3, '2');
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "icon-basket-loaded"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: this.state.activeTab[3] === '2' ? '' : 'd-none'
-      }, " Cart"), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Badge"], {
-        pill: true,
-        color: "danger"
-      }, "29"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        active: this.state.activeTab[3] === '3',
-        onClick: function onClick() {
-          _this2.toggle(3, '3');
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "icon-pie-chart"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: this.state.activeTab[3] === '3' ? '' : 'd-none'
-      }, " Charts")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["TabContent"], {
-        activeTab: this.state.activeTab[3]
-      }, this.tabPane()))));
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "3d Switch ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "disabled")), ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'primary',
+        checked: true,
+        disabled: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'secondary',
+        checked: true,
+        disabled: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'success',
+        checked: true,
+        disabled: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'warning',
+        checked: true,
+        disabled: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'info',
+        checked: true,
+        disabled: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'danger',
+        checked: true,
+        disabled: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'light',
+        checked: true,
+        disabled: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'dark',
+        checked: true,
+        disabled: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'primary',
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "3d Switch ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "outline=\"alt\"")), ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'primary',
+        checked: true,
+        outline: 'alt'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'secondary',
+        checked: true,
+        outline: 'alt'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'success',
+        checked: true,
+        outline: 'alt'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'warning',
+        checked: true,
+        outline: 'alt'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'info',
+        checked: true,
+        outline: 'alt'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'danger',
+        checked: true,
+        outline: 'alt'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'light',
+        checked: true,
+        outline: 'alt'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'dark',
+        checked: true,
+        outline: 'alt'
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'primary',
+        outline: 'alt',
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "3d Switch ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "label")), ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'primary',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'secondary',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'success',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'warning',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'info',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'danger',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'light',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'dark',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'primary',
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "3d Switch ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "outline=\"alt\" label")), ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'primary',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'secondary',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'success',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'warning',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'info',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'danger',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'light',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'dark',
+        defaultChecked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'primary',
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "3d Switch ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "outline=\"alt\" label")), ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'primary',
+        defaultChecked: true,
+        label: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'secondary',
+        defaultChecked: true,
+        label: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'success',
+        defaultChecked: true,
+        label: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'warning',
+        defaultChecked: true,
+        label: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'info',
+        defaultChecked: true,
+        label: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'danger',
+        defaultChecked: true,
+        label: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'light',
+        defaultChecked: true,
+        label: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'dark',
+        defaultChecked: true,
+        label: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        outline: 'alt',
+        color: 'primary',
+        label: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch outline", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'secondary',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'success',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'warning',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'info',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'danger',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'light',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'dark',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        outline: true,
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch outline pills", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'secondary',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'success',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'warning',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'info',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'danger',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'light',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'dark',
+        outline: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        outline: true,
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch outline alternative", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'secondary',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'success',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'warning',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'info',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'danger',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'light',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'dark',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        outline: 'alt',
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch outline alternative - pills", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'secondary',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'success',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'warning',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'info',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'danger',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'light',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'dark',
+        outline: 'alt',
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        outline: 'alt',
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch with text", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'secondary',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'success',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'warning',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'info',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'danger',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'light',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'dark',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        label: true,
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch with text pills", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'secondary',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'success',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'warning',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'info',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'danger',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'light',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'dark',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        label: true,
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch with text outline", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'secondary',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'success',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'warning',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'info',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'danger',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'light',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'dark',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        outline: true,
+        label: true,
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch with text outline pills", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'secondary',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'success',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'warning',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'info',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'danger',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'light',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'dark',
+        outline: true,
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        outline: true,
+        label: true,
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch with text outline alternative pills", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'secondary',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'success',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'warning',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'info',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'danger',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'light',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'dark',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        outline: 'alt',
+        label: true,
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch with text outline alternative pills", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'secondary',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'success',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'warning',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'info',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'danger',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'light',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'dark',
+        outline: 'alt',
+        label: true,
+        checked: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        outline: 'alt',
+        label: true,
+        disabled: true
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch with text outline alternative", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'secondary',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'success',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'warning',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'info',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'danger',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'light',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'dark',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        outline: true,
+        disabled: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch with text outline alternative pills", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'secondary',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'success',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'warning',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'info',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'danger',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'light',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'dark',
+        outline: true,
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        outline: true,
+        disabled: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch with text outline alternative", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'secondary',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'success',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'warning',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'info',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'danger',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'light',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'dark',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        color: 'primary',
+        outline: 'alt',
+        disabled: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12",
+        md: "6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Switch with text outline alternative pills", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://coreui.io/pro/react/",
+        className: "badge badge-danger"
+      }, "CoreUI Pro")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'secondary',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'success',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'warning',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'info',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'danger',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'light',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'dark',
+        outline: 'alt',
+        checked: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: 'pill',
+        color: 'primary',
+        outline: 'alt',
+        disabled: true,
+        label: true,
+        dataOn: "\u2713",
+        dataOff: "\u2715"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, "Sizes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], {
+        className: "p-0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Table"], {
+        hover: true,
+        striped: true,
+        className: "table-align-middle mb-0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Size"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Example"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Props"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Large"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'primary',
+        checked: true,
+        size: 'lg'
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Add ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "size=", 'lg'))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Normal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'primary',
+        checked: true
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "-")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Small"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_coreui_react__WEBPACK_IMPORTED_MODULE_2__["AppSwitch"], {
+        className: 'mx-1',
+        variant: '3d',
+        color: 'primary',
+        checked: true,
+        size: 'sm'
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Add ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "size=", 'sm'))))))))));
     }
   }]);
 
-  return Tabs;
+  return Switches;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Tabs);
+/* harmony default export */ __webpack_exports__["default"] = (Switches);
 
 /***/ })
 
