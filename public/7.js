@@ -204,7 +204,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var Widget03 = Object(react__WEBPACK_IMPORTED_MODULE_0__["lazy"])(function () {
-  return Promise.all(/*! import() */[__webpack_require__.e(2), __webpack_require__.e(41)]).then(__webpack_require__.bind(null, /*! ../../views/Widgets/Widget03 */ "./resources/js/ReactFiles/components/admin/views/Widgets/Widget03.js"));
+  return Promise.all(/*! import() */[__webpack_require__.e(2), __webpack_require__.e(42)]).then(__webpack_require__.bind(null, /*! ../../views/Widgets/Widget03 */ "./resources/js/ReactFiles/components/admin/views/Widgets/Widget03.js"));
 });
 var brandPrimary = Object(_coreui_coreui_dist_js_coreui_utilities__WEBPACK_IMPORTED_MODULE_4__["getStyle"])('--primary');
 var brandSuccess = Object(_coreui_coreui_dist_js_coreui_utilities__WEBPACK_IMPORTED_MODULE_4__["getStyle"])('--success');

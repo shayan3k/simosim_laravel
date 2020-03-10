@@ -42,6 +42,10 @@
   background: #2e3031;
 }
 
+.bg-admin-advertisers {
+  background-color: #f7e2a8 !important;
+}
+
 .white-space-nowrap {
   white-space: nowrap !important;
 }
@@ -495,6 +499,10 @@ font3-4 {
   min-height: 14rem !important;
   max-width: 10rem !important;
   max-height: 14rem !important;
+}
+
+.card-amdin-advertisments {
+  width: 22rem !important;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */

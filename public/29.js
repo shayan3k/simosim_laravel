@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[29],{
 
-/***/ "./resources/js/ReactFiles/components/admin/views/Buttons/ButtonDropdowns/ButtonDropdowns.js":
-/*!***************************************************************************************************!*\
-  !*** ./resources/js/ReactFiles/components/admin/views/Buttons/ButtonDropdowns/ButtonDropdowns.js ***!
-  \***************************************************************************************************/
+/***/ "./resources/js/ReactFiles/components/admin/views/Buttons/BrandButtons/BrandButtons.js":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/ReactFiles/components/admin/views/Buttons/BrandButtons/BrandButtons.js ***!
+  \*********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -22,9 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -33,363 +33,942 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var ButtonDropdowns =
+var BrandButtons =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(ButtonDropdowns, _Component);
+  _inherits(BrandButtons, _Component);
 
-  function ButtonDropdowns(props) {
-    var _this;
+  function BrandButtons() {
+    _classCallCheck(this, BrandButtons);
 
-    _classCallCheck(this, ButtonDropdowns);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(ButtonDropdowns).call(this, props));
-    _this.toggle = _this.toggle.bind(_assertThisInitialized(_this));
-    _this.state = {
-      dropdownOpen: new Array(19).fill(false)
-    };
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(BrandButtons).apply(this, arguments));
   }
 
-  _createClass(ButtonDropdowns, [{
-    key: "toggle",
-    value: function toggle(i) {
-      var newArray = this.state.dropdownOpen.map(function (element, index) {
-        return index === i ? !element : false;
-      });
-      this.setState({
-        dropdownOpen: newArray
-      });
-    }
-  }, {
+  _createClass(BrandButtons, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "animated fadeIn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fa fa-align-justify"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Button Dropdown"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header-actions"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://reactstrap.github.io/components/button-dropdown/",
-        rel: "noreferrer noopener",
-        target: "_blank",
-        className: "card-header-action"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-        className: "text-muted"
-      }, "docs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        isOpen: this.state.dropdownOpen[0],
-        toggle: function toggle() {
-          _this2.toggle(0);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true
-      }, "Button Dropdown"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], {
-        right: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Brand Button"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, " Usage ex. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "<Button className=\"btn-facebook btn-brand\"><i className=\"fa fa-facebook\"></i><span>Facebook</span></Button>")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Size Small", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, " Add this class ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, ".btn-sm"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-facebook btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-facebook"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Facebook")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-twitter btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-twitter"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Twitter")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-linkedin btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-linkedin"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-flickr btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-flickr"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Flickr")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-tumblr btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-tumblr"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tumblr")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-xing btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-xing"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Xing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-github btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-github"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-html5 btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-html5"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "HTML5")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-openid btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-openid"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "OpenID")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-stack-overflow btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-stack-overflow"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "StackOverflow")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-css3 btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-css3"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "CSS3")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-youtube btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-youtube"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "YouTube")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-dribbble btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-dribbble"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dribbble")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-google-plus btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-google-plus"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Google+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-instagram btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-instagram"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Instagram")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-pinterest btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-pinterest"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Pinterest")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-vk btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vk"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "VK")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-yahoo btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-yahoo"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Yahoo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-behance btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-behance"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Behance")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-dropbox btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-dropbox"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dropbox")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-reddit btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-reddit"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Reddit")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-spotify btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-spotify"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Spotify")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-vine btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vine"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Vine")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-foursquare btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-foursquare"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Forsquare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-vimeo btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vimeo"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Vimeo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Size Normal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-facebook btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-facebook"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Facebook")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-twitter btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-twitter"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Twitter")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-linkedin btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-linkedin"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-flickr btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-flickr"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Flickr")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-tumblr btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-tumblr"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tumblr")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-xing btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-xing"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Xing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-github btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-github"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-html5 btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-html5"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "HTML5")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-openid btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-openid"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "OpenID")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-stack-overflow btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-stack-overflow"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "StackOverflow")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-css3 btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-css3"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "CSS3")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-youtube btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-youtube"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "YouTube")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-dribbble btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-dribbble"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dribbble")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-google-plus btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-google-plus"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Google+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-instagram btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-instagram"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Instagram")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-pinterest btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-pinterest"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Pinterest")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-vk btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vk"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "VK")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-yahoo btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-yahoo"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Yahoo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-behance btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-behance"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Behance")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-dropbox btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-dropbox"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dropbox")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-reddit btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-reddit"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Reddit")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-spotify btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-spotify"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Spotify")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-vine btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vine"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Vine")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-foursquare btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-foursquare"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Forsquare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-vimeo btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vimeo"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Vimeo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Size Large", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, " Add this class ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, ".btn-lg"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-facebook btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-facebook"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Facebook")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-twitter btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-twitter"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Twitter")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-linkedin btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-linkedin"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-flickr btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-flickr"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Flickr")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-tumblr btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-tumblr"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tumblr")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-xing btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-xing"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Xing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-github btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-github"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-html5 btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-html5"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "HTML5")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-openid btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-openid"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "OpenID")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-stack-overflow btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-stack-overflow"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "StackOverflow")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-css3 btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-css3"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "CSS3")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-youtube btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-youtube"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "YouTube")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-dribbble btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-dribbble"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dribbble")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-google-plus btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-google-plus"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Google+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-instagram btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-instagram"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Instagram")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-pinterest btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-pinterest"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Pinterest")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-vk btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vk"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "VK")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-yahoo btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-yahoo"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Yahoo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-behance btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-behance"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Behance")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-dropbox btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-dropbox"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dropbox")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-reddit btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-reddit"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Reddit")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-spotify btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-spotify"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Spotify")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-vine btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vine"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Vine")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-foursquare btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-foursquare"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Forsquare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-vimeo btn-brand mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vimeo"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Vimeo")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fa fa-align-justify"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Single button dropdowns")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[1],
-        toggle: function toggle() {
-          _this2.toggle(1);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        color: "primary"
-      }, "Primary"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[2],
-        toggle: function toggle() {
-          _this2.toggle(2);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        color: "secondary"
-      }, "Secondary"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[3],
-        toggle: function toggle() {
-          _this2.toggle(3);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        color: "success"
-      }, "Success"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[4],
-        toggle: function toggle() {
-          _this2.toggle(4);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        color: "info"
-      }, "Info"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[5],
-        toggle: function toggle() {
-          _this2.toggle(5);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        color: "warning"
-      }, "Warning"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[6],
-        toggle: function toggle() {
-          _this2.toggle(6);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        color: "danger"
-      }, "Danger"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Brand Button"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, " Icons only. Usage ex. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "<Button className=\"btn-facebook btn-brand icon\"><i className=\"fa fa-facebook\"></i></Button>")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Size Small", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, " Add this class ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, ".btn-sm"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-facebook btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-facebook"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-twitter btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-twitter"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-linkedin btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-linkedin"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-flickr btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-flickr"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-tumblr btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-tumblr"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-xing btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-xing"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-github btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-github"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-html5 btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-html5"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-openid btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-openid"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-stack-overflow btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-stack-overflow"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-css3 btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-css3"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-youtube btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-youtube"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-dribbble btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-dribbble"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-google-plus btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-google-plus"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-instagram btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-instagram"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-pinterest btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-pinterest"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-vk btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vk"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-yahoo btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-yahoo"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-behance btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-behance"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-dropbox btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-dropbox"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-reddit btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-reddit"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-spotify btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-spotify"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-vine btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vine"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-foursquare btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-foursquare"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-vimeo btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vimeo"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Size Normal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-facebook btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-facebook"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-twitter btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-twitter"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-linkedin btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-linkedin"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-flickr btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-flickr"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-tumblr btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-tumblr"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-xing btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-xing"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-github btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-github"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-html5 btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-html5"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-openid btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-openid"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-stack-overflow btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-stack-overflow"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-css3 btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-css3"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-youtube btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-youtube"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-dribbble btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-dribbble"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-google-plus btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-google-plus"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-instagram btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-instagram"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-pinterest btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-pinterest"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-vk btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vk"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-yahoo btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-yahoo"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-behance btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-behance"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-dropbox btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-dropbox"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-reddit btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-reddit"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-spotify btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-spotify"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-vine btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vine"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-foursquare btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-foursquare"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-vimeo btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vimeo"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Size Large", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, " Add this class ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, ".btn-lg"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-facebook btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-facebook"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-twitter btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-twitter"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-linkedin btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-linkedin"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-flickr btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-flickr"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-tumblr btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-tumblr"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-xing btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-xing"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-github btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-github"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-html5 btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-html5"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-openid btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-openid"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-stack-overflow btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-stack-overflow"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-css3 btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-css3"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-youtube btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-youtube"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-dribbble btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-dribbble"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-google-plus btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-google-plus"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-instagram btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-instagram"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-pinterest btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-pinterest"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-vk btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vk"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-yahoo btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-yahoo"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-behance btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-behance"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-dropbox btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-dropbox"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-reddit btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-reddit"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-spotify btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-spotify"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-vine btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vine"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-foursquare btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-foursquare"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-vimeo btn-brand icon mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-vimeo"
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        xs: "12"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fa fa-align-justify"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Split button dropdowns")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[7],
-        toggle: function toggle() {
-          _this2.toggle(7);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        id: "caret",
-        color: "primary"
-      }, "Primary"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        color: "primary"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[8],
-        toggle: function toggle() {
-          _this2.toggle(8);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        id: "caret",
-        color: "secondary"
-      }, "Secondary"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        color: "secondary"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[9],
-        toggle: function toggle() {
-          _this2.toggle(9);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        id: "caret",
-        color: "success"
-      }, "Success"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        color: "success"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[10],
-        toggle: function toggle() {
-          _this2.toggle(10);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        id: "caret",
-        color: "info"
-      }, "Info"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        color: "info"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[11],
-        toggle: function toggle() {
-          _this2.toggle(11);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        id: "caret",
-        color: "warning"
-      }, "Warning"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        color: "warning"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[12],
-        toggle: function toggle() {
-          _this2.toggle(12);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        id: "caret",
-        color: "danger"
-      }, "Danger"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        color: "danger"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        divider: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fa fa-align-justify"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Dropdown directions")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        direction: "up",
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[13],
-        toggle: function toggle() {
-          _this2.toggle(13);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        size: "lg"
-      }, "Direction Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        direction: "left",
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[14],
-        toggle: function toggle() {
-          _this2.toggle(14);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        size: "lg"
-      }, "Direction Left"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        direction: "right",
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[15],
-        toggle: function toggle() {
-          _this2.toggle(15);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        size: "lg"
-      }, "Direction Right"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[16],
-        toggle: function toggle() {
-          _this2.toggle(16);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        size: "lg"
-      }, "Default Down"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardHeader"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fa fa-align-justify"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Button Dropdown sizing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        className: "mr-1",
-        isOpen: this.state.dropdownOpen[17],
-        toggle: function toggle() {
-          _this2.toggle(17);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        size: "lg"
-      }, "Large Button"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonDropdown"], {
-        isOpen: this.state.dropdownOpen[18],
-        toggle: function toggle() {
-          _this2.toggle(18);
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownToggle"], {
-        caret: true,
-        size: "sm"
-      }, "Small Button"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownMenu"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        header: true
-      }, "Header"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], {
-        disabled: true
-      }, "Action Disabled"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Action"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["DropdownItem"], null, "Another Action"))))))));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Brand Button"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, " Text only. Usage ex. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "<Button className=\"btn-facebook btn-brand text\"><span>Facebook</span></Button>")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Size Small", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, " Add this class ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, ".btn-sm"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-facebook btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Facebook")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-twitter btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Twitter")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-linkedin btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-flickr btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Flickr")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-tumblr btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tumblr")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-xing btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Xing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-github btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-html5 btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "HTML5")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-openid btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "OpenID")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-stack-overflow btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "StackOverflow")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-css3 btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "CSS3")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-youtube btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "YouTube")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-dribbble btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dribbble")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-google-plus btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Google+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-instagram btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Instagram")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-pinterest btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Pinterest")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-vk btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "VK")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-yahoo btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Yahoo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-behance btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Behance")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-dropbox btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dropbox")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-reddit btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Reddit")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-spotify btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Spotify")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-vine btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Vine")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-foursquare btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Forsquare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "sm",
+        className: "btn-vimeo btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Vimeo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Size Normal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-facebook btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Facebook")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-twitter btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Twitter")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-linkedin btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-flickr btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Flickr")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-tumblr btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tumblr")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-xing btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Xing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-github btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-html5 btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "HTML5")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-openid btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "OpenID")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-stack-overflow btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "StackOverflow")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-css3 btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "CSS3")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-youtube btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "YouTube")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-dribbble btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dribbble")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-google-plus btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Google+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-instagram btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Instagram")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-pinterest btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Pinterest")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-vk btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "VK")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-yahoo btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Yahoo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-behance btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Behance")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-dropbox btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dropbox")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-reddit btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Reddit")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-spotify btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Spotify")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-vine btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Vine")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-foursquare btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Forsquare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        className: "btn-vimeo btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Vimeo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Size Large", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, " Add this class ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, ".btn-lg"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-facebook btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Facebook")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-twitter btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Twitter")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-linkedin btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-flickr btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Flickr")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-tumblr btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Tumblr")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-xing btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Xing")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-github btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-html5 btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "HTML5")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-openid btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "OpenID")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-stack-overflow btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "StackOverflow")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-css3 btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "CSS3")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-youtube btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "YouTube")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-dribbble btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dribbble")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-google-plus btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Google+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-instagram btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Instagram")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-pinterest btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Pinterest")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-vk btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "VK")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-yahoo btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Yahoo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-behance btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Behance")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-dropbox btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Dropbox")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-reddit btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Reddit")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-spotify btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Spotify")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-vine btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Vine")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-foursquare btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Forsquare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        size: "lg",
+        className: "btn-vimeo btn-brand text mr-1 mb-1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Vimeo"))))))));
     }
   }]);
 
-  return ButtonDropdowns;
+  return BrandButtons;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (ButtonDropdowns);
+/* harmony default export */ __webpack_exports__["default"] = (BrandButtons);
 
 /***/ })
 

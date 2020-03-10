@@ -254,8 +254,7 @@ class AdvertismentController extends Controller
     public function showAllAdmin()
     {
         $data = [];
-        $advertisments = Advertisment::take(50)->paginate(10);
-        // User::id($advertisments->user_id);
+        $advertisments = Advertisment::take(50)->paginate(12);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
@@ -273,11 +272,79 @@ class AdvertismentController extends Controller
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
                 'sellerphonenumber' => $user->phonenumber,
-                'sallername' => $user->name
+                'sellername' => $user->name,
+                'published' => $item->published
             ];
             array_push($data, $new);
         }
+        // $is_admin = Auth::guard()->user()->is_admin;
+
+        // if ($is_admin == 1) {
+        //     return response()->json($data, 200);
+        // }
 
         return response()->json($data, 200);
+
+        // return response()->json('Permission Error', 400);
+    }
+
+
+
+    /**
+     * Delete Advertisments for Admin.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function deleteAdmin(Request $request)
+    {
+
+        $is_admin = Auth::guard()->user()->is_admin;
+
+        if ($is_admin == 1) {
+
+            $item  = Advertisment::findOrFail($request->id);
+            $item->delete();
+            return response()->json('Ok', 200);
+        }
+
+
+        return response()->json('Permission Error', 400);
+    }
+
+
+
+
+    /**
+     * Update Advertisments for Admin.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function updateAdmin(Request $request)
+    {
+
+        $is_admin = Auth::guard()->user()->is_admin;
+
+        if ($is_admin == 1) {
+
+            $item  = Advertisment::findOrFail($request->id);
+
+            $item->phoneNumber = $request->phoneNumber;
+            $item->simStatus = $request->simStatus;
+            $item->rond = $request->rond;
+            $item->code = $request->code;
+            $item->location = $request->location;
+            $item->value = $request->value;
+            $item->price = $request->price;
+            $item->secondPrice = $request->secondPrice;
+            $item->published = $request->published;
+            $item->text = $request->text;
+            $item->sale = $request->sale == null ? '' : $request->sale;
+            $item->save();
+
+            return response()->json($item, 200);
+        }
+
+
+        return response()->json('Permission Error', 400);
     }
 }

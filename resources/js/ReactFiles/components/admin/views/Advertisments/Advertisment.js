@@ -1,186 +1,283 @@
-import React, { Component } from "react";
-import { TweenMax, TimelineMax, CSSPlugin, Power4 } from "gsap";
-import persianJs from "persianjs";
-import GoldCrown from "../../../images/gold.png";
-import SilverCrown from "../../../images/silver.png";
-import BronzCrown from "../../../images/bronz.png";
-import secureStorage from "../../../services/Storage";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Message from "../Message";
+import { JWTHeader } from "../../../services/Auth";
 
-export default class Advertisment extends Component {
-    constructor(props) {
-        super(props);
-        this.handleAdvertismentClick = this.handleAdvertismentClick.bind(this);
-        this.handleDeleteBtn = props.handleDeleteBtn.bind(this);
-        this.flagRender = this.flagRender.bind(this);
-        this.state = {
-            toggle: false,
-            id: props.id,
-            phoneNumber: props.phoneNumber,
-            status: props.status,
-            location: props.location,
-            phoneNumber: props.phoneNumber,
-            rond: props.rond,
-            code: props.code,
-            value: props.value,
-            price: props.price,
-            secondPrice: props.secondPrice,
-            text: props.text,
-            sellerPhoneNumber: props.sellerPhoneNumber,
-            sellerName: props.sellerName,
-            sale: props.sale
+export default function Advertisment(props) {
+    const baseUrl = process.env.MIX_BASEURL;
+    const AdvertismentDeleteAdmin = "/advertisments-admin";
+
+    const [message, setMessage] = useState("");
+    const [messageStatus, setMessageStatus] = useState("");
+
+    const [id, setId] = useState(props.id);
+    const [phoneNumber, setPhoneNumber] = useState(props.phoneNumber);
+    const [status, setStatus] = useState(props.status);
+    const [location, setLocation] = useState(props.location);
+    const [rond, setRond] = useState(props.rond);
+    const [code, setCode] = useState(props.code);
+    const [value, setValue] = useState(props.value);
+    const [price, setPrice] = useState(props.price);
+    const [secondPrice, setSecondPrice] = useState(props.secondPrice);
+    const [sellerPhoneNumber, setSellerPhoneNumber] = useState(
+        props.sellerPhoneNumber
+    );
+    const [published, setPublished] = useState(props.published);
+    const [text, setText] = useState(props.text);
+    const [sellerName, setSellerName] = useState(props.sellerName);
+    const [sale, setSale] = useState(props.sale);
+
+    const handleDeleteBtn = () => {
+        console.log("DELETE BTN");
+
+        axios({
+            method: "DELETE",
+            url: baseUrl + AdvertismentDeleteAdmin,
+            headers: JWTHeader().headers,
+            data: {
+                id: id
+            }
+        })
+            .then(res => {
+                console.log(res);
+                props.updateList(id);
+            })
+            .catch(e => console.log(e));
+    };
+
+    const handleUpdateBtn = () => {
+        const data = {
+            id,
+            phoneNumber,
+            simStatus: status,
+            rond,
+            code,
+            location,
+            value,
+            price,
+            secondPrice,
+            published,
+            text,
+            sale
         };
-    }
 
-    handleAdvertismentClick(e) {
-        let tl = new TimelineMax(),
-            tl2 = new TimelineMax();
-        tl.to(e.currentTarget, 0.3, {
-            ease: Power4.easeOut,
-            rotateY: "180deg"
-        });
-        tl2.to(e.currentTarget, 0.3, { ease: Power4.easeOut, rotateY: "0" });
-        tl.pause();
-        tl2.pause();
-        this.state.toggle ? tl2.play() : tl.play();
+        axios({
+            url: baseUrl + AdvertismentDeleteAdmin,
+            method: "POST",
+            headers: JWTHeader().headers,
+            data
+        })
+            .then(res => {
+                console.log(res);
+                setMessage("Update was successful");
+                setMessageStatus("success");
+            })
+            .catch(e => {
+                console.log(e.response);
+                setMessage(e.response.data.message);
+                setMessageStatus("danger");
+            });
 
-        this.setState({ toggle: !this.state.toggle });
-    }
+        console.log(data);
+    };
 
-    flagRender() {
-        if (this.state.sale === "فوری")
-            return <div className="card-flag font3-4">فوری</div>;
-        else if (this.state.value === "طلایی")
-            return (
-                <div className="card-crown font3-4">
-                    <img
-                        className="w-100 h-100"
-                        src={GoldCrown}
-                        alt="GoldCrown"
-                    />
+    return (
+        <div className="card card-amdin-advertisments">
+            <div className="card-header">
+                <div className="input-group">
+                    <div className="form-control">{id}</div>
+                    <div className="form-control">{sellerPhoneNumber}</div>
                 </div>
-            );
-        else if (this.state.value === "نقره ای")
-            return (
-                <div className="card-crown font3-4">
-                    <img
-                        className="w-100 h-100"
-                        src={SilverCrown}
-                        alt="SilverCrown"
-                    />
-                </div>
-            );
-        else if (this.state.value === "برنز")
-            return (
-                <div className="card-crown font3-4">
-                    <img className="w-100 h-100" src={BronzCrown} alt="crown" />
-                </div>
-            );
-        else {
-            return <div className="card-flag font3-4">Not found</div>;
-        }
-    }
-
-    RondRender() {
-        if (this.state.rond === "رند")
-            return (
-                <span className="card-rond font2 h-100">{this.state.rond}</span>
-            );
-        else if (this.state.rond === "نیمه رند")
-            return (
-                <span className="card-nime-rond font2 h-100">
-                    {this.state.rond}
-                </span>
-            );
-    }
-
-    render(props) {
-        return (
-            <div
-                className="card flip-card w-100 h-100 advertisment py-0 shadow position-relative bg-transparent position-relative"
-                onClick={this.handleAdvertismentClick}
-            >
-                {this.flagRender()}
-
-                <div className="card-body flip-card-front w-100 h-100 mh-100 d-flex justify-content-between align-items-center flex-column p-1 ">
-                    <div className="card-inner-width w-100">
-                        <h3 className="ad-number font1-2 text-right pt-0">
-                            {persianJs(this.state.phoneNumber)
-                                .englishNumber()
-                                .toString()}
-                        </h3>
-                        <hr className="py-0 my-0" />
-                    </div>
-                    <div className="card-inner-width">
-                        <h6 className="card-title font3 text-center  p-0  m-0 py-1">
-                            {this.state.status} | {this.state.location}
-                        </h6>
-
-                        {this.state.sale ? (
-                            <>
-                                <p className="card-text font2 text-center p-0 m-0">
-                                    {persianJs(this.state.secondPrice)
-                                        .englishNumber()
-                                        .toString()}
-                                    تومان
-                                </p>
-                                <p className="card-text line-through font3 line text-center p-0 m-0 pb-1">
-                                    {persianJs(this.state.price)
-                                        .englishNumber()
-                                        .toString()}
-                                    تومان
-                                </p>
-                            </>
-                        ) : (
-                            <p className="card-text font2 text-center p-0 m-0">
-                                {persianJs(this.state.price)
-                                    .englishNumber()
-                                    .toString()}
-                                تومان
-                            </p>
-                        )}
-
-                        <div className="w-100 font3 ">{this.state.text}</div>
-                    </div>
-                    <div className="mt-auto card-inner-width  mb-0">
-                        <hr className="my-1 " />
-                        <div className="m-0 p-0 d-flex justify-content-between align-items-end">
-                            <span className="lead font3 h-100">4 ساعت قبل</span>
-                            {this.RondRender()}
-                        </div>
-                    </div>
-                </div>
-                <div className="flip-card-back d-flex justify-content-center align-items-center flex-column">
-                    <div className="card-body w-100 d-flex justify-content-center align-items-center flex-column  ">
-                        <div className="flip-card-background"></div>
-                        <h1 className="font1 text-center p-2">
-                            {persianJs(this.state.sellerPhoneNumber)
-                                .englishNumber()
-                                .toString()}
-                        </h1>
-                        <p className="font2 text-center p-2">
-                            {this.state.sellerName}
-                        </p>
-
-                        {secureStorage.getItem("username") ===
-                        this.state.sellerPhoneNumber ? (
-                            <button
-                                className="btn btn-outline-danger"
-                                onClick={e =>
-                                    this.handleDeleteBtn(
-                                        e,
-                                        this.state.id,
-                                        this.state.sellerPhoneNumber
-                                    )
-                                }
-                            >
-                                پاک کردن
-                            </button>
-                        ) : (
-                            ""
-                        )}
-                    </div>
+                <div className="input-group">
+                    <div className="form-control">{sellerName}</div>
                 </div>
             </div>
-        );
-    }
+            <div className="card-body">
+                <div className="input-group">
+                    <select
+                        name="location"
+                        id="location"
+                        className="form-control"
+                        defaultValue={location}
+                        onChange={e => setLocation(e.target.value)}
+                    >
+                        <option value="آذربایجان شرقی">آذربایجان شرقی</option>
+                        <option value="آذربایجان غربی">آذربایجان غربی</option>
+                        <option value="اردبیل">اردبیل</option>
+                        <option value="اصفهان">اصفهان</option>
+                        <option value="البرز">البرز</option>
+                        <option value="ایلام">ایلام</option>
+                        <option value="بوشهر">بوشهر</option>
+                        <option value="تهران">تهران</option>
+                        <option value="چهارمحال و بختیاری">
+                            چهارمحال و بختیاری
+                        </option>
+                        <option value="خراسان جنوبی">خراسان جنوبی</option>
+                        <option value="خراسان رضوی">خراسان رضوی</option>
+                        <option value="خراسان شمالی">خراسان شمالی</option>
+                        <option value="خوزستان">خوزستان</option>
+                        <option value="زنجان">زنجان</option>
+                        <option value="سمنان">سمنان</option>
+                        <option value="سیستان و بلوچستان">
+                            سیستان و بلوچستان
+                        </option>
+                        <option value="فارس">فارس</option>
+                        <option value="قزوین">قزوین</option>
+                        <option value="قم">قم</option>
+                        <option value="کردستان">کردستان</option>
+                        <option value="کرمانشاه">کرمانشاه</option>
+                        <option value="کهگیلویه و بویراحمد">
+                            کهگیلویه و بویراحمد
+                        </option>
+                        <option value="گلستان">گلستان</option>
+                        <option value="گیلان">گیلان</option>
+                        <option value="لرستان">لرستان</option>
+                        <option value="مازندران">مازندران</option>
+                        <option value="مرکزی">مرکزی</option>
+                        <option value="هرمزگان">هرمزگان</option>
+                        <option value="همدان">همدان</option>
+                        <option value="یزد">یزد</option>
+                    </select>
+
+                    <input
+                        type="text"
+                        className="form-control"
+                        maxLength="11"
+                        value={phoneNumber}
+                        onChange={e => setPhoneNumber(e.target.value)}
+                        placeholder="Phone Number"
+                    />
+                </div>
+
+                <div className="input-group">
+                    <select
+                        name="status"
+                        id="status"
+                        className="form-control"
+                        value={status}
+                        onChange={e => setStatus(e.target.value)}
+                    >
+                        <option value="صفر">صفر</option>
+                        <option value="تقریبا صفر">تقریبا صفر</option>
+                        <option value="کارکرده">کارکرده</option>
+                    </select>
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={code}
+                        maxLength="1"
+                        onChange={e => setCode(e.target.value)}
+                        placeholder="Code"
+                    />
+                </div>
+                <div className="input-group">
+                    <select
+                        name="rond"
+                        id="rond"
+                        className="form-control"
+                        value={rond}
+                        onChange={e => setRond(e.target.value)}
+                    >
+                        <option value="رند">رند</option>
+                        <option value="نیمه رند">نیمه رند</option>
+                        <option value="معمولی">معمولی</option>
+                    </select>
+                    <select
+                        name="value"
+                        id="value"
+                        className="form-control"
+                        value={value}
+                        onChange={e => setValue(e.target.value)}
+                    >
+                        <option value="طلایی">طلایی</option>
+                        <option value="نقره ای">نقره ای</option>
+                        <option value="برنز">برنز</option>
+                    </select>
+                </div>
+
+                <div className="input-group">
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={price}
+                        onChange={e => setPrice(e.target.value)}
+                        placeholder="Price"
+                    />
+                    <span className="d-flex justify-content-start align-items-center">
+                        .000 تومان
+                    </span>
+                </div>
+                <div className="input-group">
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={secondPrice}
+                        onChange={e => setSecondPrice(e.target.value)}
+                        placeholder="Second Price"
+                    />
+                    <span className="d-flex justify-content-start align-items-center">
+                        .000 تومان
+                    </span>
+                </div>
+
+                <div className="input-group">
+                    <textarea
+                        type="text"
+                        className="form-control"
+                        value={text}
+                        onChange={e => setText(e.target.value)}
+                        placeholder="Price"
+                        rows="5"
+                    />
+                </div>
+
+                <div className="input-group my-3">
+                    <span className="mx-4">Sale</span>
+                    <input
+                        type="checkbox"
+                        className="d-inline"
+                        onChange={e => {
+                            if (e.target.checked) setSale("فوری");
+                            else setSale("");
+                        }}
+                        defaultChecked={sale == "فوری" ? true : false}
+                    />
+                </div>
+
+                <div className="input-group my-3">
+                    <span className="mx-4">Published</span>
+                    <input
+                        type="checkbox"
+                        className="d-inline"
+                        onChange={e => {
+                            setPublished(e.target.checked);
+                        }}
+                        defaultChecked={published}
+                    />
+                </div>
+
+                <div
+                    className="btn btn-danger mx-1"
+                    onClick={e => handleDeleteBtn(e)}
+                >
+                    Delete
+                </div>
+                <div
+                    className="btn btn-warning mx-1"
+                    onClick={e => handleUpdateBtn(e)}
+                >
+                    Update
+                </div>
+            </div>
+            {message ? (
+                <Message
+                    title={message}
+                    status={messageStatus}
+                    setMessage={text => setMessage(text)}
+                />
+            ) : (
+                ""
+            )}
+        </div>
+    );
 }

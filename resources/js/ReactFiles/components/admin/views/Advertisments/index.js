@@ -20,11 +20,11 @@ export default function index() {
                 console.log(res);
                 setAdvertisments(res.data);
             })
-            .catch(e => console.log(e));
+            .catch(e => console.log(e.response));
     }, [currnetPage]);
 
     const handlePrevOnClick = e => {
-        if (currnetPage == 0) return;
+        if (currnetPage == 1) return;
         setCurrentpage(currnetPage - 1);
     };
 
@@ -32,8 +32,21 @@ export default function index() {
         setCurrentpage(currnetPage + 1);
     };
 
-    const handleDeleteBtn = e => {
-        console.log("DELETE BTN", e);
+    const updateList = id => {
+        let myArray = advertisments.filter(item => {
+            item.id != id;
+        });
+
+        axios({
+            url: baseUrl + advertismentsAllAdmin + "?page=" + currnetPage,
+            method: "GET",
+            headers: JWTHeader().headers
+        })
+            .then(res => {
+                console.log(res);
+                setAdvertisments(res.data);
+            })
+            .catch(e => console.log(e));
     };
 
     return (
@@ -80,9 +93,11 @@ export default function index() {
                                 sellerPhoneNumber={item.sellerphonenumber}
                                 sellerName={item.sellername}
                                 key={item.id}
+                                id={item.id}
                                 sale={item.sale}
                                 secondPrice={item.secondprice}
-                                handleDeleteBtn={e => handleDeleteBtn(e)}
+                                published={item.published}
+                                updateList={updateList}
                             />
                         </div>
                     );
