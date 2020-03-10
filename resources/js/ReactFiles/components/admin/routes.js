@@ -41,8 +41,9 @@ const Users = React.lazy(() => import("./views/Users/Users"));
 const User = React.lazy(() => import("./views/Users/User"));
 
 //CUSTOM INCLUDES
-const VIPAdvertiser = React.lazy(() => import("./views/VIPAdvertiser"));
+const Advertisments = React.lazy(() => import("./views/Advertisments"));
 const Advertisers = React.lazy(() => import("./views/Advertisers"));
+const VIPAdvertiser = React.lazy(() => import("./views/VIPAdvertiser"));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -126,7 +127,7 @@ const routes = [
         path: "/admin/advertisments",
         exact: true,
         name: "User Details",
-        component: Cards
+        component: Advertisments
     },
     {
         path: "/admin/advertisers",

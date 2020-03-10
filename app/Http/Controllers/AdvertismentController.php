@@ -42,8 +42,6 @@ class AdvertismentController extends Controller
 
         return response()->json($data, 200);
     }
-
-
     /**
      * Show on sale Advertisments.
      *
@@ -78,8 +76,6 @@ class AdvertismentController extends Controller
 
         return response()->json($data, 200);
     }
-
-
     /**
      * Show GOLD Advertisments.
      *
@@ -114,10 +110,6 @@ class AdvertismentController extends Controller
 
         return response()->json($data, 200);
     }
-
-
-
-
     /**
      * Show SILVER Advertisments.
      *
@@ -152,10 +144,6 @@ class AdvertismentController extends Controller
 
         return response()->json($data, 200);
     }
-
-
-
-
     /**
      * Show BRONZE Advertisments.
      *
@@ -190,11 +178,6 @@ class AdvertismentController extends Controller
 
         return response()->json($data, 200);
     }
-
-
-
-
-
     /**
      * Show MINE Advertisments.
      *
@@ -229,8 +212,6 @@ class AdvertismentController extends Controller
 
         return response()->json($data, 200);
     }
-
-
     /**
      * Show Advertisments.
      *
@@ -262,5 +243,41 @@ class AdvertismentController extends Controller
         $advertisment->user()->associate($user);
 
         $advertisment->save();
+    }
+
+
+    /**
+     * Show Advertisments to Admin.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function showAllAdmin()
+    {
+        $data = [];
+        $advertisments = Advertisment::take(50)->paginate(10);
+        // User::id($advertisments->user_id);
+        foreach ($advertisments as $item) {
+            $user = $item->user_id;
+            $user = User::find($user);
+            $new = [
+                'id' => $item->id,
+                'phonenumber' => $item->phonenumber,
+                'location' => $item->location,
+                'text' => $item->text,
+                'price' => $item->price,
+                'secondprice' => $item->secondprice,
+                'code' => $item->code,
+                'operator' => $item->operator,
+                'value' => $item->value,
+                'rond' => $item->rond,
+                'simstatus' => $item->simstatus,
+                'sale' => $item->sale,
+                'sellerphonenumber' => $user->phonenumber,
+                'sallername' => $user->name
+            ];
+            array_push($data, $new);
+        }
+
+        return response()->json($data, 200);
     }
 }

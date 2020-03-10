@@ -40,6 +40,7 @@ Route::get('/advertisments-silver', 'AdvertismentController@showSilver');
 Route::get('/advertisments-bronze', 'AdvertismentController@showBronze');
 Route::get('/advertisments-me', 'AdvertismentController@showMe')->middleware('auth:api');
 Route::post('/advertisments', 'AdvertismentController@create')->middleware('auth:api');
+Route::get('/advertisments-admin', 'AdvertismentController@showAllAdmin');
 
 
 Route::get('/advertisers', 'AdvertiserController@show');
