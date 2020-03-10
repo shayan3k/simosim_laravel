@@ -108,9 +108,15 @@ class AdvertiserController extends Controller
             $item->shopname = htmlspecialchars($request->shopname);
             $item->phonenumbers = json_encode(gettype($request->phonenumbers) == 'array' ? $request->phonenumbers : explode(",", $request->phonenumbers));
             $item->contactnumbers = json_encode(gettype($request->contactnumbers) == 'array' ? $request->contactnumbers : explode(",", $request->contactnumbers));
+
             $item->save();
             return response()->json(
-                $item,
+                [
+                    'name' => $item->name,
+                    'shopname' => $item->shopname,
+                    'phonenumbers' => json_decode($item->phonenumbers),
+                    'contactnumbers' => json_decode($item->contactnumbers)
+                ],
                 200
             );
         }

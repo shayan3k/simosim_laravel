@@ -26,10 +26,8 @@ export default function index() {
     }, []);
 
     const handleNewAdvertiser = data => {
-        var newArray = advertisers;
-        var newArray = newArray.push(data);
-        console.log("fslbfslkbfsf", { ...advertisers, ...data });
         setAdvertisers([...advertisers, data]);
+        console.log("jbsfjbsfjb", [...advertisers, data]);
     };
 
     const handleDeleteItem = id => {
@@ -74,7 +72,7 @@ export default function index() {
                     setStatus={setStatus}
                     baseUrl={baseUrl}
                     advertisersNewUrl={advertisersNewUrl}
-                    handleNewAdvertiser={handleNewAdvertiser}
+                    handleNewAdvertiser={e => handleNewAdvertiser(e)}
                 />
             </div>
         </div>

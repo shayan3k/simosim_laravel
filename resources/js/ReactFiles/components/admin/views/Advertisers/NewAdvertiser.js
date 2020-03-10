@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { JWTHeader } from "../../../services/Auth";
 import Axios from "axios";
+import qs from "qs";
 
 export default function NewAdvertiser(props) {
     const [id, setId] = useState(props.id);
@@ -20,6 +21,12 @@ export default function NewAdvertiser(props) {
             errorMessage += "<li>Contact Numbers can not be Empty</li>";
 
         if (errorMessage == "") {
+            //converting string to array for storage
+            console.log(phonenumbers, typeof phonenumbers);
+            // var phonenumbersArray = phonenumbers.split(",");
+            // phonenumbersArray = Object.values(phonenumbersArray);
+            // console.log(phonenumbersArray, typeof phonenumbersArray);
+
             const res = await axios({
                 url: props.baseUrl + props.advertisersNewUrl,
                 data: {
