@@ -37,10 +37,11 @@ const Modals = React.lazy(() => import("./views/Notifications/Modals"));
 const Colors = React.lazy(() => import("./views/Theme/Colors"));
 const Typography = React.lazy(() => import("./views/Theme/Typography"));
 const Widgets = React.lazy(() => import("./views/Widgets/Widgets"));
-const Users = React.lazy(() => import("./views/Users/Users"));
+// const Users = React.lazy(() => import("./views/Users/Users"));
 const User = React.lazy(() => import("./views/Users/User"));
 
 //CUSTOM INCLUDES
+const Users = React.lazy(() => import("./views/UsersList"));
 const Advertisments = React.lazy(() => import("./views/Advertisments"));
 const Advertisers = React.lazy(() => import("./views/Advertisers"));
 const VIPAdvertiser = React.lazy(() => import("./views/VIPAdvertiser"));
@@ -124,21 +125,27 @@ const routes = [
 
     //my routes
     {
-        path: "/admin/advertisments",
+        path: "/admin/users",
         exact: true,
         name: "User Details",
+        component: Users
+    },
+    {
+        path: "/admin/advertisments",
+        exact: true,
+        name: "Advertisments Details",
         component: Advertisments
     },
     {
         path: "/admin/advertisers",
         exact: true,
-        name: "User Details",
+        name: "Advertisers Details",
         component: Advertisers
     },
     {
         path: "/admin/vipadvertiser",
         exact: true,
-        name: "User Details",
+        name: "VIP advertiser Details",
         component: VIPAdvertiser
     }
 ];

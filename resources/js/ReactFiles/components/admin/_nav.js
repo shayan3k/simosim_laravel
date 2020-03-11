@@ -8,7 +8,11 @@ export default {
                 variant: "info"
             }
         },
-
+        {
+            name: "Users",
+            url: "/admin/users",
+            class: "text-left"
+        },
         {
             name: "Advertisments",
             url: "/admin/advertisments",

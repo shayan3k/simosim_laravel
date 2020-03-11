@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { JWTHeader } from "../../../services/Auth";
+import Message from "../Message";
 import axios from "axios";
 
 export default function Advertiser(props) {
     const handleDeleteItem = props.handleDeleteItem;
+
+    const [message, setMessage] = useState("");
+    const [status, setStatus] = useState("");
 
     const [name, setName] = useState(props.item.name);
     const [shopname, setShopname] = useState(props.item.shopname);
@@ -26,7 +30,10 @@ export default function Advertiser(props) {
             method: "DELETE"
         })
             .then(res => console.log(res))
-            .catch(e => console.log(e.response));
+            .catch(e => {
+                setMessage(e.response.data.message);
+                setStatus("danger");
+            });
 
         handleDeleteItem(id);
     };
@@ -46,8 +53,14 @@ export default function Advertiser(props) {
             headers: JWTHeader().headers,
             method: "POST"
         })
-            .then(res => console.log(res))
-            .catch(e => console.log(e.response));
+            .then(res => {
+                setMessage("Update was successful");
+                setStatus("success");
+            })
+            .catch(e => {
+                setMessage(e.response.data.message);
+                setStatus("danger");
+            });
     };
 
     return (
@@ -114,6 +127,15 @@ export default function Advertiser(props) {
                     Update
                 </a>
             </form>
+            {message ? (
+                <Message
+                    title={message}
+                    status={status}
+                    setMessage={text => setMessage(text)}
+                />
+            ) : (
+                ""
+            )}
         </div>
     );
 }

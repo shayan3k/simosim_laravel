@@ -15,8 +15,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _services_Auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/Auth */ "./resources/js/ReactFiles/components/services/Auth.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Message__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Message */ "./resources/js/ReactFiles/components/admin/views/Message.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -34,28 +35,39 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Advertiser(props) {
   var handleDeleteItem = props.handleDeleteItem;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.item.name),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       _useState2 = _slicedToArray(_useState, 2),
-      name = _useState2[0],
-      setName = _useState2[1];
+      message = _useState2[0],
+      _setMessage = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.item.shopname),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       _useState4 = _slicedToArray(_useState3, 2),
-      shopname = _useState4[0],
-      setShopname = _useState4[1];
+      status = _useState4[0],
+      setStatus = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.item.phonenumbers),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.item.name),
       _useState6 = _slicedToArray(_useState5, 2),
-      phonenumbers = _useState6[0],
-      setPhonenumbers = _useState6[1];
+      name = _useState6[0],
+      setName = _useState6[1];
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.item.contactnumbers),
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.item.shopname),
       _useState8 = _slicedToArray(_useState7, 2),
-      contactnumbers = _useState8[0],
-      setContactnumbers = _useState8[1];
+      shopname = _useState8[0],
+      setShopname = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.item.phonenumbers),
+      _useState10 = _slicedToArray(_useState9, 2),
+      phonenumbers = _useState10[0],
+      setPhonenumbers = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.item.contactnumbers),
+      _useState12 = _slicedToArray(_useState11, 2),
+      contactnumbers = _useState12[0],
+      setContactnumbers = _useState12[1];
 
   var handleDeleteBtn =
   /*#__PURE__*/
@@ -71,7 +83,7 @@ function Advertiser(props) {
               console.log(props.item.id, e);
               id = props.item.id;
               _context.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_3___default()({
+              return axios__WEBPACK_IMPORTED_MODULE_4___default()({
                 url: props.baseUrl + props.advertisersUrl,
                 data: {
                   id: id
@@ -81,7 +93,9 @@ function Advertiser(props) {
               }).then(function (res) {
                 return console.log(res);
               })["catch"](function (e) {
-                return console.log(e.response);
+                _setMessage(e.response.data.message);
+
+                setStatus("danger");
               });
 
             case 4:
@@ -114,7 +128,7 @@ function Advertiser(props) {
             case 0:
               id = props.item.id;
               _context2.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_3___default()({
+              return axios__WEBPACK_IMPORTED_MODULE_4___default()({
                 url: props.baseUrl + props.advertisersUrl,
                 data: {
                   id: id,
@@ -126,9 +140,13 @@ function Advertiser(props) {
                 headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_2__["JWTHeader"])().headers,
                 method: "POST"
               }).then(function (res) {
-                return console.log(res);
+                _setMessage("Update was successful");
+
+                setStatus("success");
               })["catch"](function (e) {
-                return console.log(e.response);
+                _setMessage(e.response.data.message);
+
+                setStatus("danger");
               });
 
             case 3:
@@ -209,7 +227,13 @@ function Advertiser(props) {
   }, "Delete"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
     className: "btn btn-outline-primary btn-lg mx-5",
     onClick: handleUpdateBtn
-  }, "Update")));
+  }, "Update")), message ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Message__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: message,
+    status: status,
+    setMessage: function setMessage(text) {
+      return _setMessage(text);
+    }
+  }) : "");
 }
 
 /***/ }),
@@ -428,11 +452,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _services_Auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/Auth */ "./resources/js/ReactFiles/components/services/Auth.js");
-/* harmony import */ var _Message__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Message */ "./resources/js/ReactFiles/components/admin/views/Message.js");
-/* harmony import */ var _Advertiser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Advertiser */ "./resources/js/ReactFiles/components/admin/views/Advertisers/Advertiser.js");
-/* harmony import */ var _NewAdvertiser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NewAdvertiser */ "./resources/js/ReactFiles/components/admin/views/Advertisers/NewAdvertiser.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Advertiser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Advertiser */ "./resources/js/ReactFiles/components/admin/views/Advertisers/Advertiser.js");
+/* harmony import */ var _NewAdvertiser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NewAdvertiser */ "./resources/js/ReactFiles/components/admin/views/Advertisers/NewAdvertiser.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -454,7 +477,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 function index() {
   // const AdvertisersUrl = process.env.MIX_ADVERTISERS;
   var baseUrl = "http://127.0.0.1:8000/api";
@@ -466,18 +488,8 @@ function index() {
       advertisers = _useState2[0],
       setAdvertisers = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      _useState4 = _slicedToArray(_useState3, 2),
-      message = _useState4[0],
-      _setMessage = _useState4[1];
-
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      _useState6 = _slicedToArray(_useState5, 2),
-      status = _useState6[0],
-      setStatus = _useState6[1];
-
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    axios__WEBPACK_IMPORTED_MODULE_5___default.a.get(baseUrl + advertisersUrl).then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_4___default.a.get(baseUrl + advertisersUrl).then(function (res) {
       //set the values
       setAdvertisers(res.data);
       console.log(res.data);
@@ -503,23 +515,15 @@ function index() {
     className: "container bg-advertisers"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "my-3 py-4"
-  }, "ADVERTISERS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), message ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Message__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: message,
-    status: status,
-    setMessage: function setMessage(text) {
-      return _setMessage(text);
-    }
-  }) : "", advertisers ? advertisers.map(function (item) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Advertiser__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "ADVERTISERS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), advertisers ? advertisers.map(function (item) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Advertiser__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: item.id,
       item: item,
       baseUrl: baseUrl,
       advertisersUrl: advertisersUrl,
       handleDeleteItem: handleDeleteItem
     });
-  }) : "", console.log(advertisers), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewAdvertiser__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    setMessage: _setMessage,
-    setStatus: setStatus,
+  }) : "", console.log(advertisers), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewAdvertiser__WEBPACK_IMPORTED_MODULE_3__["default"], {
     baseUrl: baseUrl,
     advertisersNewUrl: advertisersNewUrl,
     handleNewAdvertiser: function handleNewAdvertiser(e) {

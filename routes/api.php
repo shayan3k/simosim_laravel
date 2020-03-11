@@ -40,9 +40,12 @@ Route::get('/advertisments-silver', 'AdvertismentController@showSilver');
 Route::get('/advertisments-bronze', 'AdvertismentController@showBronze');
 Route::get('/advertisments-me', 'AdvertismentController@showMe')->middleware('auth:api');
 Route::post('/advertisments', 'AdvertismentController@create')->middleware('auth:api');
+
 Route::get('/advertisments-admin', 'AdvertismentController@showAllAdmin');
 Route::delete('/advertisments-admin', 'AdvertismentController@deleteAdmin')->middleware('auth:api');
 Route::post('/advertisments-admin', 'AdvertismentController@updateAdmin')->middleware('auth:api');
+
+Route::get('/users-admin', 'UserController@showAllAdmin');
 
 
 Route::get('/advertisers', 'AdvertiserController@show');
