@@ -27,7 +27,6 @@ function SignUp() {
     const handleResetfields = () => {
         setPhoneNumber("");
         setName("");
-        setEmail("");
         setPassword("");
         setCheckBox("");
         setVerifyPassword("");
@@ -53,10 +52,6 @@ function SignUp() {
                 msg += "<li>شماره تماس وارد شده اشتباه است</li>";
                 flag = true;
             }
-            if (!validateEmail(Email)) {
-                msg += "<li>ایمیل وارد شده اشتباه است</li>";
-                flag = true;
-            }
 
             if (!Name) {
                 msg += "<li>نام وارد شده اشتباه است</li>";
@@ -80,7 +75,6 @@ function SignUp() {
             let data = {
                 username: PhoneNumber,
                 name: Name,
-                email: Email,
                 password: Password
             };
             console.log(data);
@@ -98,10 +92,17 @@ function SignUp() {
                     })
 
                     .catch(e => {
-                        setError({
-                            msg: e.response.data.message,
-                            status: "danger"
-                        });
+                        if (e.response.status == 500) {
+                            setError({
+                                msg: "این شماره قبلا وارد شده",
+                                status: "danger"
+                            });
+                        } else
+                            setError({
+                                msg: e.response.data.message,
+                                status: "danger"
+                            });
+                        console.log(e.response);
                         enableSignUpBtn();
                     });
             } else {
@@ -125,10 +126,6 @@ function SignUp() {
     const handleNameOnChange = e => {
         var data = e.target.value.replace(/[^\u0600-\u06FF\s]/g, "");
         setName(data);
-    };
-
-    const handleEmailOnChange = e => {
-        setEmail(e.target.value);
     };
 
     return (
@@ -162,17 +159,7 @@ function SignUp() {
                         onChange={handleNameOnChange}
                     />
                 </div>
-                <div className="input-group col-10 col-md-9 ml-auto p-0 my-3">
-                    <input
-                        className="form-control"
-                        id="email"
-                        name="email"
-                        placeholder="ایمیل"
-                        type="text"
-                        value={Email}
-                        onChange={handleEmailOnChange}
-                    />
-                </div>
+
                 <div className="input-group col-10 col-md-9 ml-auto p-0 my-3">
                     <input
                         className="form-control"

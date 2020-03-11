@@ -17,7 +17,7 @@ class AdvertismentController extends Controller
     public function showAll()
     {
         $data = [];
-        $advertisments = Advertisment::take(50)->get();
+        $advertisments = Advertisment::orderBy('updated_at', 'desc')->where('published', '1')->paginate(50);
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
@@ -50,7 +50,7 @@ class AdvertismentController extends Controller
     public function showSale()
     {
         $data = [];
-        $advertisments = Advertisment::where('sale', 'فوری')->take(15)->get();
+        $advertisments = Advertisment::where(['sale' => 'فوری', 'published' => '1'])->orderBy('updated_at', 'desc')->take(15)->get();
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
@@ -84,8 +84,7 @@ class AdvertismentController extends Controller
     public function showGold()
     {
         $data = [];
-        $advertisments = Advertisment::where('value', 'طلایی')->take(30)->get();
-        // User::id($advertisments->user_id);
+        $advertisments = Advertisment::where(['value' => 'طلایی', 'published' => '1', 'sale' => ''])->orderBy('updated_at', 'desc')->take(30)->get();
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
@@ -118,7 +117,7 @@ class AdvertismentController extends Controller
     public function showSilver()
     {
         $data = [];
-        $advertisments = Advertisment::where('value', 'نقره ای')->take(30)->get();
+        $advertisments = Advertisment::where(['value' => 'نقره ای', 'published' => '1', 'sale' => ''])->orderBy('updated_at', 'desc')->take(30)->get();
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
@@ -152,7 +151,7 @@ class AdvertismentController extends Controller
     public function showBronze()
     {
         $data = [];
-        $advertisments = Advertisment::where('value', 'برنز')->take(30)->get();
+        $advertisments = Advertisment::where(['value' => 'برنز', 'published' => '1', 'sale' => ''])->orderBy('updated_at', 'desc')->take(30)->get();
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
@@ -186,7 +185,7 @@ class AdvertismentController extends Controller
     public function showMe()
     {
         $data = [];
-        $advertisments = Advertisment::where('user_id', Auth::user()->id)->take(10)->get();
+        $advertisments = Advertisment::where('user_id', Auth::user()->id)->orderBy('updated_at', 'desc')->paginate(30);
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
@@ -237,12 +236,9 @@ class AdvertismentController extends Controller
         $advertisment->created_at = NOW();
         $advertisment->updated_at = NOW();
 
-        // $user = Auth::user();
-        $user = User::find(1);
+        auth()->guard()->user()->advertisments()->save($advertisment);
 
-        $advertisment->user()->associate($user);
-
-        $advertisment->save();
+        response()->json('OK', 200);
     }
 
 
@@ -254,7 +250,7 @@ class AdvertismentController extends Controller
     public function showAllAdmin()
     {
         $data = [];
-        $advertisments = Advertisment::take(50)->paginate(12);
+        $advertisments = Advertisment::orderBy('created_at', 'desc')->paginate(12);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);

@@ -16,29 +16,55 @@ class UserController extends Controller
      */
     public function showAllAdmin(Request $request)
     {
-        // $is_admin = Auth::guard()->user()->is_admin;
+        $is_admin = Auth::guard()->user()->is_admin;
 
-        // if ($is_admin == 1) {
+        if ($is_admin == 1) {
 
 
-        $users = User::orderBy('created_at')->paginate(15);
-        $newArray = [];
+            $users = User::orderBy('created_at')->paginate(15);
+            $newArray = [];
 
-        foreach ($users as $user) {
+            foreach ($users as $user) {
 
-            array_push($newArray, [
-                'id' => $user->id,
-                'name' => $user->name,
-                'phonenumber' => $user->phonenumber,
-                'is_admin' => $user->is_admin,
-                'phonenumber_verified_at' => $user->phonenumber_verified_at,
-                'created_at' => $user->created_at,
-                'updated_at' => $user->updated_at
+                array_push($newArray, [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'phonenumber' => $user->phonenumber,
+                    'is_admin' => $user->is_admin,
+                    'phonenumber_verified_at' => $user->phonenumber_verified_at,
+                    'created_at' => $user->created_at,
+                    'updated_at' => $user->updated_at
 
-            ]);
+                ]);
+            }
+            return response()->json($newArray, 200);
         }
-        return response()->json($newArray, 200);
-        // }
+
+        return response()->json('Permission Error', 400);
+    }
+
+
+
+
+
+    /**
+     * Delete a user for admin
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function deleteUserAdmin(Request $request)
+    {
+        $is_admin = Auth::guard()->user()->is_admin;
+
+        if ($is_admin == 1) {
+
+
+            $user = User::findOrFail($request->id);
+            $user->delete();
+
+
+            return response()->json('Ok', 200);
+        }
 
         return response()->json('Permission Error', 400);
     }

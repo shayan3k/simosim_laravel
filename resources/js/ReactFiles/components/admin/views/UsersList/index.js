@@ -19,6 +19,19 @@ export default function index() {
 
     const [users, setUsers] = useState([]);
 
+    const updateList = e => {
+        axios({
+            url: baseUrl + userAdminUrl,
+            method: "GET",
+            headers: JWTHeader().headers
+        })
+            .then(res => {
+                console.log(res);
+                setUsers(res.data);
+            })
+            .catch(e => console.log(e));
+    };
+
     useEffect(() => {
         axios({
             url: baseUrl + userAdminUrl,
@@ -31,6 +44,7 @@ export default function index() {
             })
             .catch(e => console.log(e));
     }, []);
+
     return (
         <Container>
             <CardHeader>
@@ -51,7 +65,13 @@ export default function index() {
                     </thead>
                     <tbody>
                         {users.map((item, index) => {
-                            return <User key={index} item={item} />;
+                            return (
+                                <User
+                                    key={index}
+                                    item={item}
+                                    updateList={e => updateList(e)}
+                                />
+                            );
                         })}
                     </tbody>
                 </Table>

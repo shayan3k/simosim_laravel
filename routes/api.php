@@ -45,7 +45,8 @@ Route::get('/advertisments-admin', 'AdvertismentController@showAllAdmin');
 Route::delete('/advertisments-admin', 'AdvertismentController@deleteAdmin')->middleware('auth:api');
 Route::post('/advertisments-admin', 'AdvertismentController@updateAdmin')->middleware('auth:api');
 
-Route::get('/users-admin', 'UserController@showAllAdmin');
+Route::get('/users-admin', 'UserController@showAllAdmin')->middleware('auth:api');;
+Route::delete('/users-admin', 'UserController@deleteUserAdmin')->middleware('auth:api');;
 
 
 Route::get('/advertisers', 'AdvertiserController@show');
