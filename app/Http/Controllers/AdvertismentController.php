@@ -231,7 +231,7 @@ class AdvertismentController extends Controller
         $advertisment->code = $request->code;
         $advertisment->rond =  $request->rond;
         $advertisment->simstatus = $request->simstatus;
-        $advertisment->sale = $request->sale;
+        $advertisment->sale = $request->sale ? 'فوری' : '';
         $advertisment->published =  false;
         $advertisment->created_at = NOW();
         $advertisment->updated_at = NOW();
@@ -247,10 +247,29 @@ class AdvertismentController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function showAllAdmin()
+    public function showAllAdmin(Request $request)
     {
         $data = [];
-        $advertisments = Advertisment::orderBy('created_at', 'desc')->paginate(12);
+        $conditions = [];
+        if ($request->phonenumber)
+            $conditions += ['phonenumber' => $request->phonenumber];
+        if ($request->location)
+            $conditions += ['location' => $request->location];
+        if ($request->code)
+            $conditions += ['code' => $request->code];
+        if ($request->value)
+            $conditions += ['value' => $request->value];
+        if ($request->rond)
+            $conditions += ['rond' => $request->rond];
+        if ($request->simstatus)
+            $conditions += ['simstatus' => $request->simstatus];
+        if ($request->sale)
+            $conditions += ['sale' => $request->sale];
+        if ($request->published)
+            $conditions += ['published' => $request->published];
+
+
+        $advertisments = Advertisment::orderBy('created_at', 'desc')->where($conditions)->paginate(12);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
@@ -271,7 +290,15 @@ class AdvertismentController extends Controller
                 'sellername' => $user->name,
                 'published' => $item->published
             ];
-            array_push($data, $new);
+            if ($request->sellerphonenumber) {
+                if ($request->sellerphonenumber == $user->phonenumber) {
+                    array_push($data, $new);
+                } else {
+                    continue;
+                }
+            } else {
+                array_push($data, $new);
+            }
         }
         // $is_admin = Auth::guard()->user()->is_admin;
 

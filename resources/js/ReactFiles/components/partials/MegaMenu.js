@@ -262,11 +262,19 @@ export default function MegaMenu() {
                                         >
                                             <i className="fas fa-sign-out-alt fa-2x"></i>
                                         </span>
+                                        <Link className="login-btn" to="/admin">
+                                            <span className=" font2 px-3">
+                                                ادمین
+                                            </span>
+                                        </Link>
+                                        |
                                         <Link
-                                            className="login-btn font2 px-3"
-                                            to="/admin"
+                                            className="login-btn d-inline-block"
+                                            to="/dashboard"
                                         >
-                                            Admin
+                                            <span className=" font2 px-3">
+                                                داشبورد
+                                            </span>
                                         </Link>
                                     </>
                                 ) : (
@@ -312,11 +320,7 @@ export default function MegaMenu() {
                             id="talia"
                             onClick={() => handleTaliaBtn()}
                         >
-                            <i
-                                className="fas fa-caret-down fa-1x px-1  d-none "
-                                d-none
-                                d-sm-inline
-                            ></i>
+                            <i className="fas fa-caret-down fa-1x px-1  d-none "></i>
                             تالیا
                         </button>
                         <button
@@ -325,11 +329,7 @@ export default function MegaMenu() {
                             id="rightel"
                             onClick={() => handleRightelBtn()}
                         >
-                            <i
-                                className="fas fa-caret-down fa-1x px-1  d-none "
-                                d-none
-                                d-sm-inline
-                            ></i>
+                            <i className="fas fa-caret-down fa-1x px-1  d-none "></i>
                             رایتل
                         </button>
                         <button
@@ -338,11 +338,7 @@ export default function MegaMenu() {
                             id="irancell"
                             onClick={() => handleIrancellBtn()}
                         >
-                            <i
-                                className="fas fa-caret-down fa-1x px-1  d-none "
-                                d-none
-                                d-sm-inline
-                            ></i>
+                            <i className="fas fa-caret-down fa-1x px-1  d-none "></i>
                             ایرانسل
                         </button>
                         <button
@@ -351,11 +347,7 @@ export default function MegaMenu() {
                             id="hamraheAval"
                             onClick={() => handleHamraheAvalBtn()}
                         >
-                            <i
-                                className="fas fa-caret-down fa-1x px-1  d-none "
-                                d-none
-                                d-sm-inline
-                            ></i>
+                            <i className="fas fa-caret-down fa-1x px-1  d-none "></i>
                             همراه اول
                         </button>
                     </div>

@@ -46,7 +46,7 @@ export default function index() {
     }, []);
 
     return (
-        <Container>
+        <Container fluid={true}>
             <CardHeader>
                 <i className="fas fa-user"></i>Users
             </CardHeader>
@@ -58,6 +58,7 @@ export default function index() {
                             <th scope="col">name</th>
                             <th scope="col">phonenumber</th>
                             <th scope="col">is_admin</th>
+                            <th scope="col">Active</th>
                             <th scope="col">Verified</th>
                             <th scope="col">created_at</th>
                             <th scope="col">updated_at</th>

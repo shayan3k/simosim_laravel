@@ -76,7 +76,10 @@ function MainAds(props) {
                             ) : (
                                 ""
                             )}
-                            <div className="m-0 px-1 py-3  flex-grow-1 ">
+                            <div
+                                className="m-0 px-1 py-3  flex-grow-1 "
+                                key={index}
+                            >
                                 <Advertisment
                                     phoneNumber={item.phonenumber}
                                     status={item.simstatus}

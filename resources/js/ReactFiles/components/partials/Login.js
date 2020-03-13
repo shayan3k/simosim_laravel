@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import { JWTLogin } from "../services/Auth";
+import secureStorage from "../services/Storage";
 
 function Login() {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
-    const googleToken = useStoreState(state => state.google.token);
     const logedIn = useStoreState(state => state.auth.logedIn);
     const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);
     const setEmail = useStoreActions(actions => actions.auth.setEmail);
@@ -25,28 +25,24 @@ function Login() {
         disableLoginBtn();
         // Must be moved to process.env file in production mode
         // Must be more secure in case of production mode
-        if (!(googleToken.length == 0)) {
-            let loginData = {
-                phonenumber: username,
-                password: password
-            };
 
-            JWTLogin(loginData).then(data => {
-                if (data.status === 200) {
-                    setLogedIn(true);
-                } else {
-                    setError({
-                        msg: data.message,
-                        status: "danger"
-                    });
-                }
-                enableLoginBtn();
-                console.log(data);
-            });
-        } else {
-            setError({ msg: "Recaptcha تایید نشده.", status: "danger" });
+        let loginData = {
+            phonenumber: username,
+            password: password
+        };
+
+        JWTLogin(loginData).then(data => {
+            if (data.status === 200) {
+                setLogedIn(true);
+            } else {
+                setError({
+                    msg: data.message,
+                    status: "danger"
+                });
+            }
             enableLoginBtn();
-        }
+            console.log(data);
+        });
     };
 
     const handleUserNameOnChange = e => {
@@ -65,8 +61,6 @@ function Login() {
                 <div className="input-group col-10 col-md-9 ml-auto p-0 my-3">
                     <input
                         className="form-control"
-                        id="username"
-                        name="username"
                         placeholder="شماره موبایل"
                         type="text"
                         maxLength="11"
@@ -77,8 +71,6 @@ function Login() {
                 <div className="input-group col-10 col-md-9 ml-auto p-0 my-3">
                     <input
                         className="form-control"
-                        id="username"
-                        name="username"
                         placeholder="رمز ورود"
                         type="password"
                         value={password}

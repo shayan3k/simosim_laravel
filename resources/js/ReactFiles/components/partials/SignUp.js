@@ -9,7 +9,6 @@ const validateEmail = email => {
 
 function SignUp() {
     //  More Persistant States
-    const googleToken = useStoreState(state => state.google.token);
     const setError = useStoreActions(actions => actions.message.setError);
 
     //Local States
@@ -43,77 +42,72 @@ function SignUp() {
         e.preventDefault();
         disableSignUpBtn();
 
-        if (!(googleToken.length == 0)) {
-            let flag = false;
-            let msg = "";
+        let flag = false;
+        let msg = "";
 
-            console.log(PhoneNumber.slice(0, 2));
-            if (PhoneNumber.length !== 11 || PhoneNumber.slice(0, 2) !== "09") {
-                msg += "<li>شماره تماس وارد شده اشتباه است</li>";
-                flag = true;
-            }
+        console.log(PhoneNumber.slice(0, 2));
+        if (PhoneNumber.length !== 11 || PhoneNumber.slice(0, 2) !== "09") {
+            msg += "<li>شماره تماس وارد شده اشتباه است</li>";
+            flag = true;
+        }
 
-            if (!Name) {
-                msg += "<li>نام وارد شده اشتباه است</li>";
-                flag = true;
-            }
+        if (!Name) {
+            msg += "<li>نام وارد شده اشتباه است</li>";
+            flag = true;
+        }
 
-            if (Password !== VerifyPassword) {
-                msg += "<li>رمزهای وارد مغایر است</li>";
-                flag = true;
-            }
+        if (Password !== VerifyPassword) {
+            msg += "<li>رمزهای وارد مغایر است</li>";
+            flag = true;
+        }
 
-            if (Password.length < 8) {
-                msg += "<li>رمز عبور وارد شده کمتر از 8 کرکتر است</li>";
-                flag = true;
-            }
+        if (Password.length < 8) {
+            msg += "<li>رمز عبور وارد شده کمتر از 8 کرکتر است</li>";
+            flag = true;
+        }
 
-            if (!CheckBox) {
-                msg += "<li>تیک قوانین نزده نشده</li>";
-                flag = true;
-            }
-            let data = {
-                username: PhoneNumber,
-                name: Name,
-                password: Password
-            };
-            console.log(data);
-            if (!flag) {
-                Axios.post(baseUrl + "/auth/register", data)
-                    .then(e => {
-                        console.log(e);
-                        setError({
-                            msg:
-                                "ثبت نام شما با موفقیت انجام شد. لطفا با نام کاربری و رمز عبور خود, وارد شوید",
-                            status: "success"
-                        });
-                        handleResetfields();
-                        enableSignUpBtn();
-                    })
-
-                    .catch(e => {
-                        if (e.response.status == 500) {
-                            setError({
-                                msg: "این شماره قبلا وارد شده",
-                                status: "danger"
-                            });
-                        } else
-                            setError({
-                                msg: e.response.data.message,
-                                status: "danger"
-                            });
-                        console.log(e.response);
-                        enableSignUpBtn();
+        if (!CheckBox) {
+            msg += "<li>تیک قوانین نزده نشده</li>";
+            flag = true;
+        }
+        let data = {
+            username: PhoneNumber,
+            name: Name,
+            password: Password
+        };
+        console.log(data);
+        if (!flag) {
+            Axios.post(baseUrl + "/auth/register", data)
+                .then(e => {
+                    console.log(e);
+                    setError({
+                        msg:
+                            "ثبت نام شما با موفقیت انجام شد. لطفا با نام کاربری و رمز عبور خود, وارد شوید",
+                        status: "success"
                     });
-            } else {
-                setError({
-                    msg,
-                    status: "danger"
+                    handleResetfields();
+                    enableSignUpBtn();
+                })
+
+                .catch(e => {
+                    if (e.response.status == 500) {
+                        setError({
+                            msg: "این شماره قبلا وارد شده",
+                            status: "danger"
+                        });
+                    } else
+                        setError({
+                            msg: e.response.data.message,
+                            status: "danger"
+                        });
+                    console.log(e.response);
+                    enableSignUpBtn();
                 });
-                enableSignUpBtn();
-            }
         } else {
-            setError({ msg: "Recaptcha error", status: "danger" });
+            setError({
+                msg,
+                status: "danger"
+            });
             enableSignUpBtn();
         }
     };

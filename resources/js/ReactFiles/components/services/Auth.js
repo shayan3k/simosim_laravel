@@ -90,11 +90,17 @@ export const JWTCheck = async () => {
 };
 
 export const JWTHeader = () => {
+    //Check if the user is verified
+    var authHeader =
+        secureStorage.getItem("verified") == "true"
+            ? "Bearer " + secureStorage.getItem("jwt")
+            : "";
+
     return {
         headers: {
             // "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json",
-            Authorization: "Bearer " + secureStorage.getItem("jwt")
+            Authorization: authHeader
         }
     };
 };

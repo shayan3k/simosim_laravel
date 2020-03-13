@@ -81,9 +81,9 @@ function Navbar() {
                 </ul>
                 <div className="navbar-ul d-none d-md-inline-block order-sm-2 order-md-2">
                     <div className="div m-0 p-0 d-flex justify-content-end align-items-center">
-                        {Navbar.map(item => {
+                        {Navbar.map((item, index) => {
                             return (
-                                <li className="nav-item">
+                                <li className="nav-item" key={index}>
                                     <Link
                                         className="nav-link font3 p-sm-1 px-md-2"
                                         to={item.url}
@@ -99,8 +99,9 @@ function Navbar() {
             <ul className="mobile-menu container row px-0 mx-auto d-flex justify-content-between align-items-center">
                 {Navbar.slice(0)
                     .reverse()
-                    .map(item => (
+                    .map((item, index) => (
                         <Link
+                            key={index}
                             className="mobile-menu-item"
                             to={"/wordpress" + item.url}
                         >

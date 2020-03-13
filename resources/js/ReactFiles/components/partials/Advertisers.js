@@ -24,9 +24,13 @@ function Advertisers() {
                         ? advertisers.map((item, index) => {
                               if (index >= 4) return;
                               return (
-                                  <div className="col-lg-6 d-flex justify-content-center align-content-center py-2">
+                                  <div
+                                      className="col-lg-6 d-flex justify-content-center align-content-center py-2"
+                                      key={index}
+                                  >
                                       <div className="advertiser">
                                           <Advertiser
+                                              key={index}
                                               ShopName={item.shopname}
                                               PhoneNumbers={item.phonenumbers}
                                               Name={item.name}
@@ -50,7 +54,10 @@ function Advertisers() {
                         ? advertisers.map((item, index) => {
                               if (index < 4) return;
                               return (
-                                  <div className="col-12 col-lg-3 d-flex justify-content-center align-content-center py-2">
+                                  <div
+                                      className="col-12 col-lg-3 d-flex justify-content-center align-content-center py-2"
+                                      key={index}
+                                  >
                                       <div className="advertiser">
                                           <Advertiser
                                               ShopName={item.shopname}

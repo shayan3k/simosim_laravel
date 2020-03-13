@@ -39,6 +39,7 @@ export default function User(props) {
                 <td scope="row">{props.item.name}</td>
                 <td>{props.item.phonenumber}</td>
                 <td>{props.item.is_admin}</td>
+                <td>{props.item.active}</td>
                 <td>{props.item.phonenumber_verified_at ? "true" : "flase"}</td>
                 <td>
                     {new Date(Date.parse(props.item.created_at)).toUTCString()}

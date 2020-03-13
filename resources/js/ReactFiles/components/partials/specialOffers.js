@@ -80,7 +80,7 @@ function SpecialOffers(props) {
                 {...settings}
                 className="container specialOffersToggler bg-custom "
             >
-                {posts.map(item => {
+                {posts.map((item, index) => {
                     let flag = false;
                     if (props.flagController === "فوری" || item.sale === "فوری")
                         flag = true;
@@ -104,7 +104,7 @@ function SpecialOffers(props) {
                         flag = true;
 
                     return (
-                        <div className="p-3 h-100" key={item.id}>
+                        <div className="p-3 h-100" key={index}>
                             <Advertisment
                                 phoneNumber={item.phonenumber}
                                 status={item.simstatus}

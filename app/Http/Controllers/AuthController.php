@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use JWTAuth;
 
 use JWTFactory;
@@ -38,9 +38,13 @@ class AuthController extends Controller
         $credentials = $request->only('phonenumber', 'password');
 
         if ($token = JWTAuth::attempt($credentials)) {
-            return $this->respondWithToken($token);
+            $user = User::where(['phonenumber' => $request->phonenumber, 'active' => 1])->first();
+            if ($user)
+                return $this->respondWithToken($token);
+            else
+                return response()->json(['this account has been closed' => 'Unauthorized'], 401);
         }
-        return response()->json(['error' => 'Unauthorized'], 401);
+        return response()->json(['No such user found' => 'Unauthorized'], 401);
     }
 
     /**

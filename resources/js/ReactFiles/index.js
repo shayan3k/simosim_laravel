@@ -24,14 +24,7 @@ const store = createStore({
             state.Phonenumber = payload;
         })
     },
-    google: {
-        token: "",
-        setToken: action((state, payload) => {
-            state.token = payload;
 
-            console.log(state.token);
-        })
-    },
     // urls: {
     //     baseUrl: "http://mytestapplication.gigfa.com/wp-json",
     //     postUri: "/custom-routes/v1/advertisments",

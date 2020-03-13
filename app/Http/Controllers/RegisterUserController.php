@@ -16,7 +16,6 @@ class RegisterUserController extends Controller
     public function register(Request $request)
     {
 
-
         $user = new User();
         $user->name = $request->name;
         $user->phonenumber = $request->username;

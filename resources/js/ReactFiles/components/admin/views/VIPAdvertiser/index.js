@@ -64,7 +64,7 @@ export default function index() {
 
     return (
         <div>
-            <div className="container bg-advertisers">
+            <div className="container-fluid bg-advertisers">
                 <h1 className="my-3 py-4">VIP-ADVERTISER</h1>
                 <hr />
                 <form

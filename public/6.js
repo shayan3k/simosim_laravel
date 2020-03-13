@@ -393,6 +393,204 @@ function Advertisment(props) {
 
 /***/ }),
 
+/***/ "./resources/js/ReactFiles/components/admin/views/Advertisments/SearchPanel.js":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/ReactFiles/components/admin/views/Advertisments/SearchPanel.js ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchPanel; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function SearchPanel(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "input-group"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    name: "location",
+    id: "location",
+    className: "form-control",
+    defaultValue: props.location,
+    onChange: function onChange(e) {
+      return props.setLocation(e.target.value);
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: ""
+  }, "\u0627\u0633\u062A\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0622\u0630\u0631\u0628\u0627\u06CC\u062C\u0627\u0646 \u0634\u0631\u0642\u06CC"
+  }, "\u0622\u0630\u0631\u0628\u0627\u06CC\u062C\u0627\u0646 \u0634\u0631\u0642\u06CC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0622\u0630\u0631\u0628\u0627\u06CC\u062C\u0627\u0646 \u063A\u0631\u0628\u06CC"
+  }, "\u0622\u0630\u0631\u0628\u0627\u06CC\u062C\u0627\u0646 \u063A\u0631\u0628\u06CC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0627\u0631\u062F\u0628\u06CC\u0644"
+  }, "\u0627\u0631\u062F\u0628\u06CC\u0644"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0627\u0635\u0641\u0647\u0627\u0646"
+  }, "\u0627\u0635\u0641\u0647\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0627\u0644\u0628\u0631\u0632"
+  }, "\u0627\u0644\u0628\u0631\u0632"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0627\u06CC\u0644\u0627\u0645"
+  }, "\u0627\u06CC\u0644\u0627\u0645"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0628\u0648\u0634\u0647\u0631"
+  }, "\u0628\u0648\u0634\u0647\u0631"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u062A\u0647\u0631\u0627\u0646"
+  }, "\u062A\u0647\u0631\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0686\u0647\u0627\u0631\u0645\u062D\u0627\u0644 \u0648 \u0628\u062E\u062A\u06CC\u0627\u0631\u06CC"
+  }, "\u0686\u0647\u0627\u0631\u0645\u062D\u0627\u0644 \u0648 \u0628\u062E\u062A\u06CC\u0627\u0631\u06CC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u062E\u0631\u0627\u0633\u0627\u0646 \u062C\u0646\u0648\u0628\u06CC"
+  }, "\u062E\u0631\u0627\u0633\u0627\u0646 \u062C\u0646\u0648\u0628\u06CC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u062E\u0631\u0627\u0633\u0627\u0646 \u0631\u0636\u0648\u06CC"
+  }, "\u062E\u0631\u0627\u0633\u0627\u0646 \u0631\u0636\u0648\u06CC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u062E\u0631\u0627\u0633\u0627\u0646 \u0634\u0645\u0627\u0644\u06CC"
+  }, "\u062E\u0631\u0627\u0633\u0627\u0646 \u0634\u0645\u0627\u0644\u06CC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u062E\u0648\u0632\u0633\u062A\u0627\u0646"
+  }, "\u062E\u0648\u0632\u0633\u062A\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0632\u0646\u062C\u0627\u0646"
+  }, "\u0632\u0646\u062C\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0633\u0645\u0646\u0627\u0646"
+  }, "\u0633\u0645\u0646\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0633\u06CC\u0633\u062A\u0627\u0646 \u0648 \u0628\u0644\u0648\u0686\u0633\u062A\u0627\u0646"
+  }, "\u0633\u06CC\u0633\u062A\u0627\u0646 \u0648 \u0628\u0644\u0648\u0686\u0633\u062A\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0641\u0627\u0631\u0633"
+  }, "\u0641\u0627\u0631\u0633"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0642\u0632\u0648\u06CC\u0646"
+  }, "\u0642\u0632\u0648\u06CC\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0642\u0645"
+  }, "\u0642\u0645"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u06A9\u0631\u062F\u0633\u062A\u0627\u0646"
+  }, "\u06A9\u0631\u062F\u0633\u062A\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u06A9\u0631\u0645\u0627\u0646\u0634\u0627\u0647"
+  }, "\u06A9\u0631\u0645\u0627\u0646\u0634\u0627\u0647"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u06A9\u0647\u06AF\u06CC\u0644\u0648\u06CC\u0647 \u0648 \u0628\u0648\u06CC\u0631\u0627\u062D\u0645\u062F"
+  }, "\u06A9\u0647\u06AF\u06CC\u0644\u0648\u06CC\u0647 \u0648 \u0628\u0648\u06CC\u0631\u0627\u062D\u0645\u062F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u06AF\u0644\u0633\u062A\u0627\u0646"
+  }, "\u06AF\u0644\u0633\u062A\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u06AF\u06CC\u0644\u0627\u0646"
+  }, "\u06AF\u06CC\u0644\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0644\u0631\u0633\u062A\u0627\u0646"
+  }, "\u0644\u0631\u0633\u062A\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0645\u0627\u0632\u0646\u062F\u0631\u0627\u0646"
+  }, "\u0645\u0627\u0632\u0646\u062F\u0631\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0645\u0631\u06A9\u0632\u06CC"
+  }, "\u0645\u0631\u06A9\u0632\u06CC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0647\u0631\u0645\u0632\u06AF\u0627\u0646"
+  }, "\u0647\u0631\u0645\u0632\u06AF\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0647\u0645\u062F\u0627\u0646"
+  }, "\u0647\u0645\u062F\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u06CC\u0632\u062F"
+  }, "\u06CC\u0632\u062F")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    className: "form-control",
+    maxLength: "11",
+    value: props.phonenumber,
+    onChange: function onChange(e) {
+      return props.setPhonenumber(e.target.value);
+    },
+    placeholder: "Phone Number"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    name: "status",
+    id: "status",
+    className: "form-control",
+    value: props.simstatus,
+    onChange: function onChange(e) {
+      props.setSimstatus(e.target.value);
+      console.log(e.target.value);
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: ""
+  }, "\u0648\u0636\u0639\u06CC\u062A"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0635\u0641\u0631"
+  }, "\u0635\u0641\u0631"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u062A\u0642\u0631\u06CC\u0628\u0627 \u0635\u0641\u0631"
+  }, "\u062A\u0642\u0631\u06CC\u0628\u0627 \u0635\u0641\u0631"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u06A9\u0627\u0631\u06A9\u0631\u062F\u0647"
+  }, "\u06A9\u0627\u0631\u06A9\u0631\u062F\u0647"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "input-group"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    className: "form-control",
+    value: props.code,
+    onChange: function onChange(e) {
+      return props.setCode(e.target.value);
+    },
+    maxLength: "1",
+    placeholder: "Code"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    name: "rond",
+    id: "rond",
+    className: "form-control",
+    value: props.rond,
+    onChange: function onChange(e) {
+      return props.setRond(e.target.value);
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: ""
+  }, "\u0646\u0648\u0639 \u0631\u0646\u062F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0631\u0646\u062F"
+  }, "\u0631\u0646\u062F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0646\u06CC\u0645\u0647 \u0631\u0646\u062F"
+  }, "\u0646\u06CC\u0645\u0647 \u0631\u0646\u062F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0645\u0639\u0645\u0648\u0644\u06CC"
+  }, "\u0645\u0639\u0645\u0648\u0644\u06CC")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    name: "value",
+    id: "value",
+    className: "form-control",
+    value: props.value,
+    onChange: function onChange(e) {
+      return props.setValue(e.target.value);
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: ""
+  }, "\u0627\u0631\u0632\u0634"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0637\u0644\u0627\u06CC\u06CC"
+  }, "\u0637\u0644\u0627\u06CC\u06CC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0646\u0642\u0631\u0647 \u0627\u06CC"
+  }, "\u0646\u0642\u0631\u0647 \u0627\u06CC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "\u0628\u0631\u0646\u0632"
+  }, "\u0628\u0631\u0646\u0632"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "input-group"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    className: "form-control w-75",
+    maxLength: "11",
+    value: props.sellerphonenumber,
+    onChange: function onChange(e) {
+      return props.setSellerphonenumber(e.target.value);
+    },
+    placeholder: "Seller Phone Number"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "input-group"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "mx-4"
+  }, "Sale"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "checkbox",
+    className: "d-inline",
+    onChange: function onChange(e) {
+      if (e.target.checked) props.setSale("فوری");else props.setSale("");
+    },
+    defaultChecked: props.sale == "فوری" ? true : false
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "mx-4"
+  }, "Published"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "checkbox",
+    className: "d-inline",
+    onChange: function onChange(e) {
+      props.setPublished(e.target.checked);
+    },
+    defaultChecked: props.published
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "btn btn-dark ml-auto",
+    onClick: function onClick(e) {
+      return props.handleSearchBtn(e);
+    }
+  }, "Search")));
+}
+
+/***/ }),
+
 /***/ "./resources/js/ReactFiles/components/admin/views/Advertisments/index.js":
 /*!*******************************************************************************!*\
   !*** ./resources/js/ReactFiles/components/admin/views/Advertisments/index.js ***!
@@ -407,8 +605,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _services_Auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/Auth */ "./resources/js/ReactFiles/components/services/Auth.js");
 /* harmony import */ var _Advertisment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Advertisment */ "./resources/js/ReactFiles/components/admin/views/Advertisments/Advertisment.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _SearchPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SearchPanel */ "./resources/js/ReactFiles/components/admin/views/Advertisments/SearchPanel.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -421,22 +620,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function index() {
   var baseUrl = "http://127.0.0.1:8000/api";
   var advertismentsAllAdmin = "/advertisments-admin";
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
-      _useState2 = _slicedToArray(_useState, 2),
-      advertisments = _useState2[0],
-      setAdvertisments = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
-      _useState4 = _slicedToArray(_useState3, 2),
-      currnetPage = _useState4[0],
-      setCurrentpage = _useState4[1];
-
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    axios__WEBPACK_IMPORTED_MODULE_3___default()({
+    axios__WEBPACK_IMPORTED_MODULE_4___default()({
       url: baseUrl + advertismentsAllAdmin + "?page=" + currnetPage,
       method: "GET",
       headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_1__["JWTHeader"])().headers
@@ -448,6 +637,61 @@ function index() {
     });
   }, [currnetPage]);
 
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      advertisments = _useState2[0],
+      setAdvertisments = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState4 = _slicedToArray(_useState3, 2),
+      currnetPage = _useState4[0],
+      setCurrentpage = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState6 = _slicedToArray(_useState5, 2),
+      phonenumber = _useState6[0],
+      _setPhonenumber = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState8 = _slicedToArray(_useState7, 2),
+      location = _useState8[0],
+      _setLocation = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState10 = _slicedToArray(_useState9, 2),
+      code = _useState10[0],
+      _setCode = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState12 = _slicedToArray(_useState11, 2),
+      value = _useState12[0],
+      _setValue = _useState12[1];
+
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState14 = _slicedToArray(_useState13, 2),
+      rond = _useState14[0],
+      _setRond = _useState14[1];
+
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState16 = _slicedToArray(_useState15, 2),
+      simstatus = _useState16[0],
+      _setSimstatus = _useState16[1];
+
+  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState18 = _slicedToArray(_useState17, 2),
+      sale = _useState18[0],
+      _setSale = _useState18[1];
+
+  var _useState19 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState20 = _slicedToArray(_useState19, 2),
+      sellerphonenumber = _useState20[0],
+      _setSellerphonenumber = _useState20[1];
+
+  var _useState21 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState22 = _slicedToArray(_useState21, 2),
+      published = _useState22[0],
+      _setPublished = _useState22[1];
+
   var handlePrevOnClick = function handlePrevOnClick(e) {
     if (currnetPage == 1) return;
     setCurrentpage(currnetPage - 1);
@@ -458,10 +702,7 @@ function index() {
   };
 
   var updateList = function updateList(id) {
-    var myArray = advertisments.filter(function (item) {
-      item.id != id;
-    });
-    axios__WEBPACK_IMPORTED_MODULE_3___default()({
+    axios__WEBPACK_IMPORTED_MODULE_4___default()({
       url: baseUrl + advertismentsAllAdmin + "?page=" + currnetPage,
       method: "GET",
       headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_1__["JWTHeader"])().headers
@@ -473,7 +714,101 @@ function index() {
     });
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+  var _handleSearchBtn = function handleSearchBtn() {
+    var queryString = "";
+
+    if (phonenumber != "") {
+      queryString += "&phonenumber=".concat(phonenumber);
+    }
+
+    if (location != "") {
+      queryString += "&location=".concat(location);
+    }
+
+    if (code != "") {
+      queryString += "&code=".concat(code);
+    }
+
+    if (value != "") {
+      queryString += "&value=".concat(value);
+    }
+
+    if (rond != "") {
+      queryString += "&rond=".concat(rond);
+    }
+
+    if (simstatus != "") {
+      queryString += "&simstatus=".concat(simstatus);
+    }
+
+    if (sellerphonenumber != "") {
+      queryString += "&sellerphonenumber=".concat(sellerphonenumber);
+    }
+
+    if (sale != "") {
+      queryString += "&sale=".concat(sale);
+    }
+
+    if (published != "") {
+      queryString += "&published=".concat(published);
+    }
+
+    console.log(baseUrl + advertismentsAllAdmin + "?page=" + currnetPage + queryString, [phonenumber, location, rond, simstatus, sellerphonenumber, published]);
+    axios__WEBPACK_IMPORTED_MODULE_4___default()({
+      url: baseUrl + advertismentsAllAdmin + "?page=" + currnetPage + queryString,
+      method: "GET",
+      headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_1__["JWTHeader"])().headers
+    }).then(function (res) {
+      console.log(res);
+      setAdvertisments(res.data);
+    })["catch"](function (e) {
+      return console.log(e);
+    });
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchPanel__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    phonenumber: phonenumber,
+    location: location,
+    code: code,
+    value: value,
+    rond: rond,
+    sale: sale,
+    simstatus: simstatus,
+    sellerphonenumber: sellerphonenumber,
+    published: published,
+    setPhonenumber: function setPhonenumber(e) {
+      return _setPhonenumber(e);
+    },
+    setLocation: function setLocation(e) {
+      return _setLocation(e);
+    },
+    setSale: function setSale(e) {
+      return _setSale(e);
+    },
+    setCode: function setCode(e) {
+      return _setCode(e);
+    },
+    setValue: function setValue(e) {
+      return _setValue(e);
+    },
+    setRond: function setRond(e) {
+      return _setRond(e);
+    },
+    setSimstatus: function setSimstatus(e) {
+      return _setSimstatus(e);
+    },
+    setSellerphonenumber: function setSellerphonenumber(e) {
+      return _setSellerphonenumber(e);
+    },
+    setPublished: function setPublished(e) {
+      return _setPublished(e);
+    },
+    handleSearchBtn: function handleSearchBtn(e) {
+      return _handleSearchBtn(e);
+    }
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
     "aria-label": "Page navigation example"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     "class": "pagination"

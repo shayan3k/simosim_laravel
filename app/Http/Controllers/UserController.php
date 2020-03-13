@@ -31,6 +31,7 @@ class UserController extends Controller
                     'name' => $user->name,
                     'phonenumber' => $user->phonenumber,
                     'is_admin' => $user->is_admin,
+                    'active' => $user->active,
                     'phonenumber_verified_at' => $user->phonenumber_verified_at,
                     'created_at' => $user->created_at,
                     'updated_at' => $user->updated_at

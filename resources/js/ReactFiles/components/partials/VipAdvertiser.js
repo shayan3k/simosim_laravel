@@ -41,8 +41,11 @@ export default function VipAdvertiser() {
                 <hr />
                 <div className="row p-0 m-0">
                     {PhoneNumbers
-                        ? PhoneNumbers.map(item => (
-                              <div className="col-4 lead d-inline-block p-1">
+                        ? PhoneNumbers.map((item, index) => (
+                              <div
+                                  className="col-4 lead d-inline-block p-1"
+                                  key={index}
+                              >
                                   <div className="p-1 m-0  bg-vip-advertisers-sim text-center shadow-lg rounded white-space-nowrap">
                                       {persianJs(item)
                                           .englishNumber()
@@ -61,8 +64,12 @@ export default function VipAdvertiser() {
                 <p className="text-right pt-1 font-1">{AdvertiserName}</p>
                 <div className="d-flex justify-content-center align-content-center">
                     {contactnumber
-                        ? contactnumber.map(item => (
-                              <div className="col-4 lead d-inline-block p-1">
+                        ? contactnumber.map((item, index) => (
+                              <div
+                                  className="col-4 lead d-inline-block p-1"
+                                  key={index}
+                                  key={index}
+                              >
                                   <div className="p-1 m-0  bg-vip-advertisers-sim-owner text-center shadow-lg  white-space-nowrap font0">
                                       {persianJs(item)
                                           .englishNumber()

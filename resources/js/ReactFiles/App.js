@@ -6,6 +6,7 @@ import {
     Redirect
 } from "react-router-dom";
 import Shop from "./components/Shop";
+import GoogleReCaptcha from "./components/services/GoogleReCaptcha";
 import ContactUs from "./components/ContactUs";
 import Rahnama from "./components/Rahnama";
 import AboutUs from "./components/AboutUs";
@@ -92,29 +93,31 @@ function App() {
 
     return (
         <>
-            <Router>
-                <Suspense fallback={loading()}>
-                    <Switch>
-                        <Shop exact path="/" />
-                        <Rahnama exact path="/rahnama" />
-                        <ContactUs exact path="/contact-us" />
-                        <AboutUs exact path="/about-us" />
-                        <AdminRoute path="/admin" component={AdminPage} />
-                        <Ghavanin exact path="/ghavanin" />
-                        <PrivateRoute
-                            exact
-                            path="/dashboard"
-                            component={Dashboard}
-                        />
-                        <AuthenticatedRoute
-                            exact
-                            path="/login"
-                            component={LoginPage}
-                        />
-                        <Route component={PageNotFound} />
-                    </Switch>
-                </Suspense>
-            </Router>
+            <GoogleReCaptcha>
+                <Router>
+                    <Suspense fallback={loading()}>
+                        <Switch>
+                            <Shop exact path="/" />
+                            <Rahnama exact path="/rahnama" />
+                            <ContactUs exact path="/contact-us" />
+                            <AboutUs exact path="/about-us" />
+                            <AdminRoute path="/admin" component={AdminPage} />
+                            <Ghavanin exact path="/ghavanin" />
+                            <PrivateRoute
+                                exact
+                                path="/dashboard"
+                                component={Dashboard}
+                            />
+                            <AuthenticatedRoute
+                                exact
+                                path="/login"
+                                component={LoginPage}
+                            />
+                            <Route component={PageNotFound} />
+                        </Switch>
+                    </Suspense>
+                </Router>
+            </GoogleReCaptcha>
         </>
     );
 }
