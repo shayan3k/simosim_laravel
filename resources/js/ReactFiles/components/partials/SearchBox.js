@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useStoreActions } from "easy-peasy";
+import { useStoreActions, useStoreState } from "easy-peasy";
+import { Link } from "react-router-dom";
+import persianJs from "persianjs";
 import customSelect from "custom-select";
 import "custom-select/build/custom-select.css";
 
 function SearchBox() {
     const [Selects, setSelects] = useState("");
+    const phonenumber = useStoreState(state => state.searchBox.phonenumber);
+
+    const setPhonenumber = useStoreActions(
+        actions => actions.searchBox.setPhonenumber
+    );
     const setStatus = useStoreActions(actions => actions.searchBox.setStatus);
     const setValue = useStoreActions(actions => actions.searchBox.setValue);
     const setRond = useStoreActions(actions => actions.searchBox.setRond);
@@ -88,17 +95,53 @@ function SearchBox() {
                     id="searchBoxAccordition"
                 >
                     <div className="m-0 p-0 w-100 d-flex justify-content-between align-items-center">
-                        <span>ایتم خود را گیدا کنبید</span>
+                        <span className="searchbox-brand">
+                            <Link
+                                className="font2 searchbox-brand-text"
+                                to="/rahnama"
+                            >
+                                چگونه از جستجو استفاده کنم؟
+                            </Link>
+                        </span>
 
-                        <div className="default-btn btn-search-option px-1 col-3">
-                            <h6 className="font2"> جستجو</h6>
-                            <i className="fas fa-search"></i>
-                        </div>
+                        <span className="searchbox-title">
+                            <span className="font2 searchbox-title-text">
+                                سیمکارت جستجو
+                            </span>
+                        </span>
                     </div>
                     <hr />
 
                     <div className="row p-0 m-0 w-100">
                         <div className=" row bg-white w-100 mx-auto">
+                            <div className="col-12 row m-0 p-0">
+                                <div className="col-5  py-3 px-5 input-group mx-auto d-flex justify-content-end align-items-center">
+                                    <span className="font2">
+                                        {persianJs("0912")
+                                            .englishNumber()
+                                            .toString()}
+                                    </span>
+                                    <input
+                                        type="text"
+                                        className="font2 form-control searchBox-phonenumber"
+                                        name="phonenumber"
+                                        id="phonenumber"
+                                        placeholder="شماره خط مورد نظر"
+                                        maxLength="7"
+                                        autoComplete="off"
+                                        value={
+                                            phonenumber
+                                                ? persianJs(phonenumber)
+                                                      .englishNumber()
+                                                      .toString()
+                                                : ""
+                                        }
+                                        onChange={e =>
+                                            setPhonenumber(e.target.value)
+                                        }
+                                    />
+                                </div>
+                            </div>
                             <div className="col-6 py-3">
                                 <div className="input-group-custom font3 mb-1">
                                     <div className="input-group-prepend custom-select-prepand d-flex justify-content-center align-items-center p-1 pl-3">

@@ -37,6 +37,21 @@ export default function Advertisment(props) {
             : "";
     }, [toggle]);
 
+    useEffect(() => {
+        setPhoneNumber(props.phoneNumber);
+        setStatus(props.status);
+        setLocation(props.location);
+        setCode(props.code);
+        setRond(props.rond);
+        setValue(props.value);
+        setPrice(props.price);
+        setSecondPrice(props.secondPrice);
+        setText(props.text);
+        setSellerPhoneNumber(props.sellerPhoneNumber);
+        setSellerName(props.sellerName);
+        setSale(props.sale);
+    }, [props]);
+
     const flagRender = () => {
         if (sale === "فوری")
             return <div className="card-flag font3-4">فوری</div>;

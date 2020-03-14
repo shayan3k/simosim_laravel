@@ -51,6 +51,7 @@ const store = createStore({
         })
     },
     searchBox: {
+        phonenumber: "",
         status: "",
         value: "",
         rond: "",
@@ -58,6 +59,10 @@ const store = createStore({
         location: "",
         priceRange: "",
 
+        setPhonenumber: action((state, payload) => {
+            state.phonenumber = payload;
+            console.log(state.phonenumber);
+        }),
         setStatus: action((state, payload) => {
             state.status = payload;
             console.log(state.status);

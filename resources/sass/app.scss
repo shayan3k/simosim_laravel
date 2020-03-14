@@ -913,6 +913,30 @@ ul.social-network li {
     background: $btn-search;
 }
 
+.searchBox-title {
+    .searchBox-title-text {
+    }
+}
+
+.searchBox-brand {
+    .searchBox-brand-text {
+    }
+}
+
+.searchBox-phonenumber {
+    outline: 0 !important;
+    border: none !important;
+    border-bottom: 2px solid black !important;
+    text-align: left !important;
+    width: 5rem !important;
+    border-radius: 0 !important;
+    &:focus {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        border-bottom: 2px solid black !important;
+    }
+}
 //Featured Items
 
 .featured-items-title-img {

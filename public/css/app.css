@@ -876,6 +876,22 @@ ul.social-network li {
   background: rgba(250, 140, 140, 0.87);
 }
 
+.searchBox-phonenumber {
+  outline: 0 !important;
+  border: none !important;
+  border-bottom: 2px solid black !important;
+  text-align: left !important;
+  width: 5rem !important;
+  border-radius: 0 !important;
+}
+
+.searchBox-phonenumber:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom: 2px solid black !important;
+}
+
 .featured-items-title-img {
   width: 4rem !important;
 }

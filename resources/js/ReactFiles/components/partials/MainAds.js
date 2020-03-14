@@ -72,10 +72,7 @@ function MainAds(props) {
             <div className="d-flex justify-content-start align-items-stretch flex-wrap p-0 m-0">
                 {posts.map((item, index) => {
                     return (
-                        <div
-                            className="m-0 px-1 py-3  flex-grow-1 "
-                            key={index}
-                        >
+                        <div className="m-0 px-1 py-3  flex-grow-1 ">
                             <Advertisment
                                 phoneNumber={item.phonenumber}
                                 status={item.simstatus}
