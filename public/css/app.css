@@ -108,10 +108,19 @@ font3-4 {
   font-size: 3.3rem !important;
 }
 
+.bg-links:hover {
+  color: #5b8cf7;
+}
+
 * {
   font-family: "Vazir", sans-serif;
   text-align: right;
   scroll-behavior: smooth !important;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 #root {
@@ -119,8 +128,8 @@ font3-4 {
   background-color: #eaedf1;
 }
 
-#App {
-  min-height: 100vh !important;
+#app {
+  min-height: 100%;
 }
 
 @font-face {
@@ -570,6 +579,11 @@ font3-4 {
 
 /*FOOTER*/
 
+.page-footer {
+  margin-bottom: 0;
+  height: 100%;
+}
+
 footer {
   background: #86bbbd;
   color: #000000 !important;
@@ -610,7 +624,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #18fc9d;
+  color: #eee;
   text-decoration: none;
 }
 

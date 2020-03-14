@@ -101,6 +101,14 @@ font3-4 {
     font-size: 3.3rem !important;
 }
 
+//link  no style
+
+.bg-links {
+    &:hover {
+        color: $bg-links;
+    }
+}
+
 //Padding CONFIG
 
 //GLOBAL CLASSES
@@ -109,12 +117,16 @@ font3-4 {
     text-align: right;
     scroll-behavior: smooth !important;
 }
+html,
+body {
+    height: 100%;
+}
 #root {
     overflow-x: hidden !important;
     background-color: $brand-background;
 }
-#App {
-    min-height: 100vh !important;
+#app {
+    min-height: 100%;
 }
 
 //FONT CONFIG
@@ -594,6 +606,11 @@ font3-4 {
 
 /*FOOTER*/
 
+.page-footer {
+    margin-bottom: 0;
+    height: 100%;
+}
+
 footer {
     background: $brand-footer;
     color: $brand-black !important;
@@ -632,7 +649,7 @@ footer a {
 }
 
 footer a:hover {
-    color: $brand-primary;
+    color: $brand-navbar-items-hover;
     text-decoration: none;
 }
 

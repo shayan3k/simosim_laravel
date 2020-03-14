@@ -77,39 +77,15 @@ export default function Footer() {
                         <hr />
                     </div>
 
-                    <div className="col-12 col-md-6 row p-0 m-0 w-100 d-flex justify-content-end align-items-center ">
-                        <ul className="list-unstyled list-inline text-center w-100">
-                            <li className="list-inline-item">
-                                <a className="btn-floating btn-fb mx-1">
-                                    <i className="social-media-icons fab fa-facebook-f fa-2x"></i>
-                                </a>
-                            </li>
-                            <li className="list-inline-item">
-                                <a className="btn-floating btn-tw mx-1">
-                                    <i className="social-media-icons fab fa-twitter fa-2x"></i>
-                                </a>
-                            </li>
-                            <li className="list-inline-item">
-                                <a className="btn-floating btn-gplus mx-1">
-                                    <i className="social-media-icons fab fa-google-plus-g fa-2x"></i>
-                                </a>
-                            </li>
-                            <li className="list-inline-item">
-                                <a className="btn-floating btn-li mx-1">
-                                    <i className="social-media-icons fab fa-linkedin-in fa-2x"></i>
-                                </a>
-                            </li>
-                            <li className="list-inline-item">
-                                <a className="btn-floating btn-dribbble mx-1">
-                                    <i className="social-media-icons fab fa-dribbble fa-2x"></i>
-                                </a>
-                            </li>
-                        </ul>
+                    <div className="col-12 col-md-6 row p-0 m-0 w-100 d-flex justify-content-center align-items-center">
+                        این ستببس بتس بس بتس بتس
                     </div>
                 </div>
-                <div className="container-fluid d-inline-block w-100 bg-dark text-center">
+                <div className="container-fluid d-inline-block w-100 bg-dark text-center py-1">
                     © 2020 Copyright:
-                    <a href="https://shayanmotalebi.ir">ShayaNNN</a>
+                    <a className="bg-dark" href="https://shayanmotalebi.ir">
+                        ShayaNNN
+                    </a>
                 </div>
             </footer>
         </>

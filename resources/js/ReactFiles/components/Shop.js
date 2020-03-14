@@ -13,8 +13,6 @@ import Logo from "./partials/Logo";
 import Seperator from "./partials/Seperator";
 
 export default function Shop() {
-    // const postsUri = process.env.MIX_POSTSURI;
-    const postsUri = "/advertisments";
     const postsUriSale = "/advertisments-sale";
     const postsUriGold = "/advertisments-gold";
     const postsUriSilver = "/advertisments-silver";
@@ -37,7 +35,7 @@ export default function Shop() {
             <SectionTitle title="جستجو" collapse="searchBox" />
             <SearchBox />
             <SectionTitle title="سیم کارت یافت شده" collapse="mainAdsToggler" />
-            <MainAds uri={postsUri} deleteUri={postsUri} />
+            <MainAds />
             <Ad2 />
             <SectionTitle
                 title="پیشنهادهای هفته"

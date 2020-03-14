@@ -260,21 +260,22 @@ export default function MegaMenu() {
                                             className="login-btn p-0 m-0"
                                             onClick={() => handleLogoutBtn()}
                                         >
-                                            <i className="fas fa-sign-out-alt fa-2x"></i>
+                                            <i className="fas fa-sign-out-alt fa-2x bg-links"></i>
                                         </span>
-                                        <Link className="login-btn" to="/admin">
-                                            <span className=" font2 px-3">
-                                                ادمین
-                                            </span>
+                                        <Link
+                                            className="login-btn bg-links px-3 font2"
+                                            to="/admin"
+                                            style={{ textDecoration: "none" }}
+                                        >
+                                            ادمین
                                         </Link>
                                         |
                                         <Link
-                                            className="login-btn d-inline-block"
+                                            className="login-btn d-inline-block bg-links  px-3 font2"
                                             to="/dashboard"
+                                            style={{ textDecoration: "none" }}
                                         >
-                                            <span className=" font2 px-3">
-                                                داشبورد
-                                            </span>
+                                            داشبورد
                                         </Link>
                                     </>
                                 ) : (
@@ -283,23 +284,28 @@ export default function MegaMenu() {
                                             className="login-btn p-0 m-0"
                                             onClick={() => handleLogoutBtn()}
                                         >
-                                            <i className="fas fa-sign-out-alt fa-2x"></i>
+                                            <i className="fas fa-sign-out-alt fa-2x bg-links"></i>
                                         </span>
                                         <Link
-                                            className="login-btn font2 d-inline-block"
+                                            className="login-btn font2 d-inline-block bg-links  px-3 font2"
                                             to="/dashboard"
+                                            style={{ textDecoration: "none" }}
                                         >
-                                            <span className=" font2 px-3">
-                                                داشبورد
-                                            </span>
+                                            داشبورد
                                         </Link>
                                     </>
                                 )}
                             </div>
                         ) : (
-                            <Link className="login-btn font3" to="/login">
+                            <Link
+                                className="login-btn d-flex justify-content-center align-items-center bg-links"
+                                to="/login"
+                                style={{ textDecoration: "none" }}
+                            >
                                 <i className="fas fa-sign-in-alt fa-rotate-180 fa-2x"></i>
-                                <span className="px-3"> ورود/ثبت نام</span>
+                                <span className="px-3  font2">
+                                    ورود/ثبت نام
+                                </span>
                             </Link>
                         )}
                     </div>

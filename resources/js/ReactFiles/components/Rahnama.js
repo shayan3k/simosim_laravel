@@ -8,16 +8,16 @@ import RahnamaContents from "./partials/RahnamaContents";
 import SectionTitle from "./partials/SectionTitle";
 
 function Rahnama() {
-  return (
-    <>
-      <Navbar />
-      <Logo />
-      <SectionTitle title="راهنما" />
-      <RahnamaContents />
-      <FooterSeperator />
-      <Footer />
-    </>
-  );
+    return (
+        <>
+            <Navbar />
+            <Logo />
+            <SectionTitle title="راهنما" collapse="rahnamaCollapse" />
+            <RahnamaContents />
+            <FooterSeperator />
+            <Footer />
+        </>
+    );
 }
 
 export default Rahnama;

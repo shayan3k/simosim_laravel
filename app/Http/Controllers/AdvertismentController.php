@@ -12,13 +12,37 @@ class AdvertismentController extends Controller
     /**
      * Show Advertisments.
      *
+     * * @param  \Illuminate\Http\Request  $request
+     *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function showAll()
+    public function showAll(Request $request)
     {
         $data = [];
-        $advertisments = Advertisment::orderBy('updated_at', 'desc')->where('published', '1')->paginate(50);
-        // User::id($advertisments->user_id);
+
+        $conditions = [];
+        if ($request->phonenumber)
+            $conditions += ['phonenumber' => $request->phonenumber];
+        if ($request->location)
+            $conditions += ['location' => $request->location];
+        if ($request->code)
+            $conditions += ['code' => $request->code];
+        if ($request->value)
+            $conditions += ['value' => $request->value];
+        if ($request->rond)
+            $conditions += ['rond' => $request->rond];
+        if ($request->status)
+            $conditions += ['simstatus' => $request->status];
+
+        // if ($request->priceRange) {
+        //     array_push($condition, ['price', '>=',  $request->priceRange]);
+        // }
+
+
+        $conditions += ['published' => '1'];
+
+
+        $advertisments = Advertisment::orderBy('updated_at', 'desc')->where($conditions)->paginate(50);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);

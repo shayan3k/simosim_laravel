@@ -64,7 +64,7 @@ function SearchBox() {
     };
 
     return (
-        <div className="container mx-auto searchBox" id="searchBox1">
+        <div className="container mx-auto searchBox">
             <div className="row bg-transparent">
                 <div className="bg-transparent row col-12 col-md-4 order-2 order-md-1 p-0 m-0 pr-1">
                     <img
@@ -197,16 +197,16 @@ function SearchBox() {
                                         <option defaultValue value="">
                                             بازه قیمتی
                                         </option>
-                                        <option value="0">
+                                        <option value="1000000">
                                             تا یک میلیون تومان
                                         </option>
-                                        <option value="1">
+                                        <option value="10000000">
                                             تا ده میلیون تومان
                                         </option>
-                                        <option value="2">
+                                        <option value="90000000">
                                             تا نود میلیون تومان
                                         </option>
-                                        <option value="3">
+                                        <option value="999">
                                             از نود میلیون تومان به بالا
                                         </option>
                                     </select>
