@@ -59,11 +59,12 @@ function SpecialOffers(props) {
     const [posts, setPosts] = useState([]);
     const baseUrl = process.env.MIX_BASEURL;
 
-    // const advertismentDeleteUser = MIX_ADVERTISMENT_DELETE_USER;
-    // const advertismentBerozresaniUser = MIX_ADVERTISMENT_BEROZRESANI_USER;
+    const advertismentDeleteUser = process.env.MIX_ADVERTISMENT_DELETE_USER;
+    const advertismentBerozresaniUser =
+        process.env.MIX_ADVERTISMENT_BEROZRESANI_USER;
 
-    const advertismentDeleteUser = "/advertisments-delete-user";
-    const advertismentBerozresaniUser = "/advertisments-berozresani-user";
+    // const advertismentDeleteUser = "/advertisments-delete-user";
+    // const advertismentBerozresaniUser = "/advertisments-berozresani-user";
 
     useEffect(() => {
         axios

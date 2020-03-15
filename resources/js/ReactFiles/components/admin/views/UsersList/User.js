@@ -6,10 +6,10 @@ import { JWTHeader } from "../../../services/Auth";
 export default function User(props) {
     const baseUrl = process.env.MIX_BASEURL;
 
-    // const userActiveTogglerUrl  = process.env.MIX_USERS_ACTIVE_TOGGLER;
-    // const deleteUserAllPostsUrl  = process.env.MIX_USERS_DELETE_ALL_POSTS;
-    const userActiveTogglerUrl = "/users-active-admin";
-    const deleteUserAllPostsUrl = "/users-post-delete-admin";
+    const userActiveTogglerUrl = process.env.MIX_USERS_ACTIVE_TOGGLER;
+    const deleteUserAllPostsUrl = process.env.MIX_USERS_DELETE_ALL_POSTS;
+    // const userActiveTogglerUrl = "/users-active-admin";
+    // const deleteUserAllPostsUrl = "/users-post-delete-admin";
 
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState("");

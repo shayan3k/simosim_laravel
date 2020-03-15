@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[41],{
 
-/***/ "./resources/js/ReactFiles/components/admin/views/Theme/Typography/Typography.js":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/ReactFiles/components/admin/views/Theme/Typography/Typography.js ***!
-  \***************************************************************************************/
+/***/ "./resources/js/ReactFiles/components/admin/views/Widgets/Widget03.js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/ReactFiles/components/admin/views/Widgets/Widget03.js ***!
+  \****************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11,7 +11,17 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap/lib/utils */ "./node_modules/reactstrap/lib/utils.js");
+/* harmony import */ var reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -31,150 +41,88 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Typography =
+
+
+var propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  cssModule: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
+  dataBox: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
+var defaultProps = {
+  dataBox: function dataBox() {
+    return {
+      variant: 'facebook',
+      friends: '-',
+      feeds: '-'
+    };
+  }
+};
+
+var Widget03 =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(Typography, _Component);
+  _inherits(Widget03, _Component);
 
-  function Typography() {
-    _classCallCheck(this, Typography);
+  function Widget03() {
+    _classCallCheck(this, Widget03);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Typography).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Widget03).apply(this, arguments));
   }
 
-  _createClass(Typography, [{
+  _createClass(Widget03, [{
     key: "render",
     value: function render() {
+      // eslint-disable-next-line
+      var _this$props = this.props,
+          children = _this$props.children,
+          className = _this$props.className,
+          cssModule = _this$props.cssModule,
+          dataBox = _this$props.dataBox,
+          attributes = _objectWithoutProperties(_this$props, ["children", "className", "cssModule", "dataBox"]); // demo purposes only
+
+
+      var data = dataBox();
+      var variant = data.variant;
+
+      if (!variant || ['facebook', 'twitter', 'linkedin', 'google-plus'].indexOf(variant) < 0) {
+        return null;
+      }
+
+      var back = 'bg-' + variant;
+      var icon = 'fa fa-' + variant;
+      var keys = Object.keys(data);
+      var vals = Object.values(data);
+      var classCard = 'brand-card';
+      var classCardHeader = classnames__WEBPACK_IMPORTED_MODULE_2___default()("".concat(classCard, "-header"), back);
+      var classCardBody = classnames__WEBPACK_IMPORTED_MODULE_2___default()("".concat(classCard, "-body"));
+      var classes = Object(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_3__["mapToCssModules"])(classnames__WEBPACK_IMPORTED_MODULE_2___default()(classCard, className), cssModule);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "animated fadeIn"
+        className: classes
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header"
-      }, "Headings"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-        className: "table"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Example"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
-        className: "highlighter-rouge"
-      }, "<h1></h1>"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "h1"
-      }, "h1. Bootstrap heading"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
-        className: "highlighter-rouge"
-      }, "<h2></h2>"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "h2"
-      }, "h2. Bootstrap heading"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
-        className: "highlighter-rouge"
-      }, "<h3></h3>"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "h3"
-      }, "h3. Bootstrap heading"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
-        className: "highlighter-rouge"
-      }, "<h4></h4>"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "h4"
-      }, "h4. Bootstrap heading"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
-        className: "highlighter-rouge"
-      }, "<h5></h5>"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "h5"
-      }, "h5. Bootstrap heading"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
-        className: "highlighter-rouge"
-      }, "<h6></h6>"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "h6"
-      }, "h6. Bootstrap heading"))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header"
-      }, "Headings"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
-        className: "highlighter-rouge"
-      }, ".h1"), " through ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
-        className: "highlighter-rouge"
-      }, ".h6"), " classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "bd-example"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "h1"
-      }, "h1. Bootstrap heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "h2"
-      }, "h2. Bootstrap heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "h3"
-      }, "h3. Bootstrap heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "h4"
-      }, "h4. Bootstrap heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "h5"
-      }, "h5. Bootstrap heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "h6"
-      }, "h6. Bootstrap heading")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header"
-      }, "Display headings"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "display heading"), "\u2014a larger, slightly more opinionated heading style."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "bd-example bd-example-type"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-        className: "table"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "display-1"
-      }, "Display 1"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "display-2"
-      }, "Display 2"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "display-3"
-      }, "Display 3"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "display-4"
-      }, "Display 4")))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header"
-      }, "Inline text elements"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "display heading"), "\u2014a larger, slightly more opinionated heading style."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "bd-example"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You can use the mark tag to ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("mark", null, "highlight"), " text."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("del", null, "This line of text is meant to be treated as deleted text.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("s", null, "This line of text is meant to be treated as no longer accurate.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ins", null, "This line of text is meant to be treated as an addition to the document.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("u", null, "This line of text will render as underlined")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "This line of text is meant to be treated as fine print.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "This line rendered as bold text.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", null, "This line rendered as italicized text."))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header"
-      }, "Description list alignment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Align terms and descriptions horizontally by using our grid system\u2019s predefined classes (or semantic mixins). For longer terms, you can optionally add a ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
-        className: "highlighter-rouge"
-      }, ".text-truncate"), " class to truncate the text with an ellipsis."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "bd-example"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dl", {
-        className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dt", {
-        className: "col-sm-3"
-      }, "Description lists"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dd", {
-        className: "col-sm-9"
-      }, "A description list is perfect for defining terms."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dt", {
-        className: "col-sm-3"
-      }, "Euismod"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dd", {
-        className: "col-sm-9"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec id elit non mi porta gravida at eget metus.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dt", {
-        className: "col-sm-3"
-      }, "Malesuada porta"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dd", {
-        className: "col-sm-9"
-      }, "Etiam porta sem malesuada magna mollis euismod."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dt", {
-        className: "col-sm-3 text-truncate"
-      }, "Truncated term is truncated"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dd", {
-        className: "col-sm-9"
-      }, "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dt", {
-        className: "col-sm-3"
-      }, "Nesting"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dd", {
-        className: "col-sm-9"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dl", {
-        className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dt", {
-        className: "col-sm-4"
-      }, "Nested definition list"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dd", {
-        className: "col-sm-8"
-      }, "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc."))))))));
+        className: classCardHeader
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: icon
+      }), children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: classCardBody
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-value"
+      }, vals[1]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-uppercase text-muted small"
+      }, keys[1])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-value"
+      }, vals[2]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-uppercase text-muted small"
+      }, keys[2]))));
     }
   }]);
 
-  return Typography;
+  return Widget03;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Typography);
+Widget03.propTypes = propTypes;
+Widget03.defaultProps = defaultProps;
+/* harmony default export */ __webpack_exports__["default"] = (Widget03);
 
 /***/ })
 

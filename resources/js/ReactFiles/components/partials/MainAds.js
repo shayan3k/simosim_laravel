@@ -16,13 +16,14 @@ function MainAds(props) {
     const PriceRange = useStoreState(state => state.searchBox.priceRange);
 
     const baseUrl = process.env.MIX_BASEURL;
-    // const showAdvertisments = MIX_MAIN_ADVERTISMENTS;
-    // const advertismentDeleteUser = MIX_ADVERTISMENT_DELETE_USER;
-    // const advertismentBerozresaniUser = MIX_ADVERTISMENT_BEROZRESANI_USER;
+    const showAdvertisments = process.env.MIX_MAIN_ADVERTISMENTS;
+    const advertismentDeleteUser = process.env.MIX_ADVERTISMENT_DELETE_USER;
+    const advertismentBerozresaniUser =
+        process.env.MIX_ADVERTISMENT_BEROZRESANI_USER;
 
-    const showAdvertisments = "/advertisments-all";
-    const advertismentDeleteUser = "/advertisments-delete-user";
-    const advertismentBerozresaniUser = "/advertisments-berozresani-user";
+    // const showAdvertisments = "/advertisments-all";
+    // const advertismentDeleteUser = "/advertisments-delete-user";
+    // const advertismentBerozresaniUser = "/advertisments-berozresani-user";
     useEffect(() => {
         listUpdate();
     }, [Status, Value, Rond, Code, Location, PriceRange]);

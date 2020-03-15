@@ -470,11 +470,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function index() {
-  var baseUrl = "http://127.0.0.1:8000/api"; // const AdvertisersUrl = process.env.MIX_ADVERTISERS;
-  // const advertisersNewUrl = process.env.MIX_ADVERTISERS_NEW;
-
+  var baseUrl = "http://127.0.0.1:8000/api";
   var advertisersUrl = "/advertisers";
-  var advertisersNewUrl = "/advertisers/create";
+  var advertisersNewUrl = "/advertisers/create"; // const advertisersUrl = "/advertisers";
+  // const advertisersNewUrl = "/advertisers/create";
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
       _useState2 = _slicedToArray(_useState, 2),
@@ -516,7 +515,7 @@ function index() {
       advertisersUrl: advertisersUrl,
       handleDeleteItem: handleDeleteItem
     });
-  }) : "", console.log(advertisers), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewAdvertiser__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewAdvertiser__WEBPACK_IMPORTED_MODULE_3__["default"], {
     baseUrl: baseUrl,
     advertisersNewUrl: advertisersNewUrl,
     handleNewAdvertiser: handleNewAdvertiser

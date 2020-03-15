@@ -6,8 +6,8 @@ import { useStoreState, useStoreActions } from "easy-peasy";
 import secureStorage from "../services/Storage";
 
 export default function MegaMenu() {
-    // const adminSecretKey = process.env.MIX_ADMIN_SECRET_KEY;
-    const adminSecretKey = "true";
+    const adminSecretKey = process.env.MIX_ADMIN_SECRET_KEY;
+    // const adminSecretKey = "true";
 
     const [hamraheAval, setHamraheAval] = useState(false);
     const [irancell, setIrancell] = useState();

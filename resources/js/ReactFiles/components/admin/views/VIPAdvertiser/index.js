@@ -6,8 +6,8 @@ import axios from "axios";
 export default function index() {
     const baseUrl = process.env.MIX_BASEURL;
 
-    // const VIPAdvertiserUrl = process.env.MIX_VIP_ADVERTISER;
-    const VIPAdvertiserUrl = "/vipadvertisers";
+    const VIPAdvertiserUrl = process.env.MIX_VIP_ADVERTISER;
+    // const VIPAdvertiserUrl = "/vipadvertisers";
 
     const [title, setTitle] = useState("");
     const [advertisername, setAdvertisername] = useState("");

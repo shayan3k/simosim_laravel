@@ -6,8 +6,8 @@ import axios from "axios";
 
 export default function index() {
     const baseUrl = process.env.MIX_BASEURL;
-    // const advertismentsAllAdmin = process.env.MIX_ADVERTISMENT_All_ADMIN;
-    const advertismentsAllAdmin = "/advertisments-admin";
+    const advertismentsAllAdmin = process.env.MIX_ADVERTISMENT_All_ADMIN;
+    // const advertismentsAllAdmin = "/advertisments-admin";
 
     useEffect(() => {
         axios({

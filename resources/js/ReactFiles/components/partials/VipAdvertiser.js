@@ -4,8 +4,8 @@ import persianJs from "persianjs";
 
 export default function VipAdvertiser() {
     const baseUrl = process.env.MIX_BASEURL;
-    // const vipAdvertiser = process.env.MIX_VIP_ADVERTISER;
-    const vipAdvertiser = "/vipadvertisers";
+    const vipAdvertiser = process.env.MIX_VIP_ADVERTISER;
+    // const vipAdvertiser = "/vipadvertisers";
 
     const [Title, setTitle] = useState();
     const [ShopName, setShopName] = useState();

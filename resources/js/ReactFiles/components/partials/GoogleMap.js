@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import GoogleMapReact from "google-map-react";
 
 export default function GoogleMap() {
-    // const GoogleMapBootstrapURLKeys = MIX_GOOGLE_MAP_API_KEY;
-    const GoogleMapBootstrapURLKeys = "GoogleApiKey";
+    const GoogleMapBootstrapURLKeys = MIX_GOOGLE_MAP_API_KEY;
+    // const GoogleMapBootstrapURLKeys = "GoogleApiKey";
     const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
     const [Center, setCenter] = useState({

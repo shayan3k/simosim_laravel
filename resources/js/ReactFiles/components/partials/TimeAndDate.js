@@ -5,7 +5,6 @@ import Skeleton from "react-loading-skeleton";
 
 export default function TimeAndDate() {
     const [counter, setCounter] = useState(false);
-    const [loading, setLoading] = useState(false);
     const [date, setDate] = useState("");
     const [clock, setClock] = useState("");
 

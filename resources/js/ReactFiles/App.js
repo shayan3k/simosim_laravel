@@ -20,8 +20,8 @@ import secureStorage from "./components/services/Storage";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
 function App() {
-    // const adminSecretKey = process.env.MIX_ADMIN_SECRET_KEY;
-    const adminSecretKey = "true";
+    const adminSecretKey = process.env.MIX_ADMIN_SECRET_KEY;
+    // const adminSecretKey = "true";
 
     const logedIn = useStoreState(state => state.auth.logedIn);
     const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);

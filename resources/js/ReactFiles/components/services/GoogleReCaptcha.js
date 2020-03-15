@@ -6,8 +6,8 @@ import {
 import secureStorage from "./Storage";
 
 export default function GoogleReCaptcha(props) {
-    // const reCaptchaKey = process.env.MIX_RECAPTCHAKEY;
-    const reCaptchaKey = "6LdOuNwUAAAAALberFJy70eJUzs57cqqirKkaIM7";
+    const reCaptchaKey = process.env.MIX_RECAPTCHAKEY;
+    // const reCaptchaKey = "6LdOuNwUAAAAALberFJy70eJUzs57cqqirKkaIM7";
 
     return (
         <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey} language="fa">

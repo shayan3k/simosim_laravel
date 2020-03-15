@@ -13,8 +13,8 @@ function Navbar() {
     const [Navbar, setNavbar] = useState([]);
 
     const baseUrl = process.env.MIX_BASEURL;
-    // const navbar = process.env.MIX_NAVBAR;
-    const navbarUrl = "/navbar";
+    const navbarUrl = process.env.MIX_NAVBAR;
+    // const navbarUrl = "/navbar";
 
     useEffect(() => {
         axios

@@ -4,13 +4,13 @@ import secureStorage from "./Storage";
 //Move to Process.env
 const baseUrl = process.env.MIX_BASEURL;
 
-// const loginRoute = process.env.MIX_AUTH_LOGIN;
-// const logoutRoute = process.enc.MIX_AUTH_LOGOUT;
-// const meRoute = process.env.MIX_AUTH_ME;
+const loginRoute = process.env.MIX_AUTH_LOGIN;
+const logoutRoute = process.env.MIX_AUTH_LOGOUT;
+const meRoute = process.env.MIX_AUTH_ME;
 
-const loginRoute = "/auth/login";
-const logoutRoute = "/auth/logout";
-const meRoute = "/auth/me";
+// const loginRoute = "/auth/login";
+// const logoutRoute = "/auth/logout";
+// const meRoute = "/auth/me";
 
 export const JWTLogin = async data => {
     console.log(data);

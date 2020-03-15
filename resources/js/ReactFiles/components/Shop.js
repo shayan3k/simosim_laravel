@@ -13,15 +13,15 @@ import Logo from "./partials/Logo";
 import Seperator from "./partials/Seperator";
 
 export default function Shop() {
-    // const postsUriSale = MIX_ADVERTISMENTS_SALE;
-    // const postsUriGold = MIX_ADVERTISMENTS_GOLD;
-    // const postsUriSilver = MIX_ADVERTISMENTS_SILVER;
-    // const postsUriBronze = MIX_ADVERTISMENTS_BRONZE;
+    const postsUriSale = process.env.MIX_ADVERTISMENTS_SALE;
+    const postsUriGold = process.env.MIX_ADVERTISMENTS_GOLD;
+    const postsUriSilver = process.env.MIX_ADVERTISMENTS_SILVER;
+    const postsUriBronze = process.env.MIX_ADVERTISMENTS_BRONZE;
 
-    const postsUriSale = "/advertisments-sale";
-    const postsUriGold = "/advertisments-gold";
-    const postsUriSilver = "/advertisments-silver";
-    const postsUriBronze = "/advertisments-bronze";
+    // const postsUriSale = "/advertisments-sale";
+    // const postsUriGold = "/advertisments-gold";
+    // const postsUriSilver = "/advertisments-silver";
+    // const postsUriBronze = "/advertisments-bronze";
     return (
         <>
             <Navbar />

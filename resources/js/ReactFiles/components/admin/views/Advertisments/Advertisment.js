@@ -6,8 +6,8 @@ import { JWTHeader } from "../../../services/Auth";
 export default function Advertisment(props) {
     const baseUrl = process.env.MIX_BASEURL;
 
-    // const AdvertismentDeleteAdmin = process.env.MIX_ADVERTISMENT_All_ADMIN;
-    const AdvertismentDeleteAdmin = "/advertisments-admin";
+    const AdvertismentDeleteAdmin = process.env.MIX_ADVERTISMENT_All_ADMIN;
+    // const AdvertismentDeleteAdmin = "/advertisments-admin";
 
     const [message, setMessage] = useState("");
     const [messageStatus, setMessageStatus] = useState("");

@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[40],{
 
-/***/ "./resources/js/ReactFiles/components/admin/views/Theme/Colors/Colors.js":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/ReactFiles/components/admin/views/Theme/Colors/Colors.js ***!
-  \*******************************************************************************/
+/***/ "./resources/js/ReactFiles/components/admin/views/Theme/Typography/Typography.js":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/ReactFiles/components/admin/views/Theme/Typography/Typography.js ***!
+  \***************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11,13 +11,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-/* harmony import */ var _coreui_coreui_dist_js_coreui_utilities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @coreui/coreui/dist/js/coreui-utilities */ "./node_modules/@coreui/coreui/dist/js/coreui-utilities.js");
-/* harmony import */ var _coreui_coreui_dist_js_coreui_utilities__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_coreui_coreui_dist_js_coreui_utilities__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38,108 +31,18 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
-
-
-
-var ThemeView =
+var Typography =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(ThemeView, _Component);
+  _inherits(Typography, _Component);
 
-  function ThemeView(props) {
-    var _this;
+  function Typography() {
+    _classCallCheck(this, Typography);
 
-    _classCallCheck(this, ThemeView);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(ThemeView).call(this, props));
-    _this.state = {
-      bgColor: 'rgb(255, 255, 255)'
-    };
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Typography).apply(this, arguments));
   }
 
-  _createClass(ThemeView, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var elem = react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.findDOMNode(this).parentNode.firstChild;
-      var color = window.getComputedStyle(elem).getPropertyValue('background-color');
-      this.setState({
-        bgColor: color || this.state.bgColor
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-        className: "w-100"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "text-muted"
-      }, "HEX:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "font-weight-bold"
-      }, Object(_coreui_coreui_dist_js_coreui_utilities__WEBPACK_IMPORTED_MODULE_4__["rgbToHex"])(this.state.bgColor))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "text-muted"
-      }, "RGB:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-        className: "font-weight-bold"
-      }, this.state.bgColor))));
-    }
-  }]);
-
-  return ThemeView;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-var ThemeColor =
-/*#__PURE__*/
-function (_Component2) {
-  _inherits(ThemeColor, _Component2);
-
-  function ThemeColor() {
-    _classCallCheck(this, ThemeColor);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(ThemeColor).apply(this, arguments));
-  }
-
-  _createClass(ThemeColor, [{
-    key: "render",
-    // constructor(props) {
-    //   super(props);
-    // }
-    value: function render() {
-      // const { className, children, ...attributes } = this.props
-      var _this$props = this.props,
-          className = _this$props.className,
-          children = _this$props.children;
-      var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, 'theme-color w-75 rounded mb-3');
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-        xl: "2",
-        md: "4",
-        sm: "6",
-        xs: "12",
-        className: "mb-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: classes,
-        style: {
-          paddingTop: '75%'
-        }
-      }), children, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeView, null));
-    }
-  }]);
-
-  return ThemeColor;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-var Colors =
-/*#__PURE__*/
-function (_Component3) {
-  _inherits(Colors, _Component3);
-
-  function Colors() {
-    _classCallCheck(this, Colors);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Colors).apply(this, arguments));
-  }
-
-  _createClass(Colors, [{
+  _createClass(Typography, [{
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -148,92 +51,130 @@ function (_Component3) {
         className: "card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "icon-drop"
-      }), " Theme colors"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Headings"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-primary"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Brand Primary Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-secondary"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Brand Secondary Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-success"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Brand Success Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-danger"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Brand Danger Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-warning"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Brand Warning Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Brand Info Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-light"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Brand Light Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-dark"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Brand Dark Color"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        className: "table"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Example"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
+        className: "highlighter-rouge"
+      }, "<h1></h1>"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "h1"
+      }, "h1. Bootstrap heading"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
+        className: "highlighter-rouge"
+      }, "<h2></h2>"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "h2"
+      }, "h2. Bootstrap heading"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
+        className: "highlighter-rouge"
+      }, "<h3></h3>"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "h3"
+      }, "h3. Bootstrap heading"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
+        className: "highlighter-rouge"
+      }, "<h4></h4>"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "h4"
+      }, "h4. Bootstrap heading"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
+        className: "highlighter-rouge"
+      }, "<h5></h5>"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "h5"
+      }, "h5. Bootstrap heading"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
+        className: "highlighter-rouge"
+      }, "<h6></h6>"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "h6"
+      }, "h6. Bootstrap heading"))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "icon-drop"
-      }), " Grays"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Headings"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], {
-        className: "mb-3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-gray-100"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Gray 100 Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-gray-200"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Gray 200 Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-gray-300"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Gray 300 Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-gray-400"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Gray 400 Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-gray-500"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Gray 500 Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-gray-600"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Gray 600 Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-gray-700"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Gray 700 Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-gray-800"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Gray 800 Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-gray-900"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Gray 900 Color"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
+        className: "highlighter-rouge"
+      }, ".h1"), " through ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
+        className: "highlighter-rouge"
+      }, ".h6"), " classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bd-example"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "h1"
+      }, "h1. Bootstrap heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "h2"
+      }, "h2. Bootstrap heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "h3"
+      }, "h3. Bootstrap heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "h4"
+      }, "h4. Bootstrap heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "h5"
+      }, "h5. Bootstrap heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "h6"
+      }, "h6. Bootstrap heading")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "icon-drop"
-      }), " Additional colors"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Display headings"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-blue"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Blue Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-light-blue"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Light Blue Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-indigo"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Indigo Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-purple"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Purple Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-pink"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Pink Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-red"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Red Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-orange"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Orange Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-yellow"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Yellow Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-green"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Green Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-teal"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Teal Color")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ThemeColor, {
-        className: "bg-cyan"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "Cyan Color"))))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "display heading"), "\u2014a larger, slightly more opinionated heading style."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bd-example bd-example-type"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        className: "table"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "display-1"
+      }, "Display 1"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "display-2"
+      }, "Display 2"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "display-3"
+      }, "Display 3"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "display-4"
+      }, "Display 4")))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header"
+      }, "Inline text elements"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "display heading"), "\u2014a larger, slightly more opinionated heading style."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bd-example"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You can use the mark tag to ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("mark", null, "highlight"), " text."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("del", null, "This line of text is meant to be treated as deleted text.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("s", null, "This line of text is meant to be treated as no longer accurate.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ins", null, "This line of text is meant to be treated as an addition to the document.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("u", null, "This line of text will render as underlined")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, "This line of text is meant to be treated as fine print.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "This line rendered as bold text.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", null, "This line rendered as italicized text."))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header"
+      }, "Description list alignment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Align terms and descriptions horizontally by using our grid system\u2019s predefined classes (or semantic mixins). For longer terms, you can optionally add a ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
+        className: "highlighter-rouge"
+      }, ".text-truncate"), " class to truncate the text with an ellipsis."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bd-example"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dl", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dt", {
+        className: "col-sm-3"
+      }, "Description lists"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dd", {
+        className: "col-sm-9"
+      }, "A description list is perfect for defining terms."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dt", {
+        className: "col-sm-3"
+      }, "Euismod"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dd", {
+        className: "col-sm-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Donec id elit non mi porta gravida at eget metus.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dt", {
+        className: "col-sm-3"
+      }, "Malesuada porta"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dd", {
+        className: "col-sm-9"
+      }, "Etiam porta sem malesuada magna mollis euismod."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dt", {
+        className: "col-sm-3 text-truncate"
+      }, "Truncated term is truncated"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dd", {
+        className: "col-sm-9"
+      }, "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dt", {
+        className: "col-sm-3"
+      }, "Nesting"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dd", {
+        className: "col-sm-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dl", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dt", {
+        className: "col-sm-4"
+      }, "Nested definition list"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("dd", {
+        className: "col-sm-8"
+      }, "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc."))))))));
     }
   }]);
 
-  return Colors;
+  return Typography;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Colors);
+/* harmony default export */ __webpack_exports__["default"] = (Typography);
 
 /***/ })
 

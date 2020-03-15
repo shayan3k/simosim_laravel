@@ -7,13 +7,14 @@ function DashboardAdvertisment(props) {
     const [posts, setPosts] = useState([]);
 
     const baseUrl = process.env.MIX_BASEURL;
-    // const myAdvertisments = process.env.MIX_ADVERTISMENT_ME;
-    // const advertismentDeleteUser = MIX_ADVERTISMENT_DELETE_USER;
-    // const advertismentBerozresaniUser = MIX_ADVERTISMENT_BEROZRESANI_USER;
+    const myAdvertisments = process.env.MIX_ADVERTISMENT_ME;
+    const advertismentDeleteUser = process.env.MIX_ADVERTISMENT_DELETE_USER;
+    const advertismentBerozresaniUser =
+        process.env.MIX_ADVERTISMENT_BEROZRESANI_USER;
 
-    const myAdvertisments = "/advertisments-me";
-    const advertismentDeleteUser = "/advertisments-delete-user";
-    const advertismentBerozresaniUser = "/advertisments-berozresani-user";
+    // const myAdvertisments = "/advertisments-me";
+    // const advertismentDeleteUser = "/advertisments-delete-user";
+    // const advertismentBerozresaniUser = "/advertisments-berozresani-user";
 
     useEffect(() => {
         listUpdate();

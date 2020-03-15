@@ -6,10 +6,10 @@ import axios from "axios";
 
 export default function index() {
     const baseUrl = process.env.MIX_BASEURL;
-    // const AdvertisersUrl = process.env.MIX_ADVERTISERS;
-    // const advertisersNewUrl = process.env.MIX_ADVERTISERS_NEW;
-    const advertisersUrl = "/advertisers";
-    const advertisersNewUrl = "/advertisers/create";
+    const advertisersUrl = process.env.MIX_ADVERTISERS;
+    const advertisersNewUrl = process.env.MIX_ADVERTISERS_NEW;
+    // const advertisersUrl = "/advertisers";
+    // const advertisersNewUrl = "/advertisers/create";
 
     const [advertisers, setAdvertisers] = useState("");
 
@@ -56,7 +56,6 @@ export default function index() {
                           );
                       })
                     : ""}
-                {console.log(advertisers)}
                 <NewAdvertiser
                     baseUrl={baseUrl}
                     advertisersNewUrl={advertisersNewUrl}

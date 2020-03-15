@@ -6,8 +6,8 @@ import VipAdvertiser from "./VipAdvertiser";
 function Advertisers() {
     const [advertisers, setAdvertisers] = useState();
     const baseUrl = process.env.MIX_BASEURL;
-    // const AdvertisersUrl = process.env.MIX_ADVERTISERS;
-    const AdvertisersUrl = "/advertisers";
+    const AdvertisersUrl = process.env.MIX_ADVERTISERS;
+    // const AdvertisersUrl = "/advertisers";
 
     useEffect(() => {
         axios

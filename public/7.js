@@ -1,245 +1,389 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[7],{
 
-/***/ "./resources/js/ReactFiles/components/admin/views/Message.js":
-/*!*******************************************************************!*\
-  !*** ./resources/js/ReactFiles/components/admin/views/Message.js ***!
-  \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/umd/custom-tooltips.js":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/umd/custom-tooltips.js ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Message; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+(function (global, factory) {
+   true ? factory(exports) :
+  undefined;
+}(this, function (exports) { 'use strict';
 
-function Message(props) {
-  var setMessage = props.setMessage;
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    setTimeout(function () {
-      return setMessage("");
-    }, 10000);
-    return function () {
-      setMessage("");
+  /**
+   * --------------------------------------------------------------------------
+   * CoreUI Plugins - Custom Tooltips for Chart.js (v1.3.1): custom-tooltips.js
+   * Licensed under MIT (https://coreui.io/license)
+   * --------------------------------------------------------------------------
+   */
+  function CustomTooltips(tooltipModel) {
+    var _this = this;
+
+    // Add unique id if not exist
+    var _setCanvasId = function _setCanvasId() {
+      var _idMaker = function _idMaker() {
+        var _hex = 16;
+        var _multiplier = 0x10000;
+        return ((1 + Math.random()) * _multiplier | 0).toString(_hex);
+      };
+
+      var _canvasId = "_canvas-" + (_idMaker() + _idMaker());
+
+      _this._chart.canvas.id = _canvasId;
+      return _canvasId;
     };
-  }, []);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "alert alert-".concat(props.status),
-    dangerouslySetInnerHTML: {
-      __html: props.title
+
+    var ClassName = {
+      ABOVE: 'above',
+      BELOW: 'below',
+      CHARTJS_TOOLTIP: 'chartjs-tooltip',
+      NO_TRANSFORM: 'no-transform',
+      TOOLTIP_BODY: 'tooltip-body',
+      TOOLTIP_BODY_ITEM: 'tooltip-body-item',
+      TOOLTIP_BODY_ITEM_COLOR: 'tooltip-body-item-color',
+      TOOLTIP_BODY_ITEM_LABEL: 'tooltip-body-item-label',
+      TOOLTIP_BODY_ITEM_VALUE: 'tooltip-body-item-value',
+      TOOLTIP_HEADER: 'tooltip-header',
+      TOOLTIP_HEADER_ITEM: 'tooltip-header-item'
+    };
+    var Selector = {
+      DIV: 'div',
+      SPAN: 'span',
+      TOOLTIP: (this._chart.canvas.id || _setCanvasId()) + "-tooltip"
+    };
+    var tooltip = document.getElementById(Selector.TOOLTIP);
+
+    if (!tooltip) {
+      tooltip = document.createElement('div');
+      tooltip.id = Selector.TOOLTIP;
+      tooltip.className = ClassName.CHARTJS_TOOLTIP;
+
+      this._chart.canvas.parentNode.appendChild(tooltip);
+    } // Hide if no tooltip
+
+
+    if (tooltipModel.opacity === 0) {
+      tooltip.style.opacity = 0;
+      return;
+    } // Set caret Position
+
+
+    tooltip.classList.remove(ClassName.ABOVE, ClassName.BELOW, ClassName.NO_TRANSFORM);
+
+    if (tooltipModel.yAlign) {
+      tooltip.classList.add(tooltipModel.yAlign);
+    } else {
+      tooltip.classList.add(ClassName.NO_TRANSFORM);
+    } // Set Text
+
+
+    if (tooltipModel.body) {
+      var titleLines = tooltipModel.title || [];
+      var tooltipHeader = document.createElement(Selector.DIV);
+      tooltipHeader.className = ClassName.TOOLTIP_HEADER;
+      titleLines.forEach(function (title) {
+        var tooltipHeaderTitle = document.createElement(Selector.DIV);
+        tooltipHeaderTitle.className = ClassName.TOOLTIP_HEADER_ITEM;
+        tooltipHeaderTitle.innerHTML = title;
+        tooltipHeader.appendChild(tooltipHeaderTitle);
+      });
+      var tooltipBody = document.createElement(Selector.DIV);
+      tooltipBody.className = ClassName.TOOLTIP_BODY;
+      var tooltipBodyItems = tooltipModel.body.map(function (item) {
+        return item.lines;
+      });
+      tooltipBodyItems.forEach(function (item, i) {
+        var tooltipBodyItem = document.createElement(Selector.DIV);
+        tooltipBodyItem.className = ClassName.TOOLTIP_BODY_ITEM;
+        var colors = tooltipModel.labelColors[i];
+        var tooltipBodyItemColor = document.createElement(Selector.SPAN);
+        tooltipBodyItemColor.className = ClassName.TOOLTIP_BODY_ITEM_COLOR;
+        tooltipBodyItemColor.style.backgroundColor = colors.backgroundColor;
+        tooltipBodyItem.appendChild(tooltipBodyItemColor);
+
+        if (item[0].split(':').length > 1) {
+          var tooltipBodyItemLabel = document.createElement(Selector.SPAN);
+          tooltipBodyItemLabel.className = ClassName.TOOLTIP_BODY_ITEM_LABEL;
+          tooltipBodyItemLabel.innerHTML = item[0].split(': ')[0];
+          tooltipBodyItem.appendChild(tooltipBodyItemLabel);
+          var tooltipBodyItemValue = document.createElement(Selector.SPAN);
+          tooltipBodyItemValue.className = ClassName.TOOLTIP_BODY_ITEM_VALUE;
+          tooltipBodyItemValue.innerHTML = item[0].split(': ').pop();
+          tooltipBodyItem.appendChild(tooltipBodyItemValue);
+        } else {
+          var _tooltipBodyItemValue = document.createElement(Selector.SPAN);
+
+          _tooltipBodyItemValue.className = ClassName.TOOLTIP_BODY_ITEM_VALUE;
+          _tooltipBodyItemValue.innerHTML = item[0];
+          tooltipBodyItem.appendChild(_tooltipBodyItemValue);
+        }
+
+        tooltipBody.appendChild(tooltipBodyItem);
+      });
+      tooltip.innerHTML = '';
+      tooltip.appendChild(tooltipHeader);
+      tooltip.appendChild(tooltipBody);
     }
-  });
-}
+
+    var position = this._chart.canvas.getBoundingClientRect();
+
+    var positionY = this._chart.canvas.offsetTop;
+    var positionX = this._chart.canvas.offsetLeft;
+    var positionLeft = positionX + tooltipModel.caretX;
+    var positionTop = positionY + tooltipModel.caretY; // eslint-disable-next-line
+
+    var halfWidth = tooltipModel.width / 2;
+
+    if (positionLeft + halfWidth > position.width) {
+      positionLeft -= halfWidth;
+    } else if (positionLeft < halfWidth) {
+      positionLeft += halfWidth;
+    } // Display, position, and set styles for font
+
+
+    tooltip.style.opacity = 1;
+    tooltip.style.left = positionLeft + "px";
+    tooltip.style.top = positionTop + "px";
+  }
+
+  var customTooltips = CustomTooltips; // TODO: camel-case
+
+  exports.CustomTooltips = CustomTooltips;
+  exports.customTooltips = customTooltips;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
+
+}));
+//# sourceMappingURL=custom-tooltips.js.map
+
 
 /***/ }),
 
-/***/ "./resources/js/ReactFiles/components/admin/views/UsersList/User.js":
-/*!**************************************************************************!*\
-  !*** ./resources/js/ReactFiles/components/admin/views/UsersList/User.js ***!
-  \**************************************************************************/
+/***/ "./resources/js/ReactFiles/components/admin/views/Charts/Charts.js":
+/*!*************************************************************************!*\
+  !*** ./resources/js/ReactFiles/components/admin/views/Charts/Charts.js ***!
+  \*************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return User; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Message__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Message */ "./resources/js/ReactFiles/components/admin/views/Message.js");
-/* harmony import */ var _services_Auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/Auth */ "./resources/js/ReactFiles/components/services/Auth.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+/* harmony import */ var react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-chartjs-2 */ "./node_modules/react-chartjs-2/es/index.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var _coreui_coreui_plugin_chartjs_custom_tooltips__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @coreui/coreui-plugin-chartjs-custom-tooltips */ "./node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/umd/custom-tooltips.js");
+/* harmony import */ var _coreui_coreui_plugin_chartjs_custom_tooltips__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_coreui_coreui_plugin_chartjs_custom_tooltips__WEBPACK_IMPORTED_MODULE_3__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
 
 
 
-function User(props) {
-  var baseUrl = "http://127.0.0.1:8000/api"; // const userActiveTogglerUrl  = process.env.MIX_USERS_ACTIVE_TOGGLER;
-  // const deleteUserAllPostsUrl  = process.env.MIX_USERS_DELETE_ALL_POSTS;
+var line = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  datasets: [{
+    label: 'My First dataset',
+    fill: false,
+    lineTension: 0.1,
+    backgroundColor: 'rgba(75,192,192,0.4)',
+    borderColor: 'rgba(75,192,192,1)',
+    borderCapStyle: 'butt',
+    borderDash: [],
+    borderDashOffset: 0.0,
+    borderJoinStyle: 'miter',
+    pointBorderColor: 'rgba(75,192,192,1)',
+    pointBackgroundColor: '#fff',
+    pointBorderWidth: 1,
+    pointHoverRadius: 5,
+    pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+    pointHoverBorderColor: 'rgba(220,220,220,1)',
+    pointHoverBorderWidth: 2,
+    pointRadius: 1,
+    pointHitRadius: 10,
+    data: [65, 59, 80, 81, 56, 55, 40]
+  }]
+};
+var bar = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  datasets: [{
+    label: 'My First dataset',
+    backgroundColor: 'rgba(255,99,132,0.2)',
+    borderColor: 'rgba(255,99,132,1)',
+    borderWidth: 1,
+    hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+    hoverBorderColor: 'rgba(255,99,132,1)',
+    data: [65, 59, 80, 81, 56, 55, 40]
+  }]
+};
+var doughnut = {
+  labels: ['Red', 'Green', 'Yellow'],
+  datasets: [{
+    data: [300, 50, 100],
+    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+    hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+  }]
+};
+var radar = {
+  labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
+  datasets: [{
+    label: 'My First dataset',
+    backgroundColor: 'rgba(179,181,198,0.2)',
+    borderColor: 'rgba(179,181,198,1)',
+    pointBackgroundColor: 'rgba(179,181,198,1)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgba(179,181,198,1)',
+    data: [65, 59, 90, 81, 56, 55, 40]
+  }, {
+    label: 'My Second dataset',
+    backgroundColor: 'rgba(255,99,132,0.2)',
+    borderColor: 'rgba(255,99,132,1)',
+    pointBackgroundColor: 'rgba(255,99,132,1)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgba(255,99,132,1)',
+    data: [28, 48, 40, 19, 96, 27, 100]
+  }]
+};
+var pie = {
+  labels: ['Red', 'Green', 'Yellow'],
+  datasets: [{
+    data: [300, 50, 100],
+    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+    hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+  }]
+};
+var polar = {
+  datasets: [{
+    data: [11, 16, 7, 3, 14],
+    backgroundColor: ['#FF6384', '#4BC0C0', '#FFCE56', '#E7E9ED', '#36A2EB'],
+    label: 'My dataset' // for legend
 
-  var userActiveTogglerUrl = "/users-active-admin";
-  var deleteUserAllPostsUrl = "/users-post-delete-admin";
+  }],
+  labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue']
+};
+var options = {
+  tooltips: {
+    enabled: false,
+    custom: _coreui_coreui_plugin_chartjs_custom_tooltips__WEBPACK_IMPORTED_MODULE_3__["CustomTooltips"]
+  },
+  maintainAspectRatio: false
+};
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      _useState2 = _slicedToArray(_useState, 2),
-      message = _useState2[0],
-      setMessage = _useState2[1];
+var Charts =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Charts, _Component);
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      _useState4 = _slicedToArray(_useState3, 2),
-      status = _useState4[0],
-      setStatus = _useState4[1];
+  function Charts() {
+    _classCallCheck(this, Charts);
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      _useState6 = _slicedToArray(_useState5, 2),
-      postsDeleted = _useState6[0],
-      setPostsDeleted = _useState6[1];
+    return _possibleConstructorReturn(this, _getPrototypeOf(Charts).apply(this, arguments));
+  }
 
-  var handleActiveToggler = function handleActiveToggler(e) {
-    axios__WEBPACK_IMPORTED_MODULE_1___default()({
-      url: baseUrl + userActiveTogglerUrl,
-      method: "POST",
-      headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_3__["JWTHeader"])().headers,
-      data: {
-        id: props.item.id
-      }
-    }).then(function (res) {
-      props.updateList();
-    })["catch"](function (e) {
-      return console.log(e);
-    });
-  };
-
-  var handlePostDelete = function handlePostDelete() {
-    axios__WEBPACK_IMPORTED_MODULE_1___default()({
-      url: baseUrl + deleteUserAllPostsUrl,
-      method: "POST",
-      headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_3__["JWTHeader"])().headers,
-      data: {
-        id: props.item.id
-      }
-    }).then(function (res) {
-      return setPostsDeleted(true);
-    })["catch"](function (e) {
-      return console.log(e);
-    });
-  };
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, message ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Message__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: message,
-    status: status,
-    setMessage: setMessage
-  }) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
-    key: props.item.id
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "row"
-  }, props.item.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-    scope: "row"
-  }, props.item.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.phonenumber), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.is_admin), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.active), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.phonenumber_verified_at ? "true" : "flase"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, new Date(Date.parse(props.item.created_at)).toUTCString()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, new Date(Date.parse(props.item.updated_at)).toUTCString()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-    className: "d-flex flex-column align-items-center justify-content-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "btn btn-".concat(props.item.active ? "danger" : "success", " my-1 font4"),
-    onClick: function onClick(e) {
-      return handleActiveToggler(e);
+  _createClass(Charts, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "animated fadeIn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardColumns"], {
+        className: "cols-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardHeader"], null, "Line Chart", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header-actions"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "http://www.chartjs.org",
+        className: "card-header-action"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        className: "text-muted"
+      }, "docs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "chart-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Line"], {
+        data: line,
+        options: options
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardHeader"], null, "Bar Chart", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header-actions"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "http://www.chartjs.org",
+        className: "card-header-action"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        className: "text-muted"
+      }, "docs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "chart-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Bar"], {
+        data: bar,
+        options: options
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardHeader"], null, "Doughnut Chart", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header-actions"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "http://www.chartjs.org",
+        className: "card-header-action"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        className: "text-muted"
+      }, "docs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "chart-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Doughnut"], {
+        data: doughnut
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardHeader"], null, "Radar Chart", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header-actions"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "http://www.chartjs.org",
+        className: "card-header-action"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        className: "text-muted"
+      }, "docs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "chart-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Radar"], {
+        data: radar
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardHeader"], null, "Pie Chart", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header-actions"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "http://www.chartjs.org",
+        className: "card-header-action"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        className: "text-muted"
+      }, "docs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "chart-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Pie"], {
+        data: pie
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardHeader"], null, "Polar Area Chart", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-header-actions"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "http://www.chartjs.org",
+        className: "card-header-action"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+        className: "text-muted"
+      }, "docs")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "chart-wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_1__["Polar"], {
+        data: polar,
+        options: options
+      }))))));
     }
-  }, props.item.active ? "Deactive" : "Active", " User"), postsDeleted ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "btn btn-info my-1 font4"
-  }, "All Posts Deleted") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "btn btn-dark my-1 font4",
-    onClick: function onClick(e) {
-      return handlePostDelete(e);
-    }
-  }, "Delete User's Posts"))));
-}
+  }]);
 
-/***/ }),
+  return Charts;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/***/ "./resources/js/ReactFiles/components/admin/views/UsersList/index.js":
-/*!***************************************************************************!*\
-  !*** ./resources/js/ReactFiles/components/admin/views/UsersList/index.js ***!
-  \***************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return index; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _services_Auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/Auth */ "./resources/js/ReactFiles/components/services/Auth.js");
-/* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./User */ "./resources/js/ReactFiles/components/admin/views/UsersList/User.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-function index() {
-  var baseUrl = "http://127.0.0.1:8000/api"; // const userAdminUrl = process.env.MIX_USERS_ADMIN;
-
-  var userAdminUrl = "/users-admin";
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
-      _useState2 = _slicedToArray(_useState, 2),
-      users = _useState2[0],
-      setUsers = _useState2[1];
-
-  var _updateList = function updateList(e) {
-    axios__WEBPACK_IMPORTED_MODULE_1___default()({
-      url: baseUrl + userAdminUrl,
-      method: "GET",
-      headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_2__["JWTHeader"])().headers
-    }).then(function (res) {
-      console.log(res);
-      setUsers(res.data);
-    })["catch"](function (e) {
-      return console.log(e);
-    });
-  };
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1___default()({
-      url: baseUrl + userAdminUrl,
-      method: "GET",
-      headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_2__["JWTHeader"])().headers
-    }).then(function (res) {
-      console.log(res);
-      setUsers(res.data);
-    })["catch"](function (e) {
-      return console.log(e);
-    });
-  }, []);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Container"], {
-    fluid: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["CardHeader"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fas fa-user"
-  }), "Users"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Table"], {
-    responsive: true,
-    hover: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "col"
-  }, "id"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "col"
-  }, "name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "col"
-  }, "phonenumber"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "col"
-  }, "is_admin"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "col"
-  }, "Active"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "col"
-  }, "Verified"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "col"
-  }, "created_at"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "col"
-  }, "updated_at"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, users.map(function (item, index) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_User__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      key: index,
-      item: item,
-      updateList: function updateList(e) {
-        return _updateList(e);
-      }
-    });
-  })))));
-}
+/* harmony default export */ __webpack_exports__["default"] = (Charts);
 
 /***/ })
 
