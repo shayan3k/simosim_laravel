@@ -61,19 +61,23 @@ export default function MegaMenu() {
 
     const handleLogoutBtn = () => {
         console.log("Logout Clicked");
+        let elements = document.querySelectorAll(".login-btn");
+
         JWTLogout()
             .then(res => {
-                if (res.status === 200) {
-                    setLogedIn(false);
-                    setPhoneNumber("");
-                    setNiceName("");
-                    console.log("Loged out");
-                } else {
-                    console.log("can not sign out at this moment!");
-                }
+                setLogedIn(false);
+                setPhoneNumber("");
+                setNiceName("");
+                console.log("Loged out");
                 console.log(res);
             })
-            .catch(e => console.log("can not sign out at this moment!", e));
+            .catch(e => {
+                setLogedIn(false);
+                setPhoneNumber("");
+                setNiceName("");
+                console.log("Loged out");
+                console.log("can not sign out at this moment!", e);
+            });
     };
 
     const componentMountConfig = () => {
@@ -277,6 +281,16 @@ export default function MegaMenu() {
                                         >
                                             داشبورد
                                         </Link>
+                                        <span
+                                            className="px-3 font4"
+                                            style={{ textDecoration: "none" }}
+                                        >
+                                            {" "}
+                                            خوش آمدید
+                                            <span className="font3 px-2">
+                                                {secureStorage.getItem("name")}
+                                            </span>
+                                        </span>
                                     </>
                                 ) : (
                                     <>

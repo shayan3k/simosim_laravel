@@ -6,6 +6,7 @@ const baseUrl = process.env.MIX_BASEURL;
 const loginRoute = process.env.MIX_AUTH_LOGIN;
 // const logoutRoute = process.enc.MIX_AUTH_LOGOUT;
 const meRoute = process.env.MIX_AUTH_ME;
+
 export const JWTLogin = async data => {
     console.log(data);
     return axios
@@ -19,6 +20,7 @@ export const JWTLogin = async data => {
                 res.data.is_admin ? "true" : "false"
             );
             console.log("IS_ADMIN", res.data.is_admin ? "true" : "false");
+            console.log("jwt TOKEN SET", secureStorage.getItem("jwt"));
             return {
                 status: res.status,
                 message: "خوش آمدید"
@@ -49,9 +51,6 @@ export const JWTLogout = () => {
 };
 
 export const JWTValidate = async () => {
-    console.log("header USED", JWTHeader());
-    console.log(baseUrl + "/auth/me");
-
     return new Promise((resolve, reject) => {
         return axios
             .post(baseUrl + "/auth/me", {}, JWTHeader())
@@ -74,18 +73,38 @@ export const JWTValidate = async () => {
                 return reject(err);
             });
     });
-
-    return;
 };
 
 export const JWTCheck = async () => {
+    console.log("JWT CHECK");
+
     return new Promise((resolve, reject) => {
-        if (secureStorage.getItem("jwt")) {
-            JWTValidate().then(data => {
-                if (data.status === 200) resolve({ status: 200 });
-                else reject({ status: 201 });
+        return axios({
+            method: "POST",
+            url: baseUrl + "/auth/me",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + secureStorage.getItem("jwt")
+            }
+        })
+            .then(res => {
+                secureStorage.setItem("name", res.data.name);
+                secureStorage.setItem("phonenumber", res.data.phonenumber);
+                secureStorage.setItem(
+                    "is_admin",
+                    res.data.is_admin ? "true" : "false"
+                );
+                console.log("Authenticated in AUTH", res);
+                return resolve({
+                    statusText: res.statusText,
+                    name: res.data.name,
+                    phonenumber: res.data.phonenumber
+                });
+            })
+            .catch(err => {
+                console.log("NOT Authenticated in AUTH", err.response);
+                return reject(err);
             });
-        } else reject({ status: 201 });
     });
 };
 

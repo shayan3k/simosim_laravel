@@ -9,18 +9,24 @@ import SectionTitle from "./partials/SectionTitle";
 import DashboardAdvertisment from "./partials/DashboardAdvertisment";
 import FooterSeperator from "./partials/FooterSeperator";
 export default function Dashboard() {
-  return (
-    <>
-      <Navbar />
-      <Logo />
-      <Seperator />
-      <MegaMenu />
-      <SectionTitle title="تبلیغ جدید" collapse="DashboardAdvertisment" />
-      <NewAdvertisment />
-      <SectionTitle title="سیم کارت های من" collapse="DashboardAdvertisment" />
-      <DashboardAdvertisment />
-      <FooterSeperator />
-      <Footer />
-    </>
-  );
+    return (
+        <>
+            <Navbar />
+            <Logo />
+            <Seperator />
+            <MegaMenu />
+            <SectionTitle
+                title="ایجاد آگهی جدید"
+                collapse="DashboardNewAdvertisment"
+            />
+            <NewAdvertisment />
+            <SectionTitle
+                title="سیم کارت های من"
+                collapse="DashboardAdvertisment"
+            />
+            <DashboardAdvertisment />
+            <FooterSeperator />
+            <Footer />
+        </>
+    );
 }

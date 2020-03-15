@@ -62,9 +62,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function User(props) {
-  var baseUrl = "http://127.0.0.1:8000/api"; // const userDeleteUrl  = process.env.MIX_USER_ADMIN;
+  var baseUrl = "http://127.0.0.1:8000/api"; // const userActiveTogglerUrl  = process.env.MIX_USERS_ACTIVE_TOGGLER;
+  // const deleteUserAllPostsUrl  = process.env.MIX_USERS_DELETE_ALL_POSTS;
 
-  var userDeleteUrl = "/users-admin";
+  var userActiveTogglerUrl = "/users-active-admin";
+  var deleteUserAllPostsUrl = "/users-post-delete-admin";
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
       _useState2 = _slicedToArray(_useState, 2),
@@ -76,16 +78,36 @@ function User(props) {
       status = _useState4[0],
       setStatus = _useState4[1];
 
-  var handleDeleteUser = function handleDeleteUser(e) {
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      postsDeleted = _useState6[0],
+      setPostsDeleted = _useState6[1];
+
+  var handleActiveToggler = function handleActiveToggler(e) {
     axios__WEBPACK_IMPORTED_MODULE_1___default()({
-      url: baseUrl + userDeleteUrl,
-      method: "DELETE",
+      url: baseUrl + userActiveTogglerUrl,
+      method: "POST",
       headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_3__["JWTHeader"])().headers,
       data: {
         id: props.item.id
       }
     }).then(function (res) {
       props.updateList();
+    })["catch"](function (e) {
+      return console.log(e);
+    });
+  };
+
+  var handlePostDelete = function handlePostDelete() {
+    axios__WEBPACK_IMPORTED_MODULE_1___default()({
+      url: baseUrl + deleteUserAllPostsUrl,
+      method: "POST",
+      headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_3__["JWTHeader"])().headers,
+      data: {
+        id: props.item.id
+      }
+    }).then(function (res) {
+      return setPostsDeleted(true);
     })["catch"](function (e) {
       return console.log(e);
     });
@@ -104,13 +126,18 @@ function User(props) {
   }, props.item.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.phonenumber), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.is_admin), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.active), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.phonenumber_verified_at ? "true" : "flase"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, new Date(Date.parse(props.item.created_at)).toUTCString()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, new Date(Date.parse(props.item.updated_at)).toUTCString()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     className: "d-flex flex-column align-items-center justify-content-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "btn btn-danger my-1 font4",
+    className: "btn btn-".concat(props.item.active ? "danger" : "success", " my-1 font4"),
     onClick: function onClick(e) {
-      return handleDeleteUser(e);
+      return handleActiveToggler(e);
     }
-  }, "Delete User"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "btn btn-dark my-1 font4"
-  }, "Delete User Posts"))));
+  }, props.item.active ? "Deactive" : "Active", " User"), postsDeleted ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "btn btn-info my-1 font4"
+  }, "All Posts Deleted") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "btn btn-dark my-1 font4",
+    onClick: function onClick(e) {
+      return handlePostDelete(e);
+    }
+  }, "Delete User's Posts"))));
 }
 
 /***/ }),

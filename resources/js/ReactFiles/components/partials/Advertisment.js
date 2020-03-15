@@ -4,12 +4,14 @@ import GoldCrown from "../images/gold.png";
 import SilverCrown from "../images/silver.png";
 import BronzCrown from "../images/bronz.png";
 import secureStorage from "../services/Storage";
+import ReactTimeAgo from "react-time-ago";
 
 export default function Advertisment(props) {
     const [toggle, setToggle] = useState(false);
     const [phoneNumber, setPhoneNumber] = useState(props.phoneNumber);
     const [status, setStatus] = useState(props.status);
     const [location, setLocation] = useState(props.location);
+    const [id, setId] = useState(props.id);
     const [code, setCode] = useState(props.code);
     const [rond, setRond] = useState(props.rond);
     const [value, setValue] = useState(props.value);
@@ -25,7 +27,7 @@ export default function Advertisment(props) {
 
     const handleAdvertismentClick = e => {
         setTargetElement(e.currentTarget);
-        console.log(e.currentTarget);
+        console.log(e.target);
         setToggle(!toggle);
     };
 
@@ -143,7 +145,9 @@ export default function Advertisment(props) {
                 <div className="mt-auto card-inner-width  mb-0">
                     <hr className="my-1 " />
                     <div className="m-0 p-0 d-flex justify-content-between align-items-end">
-                        <span className="lead font3 h-100">4 ساعت قبل</span>
+                        <span className="lead font3 h-100">
+                            <ReactTimeAgo date={props.updated_at} locale="fa" />
+                        </span>
                         {RondRender()}
                     </div>
                 </div>
@@ -158,15 +162,35 @@ export default function Advertisment(props) {
                     </h1>
                     <p className="font2 text-center p-2">{sellerName}</p>
 
-                    {secureStorage.getItem("username") === sellerPhoneNumber ? (
-                        <button
-                            className="btn btn-outline-danger"
-                            onClick={e =>
-                                handleDeleteBtn(e, id, sellerPhoneNumber)
-                            }
-                        >
-                            پاک کردن
-                        </button>
+                    {secureStorage.getItem("phonenumber") ===
+                    sellerPhoneNumber ? (
+                        <>
+                            <button
+                                className="btn btn-danger btn-sm p-1 my-1"
+                                onClick={e => {
+                                    props.handleDeleteBtn(
+                                        e,
+                                        id,
+                                        sellerPhoneNumber
+                                    );
+                                    console.log(props.id);
+                                }}
+                            >
+                                پاک کردن
+                            </button>
+                            <button
+                                className="btn btn-warning btn-sm p-1 my-1"
+                                onClick={e =>
+                                    props.handleBeRoozResani(
+                                        e,
+                                        id,
+                                        sellerPhoneNumber
+                                    )
+                                }
+                            >
+                                به روز رسانی
+                            </button>
+                        </>
                     ) : (
                         ""
                     )}

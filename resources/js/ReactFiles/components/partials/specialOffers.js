@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Advertisment from "./Advertisment";
-import { useStoreState } from "easy-peasy";
 import axios from "axios";
 
 function SpecialOffers(props) {
@@ -64,6 +63,7 @@ function SpecialOffers(props) {
             .get(baseUrl + props.uri)
             .then(response => {
                 setPosts(response.data);
+                console.log("sepecial offers ", response.data);
             })
             .catch(error => {
                 console.log(error.response);
@@ -120,6 +120,7 @@ function SpecialOffers(props) {
                                 key={item.id}
                                 sale={item.sale}
                                 secondPrice={item.secondprice}
+                                updated_at={item.updated_at}
                                 handleDeleteBtn={handleDeleteBtn}
                             />
                         </div>

@@ -22,6 +22,7 @@ class RegisterUserController extends Controller
         $user->phonenumber_verified_at =  null;
         $user->password  = Hash::make($request->password);
         $user->remember_token = null;
+        $user->active = false;
         $user->is_admin = false;
         $user->save();
 

@@ -5,22 +5,35 @@ import { JWTHeader } from "../../../services/Auth";
 
 export default function User(props) {
     const baseUrl = process.env.MIX_BASEURL;
-    // const userDeleteUrl  = process.env.MIX_USER_ADMIN;
-    const userDeleteUrl = "/users-admin";
-
+    // const userActiveTogglerUrl  = process.env.MIX_USERS_ACTIVE_TOGGLER;
+    // const deleteUserAllPostsUrl  = process.env.MIX_USERS_DELETE_ALL_POSTS;
+    const userActiveTogglerUrl = "/users-active-admin";
+    const deleteUserAllPostsUrl = "/users-post-delete-admin";
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState("");
+    const [postsDeleted, setPostsDeleted] = useState(false);
 
-    const handleDeleteUser = e => {
+    const handleActiveToggler = e => {
         axios({
-            url: baseUrl + userDeleteUrl,
-            method: "DELETE",
+            url: baseUrl + userActiveTogglerUrl,
+            method: "POST",
             headers: JWTHeader().headers,
             data: { id: props.item.id }
         })
             .then(res => {
                 props.updateList();
             })
+            .catch(e => console.log(e));
+    };
+
+    const handlePostDelete = () => {
+        axios({
+            url: baseUrl + deleteUserAllPostsUrl,
+            method: "POST",
+            headers: JWTHeader().headers,
+            data: { id: props.item.id }
+        })
+            .then(res => setPostsDeleted(true))
             .catch(e => console.log(e));
     };
     return (
@@ -50,14 +63,26 @@ export default function User(props) {
 
                 <td className="d-flex flex-column align-items-center justify-content-center">
                     <button
-                        className="btn btn-danger my-1 font4"
-                        onClick={e => handleDeleteUser(e)}
+                        className={`btn btn-${
+                            props.item.active ? "danger" : "success"
+                        } my-1 font4`}
+                        onClick={e => handleActiveToggler(e)}
                     >
-                        Delete User
+                        {props.item.active ? "Deactive" : "Active"} User
                     </button>
-                    <button className="btn btn-dark my-1 font4">
-                        Delete User Posts
-                    </button>
+
+                    {postsDeleted ? (
+                        <button className="btn btn-info my-1 font4">
+                            All Posts Deleted
+                        </button>
+                    ) : (
+                        <button
+                            className="btn btn-dark my-1 font4"
+                            onClick={e => handlePostDelete(e)}
+                        >
+                            Delete User's Posts
+                        </button>
+                    )}
                 </td>
             </tr>
         </>

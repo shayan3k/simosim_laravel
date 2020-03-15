@@ -1,4 +1,4 @@
-import React, { useEffect, Suspense } from "react";
+import React, { useEffect } from "react";
 import {
     BrowserRouter as Router,
     Switch,
@@ -15,7 +15,7 @@ import LoginPage from "./components/LoginPage";
 import Dashboard from "./components/Dashboard";
 import PageNotFound from "./components/PageNotFound";
 import AdminPage from "./components/AdminPage";
-import { JWTValidate } from "./components/services/Auth";
+import { JWTCheck } from "./components/services/Auth";
 import secureStorage from "./components/services/Storage";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
@@ -31,7 +31,7 @@ function App() {
     );
     const islogedIn = () => {
         console.log("Authenticating ... ");
-        JWTValidate()
+        JWTCheck()
             .then(res => {
                 console.log(res);
                 if (res.statusText === "OK") {
@@ -81,14 +81,10 @@ function App() {
                 secureStorage.getItem("is_admin") == adminSecretKey ? (
                     <Component {...props} />
                 ) : (
-                    <Redirect to="/afdv" />
+                    <Redirect to="/login" />
                 )
             }
         />
-    );
-
-    const loading = () => (
-        <div className="animated fadeIn pt-3 text-center">Loading...</div>
     );
 
     return (
@@ -96,25 +92,23 @@ function App() {
             <GoogleReCaptcha>
                 <Router>
                     <Switch>
-                        <Suspense fallback={loading()}>
-                            <Shop exact path="/" />
-                            <Rahnama exact path="/rahnama" />
-                            <ContactUs exact path="/contact-us" />
-                            <AboutUs exact path="/about-us" />
-                            <AdminRoute path="/admin" component={AdminPage} />
-                            <Ghavanin exact path="/ghavanin" />
-                            <PrivateRoute
-                                exact
-                                path="/dashboard"
-                                component={Dashboard}
-                            />
-                            <AuthenticatedRoute
-                                exact
-                                path="/login"
-                                component={LoginPage}
-                            />
-                            <Route component={PageNotFound} />
-                        </Suspense>
+                        <Shop exact path="/" />
+                        <Rahnama exact path="/rahnama" />
+                        <ContactUs exact path="/contact-us" />
+                        <AboutUs exact path="/about-us" />
+                        <AdminRoute path="/admin" component={AdminPage} />
+                        <Ghavanin exact path="/ghavanin" />
+                        <PrivateRoute
+                            exact
+                            path="/dashboard"
+                            component={Dashboard}
+                        />
+                        <AuthenticatedRoute
+                            exact
+                            path="/login"
+                            component={LoginPage}
+                        />
+                        <Route component={PageNotFound} />
                     </Switch>
                 </Router>
             </GoogleReCaptcha>

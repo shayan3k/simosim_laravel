@@ -54,7 +54,11 @@ class AuthController extends Controller
      */
     public function me()
     {
-        return response()->json($this->guard()->user());
+        if ($this->guard()->user()->active == true)
+            return response()->json($this->guard()->user());
+
+        else
+            return response()->json('Permission Error', 401);
     }
 
     /**

@@ -17,8 +17,12 @@ function MainAds(props) {
 
     const baseUrl = process.env.MIX_BASEURL;
     // const showAdvertisments = MIX_MAIN_ADVERTISMENTS;
-    const showAdvertisments = "/advertisments-all";
+    // const advertismentDeleteUser = MIX_ADVERTISMENT_DELETE_USER;
+    // const advertismentBerozresaniUser = MIX_ADVERTISMENT_BEROZRESANI_USER;
 
+    const showAdvertisments = "/advertisments-all";
+    const advertismentDeleteUser = "/advertisments-delete-user";
+    const advertismentBerozresaniUser = "/advertisments-berozresani-user";
     useEffect(() => {
         listUpdate();
     }, [Status, Value, Rond, Code, Location, PriceRange]);
@@ -47,20 +51,33 @@ function MainAds(props) {
             });
     };
     const handleDeleteBtn = (e, id, sellerPhoneNumber) => {
-        if (secureStorage.getItem("username") === sellerPhoneNumber) {
-            axios
-                .delete(baseUrl + props.deleteUri + id, JWTHeader())
-                .then(res => {
-                    console.log(res, posts, "done");
+        console.log("id is ", id);
+        axios({
+            url: baseUrl + advertismentDeleteUser,
+            method: "POST",
+            headers: JWTHeader().headers,
+            data: { id: id }
+        })
+            .then(res => {
+                console.log(res, posts, "done");
+                listUpdate();
+            })
+            .catch(e => console.log(e.response));
+    };
 
-                    setPosts(
-                        posts.filter(item => {
-                            if (item.id !== id) return item;
-                        })
-                    );
-                })
-                .catch(e => console.log(e.response));
-        }
+    const handleBeRoozResani = (e, id, sellerPhoneNumber) => {
+        console.log("id is ", id);
+        axios({
+            url: baseUrl + advertismentBerozresaniUser,
+            method: "POST",
+            headers: JWTHeader().headers,
+            data: { id: id }
+        })
+            .then(res => {
+                console.log(res, posts, "done");
+                listUpdate();
+            })
+            .catch(e => console.log(e.response));
     };
 
     useEffect(() => {
@@ -89,7 +106,9 @@ function MainAds(props) {
                                 secondPrice={item.secondprice}
                                 id={item.id}
                                 key={index}
+                                updated_at={item.updated_at}
                                 handleDeleteBtn={handleDeleteBtn}
+                                handleBeRoozResani={handleBeRoozResani}
                             />
                         </div>
                     );

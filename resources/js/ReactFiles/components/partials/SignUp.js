@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import Axios from "axios";
+import { Link } from "react-router-dom";
 
 const validateEmail = email => {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -182,7 +183,8 @@ function SignUp() {
                         className="col-11 form-check-label font2"
                         htmlFor="checkBox"
                     >
-                        قوانین مطالعه کردم
+                        <Link to="/ghavanin">قوانین</Link> را مطالعه کردم و قبول
+                        دارم{" "}
                     </label>
                     <input
                         type="checkbox"

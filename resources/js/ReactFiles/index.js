@@ -7,6 +7,12 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap";
 import { createStore, StoreProvider, action } from "easy-peasy";
 import App from "./App";
+import JavascriptTimeAgo from "javascript-time-ago";
+
+import en from "javascript-time-ago/locale/en";
+import fa from "javascript-time-ago/locale/fa";
+JavascriptTimeAgo.locale(en);
+JavascriptTimeAgo.locale(fa);
 
 const store = createStore({
     auth: {
@@ -24,15 +30,6 @@ const store = createStore({
             state.Phonenumber = payload;
         })
     },
-
-    // urls: {
-    //     baseUrl: "http://mytestapplication.gigfa.com/wp-json",
-    //     postUri: "/custom-routes/v1/advertisments",
-    //     postsUri: "/wp/v2/advertisement/",
-    //     userUri: "/wp/v2/users/me",
-    //     navbar: "/menus/v1/menus/navbar1",
-    //     vipAdvertiser: "/wp/v2/pages"
-    // },
     message: {
         msg: "",
         status: "",

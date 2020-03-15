@@ -47,6 +47,7 @@ class AdvertismentController extends Controller
             $user = $item->user_id;
             $user = User::find($user);
             $new = [
+                'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
                 'location' => $item->location,
                 'text' => $item->text,
@@ -59,7 +60,8 @@ class AdvertismentController extends Controller
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
                 'sellerphonenumber' => $user->phonenumber,
-                'sallername' => $user->name
+                'sellername' => $user->name,
+                'updated_at' => $item->updated_at
             ];
             array_push($data, $new);
         }
@@ -80,6 +82,7 @@ class AdvertismentController extends Controller
             $user = $item->user_id;
             $user = User::find($user);
             $new = [
+                'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
                 'location' => $item->location,
                 'text' => $item->text,
@@ -92,7 +95,8 @@ class AdvertismentController extends Controller
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
                 'sellerphonenumber' => $user->phonenumber,
-                'sallername' => $user->name
+                'sellername' => $user->name,
+                'updated_at' => $item->updated_at
             ];
 
             array_push($data, $new);
@@ -113,6 +117,7 @@ class AdvertismentController extends Controller
             $user = $item->user_id;
             $user = User::find($user);
             $new = [
+                'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
                 'location' => $item->location,
                 'text' => $item->text,
@@ -125,7 +130,8 @@ class AdvertismentController extends Controller
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
                 'sellerphonenumber' => $user->phonenumber,
-                'sallername' => $user->name
+                'sellername' => $user->name,
+                'updated_at' => $item->updated_at
             ];
 
             array_push($data, $new);
@@ -147,6 +153,7 @@ class AdvertismentController extends Controller
             $user = $item->user_id;
             $user = User::find($user);
             $new = [
+                'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
                 'location' => $item->location,
                 'text' => $item->text,
@@ -159,7 +166,8 @@ class AdvertismentController extends Controller
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
                 'sellerphonenumber' => $user->phonenumber,
-                'sallername' => $user->name
+                'sellername' => $user->name,
+                'updated_at' => $item->updated_at
             ];
 
             array_push($data, $new);
@@ -181,6 +189,7 @@ class AdvertismentController extends Controller
             $user = $item->user_id;
             $user = User::find($user);
             $new = [
+                'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
                 'location' => $item->location,
                 'text' => $item->text,
@@ -193,7 +202,8 @@ class AdvertismentController extends Controller
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
                 'sellerphonenumber' => $user->phonenumber,
-                'sallername' => $user->name
+                'sellername' => $user->name,
+                'updated_at' => $item->updated_at
             ];
 
             array_push($data, $new);
@@ -209,12 +219,13 @@ class AdvertismentController extends Controller
     public function showMe()
     {
         $data = [];
-        $advertisments = Advertisment::where('user_id', Auth::user()->id)->orderBy('updated_at', 'desc')->paginate(30);
+        $advertisments = Advertisment::where(['user_id' => Auth::user()->id, 'published' => 1])->orderBy('updated_at', 'desc')->paginate(30);
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
             $new = [
+                'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
                 'location' => $item->location,
                 'text' => $item->text,
@@ -227,7 +238,8 @@ class AdvertismentController extends Controller
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
                 'sellerphonenumber' => $user->phonenumber,
-                'sellername' => $user->name
+                'sellername' => $user->name,
+                'updated_at' => $item->updated_at
             ];
 
             array_push($data, $new);
@@ -264,6 +276,53 @@ class AdvertismentController extends Controller
 
         response()->json('OK', 200);
     }
+
+
+
+    /**
+     * Delete Advertisments for Users.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function deleteAdvertismentUser(Request $request)
+    {
+
+
+        $advertisment = Advertisment::findOrFail($request->id);
+
+        if ($advertisment->user_id == Auth::guard()->user()->id) {
+            $advertisment->published = false;
+            $advertisment->save();
+            return response()->json('OK', 200);
+        }
+
+
+        return response()->json($request->id, 400);
+    }
+
+
+
+    /**
+     * BEROZRESANI for Users.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function berozresaniAdvertismentUser(Request $request)
+    {
+
+
+        $advertisment = Advertisment::findOrFail($request->id);
+
+        if ($advertisment->user_id == Auth::guard()->user()->id) {
+            $advertisment->updated_at = NOW();
+            $advertisment->save();
+            return response()->json('OK', 200);
+        }
+
+
+        return response()->json($request->id, 400);
+    }
+
 
 
     /**
@@ -312,7 +371,9 @@ class AdvertismentController extends Controller
                 'sale' => $item->sale,
                 'sellerphonenumber' => $user->phonenumber,
                 'sellername' => $user->name,
-                'published' => $item->published
+                'published' => $item->published,
+                'created_at' => $item->created_at,
+                'updated_at' => $item->updated_at
             ];
             if ($request->sellerphonenumber) {
                 if ($request->sellerphonenumber == $user->phonenumber) {

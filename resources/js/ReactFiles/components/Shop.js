@@ -13,6 +13,11 @@ import Logo from "./partials/Logo";
 import Seperator from "./partials/Seperator";
 
 export default function Shop() {
+    // const postsUriSale = MIX_ADVERTISMENTS_SALE;
+    // const postsUriGold = MIX_ADVERTISMENTS_GOLD;
+    // const postsUriSilver = MIX_ADVERTISMENTS_SILVER;
+    // const postsUriBronze = MIX_ADVERTISMENTS_BRONZE;
+
     const postsUriSale = "/advertisments-sale";
     const postsUriGold = "/advertisments-gold";
     const postsUriSilver = "/advertisments-silver";

@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment-jalaali";
 import persianJs from "persianjs";
+import Skeleton from "react-loading-skeleton";
 
 export default function TimeAndDate() {
     const [counter, setCounter] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [date, setDate] = useState("");
+    const [clock, setClock] = useState("");
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -14,6 +18,10 @@ export default function TimeAndDate() {
             clearInterval(interval);
         };
     }, [counter]);
+
+    useEffect(() => {
+        JalaliDateAndTime();
+    }, []);
 
     const JalaliDateAndTime = () => {
         let m = moment();
@@ -45,21 +53,22 @@ export default function TimeAndDate() {
         ];
         month = month[m.jMonth()];
 
-        let clock = persianJs(m.format("HH:mm"))
-            .englishNumber()
-            .toString();
-
-        let date =
-            dayOfWeek +
-            " " +
-            persianJs(m.jDate())
+        setClock(
+            persianJs(m.format("HH:mm"))
                 .englishNumber()
-                .toString() +
-            " " +
-            month;
+                .toString()
+        );
 
-        return date + " | " + clock;
+        setDate(
+            dayOfWeek +
+                " " +
+                persianJs(m.jDate())
+                    .englishNumber()
+                    .toString() +
+                " " +
+                month
+        );
     };
 
-    return <JalaliDateAndTime style={{ display: "none" }} />;
+    return date.length && clock.length ? date + " | " + clock : <Skeleton />;
 }

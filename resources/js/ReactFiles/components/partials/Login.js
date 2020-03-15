@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import { JWTLogin } from "../services/Auth";
-import secureStorage from "../services/Storage";
+import { Link } from "react-router-dom";
 
 function Login() {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
-    const logedIn = useStoreState(state => state.auth.logedIn);
     const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);
-    const setEmail = useStoreActions(actions => actions.auth.setEmail);
-    const setNiceName = useStoreActions(actions => actions.auth.setNiceName);
     const setError = useStoreActions(actions => actions.message.setError);
 
     const disableLoginBtn = () =>
@@ -23,8 +20,6 @@ function Login() {
     const loginRequest = async e => {
         e.preventDefault();
         disableLoginBtn();
-        // Must be moved to process.env file in production mode
-        // Must be more secure in case of production mode
 
         let loginData = {
             phonenumber: username,
@@ -85,6 +80,9 @@ function Login() {
                 >
                     ورود
                 </button>
+                <div className="py-5">
+                    <Link to="/resetpassword">رمز خود را فراموش کردید؟</Link>
+                </div>
             </form>
         </>
     );
