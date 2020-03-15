@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { JWTHeader } from "../../../services/Auth";
-import Axios from "axios";
-import qs from "qs";
+import axios from "axios";
 
 export default function NewAdvertiser(props) {
-    const [id, setId] = useState(props.id);
     const [name, setName] = useState("");
     const [shopname, setShopname] = useState("");
     const [phonenumbers, setPhonenumbers] = useState("");

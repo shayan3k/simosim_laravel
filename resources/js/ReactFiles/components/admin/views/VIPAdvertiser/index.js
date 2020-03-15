@@ -4,8 +4,9 @@ import Message from "../Message";
 import axios from "axios";
 
 export default function index() {
-    // const VIPAdvertiserUrl = process.env.MIX_VIP_ADVERTISER;
     const baseUrl = process.env.MIX_BASEURL;
+
+    // const VIPAdvertiserUrl = process.env.MIX_VIP_ADVERTISER;
     const VIPAdvertiserUrl = "/vipadvertisers";
 
     const [title, setTitle] = useState("");

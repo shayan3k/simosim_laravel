@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Advertisment from "./Advertisment";
 import { JWTHeader } from "../services/Auth";
-import secureStorage from "../services/Storage";
 import axios from "axios";
 
 function DashboardAdvertisment(props) {

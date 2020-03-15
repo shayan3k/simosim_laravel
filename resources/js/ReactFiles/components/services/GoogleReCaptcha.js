@@ -3,7 +3,6 @@ import {
     GoogleReCaptcha as GoogleReCaptchaService,
     GoogleReCaptchaProvider
 } from "react-google-recaptcha-v3";
-import { useStoreState, useStoreActions } from "easy-peasy";
 import secureStorage from "./Storage";
 
 export default function GoogleReCaptcha(props) {

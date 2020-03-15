@@ -6,11 +6,12 @@ import VipAdvertiser from "./VipAdvertiser";
 function Advertisers() {
     const [advertisers, setAdvertisers] = useState();
     const baseUrl = process.env.MIX_BASEURL;
-    const AdvertisersUrl = process.env.MIX_ADVERTISERSURL;
-    console.log(baseUrl + AdvertisersUrl);
+    // const AdvertisersUrl = process.env.MIX_ADVERTISERS;
+    const AdvertisersUrl = "/advertisers";
+
     useEffect(() => {
         axios
-            .get("http://127.0.0.1:8000/api/advertisers")
+            .get(baseUrl + AdvertisersUrl)
             .then(res => {
                 setAdvertisers(res.data);
             })

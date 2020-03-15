@@ -3,14 +3,19 @@ import secureStorage from "./Storage";
 
 //Move to Process.env
 const baseUrl = process.env.MIX_BASEURL;
-const loginRoute = process.env.MIX_AUTH_LOGIN;
+
+// const loginRoute = process.env.MIX_AUTH_LOGIN;
 // const logoutRoute = process.enc.MIX_AUTH_LOGOUT;
-const meRoute = process.env.MIX_AUTH_ME;
+// const meRoute = process.env.MIX_AUTH_ME;
+
+const loginRoute = "/auth/login";
+const logoutRoute = "/auth/logout";
+const meRoute = "/auth/me";
 
 export const JWTLogin = async data => {
     console.log(data);
     return axios
-        .post(baseUrl + "/auth/login", data)
+        .post(baseUrl + loginRoute, data)
         .then(res => {
             secureStorage.setItem("jwt", res.data.access_token);
             secureStorage.setItem("name", res.data.name);
@@ -38,7 +43,7 @@ export const JWTLogin = async data => {
 export const JWTLogout = () => {
     return new Promise((resolve, reject) => {
         return axios
-            .post(baseUrl + "/auth/logout", {}, JWTHeader())
+            .post(baseUrl + logoutRoute, {}, JWTHeader())
             .then(res => {
                 secureStorage.clear();
                 console.log("storage cleared");
@@ -53,7 +58,7 @@ export const JWTLogout = () => {
 export const JWTValidate = async () => {
     return new Promise((resolve, reject) => {
         return axios
-            .post(baseUrl + "/auth/me", {}, JWTHeader())
+            .post(baseUrl + meRoute, {}, JWTHeader())
             .then(res => {
                 secureStorage.setItem("name", res.data.name);
                 secureStorage.setItem("phonenumber", res.data.phonenumber);
@@ -81,7 +86,7 @@ export const JWTCheck = async () => {
     return new Promise((resolve, reject) => {
         return axios({
             method: "POST",
-            url: baseUrl + "/auth/me",
+            url: baseUrl + meRoute,
             headers: {
                 "Content-Type": "application/json",
                 Authorization: "Bearer " + secureStorage.getItem("jwt")

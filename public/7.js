@@ -173,7 +173,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function index() {
-  var baseUrl = "http://127.0.0.1:8000/api";
+  var baseUrl = "http://127.0.0.1:8000/api"; // const userAdminUrl = process.env.MIX_USERS_ADMIN;
+
   var userAdminUrl = "/users-admin";
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),

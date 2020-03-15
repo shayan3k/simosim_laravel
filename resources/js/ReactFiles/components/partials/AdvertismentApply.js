@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { TweenMax, TimelineMax } from "gsap";
 import { Link } from "react-router-dom";
-import Shop from "../Shop";
 import img from "../images/hamrah.jpg";
 
 export default class AdvertismentApply extends Component {

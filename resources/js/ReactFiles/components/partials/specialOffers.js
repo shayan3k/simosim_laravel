@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Advertisment from "./Advertisment";
+import { JWTHeader } from "../services/Auth";
 import axios from "axios";
 
 function SpecialOffers(props) {
@@ -58,6 +59,12 @@ function SpecialOffers(props) {
     const [posts, setPosts] = useState([]);
     const baseUrl = process.env.MIX_BASEURL;
 
+    // const advertismentDeleteUser = MIX_ADVERTISMENT_DELETE_USER;
+    // const advertismentBerozresaniUser = MIX_ADVERTISMENT_BEROZRESANI_USER;
+
+    const advertismentDeleteUser = "/advertisments-delete-user";
+    const advertismentBerozresaniUser = "/advertisments-berozresani-user";
+
     useEffect(() => {
         axios
             .get(baseUrl + props.uri)
@@ -70,8 +77,34 @@ function SpecialOffers(props) {
             });
     }, []);
 
-    const handleDeleteBtn = e => {
-        console.log("pressed");
+    const handleDeleteBtn = (e, id, sellerPhoneNumber) => {
+        console.log("id is ", id);
+        axios({
+            url: baseUrl + advertismentDeleteUser,
+            method: "POST",
+            headers: JWTHeader().headers,
+            data: { id: id }
+        })
+            .then(res => {
+                console.log(res, posts, "done");
+                listUpdate();
+            })
+            .catch(e => console.log(e.response));
+    };
+
+    const handleBeRoozResani = (e, id, sellerPhoneNumber) => {
+        console.log("id is ", id);
+        axios({
+            url: baseUrl + advertismentBerozresaniUser,
+            method: "POST",
+            headers: JWTHeader().headers,
+            data: { id: id }
+        })
+            .then(res => {
+                console.log(res, posts, "done");
+                listUpdate();
+            })
+            .catch(e => console.log(e.response));
     };
 
     return (
@@ -106,6 +139,7 @@ function SpecialOffers(props) {
                     return (
                         <div className="p-3 h-100" key={index}>
                             <Advertisment
+                                id={item.id}
                                 phoneNumber={item.phonenumber}
                                 status={item.simstatus}
                                 rond={item.rond}
@@ -122,6 +156,7 @@ function SpecialOffers(props) {
                                 secondPrice={item.secondprice}
                                 updated_at={item.updated_at}
                                 handleDeleteBtn={handleDeleteBtn}
+                                handleBeRoozResani={handleBeRoozResani}
                             />
                         </div>
                     );

@@ -21,7 +21,8 @@ function SignUp() {
     const [VerifyPassword, setVerifyPassword] = useState("");
 
     const baseUrl = process.env.MIX_BASEURL;
-    const registerUrl = process.env.Mix_REGISTERURL;
+    // const registerUrl = process.env.Mix_REGISTERURL;
+    const registerUrl = "/auth/register";
 
     //Function for resting fields after successfull signup
     const handleResetfields = () => {
@@ -78,7 +79,7 @@ function SignUp() {
         };
         console.log(data);
         if (!flag) {
-            Axios.post(baseUrl + "/auth/register", data)
+            Axios.post(baseUrl + registerUrl, data)
                 .then(e => {
                     console.log(e);
                     setError({

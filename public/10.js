@@ -62,8 +62,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function index() {
-  // const VIPAdvertiserUrl = process.env.MIX_VIP_ADVERTISER;
-  var baseUrl = "http://127.0.0.1:8000/api";
+  var baseUrl = "http://127.0.0.1:8000/api"; // const VIPAdvertiserUrl = process.env.MIX_VIP_ADVERTISER;
+
   var VIPAdvertiserUrl = "/vipadvertisers";
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),

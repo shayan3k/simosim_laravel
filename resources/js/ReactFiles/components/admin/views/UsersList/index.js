@@ -15,6 +15,8 @@ import {
 
 export default function index() {
     const baseUrl = process.env.MIX_BASEURL;
+
+    // const userAdminUrl = process.env.MIX_USERS_ADMIN;
     const userAdminUrl = "/users-admin";
 
     const [users, setUsers] = useState([]);

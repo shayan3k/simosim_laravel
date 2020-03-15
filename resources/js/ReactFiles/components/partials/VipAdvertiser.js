@@ -3,18 +3,20 @@ import axios from "axios";
 import persianJs from "persianjs";
 
 export default function VipAdvertiser() {
+    const baseUrl = process.env.MIX_BASEURL;
+    // const vipAdvertiser = process.env.MIX_VIP_ADVERTISER;
+    const vipAdvertiser = "/vipadvertisers";
+
     const [Title, setTitle] = useState();
     const [ShopName, setShopName] = useState();
     const [PhoneNumbers, setPhoneNumbers] = useState();
     const [AdvertiserName, setAdvertiserName] = useState();
     const [Text, setText] = useState();
     const [contactnumber, setContactNumber] = useState();
-    const baseUrl = process.env.MIX_BASEURL;
-    const vipAdvertiser = process.env.MIX_VIPADVERTISER;
 
     useEffect(() => {
         axios
-            .get("http://127.0.0.1:8000/api/vipadvertisers")
+            .get(baseUrl + vipAdvertiser)
             .then(res => {
                 console.log("th", res.data);
 
@@ -30,9 +32,9 @@ export default function VipAdvertiser() {
 
     return (
         <div className="card w-100 h-100 position-relative vip-advertiser-card">
-            <div className="advertiser-vip-flag-icon">
-                {/* <img className="w-100 h-100" src={vip} alt="vip" /> */}
-            </div>
+            {/* <div className="advertiser-vip-flag-icon">
+                <img className="w-100 h-100" src={vip} alt="vip" />
+            </div> */}
             <div className="card-header card-header-vip-advertiser d-flex justify-content-end align-content-center px-1 py-4">
                 <h6 className="font1 my-auto pr-1">{Title}</h6>
             </div>

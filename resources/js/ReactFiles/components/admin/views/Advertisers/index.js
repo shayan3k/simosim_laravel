@@ -5,10 +5,12 @@ import NewAdvertiser from "./NewAdvertiser";
 import axios from "axios";
 
 export default function index() {
-    // const AdvertisersUrl = process.env.MIX_ADVERTISERS;
     const baseUrl = process.env.MIX_BASEURL;
+    // const AdvertisersUrl = process.env.MIX_ADVERTISERS;
+    // const advertisersNewUrl = process.env.MIX_ADVERTISERS_NEW;
     const advertisersUrl = "/advertisers";
     const advertisersNewUrl = "/advertisers/create";
+
     const [advertisers, setAdvertisers] = useState("");
 
     useEffect(() => {
@@ -58,7 +60,7 @@ export default function index() {
                 <NewAdvertiser
                     baseUrl={baseUrl}
                     advertisersNewUrl={advertisersNewUrl}
-                    handleNewAdvertiser={e => handleNewAdvertiser(e)}
+                    handleNewAdvertiser={handleNewAdvertiser}
                 />
             </div>
         </div>

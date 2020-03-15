@@ -1,10 +1,8 @@
 import React from "react";
 import persianJs from "persianjs";
-import flag from "../images/sim-card.png";
 
 export default function Advertiser(props) {
     const { Name, ShopName, PhoneNumbers, ContactNumbers } = props;
-    console.log("jbfkjslbsfsffjlsbf", props);
 
     return (
         <div className="card w-100 h-100 position-relative advertiser-card">
@@ -36,7 +34,6 @@ export default function Advertiser(props) {
                 </div>
 
                 {ContactNumbers.map((item, index) => {
-                    // console.log(item);
                     return (
                         <p
                             className="col-6 m-0 p-0 py-1 white-space-nowrap"

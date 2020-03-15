@@ -478,8 +478,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function index() {
-  // const AdvertisersUrl = process.env.MIX_ADVERTISERS;
-  var baseUrl = "http://127.0.0.1:8000/api";
+  var baseUrl = "http://127.0.0.1:8000/api"; // const AdvertisersUrl = process.env.MIX_ADVERTISERS;
+  // const advertisersNewUrl = process.env.MIX_ADVERTISERS_NEW;
+
   var advertisersUrl = "/advertisers";
   var advertisersNewUrl = "/advertisers/create";
 
@@ -498,7 +499,7 @@ function index() {
     });
   }, []);
 
-  var _handleNewAdvertiser = function handleNewAdvertiser(data) {
+  var handleNewAdvertiser = function handleNewAdvertiser(data) {
     setAdvertisers([].concat(_toConsumableArray(advertisers), [data]));
     console.log("jbsfjbsfjb", [].concat(_toConsumableArray(advertisers), [data]));
   };
@@ -526,9 +527,7 @@ function index() {
   }) : "", console.log(advertisers), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewAdvertiser__WEBPACK_IMPORTED_MODULE_3__["default"], {
     baseUrl: baseUrl,
     advertisersNewUrl: advertisersNewUrl,
-    handleNewAdvertiser: function handleNewAdvertiser(e) {
-      return _handleNewAdvertiser(e);
-    }
+    handleNewAdvertiser: handleNewAdvertiser
   })));
 }
 

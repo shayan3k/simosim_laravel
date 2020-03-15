@@ -11,13 +11,14 @@ function Navbar() {
         new TimelineLite({ paused: true })
     );
     const [Navbar, setNavbar] = useState([]);
-    // const navbar = process.env.MIX_NAVBAR;
+
     const baseUrl = process.env.MIX_BASEURL;
-    const [loading, setLoading] = useState(false);
-    //Navbar useEffect
+    // const navbar = process.env.MIX_NAVBAR;
+    const navbarUrl = "/navbar";
+
     useEffect(() => {
         axios
-            .get(baseUrl + "/navbar")
+            .get(baseUrl + navbarUrl)
             .then(res => {
                 console.log(res.data);
                 setNavbar(res.data);

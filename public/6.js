@@ -29,7 +29,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Advertisment(props) {
-  var baseUrl = "http://127.0.0.1:8000/api";
+  var baseUrl = "http://127.0.0.1:8000/api"; // const AdvertismentDeleteAdmin = process.env.MIX_ADVERTISMENT_All_ADMIN;
+
   var AdvertismentDeleteAdmin = "/advertisments-admin";
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
@@ -622,7 +623,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function index() {
-  var baseUrl = "http://127.0.0.1:8000/api";
+  var baseUrl = "http://127.0.0.1:8000/api"; // const advertismentsAllAdmin = process.env.MIX_ADVERTISMENT_All_ADMIN;
+
   var advertismentsAllAdmin = "/advertisments-admin";
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     axios__WEBPACK_IMPORTED_MODULE_4___default()({
