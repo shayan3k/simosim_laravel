@@ -963,6 +963,18 @@ ul.social-network li {
   height: 100% !important;
 }
 
+.advertiser-card {
+  padding: 0.2rem !important;
+  border: 1.5px solid #9dcdf5 !important;
+  border-radius: 0 !important;
+}
+
+.vip-advertiser-card {
+  padding: 0.5rem !important;
+  border: 5px solid #450085 !important;
+  border-radius: 0 !important;
+}
+
 .vip-advertiser {
   height: 100% !important;
   font-size: 2rem !important;

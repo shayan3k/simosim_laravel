@@ -7,10 +7,10 @@ export default function Advertiser(props) {
     console.log("jbfkjslbsfsffjlsbf", props);
 
     return (
-        <div className="card w-100 h-100 border-0 position-relative">
-            <div className="advertiser-flag-icon">
+        <div className="card w-100 h-100 position-relative advertiser-card">
+            {/* <div className="advertiser-flag-icon">
                 <img className="w-100 h-100" src={flag} alt="سیمکارت" />
-            </div>
+            </div> */}
             <div className="card-body font4 card-body-advertiser px-0">
                 <h4 className="text-center">{ShopName}</h4>
                 <hr />

@@ -95,8 +95,8 @@ function App() {
         <>
             <GoogleReCaptcha>
                 <Router>
-                    <Suspense fallback={loading()}>
-                        <Switch>
+                    <Switch>
+                        <Suspense fallback={loading()}>
                             <Shop exact path="/" />
                             <Rahnama exact path="/rahnama" />
                             <ContactUs exact path="/contact-us" />
@@ -114,8 +114,8 @@ function App() {
                                 component={LoginPage}
                             />
                             <Route component={PageNotFound} />
-                        </Switch>
-                    </Suspense>
+                        </Suspense>
+                    </Switch>
                 </Router>
             </GoogleReCaptcha>
         </>

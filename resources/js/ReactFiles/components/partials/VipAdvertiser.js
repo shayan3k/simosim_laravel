@@ -29,7 +29,7 @@ export default function VipAdvertiser() {
     }, []);
 
     return (
-        <div className="card w-100 h-100 border-0 position-relative">
+        <div className="card w-100 h-100 position-relative vip-advertiser-card">
             <div className="advertiser-vip-flag-icon">
                 {/* <img className="w-100 h-100" src={vip} alt="vip" /> */}
             </div>
