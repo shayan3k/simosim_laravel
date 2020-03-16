@@ -625,19 +625,6 @@ function index() {
   var baseUrl = "http://127.0.0.1:8000/api";
   var advertismentsAllAdmin = "/advertisments-admin"; // const advertismentsAllAdmin = "/advertisments-admin";
 
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    axios__WEBPACK_IMPORTED_MODULE_4___default()({
-      url: baseUrl + advertismentsAllAdmin + "?page=" + currnetPage,
-      method: "GET",
-      headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_1__["JWTHeader"])().headers
-    }).then(function (res) {
-      console.log(res);
-      setAdvertisments(res.data);
-    })["catch"](function (e) {
-      return console.log(e.response);
-    });
-  }, [currnetPage]);
-
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
       _useState2 = _slicedToArray(_useState, 2),
       advertisments = _useState2[0],
@@ -701,6 +688,19 @@ function index() {
   var handleNextOnClick = function handleNextOnClick(e) {
     setCurrentpage(currnetPage + 1);
   };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    axios__WEBPACK_IMPORTED_MODULE_4___default()({
+      url: baseUrl + advertismentsAllAdmin + "?page=" + currnetPage,
+      method: "GET",
+      headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_1__["JWTHeader"])().headers
+    }).then(function (res) {
+      console.log(res);
+      setAdvertisments(res.data);
+    })["catch"](function (e) {
+      return console.log(e.response);
+    });
+  }, [currnetPage]);
 
   var updateList = function updateList(id) {
     axios__WEBPACK_IMPORTED_MODULE_4___default()({
@@ -819,7 +819,10 @@ function index() {
     "class": "btn page-link",
     onClick: function onClick(e) {
       return handlePrevOnClick(e);
-    }
+    },
+    style: currnetPage == 1 ? {
+      pointerEvents: "none"
+    } : null
   }, "Previous")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     "class": "page-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {

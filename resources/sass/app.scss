@@ -972,6 +972,11 @@ ul.social-network li {
     opacity: 0.23;
 }
 
+//
+.ghavaninCollapse {
+    background-color: $bg-ghavanin-contents;
+}
+
 ////////// Media Break Points
 /* Large desktops and laptops */
 @media (min-width: 1200px) {

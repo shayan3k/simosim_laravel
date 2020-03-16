@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import persianJs from "persianjs";
 import customSelect from "custom-select";
 import "custom-select/build/custom-select.css";
+import BannerSm1 from "../images/banner-sm-1.gif";
+import BannerSm2 from "../images/banner-sm-2.gif";
+import BannerSm3 from "../images/banner-sm-3.gif";
 
 function SearchBox() {
     const [Selects, setSelects] = useState("");
+    const [phonenumberLocal, setPhonenumberLocal] = useState("");
     const phonenumber = useStoreState(state => state.searchBox.phonenumber);
 
     const setPhonenumber = useStoreActions(
@@ -56,37 +60,23 @@ function SearchBox() {
         });
     };
 
-    const handleResetButton = () => {
-        Selects[1].value = "";
-        Selects[2].value = "";
-        Selects[3].value = "";
-        Selects[4].value = "";
-        Selects[5].value = "";
-        setStatus("");
-        setValue("");
-        setCode("");
-        setRond("");
-        setCode("");
-        setStatus("");
-    };
-
     return (
         <div className="container mx-auto searchBox">
             <div className="row bg-transparent">
                 <div className="bg-transparent row col-12 col-md-4 order-2 order-md-1 p-0 m-0 pr-1">
                     <img
                         className="col-6 col-md-12 ad1-image w-100 px-0 border"
-                        src="https://via.placeholder.com/100x30.png"
+                        src={BannerSm1}
                     />
 
                     <img
                         className="col-6 col-md-12 ad1-image w-100 px-0 border"
-                        src="https://via.placeholder.com/100x30.png"
+                        src={BannerSm2}
                     />
 
                     <img
                         className="col-6 col-md-12 ad1-image w-100 px-0 border"
-                        src="https://via.placeholder.com/100x30.png"
+                        src={BannerSm3}
                     />
                 </div>
 
@@ -115,7 +105,16 @@ function SearchBox() {
                     <div className="row p-0 m-0 w-100">
                         <div className=" row bg-white w-100 mx-auto">
                             <div className="col-12 row m-0 p-0">
-                                <div className="col-5  py-3 px-5 input-group mx-auto d-flex justify-content-end align-items-center">
+                                {phonenumberLocal.length == 0 ||
+                                phonenumberLocal.length == 7 ? (
+                                    ""
+                                ) : (
+                                    <div className="alert alert-warning px-5 d-flex justify-content-end align-items-center">
+                                        تعداد شماره های وارد شده کافی نیست
+                                    </div>
+                                )}
+
+                                <div className="col-5 py-3 px-5 input-group ml-auto d-flex justify-content-end align-items-center">
                                     <span className="font2">
                                         {persianJs("0912")
                                             .englishNumber()
@@ -123,22 +122,29 @@ function SearchBox() {
                                     </span>
                                     <input
                                         type="text"
-                                        className="font2 form-control searchBox-phonenumber"
+                                        className="font1 form-control searchBox-phonenumber text-center"
                                         name="phonenumber"
                                         id="phonenumber"
-                                        placeholder="شماره خط مورد نظر"
+                                        placeholder="شماره خط"
                                         maxLength="7"
                                         autoComplete="off"
                                         value={
-                                            phonenumber
-                                                ? persianJs(phonenumber)
+                                            phonenumberLocal
+                                                ? persianJs(phonenumberLocal)
                                                       .englishNumber()
                                                       .toString()
                                                 : ""
                                         }
-                                        onChange={e =>
-                                            setPhonenumber(e.target.value)
-                                        }
+                                        onChange={e => {
+                                            setPhonenumber("");
+                                            setPhonenumberLocal(e.target.value);
+                                            if (e.target.value.length == 7) {
+                                                setPhonenumberLocal(
+                                                    e.target.value
+                                                );
+                                                setPhonenumber(e.target.value);
+                                            }
+                                        }}
                                     />
                                 </div>
                             </div>

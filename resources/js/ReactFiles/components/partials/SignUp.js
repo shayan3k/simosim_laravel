@@ -21,7 +21,7 @@ function SignUp() {
     const [VerifyPassword, setVerifyPassword] = useState("");
 
     const baseUrl = process.env.MIX_BASEURL;
-    const registerUrl = process.env.Mix_REGISTERURL;
+    const registerUrl = process.env.MIX_REGISTERURL;
     // const registerUrl = "/auth/register";
 
     //Function for resting fields after successfull signup

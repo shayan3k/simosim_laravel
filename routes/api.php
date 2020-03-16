@@ -39,6 +39,8 @@ Route::get('/advertisments-gold', 'AdvertismentController@showGold');
 Route::get('/advertisments-silver', 'AdvertismentController@showSilver');
 Route::get('/advertisments-bronze', 'AdvertismentController@showBronze');
 Route::get('/advertisments-me', 'AdvertismentController@showMe')->middleware('auth:api');
+Route::get('/advertisments-sold', 'AdvertismentController@showMeSold')->middleware('auth:api');
+
 Route::post('/advertisments', 'AdvertismentController@create')->middleware('auth:api');
 Route::post('/advertisments-delete-user', 'AdvertismentController@deleteAdvertismentUser')->middleware('auth:api');
 Route::post('/advertisments-berozresani-user', 'AdvertismentController@berozresaniAdvertismentUser')->middleware('auth:api');

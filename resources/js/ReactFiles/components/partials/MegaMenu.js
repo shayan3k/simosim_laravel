@@ -281,10 +281,7 @@ export default function MegaMenu() {
                                         >
                                             داشبورد
                                         </Link>
-                                        <span
-                                            className="px-3 font4"
-                                            style={{ textDecoration: "none" }}
-                                        >
+                                        <span className="px-3 font4">
                                             {" "}
                                             خوش آمدید
                                             <span className="font3 px-2">
@@ -307,6 +304,13 @@ export default function MegaMenu() {
                                         >
                                             داشبورد
                                         </Link>
+                                        <span className="px-3 font4">
+                                            {" "}
+                                            خوش آمدید ,
+                                            <span className="font3 px-2">
+                                                {secureStorage.getItem("name")}
+                                            </span>
+                                        </span>
                                     </>
                                 )}
                             </div>

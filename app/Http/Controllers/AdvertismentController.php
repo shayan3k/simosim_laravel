@@ -21,8 +21,7 @@ class AdvertismentController extends Controller
         $data = [];
 
         $conditions = [];
-        if ($request->phonenumber)
-            $conditions += ['phonenumber' => $request->phonenumber];
+
         if ($request->location)
             $conditions += ['location' => $request->location];
         if ($request->code)
@@ -38,11 +37,14 @@ class AdvertismentController extends Controller
         //     array_push($condition, ['price', '>=',  $request->priceRange]);
         // }
 
+        if ($request->phonenumber)
+            $conditions = ['phonenumber' => $request->phonenumber];
+
 
         $conditions += ['published' => '1'];
 
 
-        $advertisments = Advertisment::orderBy('updated_at', 'desc')->where($conditions)->paginate(50);
+        $advertisments = Advertisment::orderBy('updated_at', 'desc')->where($conditions)->paginate('50', ['*'], 'page', $request->page);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
@@ -219,7 +221,7 @@ class AdvertismentController extends Controller
     public function showMe()
     {
         $data = [];
-        $advertisments = Advertisment::where(['user_id' => Auth::user()->id, 'published' => 1])->orderBy('updated_at', 'desc')->paginate(30);
+        $advertisments = Advertisment::where(['user_id' => Auth::user()->id, 'published' => 1])->orderBy('updated_at', 'desc')->paginate(25);
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
@@ -247,6 +249,47 @@ class AdvertismentController extends Controller
 
         return response()->json($data, 200);
     }
+
+
+    /**
+     * Show Me sold Advertisments.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function showMeSold()
+    {
+        $data = [];
+        $advertisments = Advertisment::where(['user_id' => Auth::user()->id, 'published' => 0])->orderBy('updated_at', 'desc')->paginate(25);
+        // User::id($advertisments->user_id);
+        foreach ($advertisments as $item) {
+            $user = $item->user_id;
+            $user = User::find($user);
+            $new = [
+                'id' => $item->id,
+                'phonenumber' => $item->phonenumber,
+                'location' => $item->location,
+                'text' => $item->text,
+                'price' => $item->price,
+                'secondprice' => $item->secondprice,
+                'code' => $item->code,
+                'operator' => $item->operator,
+                'value' => $item->value,
+                'rond' => $item->rond,
+                'simstatus' => $item->simstatus,
+                'sale' => $item->sale,
+                'sellerphonenumber' => $user->phonenumber,
+                'sellername' => $user->name,
+                'updated_at' => $item->updated_at
+            ];
+
+            array_push($data, $new);
+        }
+
+        return response()->json($data, 200);
+    }
+
+
+
     /**
      * Show Advertisments.
      *

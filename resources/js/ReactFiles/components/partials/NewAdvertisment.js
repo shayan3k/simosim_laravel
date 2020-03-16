@@ -6,7 +6,7 @@ import "custom-select/build/custom-select.css";
 import { JWTHeader } from "../services/Auth";
 import Axios from "axios";
 
-export default function NewAdvertisment() {
+export default function NewAdvertisment(props) {
     useEffect(() => {
         SelectConfig();
     }, []);
@@ -205,21 +205,21 @@ export default function NewAdvertisment() {
                 <div className="bg-transparent row col-12 col-md-4 order-2 order-md-1 p-0 m-0 pr-1">
                     <img
                         className="col-6 col-md-12 ad1-image w-100 px-0 border"
-                        src="https://via.placeholder.com/100x30.png"
+                        src={props.BannerSm1}
                     />
 
                     <img
                         className="col-6 col-md-12 ad1-image w-100 px-0 border"
-                        src="https://via.placeholder.com/100x30.png"
+                        src={props.BannerSm2}
                     />
 
                     <img
                         className="col-6 col-md-12 ad1-image w-100 px-0 border"
-                        src="https://via.placeholder.com/100x30.png"
+                        src={props.BannerSm3}
                     />
                     <img
                         className="col-6 col-md-12 ad1-image w-100 px-0 border"
-                        src="https://via.placeholder.com/100x30.png"
+                        src={props.BannerSm4}
                     />
                 </div>
 

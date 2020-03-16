@@ -9,19 +9,6 @@ export default function index() {
     const advertismentsAllAdmin = process.env.MIX_ADVERTISMENT_All_ADMIN;
     // const advertismentsAllAdmin = "/advertisments-admin";
 
-    useEffect(() => {
-        axios({
-            url: baseUrl + advertismentsAllAdmin + "?page=" + currnetPage,
-            method: "GET",
-            headers: JWTHeader().headers
-        })
-            .then(res => {
-                console.log(res);
-                setAdvertisments(res.data);
-            })
-            .catch(e => console.log(e.response));
-    }, [currnetPage]);
-
     const [advertisments, setAdvertisments] = useState([]);
     const [currnetPage, setCurrentpage] = useState(1);
 
@@ -43,6 +30,19 @@ export default function index() {
     const handleNextOnClick = e => {
         setCurrentpage(currnetPage + 1);
     };
+
+    useEffect(() => {
+        axios({
+            url: baseUrl + advertismentsAllAdmin + "?page=" + currnetPage,
+            method: "GET",
+            headers: JWTHeader().headers
+        })
+            .then(res => {
+                console.log(res);
+                setAdvertisments(res.data);
+            })
+            .catch(e => console.log(e.response));
+    }, [currnetPage]);
 
     const updateList = id => {
         axios({
@@ -157,6 +157,11 @@ export default function index() {
                         <a
                             class="btn page-link"
                             onClick={e => handlePrevOnClick(e)}
+                            style={
+                                currnetPage == 1
+                                    ? { pointerEvents: "none" }
+                                    : null
+                            }
                         >
                             Previous
                         </a>

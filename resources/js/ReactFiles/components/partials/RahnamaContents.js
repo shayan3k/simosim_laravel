@@ -3,7 +3,7 @@ import React from "react";
 function RahnamaContents() {
     return (
         <div className="container row p-0 m-0 mx-auto rahnamaCollapse">
-            <div className="col-12 ml-auto pr-0" id="accordion">
+            <div className="col-12 ml-auto p-0" id="accordion">
                 <div class="card my-0">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">

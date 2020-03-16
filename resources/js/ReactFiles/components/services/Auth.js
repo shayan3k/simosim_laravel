@@ -115,10 +115,7 @@ export const JWTCheck = async () => {
 
 export const JWTHeader = () => {
     //Check if the user is verified
-    var authHeader =
-        secureStorage.getItem("verified") == "true"
-            ? "Bearer " + secureStorage.getItem("jwt")
-            : "";
+    var authHeader = "Bearer " + secureStorage.getItem("jwt");
 
     return {
         headers: {
