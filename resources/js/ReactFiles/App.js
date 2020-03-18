@@ -60,7 +60,11 @@ function App() {
         <Route
             {...rest}
             render={props =>
-                logedIn ? <Component {...props} /> : <Redirect to="/login" />
+                secureStorage.getItem("jwt") || logedIn ? (
+                    <Component {...props} />
+                ) : (
+                    <Redirect to="/login" />
+                )
             }
         />
     );
@@ -90,31 +94,31 @@ function App() {
     return (
         <>
             <GoogleReCaptcha>
-                {secureStorage.getItem("verified") == "true" ? (
-                    <Router>
-                        <Switch>
-                            <Shop exact path="/" />
-                            <Rahnama exact path="/rahnama" />
-                            <ContactUs exact path="/contact-us" />
-                            <AboutUs exact path="/about-us" />
-                            <AdminRoute path="/admin" component={AdminPage} />
-                            <Ghavanin exact path="/ghavanin" />
-                            <PrivateRoute
-                                exact
-                                path="/dashboard"
-                                component={Dashboard}
-                            />
-                            <AuthenticatedRoute
-                                exact
-                                path="/login"
-                                component={LoginPage}
-                            />
-                            <Route component={PageNotFound} />
-                        </Switch>
-                    </Router>
-                ) : (
+                {/* {secureStorage.getItem("verified") == "true" ? ( */}
+                <Router>
+                    <Switch>
+                        <Shop exact path="/" />
+                        <Rahnama exact path="/rahnama" />
+                        <ContactUs exact path="/contact-us" />
+                        <AboutUs exact path="/about-us" />
+                        <AdminRoute path="/admin" component={AdminPage} />
+                        <Ghavanin exact path="/ghavanin" />
+                        <PrivateRoute
+                            exact
+                            path="/dashboard"
+                            component={Dashboard}
+                        />
+                        <AuthenticatedRoute
+                            exact
+                            path="/login"
+                            component={LoginPage}
+                        />
+                        <Route component={PageNotFound} />
+                    </Switch>
+                </Router>
+                {/* ) : (
                     "Verifing"
-                )}
+                )} */}
             </GoogleReCaptcha>
         </>
     );

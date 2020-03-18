@@ -218,10 +218,10 @@ class AdvertismentController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function showMe()
+    public function showMeLive()
     {
         $data = [];
-        $advertisments = Advertisment::where(['user_id' => Auth::user()->id, 'published' => 1])->orderBy('updated_at', 'desc')->paginate(25);
+        $advertisments = Advertisment::where(['user_id' => Auth::user()->id, 'published' => 1])->orderBy('updated_at', 'desc')->paginate(15);
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
@@ -259,7 +259,7 @@ class AdvertismentController extends Controller
     public function showMeSold()
     {
         $data = [];
-        $advertisments = Advertisment::where(['user_id' => Auth::user()->id, 'published' => 0])->orderBy('updated_at', 'desc')->paginate(25);
+        $advertisments = Advertisment::where(['user_id' => Auth::user()->id, 'published' => 0])->orderBy('updated_at', 'desc')->paginate(15);
         // User::id($advertisments->user_id);
         foreach ($advertisments as $item) {
             $user = $item->user_id;

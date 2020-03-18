@@ -395,7 +395,7 @@ export default function NewAdvertisment(props) {
                                     id="exampleFormControlTextarea1"
                                     placeholder="متن تبلیغ"
                                     value={Text}
-                                    maxLength="150"
+                                    maxLength="100"
                                     onChange={handleTextOnChange}
                                 ></textarea>
                                 <div className="col-12 form-check row m-0 p-0 py-2 px-3">

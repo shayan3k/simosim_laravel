@@ -6,7 +6,8 @@ import MegaMenu from "./partials/MegaMenu";
 import Footer from "./partials/Footer";
 import NewAdvertisment from "./partials/NewAdvertisment";
 import SectionTitle from "./partials/SectionTitle";
-import DashboardAdvertisment from "./partials/DashboardAdvertisment";
+import DashboardAdvertismentLive from "./partials/DashboardAdvertismentLive";
+import DashboardAdvertismentSold from "./partials/DashboardAdvertismentSold";
 import FooterSeperator from "./partials/FooterSeperator";
 import BannerLg1 from "./images/banner-lg-1.gif";
 import BannerLg2 from "./images/banner-lg-2.gif";
@@ -34,11 +35,18 @@ export default function Dashboard() {
                 BannerSm4={BannerSm4}
             />
             <SectionTitle
-                title="سیم کارت های من"
-                collapse="DashboardAdvertisment"
+                title="آگهی های تایید شده"
+                collapse="DashboardAdvertismentLive"
                 Banner={BannerLg2}
             />
-            <DashboardAdvertisment />
+            <DashboardAdvertismentLive />
+
+            <SectionTitle
+                title="سیم کارت های فروخته شده"
+                collapse="DashboardAdvertismentSold"
+                Banner={BannerLg2}
+            />
+            <DashboardAdvertismentSold />
             <FooterSeperator />
             <Footer />
         </>

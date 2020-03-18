@@ -84,6 +84,13 @@ const store = createStore({
             state.priceRange = payload;
             console.log(state.priceRange);
         })
+    },
+    listUpdate: {
+        dashboardAdvertisment: false,
+        setDashboardAdvertisment: action((state, payload) => {
+            state.dashboardAdvertisment = payload;
+            console.log(state.dashboardAdvertisment);
+        })
     }
 });
 if (document.getElementById("app")) {

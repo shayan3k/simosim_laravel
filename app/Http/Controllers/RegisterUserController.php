@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Ghasedak\GhasedakApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -25,6 +26,11 @@ class RegisterUserController extends Controller
         $user->active = false;
         $user->is_admin = false;
         $user->save();
+
+        $message = "تست ارسال وب سرویس قاصدک" . 'remember_token=' . $user->remember_token;
+        $lineNumber = "10008566";
+        $receptor = $user->phonenumber;
+        $api = new GhasedakApi(env('GHASEDAK_APIKEY'));
 
         return response()->json(['message' => "Successfully Registered!", 'user' => $user], 200);
     }
