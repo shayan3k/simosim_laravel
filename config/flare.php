@@ -24,8 +24,6 @@ return [
     |
     */
 
-
-
     'reporting' => [
         'anonymize_ips' => true,
         'collect_git_information' => false,
@@ -34,7 +32,6 @@ return [
         'report_query_bindings' => true,
         'report_view_data' => true,
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Reporting Log statements

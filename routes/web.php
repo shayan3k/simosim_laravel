@@ -11,6 +11,15 @@
 |
 */
 
+Route::get('/clear', function () {
+    Artisan::call('config:clear');
+    return "All cache cleared";
+});
+
+Route::get('/cache', function () {
+    Artisan::call('config:cache');
+    return "All cache cleared";
+});
 
 Route::get('/{path?}', [
     'uses' => 'ReactController@show',
