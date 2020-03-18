@@ -48,6 +48,12 @@ class AdvertismentController extends Controller
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
+            $sellerPhonenumber = 'No phoneNumber';
+            $sellerName = 'No Name';
+            if ($user) {
+                $sellerPhonenumber = $user->phonenumber;
+                $sellerName = $user->name;
+            }
             $new = [
                 'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
@@ -61,8 +67,8 @@ class AdvertismentController extends Controller
                 'rond' => $item->rond,
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
-                'sellerphonenumber' => $user->phonenumber,
-                'sellername' => $user->name,
+                'sellerphonenumber' => $sellerPhonenumber,
+                'sellername' => $sellerName,
                 'updated_at' => $item->updated_at
             ];
             array_push($data, $new);
@@ -83,6 +89,12 @@ class AdvertismentController extends Controller
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
+            $sellerPhonenumber = 'No phoneNumber';
+            $sellerName = 'No Name';
+            if ($user) {
+                $sellerPhonenumber = $user->phonenumber;
+                $sellerName = $user->name;
+            }
             $new = [
                 'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
@@ -96,8 +108,8 @@ class AdvertismentController extends Controller
                 'rond' => $item->rond,
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
-                'sellerphonenumber' => $user->phonenumber,
-                'sellername' => $user->name,
+                'sellerphonenumber' => $sellerPhonenumber,
+                'sellername' => $sellerName,
                 'updated_at' => $item->updated_at
             ];
 
@@ -118,6 +130,12 @@ class AdvertismentController extends Controller
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
+            $sellerPhonenumber = 'No phoneNumber';
+            $sellerName = 'No Name';
+            if ($user) {
+                $sellerPhonenumber = $user->phonenumber;
+                $sellerName = $user->name;
+            }
             $new = [
                 'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
@@ -131,8 +149,8 @@ class AdvertismentController extends Controller
                 'rond' => $item->rond,
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
-                'sellerphonenumber' => $user->phonenumber,
-                'sellername' => $user->name,
+                'sellerphonenumber' => $sellerPhonenumber,
+                'sellername' => $sellerName,
                 'updated_at' => $item->updated_at
             ];
 
@@ -154,6 +172,12 @@ class AdvertismentController extends Controller
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
+            $sellerPhonenumber = 'No phoneNumber';
+            $sellerName = 'No Name';
+            if ($user) {
+                $sellerPhonenumber = $user->phonenumber;
+                $sellerName = $user->name;
+            }
             $new = [
                 'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
@@ -167,8 +191,8 @@ class AdvertismentController extends Controller
                 'rond' => $item->rond,
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
-                'sellerphonenumber' => $user->phonenumber,
-                'sellername' => $user->name,
+                'sellerphonenumber' => $sellerPhonenumber,
+                'sellername' => $sellerName,
                 'updated_at' => $item->updated_at
             ];
 
@@ -190,6 +214,12 @@ class AdvertismentController extends Controller
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
+            $sellerPhonenumber = 'No phoneNumber';
+            $sellerName = 'No Name';
+            if ($user) {
+                $sellerPhonenumber = $user->phonenumber;
+                $sellerName = $user->name;
+            }
             $new = [
                 'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
@@ -203,8 +233,8 @@ class AdvertismentController extends Controller
                 'rond' => $item->rond,
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
-                'sellerphonenumber' => $user->phonenumber,
-                'sellername' => $user->name,
+                'sellerphonenumber' => $sellerPhonenumber,
+                'sellername' => $sellerName,
                 'updated_at' => $item->updated_at
             ];
 
@@ -226,6 +256,12 @@ class AdvertismentController extends Controller
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
+            $sellerPhonenumber = 'No phoneNumber';
+            $sellerName = 'No Name';
+            if ($user) {
+                $sellerPhonenumber = $user->phonenumber;
+                $sellerName = $user->name;
+            }
             $new = [
                 'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
@@ -239,8 +275,8 @@ class AdvertismentController extends Controller
                 'rond' => $item->rond,
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
-                'sellerphonenumber' => $user->phonenumber,
-                'sellername' => $user->name,
+                'sellerphonenumber' => $sellerPhonenumber,
+                'sellername' => $sellerName,
                 'updated_at' => $item->updated_at
             ];
 
@@ -399,6 +435,12 @@ class AdvertismentController extends Controller
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
+            $sellerPhonenumber = 'No phoneNumber';
+            $sellerName = 'No Name';
+            if ($user) {
+                $sellerPhonenumber = $user->phonenumber;
+                $sellerName = $user->name;
+            }
             $new = [
                 'id' => $item->id,
                 'phonenumber' => $item->phonenumber,
@@ -412,14 +454,12 @@ class AdvertismentController extends Controller
                 'rond' => $item->rond,
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
-                'sellerphonenumber' => $user->phonenumber,
-                'sellername' => $user->name,
-                'published' => $item->published,
-                'created_at' => $item->created_at,
+                'sellerphonenumber' => $sellerPhonenumber,
+                'sellername' => $sellerName,
                 'updated_at' => $item->updated_at
             ];
             if ($request->sellerphonenumber) {
-                if ($request->sellerphonenumber == $user->phonenumber) {
+                if ($request->sellerphonenumber == $sellerPhonenumber) {
                     array_push($data, $new);
                 } else {
                     continue;

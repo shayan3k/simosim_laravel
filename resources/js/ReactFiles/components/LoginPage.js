@@ -5,6 +5,7 @@ import Navbar from "./partials/Navbar";
 import Logo from "./partials/Logo";
 import SignUp from "./partials/SignUp";
 import Login from "./partials/Login";
+import SMSVerification from "./partials/SMSVerification";
 import FooterSeperator from "./partials/FooterSeperator";
 import Footer from "./partials/Footer";
 
@@ -20,6 +21,7 @@ function LoginPage() {
                     <SignUp />
                     <Login />
                 </div>
+                <SMSVerification />
             </section>
             <FooterSeperator />
             <Footer />

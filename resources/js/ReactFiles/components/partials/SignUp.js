@@ -11,25 +11,34 @@ const validateEmail = email => {
 function SignUp() {
     //  More Persistant States
     const setError = useStoreActions(actions => actions.message.setError);
+    const setSmsToken = useStoreActions(
+        actions => actions.register.setSmsToken
+    );
+    const setPhonenumberGlob = useStoreActions(
+        actions => actions.register.setPhonenumber
+    );
+    const setNameGlob = useStoreActions(actions => actions.register.setName);
+    const setPasswordGlob = useStoreActions(
+        actions => actions.register.setPassword
+    );
 
     //Local States
-    const [PhoneNumber, setPhoneNumber] = useState("");
-    const [Name, setName] = useState("");
-    const [Email, setEmail] = useState("");
-    const [Password, setPassword] = useState("");
-    const [CheckBox, setCheckBox] = useState("");
-    const [VerifyPassword, setVerifyPassword] = useState("");
+    const [PhoneNumber, setPhoneNumber] = useState("09127170126");
+    const [Name, setName] = useState("شایان");
+    const [Password, setPassword] = useState("password");
+    const [CheckBox, setCheckBox] = useState(true);
+    const [VerifyPassword, setVerifyPassword] = useState("password");
 
     const baseUrl = process.env.MIX_BASEURL;
-    const registerUrl = process.env.MIX_REGISTERURL;
-    // const registerUrl = "/auth/register";
+    // const registerSmsUrl = process.env.MIX_REGISTER_SMS;
+    const registerSmsUrl = "/auth/register/sms";
 
     //Function for resting fields after successfull signup
     const handleResetfields = () => {
         setPhoneNumber("");
         setName("");
         setPassword("");
-        setCheckBox("");
+        setCheckBox(false);
         setVerifyPassword("");
     };
 
@@ -73,28 +82,31 @@ function SignUp() {
             flag = true;
         }
         let data = {
-            username: PhoneNumber,
+            phonenumber: PhoneNumber,
             name: Name,
             password: Password
         };
         console.log(data);
         if (!flag) {
-            Axios.post(baseUrl + registerUrl, data)
-                .then(e => {
-                    console.log(e);
+            Axios.post(baseUrl + registerSmsUrl, data)
+                .then(res => {
+                    console.log(res);
                     setError({
-                        msg:
-                            "ثبت نام شما با موفقیت انجام شد. لطفا با نام کاربری و رمز عبور خود, وارد شوید",
+                        msg: res.data.message,
                         status: "success"
                     });
                     handleResetfields();
+                    setSmsToken(res.data.smsToken);
+                    setPhonenumberGlob(PhoneNumber);
+                    setNameGlob(Name);
+                    setPasswordGlob(Password);
                     enableSignUpBtn();
                 })
-
                 .catch(e => {
                     if (e.response.status == 500) {
                         setError({
-                            msg: "این شماره قبلا وارد شده",
+                            msg:
+                                "امکان ایجاد اکانت برای این شماره در حال حاظر وجود ندارد",
                             status: "danger"
                         });
                     } else
@@ -191,7 +203,7 @@ function SignUp() {
                         type="checkbox"
                         className="col-1 form-check-input"
                         id="checkBox"
-                        value={CheckBox}
+                        checked={CheckBox}
                         onChange={e => setCheckBox(e.target.checked)}
                     />
                 </div>

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterUserController extends Controller
 {
+
+    private $smsToken = '';
     /**
      * Create a new User
      * @param  \Illuminate\Http\Request  $request
@@ -16,22 +18,44 @@ class RegisterUserController extends Controller
      */
     public function register(Request $request)
     {
+        if ($request->phonenumber != '' || $request->name != '' || $request->password != '') {
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->phonenumber = $request->username;
-        $user->phonenumber_verified_at =  null;
-        $user->password  = Hash::make($request->password);
-        $user->remember_token = null;
-        $user->active = false;
-        $user->is_admin = false;
-        $user->save();
+            $user = new User();
+            $user->name = $request->name;
+            $user->phonenumber = $request->phonenumber;
+            $user->phonenumber_verified_at =  null;
+            $user->password  = Hash::make($request->password);
+            $user->remember_token = $request->smsToken;
+            $user->active = true;
+            $user->is_admin = false;
+            $user->save();
+        } else {
+            return response()->json(['message' => "phoneNumber , password , name are empty"], 500);
+        }
 
-        $message = "تست ارسال وب سرویس قاصدک" . 'remember_token=' . $user->remember_token;
+
+
+        return response()->json(['message' => "Successfully Registered!"], 200);
+    }
+
+
+    /**
+     * Create a new User
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function sendsms(Request $request)
+    {
+
+
+        $this->smsToken = rand(10000, 99999);
+
+        $message = "تست ارسال وب سرویس قاصدک" . 'password=' . $this->smsToken;
         $lineNumber = "10008566";
-        $receptor = $user->phonenumber;
+        $receptor = $request->phonenumber;
         $api = new GhasedakApi(env('GHASEDAK_APIKEY'));
+        $api->SendSimple($receptor, $message, $lineNumber);
 
-        return response()->json(['message' => "Successfully Registered!", 'user' => $user], 200);
+        return response()->json(['message' => "Sms has been sent = " . $this->smsToken, 'smsToken' => $this->smsToken], 200);
     }
 }

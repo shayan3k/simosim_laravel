@@ -26,12 +26,15 @@ Route::group([
 ], function ($router) {
 
     Route::post('register', 'RegisterUserController@register');
+    Route::post('register/sms', 'RegisterUserController@sendsms');
+
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
 });
 
+Route::post('/advertisments-all', 'AdvertismentController@showAll');
 
 Route::post('/advertisments-all', 'AdvertismentController@showAll');
 Route::get('/advertisments-sale', 'AdvertismentController@showSale');

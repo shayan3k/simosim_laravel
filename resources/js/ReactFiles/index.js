@@ -91,6 +91,28 @@ const store = createStore({
             state.dashboardAdvertisment = payload;
             console.log(state.dashboardAdvertisment);
         })
+    },
+    register: {
+        smsToken: "",
+        phonenumber: "",
+        name: "",
+        password: "",
+        setSmsToken: action((state, payload) => {
+            state.smsToken = payload;
+            console.log(state.smsToken);
+        }),
+        setPhonenumber: action((state, payload) => {
+            state.phonenumber = payload;
+            console.log(state.phonenumber);
+        }),
+        setName: action((state, payload) => {
+            state.name = payload;
+            console.log(state.name);
+        }),
+        setPassword: action((state, payload) => {
+            state.password = payload;
+            console.log(state.password);
+        })
     }
 });
 if (document.getElementById("app")) {
