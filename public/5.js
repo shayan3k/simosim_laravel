@@ -29,7 +29,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Advertisment(props) {
-  var baseUrl = "http://127.0.0.1:8000/api";
+  var baseUrl = "http://simosim.herokuapp.com/api";
   var AdvertismentDeleteAdmin = "/advertisments-admin"; // const AdvertismentDeleteAdmin = "/advertisments-admin";
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
@@ -622,7 +622,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function index() {
-  var baseUrl = "http://127.0.0.1:8000/api";
+  var baseUrl = "http://simosim.herokuapp.com/api";
   var advertismentsAllAdmin = "/advertisments-admin"; // const advertismentsAllAdmin = "/advertisments-admin";
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),

@@ -16,6 +16,8 @@ function Navbar() {
     const navbarUrl = process.env.MIX_NAVBAR;
     // const navbarUrl = "/navbar";
 
+    console.log("BASE URL is" + process.env.MIX_BASEURL);
+
     useEffect(() => {
         axios
             .get(baseUrl + navbarUrl)
