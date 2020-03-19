@@ -520,7 +520,7 @@ class AdvertismentController extends Controller
             $item  = Advertisment::findOrFail($request->id);
 
             $item->phonenumber = $request->phoneNumber;
-            $item->simStatus = $request->simStatus;
+            $item->simstatus = $request->simStatus;
             $item->rond = $request->rond;
             $item->code = $request->code;
             $item->location = $request->location;
