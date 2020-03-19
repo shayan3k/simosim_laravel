@@ -31,8 +31,8 @@ class UserController extends Controller
                     'id' => $user->id,
                     'name' => $user->name,
                     'phonenumber' => $user->phonenumber,
-                    'is_admin' => $user->is_admin,
-                    'active' => $user->active,
+                    'is_admin' => $user->is_admin ? true : false,
+                    'active' => $user->active ? true : false,
                     'phonenumber_verified_at' => $user->phonenumber_verified_at,
                     'created_at' => $user->created_at,
                     'updated_at' => $user->updated_at
@@ -57,6 +57,10 @@ class UserController extends Controller
     public function activeUserToggleAdmin(Request $request)
     {
         $is_admin = Auth::guard()->user()->is_admin;
+
+        //if user changes his permission
+        if (Auth::guard()->user()->id == $request->id)
+            return response()->json('you can not change your information', 400);
 
         if ($is_admin == 1) {
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Message from "../Message";
 import { JWTHeader } from "../../../services/Auth";
-
+import secureStorage from "../../../services/Storage";
 export default function User(props) {
     const baseUrl = process.env.MIX_BASEURL;
 
@@ -53,8 +53,8 @@ export default function User(props) {
                 <th scope="row">{props.item.id}</th>
                 <td scope="row">{props.item.name}</td>
                 <td>{props.item.phonenumber}</td>
-                <td>{props.item.is_admin}</td>
-                <td>{props.item.active}</td>
+                <td>{props.item.is_admin ? "true" : "false"}</td>
+                <td>{props.item.active ? "true" : "false"}</td>
                 <td>{props.item.phonenumber_verified_at ? "true" : "flase"}</td>
                 <td>
                     {new Date(Date.parse(props.item.created_at)).toUTCString()}
@@ -69,6 +69,12 @@ export default function User(props) {
                             props.item.active ? "danger" : "success"
                         } my-1 font4`}
                         onClick={e => handleActiveToggler(e)}
+                        disabled={
+                            secureStorage.getItem("phonenumber") ==
+                            props.item.phonenumber
+                                ? true
+                                : false
+                        }
                     >
                         {props.item.active ? "Deactive" : "Active"} User
                     </button>

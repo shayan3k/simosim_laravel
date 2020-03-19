@@ -49,6 +49,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Message__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Message */ "./resources/js/ReactFiles/components/admin/views/Message.js");
 /* harmony import */ var _services_Auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/Auth */ "./resources/js/ReactFiles/components/services/Auth.js");
+/* harmony import */ var _services_Storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/Storage */ "./resources/js/ReactFiles/components/services/Storage.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -61,8 +62,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function User(props) {
-  var baseUrl = "http://simosim.herokuapp.com/api";
+  var baseUrl = "http://127.0.0.1:8000/api";
   var userActiveTogglerUrl = "/users-active-admin";
   var deleteUserAllPostsUrl = "/users-post-delete-admin"; // const userActiveTogglerUrl = "/users-active-admin";
   // const deleteUserAllPostsUrl = "/users-post-delete-admin";
@@ -122,13 +124,14 @@ function User(props) {
     scope: "row"
   }, props.item.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     scope: "row"
-  }, props.item.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.phonenumber), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.is_admin), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.active), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.phonenumber_verified_at ? "true" : "flase"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, new Date(Date.parse(props.item.created_at)).toUTCString()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, new Date(Date.parse(props.item.updated_at)).toUTCString()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+  }, props.item.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.phonenumber), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.is_admin ? "true" : "false"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.active ? "true" : "false"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, props.item.phonenumber_verified_at ? "true" : "flase"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, new Date(Date.parse(props.item.created_at)).toUTCString()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, new Date(Date.parse(props.item.updated_at)).toUTCString()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     className: "d-flex flex-column align-items-center justify-content-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-".concat(props.item.active ? "danger" : "success", " my-1 font4"),
     onClick: function onClick(e) {
       return handleActiveToggler(e);
-    }
+    },
+    disabled: _services_Storage__WEBPACK_IMPORTED_MODULE_4__["default"].getItem("phonenumber") == props.item.phonenumber ? true : false
   }, props.item.active ? "Deactive" : "Active", " User"), postsDeleted ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-info my-1 font4"
   }, "All Posts Deleted") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -172,7 +175,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function index() {
-  var baseUrl = "http://simosim.herokuapp.com/api";
+  var baseUrl = "http://127.0.0.1:8000/api";
   var userAdminUrl = "/users-admin"; // const userAdminUrl = "/users-admin";
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
