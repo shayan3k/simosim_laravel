@@ -137,12 +137,24 @@ function SearchBox() {
                                         }
                                         onChange={e => {
                                             setPhonenumber("");
-                                            setPhonenumberLocal(e.target.value);
+                                            setPhonenumberLocal(
+                                                persianJs(e.target.value)
+                                                    .persianNumber()
+                                                    .toString()
+                                            );
+
                                             if (e.target.value.length == 7) {
                                                 setPhonenumberLocal(
-                                                    e.target.value
+                                                    persianJs(e.target.value)
+                                                        .persianNumber()
+                                                        .toString()
                                                 );
-                                                setPhonenumber(e.target.value);
+
+                                                setPhonenumber(
+                                                    persianJs(e.target.value)
+                                                        .persianNumber()
+                                                        .toString()
+                                                );
                                             }
                                         }}
                                     />
