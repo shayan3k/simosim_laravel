@@ -12,6 +12,10 @@ class UserWithAdvertismentSeeder extends Seeder
      */
     public function run()
     {
+
+        $vipAdvertiser = factory(App\Vipadvertiser::class, 1)
+            ->create();
+
         $users = factory(App\User::class, 10)
             ->create()
             ->each(function ($user) {
@@ -19,8 +23,5 @@ class UserWithAdvertismentSeeder extends Seeder
                 for ($i = 0; $i < 20; $i++)
                     $user->advertisments()->save(factory(Advertisment::class)->make());
             });
-
-        $vipAdvertiser = factory(App\Vipadvertiser::class, 1)
-            ->create();
     }
 }

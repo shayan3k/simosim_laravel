@@ -1,7 +1,9 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UsersSeeder extends Seeder
 {
@@ -16,31 +18,15 @@ class UsersSeeder extends Seeder
 
         if (DB::table('users')->get()->count() == 0) {
 
-            DB::table('users')->insert([
-
-                [
-                    'name' => 'Administrator',
-                    'email' => 'admin@app.com',
-                    'password' => bcrypt('password'),
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ],
-                [
-                    'name' => 'Agency',
-                    'email' => 'agency@app.com',
-                    'password' => bcrypt('password'),
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ],
-                [
-                    'name' => 'End',
-                    'email' => 'endcustomer@app.com',
-                    'password' => bcrypt('password'),
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ]
-
-            ]);
+            $user = new User();
+            $user->name = 'admin';
+            $user->phonenumber = '09127170126';
+            $user->phonenumber_verified_at =  null;
+            $user->password  = Hash::make('admin');
+            $user->remember_token = '00000';
+            $user->active = true;
+            $user->is_admin = true;
+            $user->save();
         } else {
             echo "\e[31mTable is not empty, therefore NOT ";
         }
