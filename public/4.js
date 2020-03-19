@@ -470,7 +470,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function index() {
-  var baseUrl = "http://127.0.0.1:8000/api";
+  var baseUrl = "http://simosim.herokuapp.com/api";
   var advertisersUrl = "/advertisers";
   var advertisersNewUrl = "/advertisers/create"; // const advertisersUrl = "/advertisers";
   // const advertisersNewUrl = "/advertisers/create";
