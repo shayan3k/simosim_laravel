@@ -35,8 +35,6 @@ Route::group([
 });
 
 Route::post('/advertisments-all', 'AdvertismentController@showAll');
-
-Route::post('/advertisments-all', 'AdvertismentController@showAll');
 Route::get('/advertisments-sale', 'AdvertismentController@showSale');
 Route::get('/advertisments-gold', 'AdvertismentController@showGold');
 Route::get('/advertisments-silver', 'AdvertismentController@showSilver');
