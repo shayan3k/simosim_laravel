@@ -19,7 +19,7 @@ $factory->define(Advertisment::class, function (Faker $faker) {
         "rond" => $faker->randomElement(['رند', 'نیمه رند', 'معمولی']),
         "simstatus" => $faker->randomElement(['صفر', 'تقریبا صفر', 'کارکرده']),
         "sale" => "",
-        'published' => false,
+        'published' => true,
         'created_at' => date('Y-m-d H:i:s'),
         'updated_at' => date('Y-m-d H:i:s'),
     ];
