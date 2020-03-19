@@ -519,18 +519,19 @@ class AdvertismentController extends Controller
 
             $item  = Advertisment::findOrFail($request->id);
 
-            $item->phoneNumber = $request->phoneNumber;
+            $item->phonenumber = $request->phoneNumber;
             $item->simStatus = $request->simStatus;
             $item->rond = $request->rond;
             $item->code = $request->code;
             $item->location = $request->location;
             $item->value = $request->value;
             $item->price = $request->price;
-            $item->secondPrice = $request->secondPrice;
+            $item->secondprice = $request->secondPrice;
             $item->published = $request->published;
             $item->text = $request->text;
             $item->sale = $request->sale == null ? '' : $request->sale;
             $item->save();
+
 
             return response()->json($item, 200);
         }
