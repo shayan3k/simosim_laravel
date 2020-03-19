@@ -514,10 +514,6 @@ body {
   max-height: 14rem !important;
 }
 
-.card-amdin-advertisments {
-  width: 22rem !important;
-}
-
 /* Do an horizontal flip when you move the mouse over the flip box container */
 /* Position the front and back side */
 .card-body {

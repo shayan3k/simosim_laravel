@@ -458,6 +458,7 @@ class AdvertismentController extends Controller
                 'rond' => $item->rond,
                 'simstatus' => $item->simstatus,
                 'sale' => $item->sale,
+                'published' => $item->published,
                 'sellerphonenumber' => $sellerPhonenumber,
                 'sellername' => $sellerName,
                 'updated_at' => $item->updated_at

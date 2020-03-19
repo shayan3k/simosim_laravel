@@ -166,23 +166,19 @@ function Advertisment(props) {
   };
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card card-amdin-advertisments"
+    className: "container row m-0 p-0"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group"
+    className: "col-4 input-group"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-control"
   }, id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-control"
   }, sellerPhoneNumber)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group"
+    className: "col-4 input-group m-0"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-control"
-  }, sellerName))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-body"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group"
+  }, sellerName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-4 input-group m-0"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     name: "location",
     id: "location",
@@ -251,7 +247,9 @@ function Advertisment(props) {
     value: "\u0647\u0645\u062F\u0627\u0646"
   }, "\u0647\u0645\u062F\u0627\u0646"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "\u06CC\u0632\u062F"
-  }, "\u06CC\u0632\u062F")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, "\u06CC\u0632\u062F"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12 input-group m-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     className: "form-control",
     maxLength: "11",
@@ -260,9 +258,7 @@ function Advertisment(props) {
       return setPhoneNumber(e.target.value);
     },
     placeholder: "Phone Number"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     name: "status",
     id: "status",
     className: "form-control",
@@ -285,9 +281,7 @@ function Advertisment(props) {
       return setCode(e.target.value);
     },
     placeholder: "Code"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     name: "rond",
     id: "rond",
     className: "form-control",
@@ -301,7 +295,35 @@ function Advertisment(props) {
     value: "\u0646\u06CC\u0645\u0647 \u0631\u0646\u062F"
   }, "\u0646\u06CC\u0645\u0647 \u0631\u0646\u062F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "\u0645\u0639\u0645\u0648\u0644\u06CC"
-  }, "\u0645\u0639\u0645\u0648\u0644\u06CC")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  }, "\u0645\u0639\u0645\u0648\u0644\u06CC"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12 row input-groupm-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 m-0 p-0 d-flex justify-content-end align-items-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    className: "col-7 form-control",
+    value: price,
+    onChange: function onChange(e) {
+      return setPrice(e.target.value);
+    },
+    placeholder: "Price"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "d-flex justify-content-start align-items-center"
+  }, ".000 \u062A\u0648\u0645\u0627\u0646")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 m-0 p-0 d-flex justify-content-end align-items-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    className: "col-7 form-control",
+    value: secondPrice,
+    onChange: function onChange(e) {
+      return setSecondPrice(e.target.value);
+    },
+    placeholder: "Second Price"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "d-flex justify-content-start align-items-center"
+  }, ".000 \u062A\u0648\u0645\u0627\u0646"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12 input-groupm-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     name: "value",
     id: "value",
     className: "form-control",
@@ -316,31 +338,7 @@ function Advertisment(props) {
   }, "\u0646\u0642\u0631\u0647 \u0627\u06CC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "\u0628\u0631\u0646\u0632"
   }, "\u0628\u0631\u0646\u0632"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    className: "form-control",
-    value: price,
-    onChange: function onChange(e) {
-      return setPrice(e.target.value);
-    },
-    placeholder: "Price"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "d-flex justify-content-start align-items-center"
-  }, ".000 \u062A\u0648\u0645\u0627\u0646")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "text",
-    className: "form-control",
-    value: secondPrice,
-    onChange: function onChange(e) {
-      return setSecondPrice(e.target.value);
-    },
-    placeholder: "Second Price"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "d-flex justify-content-start align-items-center"
-  }, ".000 \u062A\u0648\u0645\u0627\u0646")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group"
+    className: "col-8 input-groupm-0"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
     type: "text",
     className: "form-control",
@@ -351,38 +349,44 @@ function Advertisment(props) {
     placeholder: "Price",
     rows: "5"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group my-3"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "mx-4"
-  }, "Sale"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "col-4 row input-groupm-0"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 input-group my-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "checkbox",
-    className: "d-inline",
+    className: "w-50 d-inline",
+    id: "saleCheckBox",
     onChange: function onChange(e) {
       if (e.target.checked) setSale("فوری");else setSale("");
     },
     defaultChecked: sale == "فوری" ? true : false
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group my-3"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "mx-4"
-  }, "Published"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "saleCheckBox"
+  }, "Sale")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 input-group my-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "checkbox",
     className: "d-inline",
+    id: "publishedCheckBox",
     onChange: function onChange(e) {
       setPublished(e.target.checked);
     },
     defaultChecked: published
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "publishedCheckBox"
+  }, "Published")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12 input-group my-3"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-danger mx-1",
     onClick: function onClick(e) {
       return handleDeleteBtn(e);
     }
-  }, "Delete"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Delete"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-warning mx-1",
     onClick: function onClick(e) {
       return handleUpdateBtn(e);
     }
-  }, "Update")), message ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Message__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "Update"))), message ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Message__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: message,
     status: messageStatus,
     setMessage: function setMessage(text) {
@@ -838,7 +842,7 @@ function index() {
     className: "row p-0 m-0"
   }, advertisments.map(function (item) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "p-1"
+      className: "col-12 p-1  my-4 d-flex justify-content-center align-items-center"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Advertisment__WEBPACK_IMPORTED_MODULE_2__["default"], {
       phoneNumber: item.phonenumber,
       status: item.simstatus,

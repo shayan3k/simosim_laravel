@@ -183,7 +183,7 @@ export default function index() {
             <div className="row p-0 m-0">
                 {advertisments.map(item => {
                     return (
-                        <div className="p-1">
+                        <div className="col-12 p-1  my-4 d-flex justify-content-center align-items-center">
                             <Advertisment
                                 phoneNumber={item.phonenumber}
                                 status={item.simstatus}
