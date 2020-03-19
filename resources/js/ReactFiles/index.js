@@ -54,6 +54,7 @@ const store = createStore({
         rond: "",
         code: "",
         location: "",
+        sale: false,
         priceRange: "",
 
         setPhonenumber: action((state, payload) => {
@@ -79,6 +80,10 @@ const store = createStore({
         setLocation: action((state, payload) => {
             state.location = payload;
             console.log(state.location);
+        }),
+        setSale: action((state, payload) => {
+            state.sale = payload;
+            console.log(state.sale);
         }),
         setPriceRange: action((state, payload) => {
             state.priceRange = payload;

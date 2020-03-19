@@ -20,6 +20,7 @@ function SearchBox() {
     const setValue = useStoreActions(actions => actions.searchBox.setValue);
     const setRond = useStoreActions(actions => actions.searchBox.setRond);
     const setCode = useStoreActions(actions => actions.searchBox.setCode);
+    const setSale = useStoreActions(actions => actions.searchBox.setSale);
     const setLocation = useStoreActions(
         actions => actions.searchBox.setLocation
     );
@@ -323,6 +324,24 @@ function SearchBox() {
                                         </option>
                                         <option value="معمولی">معمولی</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div className="col-12 py-3">
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        defaultValue={false}
+                                        onChange={e =>
+                                            setSale(e.target.checked)
+                                        }
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="defaultCheck1"
+                                    >
+                                        فروش ویژه
+                                    </label>
                                 </div>
                             </div>
                         </div>

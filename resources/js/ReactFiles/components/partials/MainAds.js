@@ -23,6 +23,7 @@ function MainAds(props) {
     const Rond = useStoreState(state => state.searchBox.rond);
     const Code = useStoreState(state => state.searchBox.code);
     const Location = useStoreState(state => state.searchBox.location);
+    const Sale = useStoreState(state => state.searchBox.sale);
     const PriceRange = useStoreState(state => state.searchBox.priceRange);
 
     const [posts, setPosts] = useState([]);
@@ -46,6 +47,7 @@ function MainAds(props) {
         Code,
         Location,
         PriceRange,
+        Sale,
         currnetPage
     ]);
 
@@ -58,6 +60,7 @@ function MainAds(props) {
             value: Value,
             rond: Rond,
             status: Status,
+            sale: Sale,
             priceRange: PriceRange
         };
         axios({

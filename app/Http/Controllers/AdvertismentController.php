@@ -30,6 +30,10 @@ class AdvertismentController extends Controller
             $conditions += ['value' => $request->value];
         if ($request->rond)
             $conditions += ['rond' => $request->rond];
+        if ($request->sale)
+            $conditions += [
+                'sale' =>  'فوری'
+            ];
         if ($request->status)
             $conditions += ['simstatus' => $request->status];
 
