@@ -468,15 +468,8 @@ class AdvertismentController extends Controller
                 array_push($data, $new);
             }
         }
-        // $is_admin = Auth::guard()->user()->is_admin;
-
-        // if ($is_admin == 1) {
-        //     return response()->json($data, 200);
-        // }
 
         return response()->json($data, 200);
-
-        // return response()->json('Permission Error', 400);
     }
 
 
