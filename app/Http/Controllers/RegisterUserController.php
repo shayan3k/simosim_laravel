@@ -51,7 +51,7 @@ class RegisterUserController extends Controller
         $this->smsToken = rand(10000, 99999);
 
         $message = "تست ارسال وب سرویس قاصدک" . 'password=' . $this->smsToken;
-        $lineNumber = "10008567";
+        $lineNumber = "10008566";
         $receptor = $request->phonenumber;
         $api = new GhasedakApi(env('GHASEDAK_APIKEY'));
         $api->SendSimple($receptor, $message, $lineNumber);
