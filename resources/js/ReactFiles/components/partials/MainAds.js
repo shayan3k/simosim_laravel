@@ -146,7 +146,7 @@ function MainAds(props) {
                 ) : (
                     posts.map((item, index) => {
                         return (
-                            <div className="m-0 px-1 py-3  flex-grow-1 ">
+                            <div className="m-0 py-3 flex-grow-1">
                                 <Advertisment
                                     phoneNumber={item.phonenumber}
                                     status={item.simstatus}

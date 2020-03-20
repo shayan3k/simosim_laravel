@@ -51,13 +51,13 @@ export default function MegaMenu() {
         })
     );
 
-    useEffect(() => {
-        componentMountConfig();
-    }, []);
+    // useEffect(() => {
+    //     componentMountConfig();
+    // }, []);
 
-    useEffect(() => {
-        componentUpdateConfig();
-    });
+    // useEffect(() => {
+    //     componentUpdateConfig();
+    // });
 
     const handleLogoutBtn = () => {
         console.log("Logout Clicked");
@@ -253,7 +253,7 @@ export default function MegaMenu() {
                 className="container mega-menu d-flex justify-content-between align-items-center position-relative flex-column px-0 px-md-1"
                 id="mega-menu"
             >
-                <div className="w-100 m-0 p-0 d-flex justify-content-between align-items-center">
+                <div className="w-100 m-0 p-2 d-flex justify-content-between align-items-center">
                     <div className="px-1 d-inline">
                         {logedIn ? (
                             <div className="d-flex justify-content-between align-items-center">
@@ -281,13 +281,6 @@ export default function MegaMenu() {
                                         >
                                             داشبورد
                                         </Link>
-                                        <span className="px-3 font4">
-                                            {" "}
-                                            خوش آمدید
-                                            <span className="font3 px-2">
-                                                {secureStorage.getItem("name")}
-                                            </span>
-                                        </span>
                                     </>
                                 ) : (
                                     <>
@@ -304,13 +297,6 @@ export default function MegaMenu() {
                                         >
                                             داشبورد
                                         </Link>
-                                        <span className="px-3 font4">
-                                            {" "}
-                                            خوش آمدید ,
-                                            <span className="font3 px-2">
-                                                {secureStorage.getItem("name")}
-                                            </span>
-                                        </span>
                                     </>
                                 )}
                             </div>
@@ -327,8 +313,34 @@ export default function MegaMenu() {
                             </Link>
                         )}
                     </div>
-
                     <div className="font2 d-flex justify-content-end align-items-center">
+                        {secureStorage.getItem("is_admin") == adminSecretKey ? (
+                            <span className="px-3 font4">
+                                {" "}
+                                خوش آمدید
+                                <span className="font3 px-2">
+                                    {secureStorage.getItem("name")}
+                                </span>
+                            </span>
+                        ) : (
+                            <Link
+                                className="d-flex justify-content-center align-items-center bg-links"
+                                to="/login"
+                                style={{ textDecoration: "none" }}
+                            >
+                                خوش آمدید
+                                <span
+                                    className="font1 px-2"
+                                    style={{ color: "lightblue" }}
+                                >
+                                    سیم سیم
+                                </span>
+                                به
+                            </Link>
+                        )}
+                    </div>
+
+                    {/* <div className="font2 d-flex justify-content-end align-items-center">
                         <button
                             type="button"
                             className="btn-mega-menu  m-0 mt-1 ml-2"
@@ -375,8 +387,9 @@ export default function MegaMenu() {
                             همراه اول
                         </button>
                     </div>
+       */}
                 </div>
-                <div className="div w-100">
+                {/* <div className="div w-100">
                     <div
                         className="megaMenuPanel bg-transparent m-0 p-0 py-3"
                         style={{ display: "none" }}
@@ -878,6 +891,7 @@ export default function MegaMenu() {
                         </div>
                     </div>
                 </div>
+    */}
             </div>
         </>
     );
