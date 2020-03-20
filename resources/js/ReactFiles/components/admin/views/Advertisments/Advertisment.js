@@ -235,26 +235,28 @@ export default function Advertisment(props) {
                     <input
                         type="checkbox"
                         className="w-50 d-inline"
-                        id="saleCheckBox"
+                        id={"saleCheckBox" + props.id}
                         onChange={e => {
                             if (e.target.checked) setSale("فوری");
                             else setSale("");
                         }}
                         defaultChecked={sale == "فوری" ? true : false}
                     />
-                    <label htmlFor="saleCheckBox">Sale</label>
+                    <label htmlFor={"saleCheckBox" + props.id}>Sale</label>
                 </div>
                 <div className="col-6 input-group my-3">
                     <input
                         type="checkbox"
                         className="d-inline"
-                        id="publishedCheckBox"
+                        id={"publishedCheckBox" + props.id}
                         onChange={e => {
                             setPublished(e.target.checked);
                         }}
                         defaultChecked={published}
                     />
-                    <label htmlFor="publishedCheckBox">Published</label>
+                    <label htmlFor={"publishedCheckBox" + props.id}>
+                        Published
+                    </label>
                 </div>
 
                 <div className="col-12 input-group my-3">

@@ -355,25 +355,25 @@ function Advertisment(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "checkbox",
     className: "w-50 d-inline",
-    id: "saleCheckBox",
+    id: "saleCheckBox" + props.id,
     onChange: function onChange(e) {
       if (e.target.checked) setSale("فوری");else setSale("");
     },
     defaultChecked: sale == "فوری" ? true : false
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "saleCheckBox"
+    htmlFor: "saleCheckBox" + props.id
   }, "Sale")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-6 input-group my-3"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "checkbox",
     className: "d-inline",
-    id: "publishedCheckBox",
+    id: "publishedCheckBox" + props.id,
     onChange: function onChange(e) {
       setPublished(e.target.checked);
     },
     defaultChecked: published
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    htmlFor: "publishedCheckBox"
+    htmlFor: "publishedCheckBox" + props.id
   }, "Published")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-12 input-group my-3"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

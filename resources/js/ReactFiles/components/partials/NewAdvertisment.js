@@ -76,12 +76,12 @@ export default function NewAdvertisment(props) {
         setPrice(data);
 
         //get value
-        if (parseInt(data) > 90000) {
-            setValue("طلایی");
-        } else if (parseInt(data) > 10000) {
+        if (parseInt(data) < 1000) {
+            setValue("برنز");
+        } else if (parseInt(data) < 10000) {
             setValue("نقره ای");
         } else {
-            setValue("برنز");
+            setValue("طلایی");
         }
 
         console.log(data);
@@ -151,9 +151,9 @@ export default function NewAdvertisment(props) {
                 location: Location,
                 simstatus: SimStatus,
                 text: Text.trim(),
-                price: Price * 1000,
+                price: Price,
                 sale: Sale ? "فوری" : "",
-                secondprice: Sale ? SecondPrice * 1000 : 0,
+                secondprice: Sale ? SecondPrice : 0,
                 modifed: new Date().toISOString()
             };
 

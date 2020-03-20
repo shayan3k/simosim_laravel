@@ -74,6 +74,7 @@ function MainAds(props) {
             })
             .catch(err => {
                 console.log(err);
+                console.log("Error search", err.response, data);
             });
     };
     const handleDeleteBtn = (e, id, sellerPhoneNumber) => {

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import TimeAndDate from "./TimeAndDate";
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
+import { JWTHeader } from "../services/Auth";
 
 function Navbar() {
     const [menuTogglerAnimation, setMenuTogglerAnimation] = useState(
@@ -19,8 +20,11 @@ function Navbar() {
     console.log("BASE URL is" + process.env.MIX_BASEURL);
 
     useEffect(() => {
-        axios
-            .get(baseUrl + navbarUrl)
+        axios({
+            method: "GET",
+            url: baseUrl + navbarUrl,
+            headers: JWTHeader().headers
+        })
             .then(res => {
                 console.log(res.data);
                 setNavbar(res.data);

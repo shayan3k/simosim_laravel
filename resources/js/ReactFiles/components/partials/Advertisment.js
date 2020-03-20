@@ -119,13 +119,13 @@ export default function Advertisment(props) {
                     {sale ? (
                         <>
                             <p className="card-text font2 text-center p-0 m-0">
-                                {persianJs(secondPrice)
+                                {persianJs(secondPrice * 1000)
                                     .englishNumber()
                                     .toString()}
                                 تومان
                             </p>
                             <p className="card-text line-through font3 line text-center p-0 m-0 pb-1">
-                                {persianJs(price)
+                                {persianJs(price * 1000)
                                     .englishNumber()
                                     .toString()}
                                 تومان
@@ -133,7 +133,7 @@ export default function Advertisment(props) {
                         </>
                     ) : (
                         <p className="card-text font2 text-center p-0 m-0">
-                            {persianJs(price)
+                            {persianJs(price * 1000)
                                 .englishNumber()
                                 .toString()}
                             تومان

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,11 +68,24 @@ Route::post('/vipadvertisers', 'VipadvertiserController@update')->middleware('au
 
 Route::get('/navbar', function () {
 
+
+
+
+    if (Auth::guard()->user()) {
+        return [
+            ['post_title' => 'تبلیغات/تماس با ما', 'url' => '/contact-us'],
+            ['post_title' => 'قوانین', 'url' => '/ghavanin'],
+            ['post_title' => 'راهنما', 'url' => '/rahnama'],
+            ['post_title' => 'داشبورد', 'url' => '/dashboard'],
+            ['post_title' => 'خانه', 'url' => '/'],
+        ];
+    }
+
+
     return [
         ['post_title' => 'تبلیغات/تماس با ما', 'url' => '/contact-us'],
         ['post_title' => 'قوانین', 'url' => '/ghavanin'],
         ['post_title' => 'راهنما', 'url' => '/rahnama'],
-        ['post_title' => 'داشبورد', 'url' => '/dashboard'],
         ['post_title' => 'خانه', 'url' => '/'],
     ];
 });

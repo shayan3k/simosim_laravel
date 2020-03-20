@@ -259,18 +259,16 @@ function SearchBox() {
                                         <option defaultValue value="">
                                             بازه قیمتی
                                         </option>
-                                        <option value="1000000">
+                                        <option value={1000}>
                                             تا یک میلیون تومان
                                         </option>
-                                        <option value="10000000">
-                                            تا ده میلیون تومان
+                                        <option value={10000}>
+                                            یک میلیون تومان تا ده میلیون تومان
                                         </option>
-                                        <option value="90000000">
-                                            تا نود میلیون تومان
+                                        <option value={90000}>
+                                            ده میلیون تومان تا نود میلیون تومان
                                         </option>
-                                        <option value="999">
-                                            از نود میلیون تومان به بالا
-                                        </option>
+                                        <option value={0}>فروش های برتر</option>
                                     </select>
                                 </div>
                             </div>

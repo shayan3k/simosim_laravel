@@ -313,7 +313,7 @@ export default function MegaMenu() {
                             </Link>
                         )}
                     </div>
-                    <div className="font2 d-flex justify-content-end align-items-center">
+                    <div className="font1-2 d-flex justify-content-end align-items-center bg-links">
                         {secureStorage.getItem("is_admin") == adminSecretKey ? (
                             <span className="px-3 font4">
                                 {" "}
