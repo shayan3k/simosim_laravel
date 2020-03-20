@@ -110,12 +110,12 @@ function SearchBox() {
                                 phonenumberLocal.length == 7 ? (
                                     ""
                                 ) : (
-                                    <div className="alert alert-warning px-5 d-flex justify-content-end align-items-center">
+                                    <div className="alert alert-warning col-md-5 col-sm-12 d-flex justify-content-end align-items-center">
                                         تعداد شماره های وارد شده کافی نیست
                                     </div>
                                 )}
 
-                                <div className="col-5 py-3 px-5 input-group ml-auto d-flex justify-content-end align-items-center">
+                                <div className="col-md-5 col-sm-7 py-3 px-5 input-group ml-auto d-flex justify-content-end align-items-center">
                                     <span className="font2">
                                         {persianJs("0912")
                                             .englishNumber()

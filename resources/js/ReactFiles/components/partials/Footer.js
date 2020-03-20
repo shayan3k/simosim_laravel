@@ -71,14 +71,14 @@ export default function Footer() {
                     <hr />
                 </div>
                 <div className="row m-0 p-0 w-100  d-flex justify-content-center align-content-center">
-                    <div className="col-12 col-md-6 row p-0 m-0 container d-flex justify-content-center flex-column align-items-end mx-auto">
+                    <div className="col-12 col-md-6 row p-0 m-0 container d-flex justify-content-center flex-column align-items-center mx-auto">
                         <h6 className="text-white">سیمکارت خود را آگهی کنید</h6>
                         <button className="btn btn-outline-light">شروع</button>
                         <hr />
                     </div>
 
                     <div className="col-12 col-md-6 row p-0 m-0 w-100 d-flex justify-content-center align-items-center">
-                        این ستببس بتس بس بتس بتس
+                        سیمکارت خود را آگهی کنید
                     </div>
                 </div>
                 <div className="container-fluid d-inline-block w-100 bg-dark text-center py-1">
