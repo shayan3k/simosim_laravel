@@ -21,7 +21,7 @@ class AdvertismentController extends Controller
         $data = [];
 
         $conditions = [];
-        $conditionPriceRange = 'published = 1';
+        $conditionPriceRange = 'published = true';
 
         if ($request->location)
             $conditions += ['location' => $request->location];
