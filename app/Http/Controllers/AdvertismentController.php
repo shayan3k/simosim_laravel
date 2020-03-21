@@ -21,7 +21,7 @@ class AdvertismentController extends Controller
         $data = [];
 
         $conditions = [];
-        $priceArray = [0, 99999999999999999999];
+        $priceArray = [0, 9999999];
 
         if ($request->location)
             $conditions += ['location' => $request->location];
@@ -40,7 +40,7 @@ class AdvertismentController extends Controller
 
         if ($request->priceRange) {
             if ($request->priceRange == '1')
-                $priceArray = [90000, 99999999999999999999];
+                $priceArray = [90000, 9999999999];
             else if ($request->priceRange == '1000')
                 $priceArray = [0, 1000];
             else  if ($request->priceRange == '10000')
