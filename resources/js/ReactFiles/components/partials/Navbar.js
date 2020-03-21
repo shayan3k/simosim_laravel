@@ -101,7 +101,7 @@ function Navbar() {
                             <Link
                                 key={index}
                                 className="mobile-menu-item"
-                                to={"/wordpress" + item.url}
+                                to={item.url}
                             >
                                 <span> {item.post_title}</span>
                             </Link>
