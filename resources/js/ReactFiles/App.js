@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import {
     BrowserRouter as Router,
     Switch,
@@ -15,11 +15,14 @@ import LoginPage from "./components/LoginPage";
 import Dashboard from "./components/Dashboard";
 import PageNotFound from "./components/PageNotFound";
 import AdminPage from "./components/AdminPage";
-import { JWTCheck } from "./components/services/Auth";
+import { JWTCheck, JWTHeader } from "./components/services/Auth";
 import secureStorage from "./components/services/Storage";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
 function App() {
+    const baseUrl = process.env.MIX_BASEURL;
+    const navbarUrl = process.env.MIX_NAVBAR;
+    // const navbarUrl = "/navbar";
     const adminSecretKey = process.env.MIX_ADMIN_SECRET_KEY;
     // const adminSecretKey = "true";
 
@@ -29,6 +32,12 @@ function App() {
     const setPhoneNumber = useStoreActions(
         actions => actions.auth.setPhoneNumber
     );
+    const setNavbarData = useStoreActions(
+        actions => actions.navbar.setNavbarData
+    );
+
+    console.log("BASE URL is" + process.env.MIX_BASEURL);
+
     const islogedIn = () => {
         console.log("Authenticating ... ");
         JWTCheck()
@@ -51,9 +60,22 @@ function App() {
                 setNiceName("");
             });
     };
+    const setNavbar = () => {
+        axios({
+            method: "GET",
+            url: baseUrl + navbarUrl,
+            headers: JWTHeader().headers
+        })
+            .then(res => {
+                console.log(res.data);
+                setNavbarData(res.data);
+            })
+            .catch(e => console.log(e));
+    };
 
     useEffect(() => {
         islogedIn();
+        setNavbar();
     }, []);
 
     const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -61,7 +83,9 @@ function App() {
             {...rest}
             render={props =>
                 secureStorage.getItem("jwt") || logedIn ? (
-                    <Component {...props} />
+                    <Suspense fallback={Loading}>
+                        <Component {...props} />
+                    </Suspense>
                 ) : (
                     <Redirect to="/login" />
                 )
@@ -73,7 +97,13 @@ function App() {
         <Route
             {...rest}
             render={props =>
-                !logedIn ? <Component {...props} /> : <Redirect to="/" />
+                !logedIn ? (
+                    <Suspense fallback={Loading}>
+                        <Component {...props} />
+                    </Suspense>
+                ) : (
+                    <Redirect to="/" />
+                )
             }
         />
     );
@@ -83,31 +113,59 @@ function App() {
             {...rest}
             render={props =>
                 secureStorage.getItem("is_admin") == adminSecretKey ? (
-                    <Component {...props} />
+                    <Suspense fallback={Loading}>
+                        <Component {...props} />
+                    </Suspense>
                 ) : (
                     <Redirect to="/login" />
                 )
             }
         />
     );
+    const Loading = () => {
+        return <div>Loading...</div>;
+    };
 
     return (
         <>
             <GoogleReCaptcha>
-                {/* {secureStorage.getItem("verified") == "true" ? ( */}
                 <Router>
                     <Switch>
-                        <Shop exact path="/" />
-                        <Rahnama exact path="/rahnama" />
-                        <ContactUs exact path="/contact-us" />
-                        <AboutUs exact path="/about-us" />
-                        <AdminRoute path="/admin" component={AdminPage} />
-                        <Ghavanin exact path="/ghavanin" />
+                        <Route exact path="/">
+                            <Suspense fallback={Loading}>
+                                <Shop />
+                            </Suspense>
+                        </Route>
+                        <Route exact path="/rahnama">
+                            <Suspense fallback={Loading}>
+                                <Rahnama />
+                            </Suspense>
+                        </Route>
+                        <Route exact path="/contact-us">
+                            <Suspense fallback={Loading}>
+                                <ContactUs />
+                            </Suspense>
+                        </Route>
+                        <Route exact path="/about-us">
+                            <Suspense fallback={Loading}>
+                                <AboutUs />
+                            </Suspense>
+                        </Route>
+                        <Route path="/admin">
+                            <AdminRoute component={AdminPage} />
+                        </Route>
+                        <Route exact path="/ghavanin">
+                            <Suspense fallback={Loading}>
+                                <Ghavanin />
+                            </Suspense>
+                        </Route>
+
                         <PrivateRoute
                             exact
                             path="/dashboard"
                             component={Dashboard}
                         />
+
                         <AuthenticatedRoute
                             exact
                             path="/login"
@@ -116,9 +174,6 @@ function App() {
                         <Route component={PageNotFound} />
                     </Switch>
                 </Router>
-                {/* ) : (
-                    "Verifing"
-                )} */}
             </GoogleReCaptcha>
         </>
     );

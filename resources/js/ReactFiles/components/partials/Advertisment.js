@@ -146,7 +146,10 @@ export default function Advertisment(props) {
                     <hr className="my-1 " />
                     <div className="m-0 p-0 d-flex justify-content-between align-items-end">
                         <span className="lead font3 h-100">
-                            <ReactTimeAgo date={props.updated_at} locale="fa" />
+                            <ReactTimeAgo
+                                date={props.updated_at ? props.updated_at : ""}
+                                locale="fa"
+                            />
                         </span>
                         {RondRender()}
                     </div>

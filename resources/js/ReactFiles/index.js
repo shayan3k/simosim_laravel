@@ -118,6 +118,13 @@ const store = createStore({
             state.password = payload;
             console.log(state.password);
         })
+    },
+    navbar: {
+        navbarData: [],
+        setNavbarData: action((state, payload) => {
+            state.navbarData = payload;
+            console.log(state.navbarData);
+        })
     }
 });
 if (document.getElementById("app")) {

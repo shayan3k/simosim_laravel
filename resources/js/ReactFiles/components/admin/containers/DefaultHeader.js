@@ -55,6 +55,12 @@ class DefaultHeader extends Component {
                             داشبورد
                         </NavLink>
                     </NavItem>
+
+                    <NavItem className="px-3">
+                        <NavLink to="/" className="nav-link">
+                            خانه
+                        </NavLink>
+                    </NavItem>
                 </Nav>
                 <Nav className="ml-auto" navbar>
                     <NavItem className="d-md-down-none">

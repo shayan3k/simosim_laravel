@@ -325,9 +325,9 @@ function SearchBox() {
                                 </div>
                             </div>
                             <div className="col-12 py-3">
-                                <div class="form-check">
+                                <div className="form-check">
                                     <input
-                                        class="form-check-input"
+                                        className="form-check-input"
                                         type="checkbox"
                                         defaultValue={false}
                                         onChange={e =>
@@ -335,8 +335,8 @@ function SearchBox() {
                                         }
                                     />
                                     <label
-                                        class="form-check-label"
-                                        for="defaultCheck1"
+                                        className="form-check-label"
+                                        htmlFor="defaultCheck1"
                                     >
                                         فروش ویژه
                                     </label>

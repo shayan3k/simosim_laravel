@@ -114,10 +114,10 @@ function MainAds(props) {
     return (
         <div className="container my-0 mainAdsToggler bg-custom">
             <nav aria-label="Page navigation">
-                <ul class="pagination py-2 px-1">
-                    <li class="page-item ml-auto">
+                <ul className="pagination py-2 px-1">
+                    <li className="page-item ml-auto">
                         <a
-                            class="btn page-link"
+                            className="btn page-link"
                             onClick={e => handlePrevOnClick(e)}
                             style={
                                 currnetPage == 1
@@ -128,12 +128,12 @@ function MainAds(props) {
                             صفحه قبل
                         </a>
                     </li>
-                    <li class="page-item">
-                        <a class="btn btn-danger">{currnetPage}</a>
+                    <li className="page-item">
+                        <a className="btn btn-danger">{currnetPage}</a>
                     </li>
-                    <li class="page-item">
+                    <li className="page-item">
                         <a
-                            class="btn page-link"
+                            className="btn page-link"
                             onClick={e => handleNextOnClick(e)}
                         >
                             صفحه بعد
@@ -147,7 +147,7 @@ function MainAds(props) {
                 ) : (
                     posts.map((item, index) => {
                         return (
-                            <div className="m-0 py-3 flex-grow-1">
+                            <div className="m-0 py-3 flex-grow-1" key={index}>
                                 <Advertisment
                                     phoneNumber={item.phonenumber}
                                     status={item.simstatus}
@@ -163,7 +163,6 @@ function MainAds(props) {
                                     sale={item.sale}
                                     secondPrice={item.secondprice}
                                     id={item.id}
-                                    key={index}
                                     updated_at={item.updated_at}
                                     handleDeleteBtn={handleDeleteBtn}
                                     handleBeRoozResani={handleBeRoozResani}

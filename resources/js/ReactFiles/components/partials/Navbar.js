@@ -3,34 +3,15 @@ import { useStoreState } from "easy-peasy";
 import { TimelineLite, Power4 } from "gsap";
 import { Link } from "react-router-dom";
 import TimeAndDate from "./TimeAndDate";
-import axios from "axios";
 import Skeleton from "react-loading-skeleton";
-import { JWTHeader } from "../services/Auth";
 
 function Navbar() {
     const [menuTogglerAnimation, setMenuTogglerAnimation] = useState(
         new TimelineLite({ paused: true })
     );
-    const [Navbar, setNavbar] = useState([]);
-
-    const baseUrl = process.env.MIX_BASEURL;
-    const navbarUrl = process.env.MIX_NAVBAR;
-    // const navbarUrl = "/navbar";
-
-    console.log("BASE URL is" + process.env.MIX_BASEURL);
+    const navbarData = useStoreState(state => state.navbar.navbarData);
 
     useEffect(() => {
-        axios({
-            method: "GET",
-            url: baseUrl + navbarUrl,
-            headers: JWTHeader().headers
-        })
-            .then(res => {
-                console.log(res.data);
-                setNavbar(res.data);
-            })
-            .catch(e => console.log(e));
-
         menuTogglerAnimation
             .to(".MenuOpenner", 0.3, {
                 css: { transform: "translateX(-10px)", opacity: "0" }
@@ -88,8 +69,8 @@ function Navbar() {
                 </ul>
                 <div className="navbar-ul d-none d-md-inline-block order-sm-2 order-md-2">
                     <div className="div m-0 p-0 d-flex justify-content-end align-items-center">
-                        {Navbar.length ? (
-                            Navbar.map((item, index) => {
+                        {navbarData.length ? (
+                            navbarData.map((item, index) => {
                                 return (
                                     <li className="nav-item" key={index}>
                                         <Link
@@ -112,8 +93,9 @@ function Navbar() {
                 </div>
             </div>
             <ul className="mobile-menu container row px-0 mx-auto d-flex justify-content-between align-items-center">
-                {Navbar.length ? (
-                    Navbar.slice(0)
+                {navbarData.length ? (
+                    navbarData
+                        .slice(0)
                         .reverse()
                         .map((item, index) => (
                             <Link
