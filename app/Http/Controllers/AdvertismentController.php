@@ -21,7 +21,7 @@ class AdvertismentController extends Controller
         $data = [];
 
         $conditions = [];
-        $conditionPriceRange = 'published = true';
+        $priceArray = [0, 99999999999999999999];
 
         if ($request->location)
             $conditions += ['location' => $request->location];
@@ -39,14 +39,14 @@ class AdvertismentController extends Controller
             $conditions += ['simstatus' => $request->status];
 
         if ($request->priceRange) {
-            if ($request->priceRange == 0)
-                $conditionPriceRange = ' price ' . ' >= ' .  ' 90000 ';
-            else if ($request->priceRange == 1000)
-                $conditionPriceRange = ' price ' . ' <= ' .  ' 1000';
-            else  if ($request->priceRange == 10000)
-                $conditionPriceRange = 'price BETWEEN 1000 AND 10000';
-            else  if ($request->priceRange == 90000)
-                $conditionPriceRange = 'price BETWEEN 10000 AND 90000';;
+            if ($request->priceRange == '1')
+                $priceArray = [90000, 99999999999999999999];
+            else if ($request->priceRange == '1000')
+                $priceArray = [0, 1000];
+            else  if ($request->priceRange == '10000')
+                $priceArray = [1000, 10000];
+            else  if ($request->priceRange == '90000')
+                $priceArray = [10000, 90000];
         }
 
         if ($request->phonenumber)
@@ -56,7 +56,7 @@ class AdvertismentController extends Controller
         $conditions += ['published' => '1'];
 
 
-        $advertisments = Advertisment::orderBy('updated_at', 'desc')->where($conditions)->whereRaw($conditionPriceRange)->paginate('50', ['*'], 'page', $request->page);
+        $advertisments = Advertisment::orderBy('updated_at', 'desc')->where($conditions)->whereBetween('price', $priceArray)->paginate('50', ['*'], 'page', $request->page);
         foreach ($advertisments as $item) {
             $user = $item->user_id;
             $user = User::find($user);
