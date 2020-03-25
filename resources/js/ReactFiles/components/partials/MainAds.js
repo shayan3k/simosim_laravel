@@ -141,13 +141,13 @@ function MainAds(props) {
                     </li>
                 </ul>
             </nav>
-            <div className="d-flex justify-content-start align-items-stretch flex-wrap p-0 m-0">
+            <div className="d-flex justify-content-center align-items-stretch flex-wrap p-0 m-0">
                 {posts.length == 0 ? (
                     <div className="alert alert-warning">نتیجه ای یافت نشد</div>
                 ) : (
                     posts.map((item, index) => {
                         return (
-                            <div className="m-0 py-3 flex-grow-1" key={index}>
+                            <div className="p-1 d-flex justify-content-center align-items-center">
                                 <Advertisment
                                     phoneNumber={item.phonenumber}
                                     status={item.simstatus}

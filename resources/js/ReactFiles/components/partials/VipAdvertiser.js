@@ -32,9 +32,6 @@ export default function VipAdvertiser() {
 
     return (
         <div className="card w-100 h-100 position-relative vip-advertiser-card">
-            {/* <div className="advertiser-vip-flag-icon">
-                <img className="w-100 h-100" src={vip} alt="vip" />
-            </div> */}
             <div className="card-header card-header-vip-advertiser d-flex justify-content-end align-content-center px-1 py-4">
                 <h6 className="font1 my-auto pr-1">{Title}</h6>
             </div>
@@ -45,10 +42,10 @@ export default function VipAdvertiser() {
                     {PhoneNumbers
                         ? PhoneNumbers.map((item, index) => (
                               <div
-                                  className="col-4 lead d-inline-block p-1"
+                                  className="col-12 col-md-4 lead d-inline-block p-1"
                                   key={index}
                               >
-                                  <div className="p-1 m-0  bg-vip-advertisers-sim text-center shadow-lg rounded white-space-nowrap">
+                                  <div className="p-1 m-0 bg-vip-advertisers-sim text-center shadow-lg rounded white-space-nowrap">
                                       {persianJs(item)
                                           .englishNumber()
                                           .toString()}
@@ -64,11 +61,11 @@ export default function VipAdvertiser() {
                 </h4>
                 <hr />
                 <p className="text-right pt-1 font-1">{AdvertiserName}</p>
-                <div className="d-flex justify-content-center align-content-center">
+                <div className="row">
                     {contactnumber
                         ? contactnumber.map((item, index) => (
                               <div
-                                  className="col-4 lead d-inline-block p-1"
+                                  className="col-12 col-md-6 lead d-inline-block p-1"
                                   key={index}
                                   key={index}
                               >
