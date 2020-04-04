@@ -32,9 +32,13 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -67,15 +71,15 @@ var defaultProps = {
   variant: ''
 };
 
-var Widget01 =
-/*#__PURE__*/
-function (_Component) {
+var Widget01 = /*#__PURE__*/function (_Component) {
   _inherits(Widget01, _Component);
+
+  var _super = _createSuper(Widget01);
 
   function Widget01() {
     _classCallCheck(this, Widget01);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Widget01).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   _createClass(Widget01, [{
@@ -113,17 +117,17 @@ function (_Component) {
 
       var classes = Object(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4__["mapToCssModules"])(classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, card.style, card.bgColor), cssModule);
       progress.style = classnames__WEBPACK_IMPORTED_MODULE_3___default()('progress-xs my-3', progress.style);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], _extends({
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], _extends({
         className: classes
-      }, attributes), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, attributes), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "h4 m-0"
-      }, header), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mainText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Progress"], {
+      }, header), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, mainText), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Progress"], {
         className: progress.style,
         color: progress.color,
         value: progress.value
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
         className: "text-muted"
-      }, smallText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, children)));
+      }, smallText), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, children)));
     }
   }]);
 
@@ -168,9 +172,13 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -204,15 +212,15 @@ var defaultProps = {
   link: '#'
 };
 
-var Widget02 =
-/*#__PURE__*/
-function (_Component) {
+var Widget02 = /*#__PURE__*/function (_Component) {
   _inherits(Widget02, _Component);
+
+  var _super = _createSuper(Widget02);
 
   function Widget02() {
     _classCallCheck(this, Widget02);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Widget02).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   _createClass(Widget02, [{
@@ -261,29 +269,29 @@ function (_Component) {
 
       var blockIcon = function blockIcon(icon) {
         var classes = classnames__WEBPACK_IMPORTED_MODULE_3___default()(icon, 'bg-' + card.color, padding.icon, 'font-2xl mr-3 float-left');
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: classes
         });
       };
 
       var cardFooter = function cardFooter() {
         if (footer) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardFooter"], {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardFooter"], {
             className: "px-3 py-2"
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
             className: "font-weight-bold font-xs btn-block text-muted",
             href: link
-          }, "View More", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          }, "View More", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fa fa-angle-right float-right font-lg"
           })));
         }
       };
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], _extends({
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], _extends({
         className: card.classes
-      }, attributes), blockIcon(card.icon), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, attributes), blockIcon(card.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: lead.classes
-      }, header), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, header), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-muted text-uppercase font-weight-bold font-xs"
       }, mainText)), cardFooter());
     }
@@ -327,9 +335,13 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -357,15 +369,15 @@ var defaultProps = {
   }
 };
 
-var Widget03 =
-/*#__PURE__*/
-function (_Component) {
+var Widget03 = /*#__PURE__*/function (_Component) {
   _inherits(Widget03, _Component);
+
+  var _super = _createSuper(Widget03);
 
   function Widget03() {
     _classCallCheck(this, Widget03);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Widget03).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   _createClass(Widget03, [{
@@ -395,21 +407,21 @@ function (_Component) {
       var classCardHeader = classnames__WEBPACK_IMPORTED_MODULE_2___default()("".concat(classCard, "-header"), back);
       var classCardBody = classnames__WEBPACK_IMPORTED_MODULE_2___default()("".concat(classCard, "-body"));
       var classes = Object(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_3__["mapToCssModules"])(classnames__WEBPACK_IMPORTED_MODULE_2___default()(classCard, className), cssModule);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: classes
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: classCardHeader
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: icon
-      }), children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: classCardBody
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-value"
-      }, vals[1]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, vals[1]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-uppercase text-muted small"
-      }, keys[1])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, keys[1])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-value"
-      }, vals[2]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, vals[2]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-uppercase text-muted small"
       }, keys[2]))));
     }
@@ -456,9 +468,13 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -490,15 +506,15 @@ var defaultProps = {
   invert: false
 };
 
-var Widget04 =
-/*#__PURE__*/
-function (_Component) {
+var Widget04 = /*#__PURE__*/function (_Component) {
   _inherits(Widget04, _Component);
+
+  var _super = _createSuper(Widget04);
 
   function Widget04() {
     _classCallCheck(this, Widget04);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Widget04).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   _createClass(Widget04, [{
@@ -536,17 +552,17 @@ function (_Component) {
 
       var classes = Object(reactstrap_lib_utils__WEBPACK_IMPORTED_MODULE_4__["mapToCssModules"])(classnames__WEBPACK_IMPORTED_MODULE_3___default()(className, card.style, card.bgColor), cssModule);
       progress.style = classnames__WEBPACK_IMPORTED_MODULE_3___default()('progress-xs mt-3 mb-0', progress.style);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], _extends({
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], _extends({
         className: classes
-      }, attributes), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, attributes), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "h1 text-muted text-right mb-2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: card.icon
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "h4 mb-0"
-      }, header), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+      }, header), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
         className: "text-muted text-uppercase font-weight-bold"
-      }, children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Progress"], {
+      }, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Progress"], {
         className: progress.style,
         color: progress.color,
         value: progress.value
@@ -588,9 +604,13 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -661,256 +681,256 @@ var socialChartOpts = {
   }
 };
 
-var Widgets =
-/*#__PURE__*/
-function (_Component) {
+var Widgets = /*#__PURE__*/function (_Component) {
   _inherits(Widgets, _Component);
+
+  var _super = _createSuper(Widgets);
 
   function Widgets() {
     _classCallCheck(this, Widgets);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Widgets).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   _createClass(Widgets, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "animated fadeIn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
         color: "success",
         header: "89.9%"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
         color: "info",
         header: "12.124"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
         color: "warning",
         header: "$98.111,00",
         smallText: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
         className: "text-muted"
-      }, "Excepteur sint occaecat..."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "Excepteur sint occaecat..."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
         color: "danger",
         value: "95",
         header: "1.9 TB",
         mainText: "Danger!",
         smallText: "This is your final warning..."
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
         color: "primary",
         variant: "inverse",
         header: "89.9%"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
         color: "warning",
         variant: "inverse",
         header: "12.124"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
         color: "danger",
         variant: "inverse",
         header: "$98.111,00",
         smallText: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
         className: "text-muted"
-      }, "Excepteur sint occaecat..."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "Excepteur sint occaecat..."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget01__WEBPACK_IMPORTED_MODULE_2__["default"], {
         color: "info",
         variant: "inverse",
         value: "95",
         header: "1.9 TB",
         mainText: "Danger!",
         smallText: "This is your final warning..."
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-cogs",
         color: "primary"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-laptop",
         color: "info"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-moon-o",
         color: "warning"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-bell",
         color: "danger"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-cogs",
         color: "primary",
         footer: true,
         link: "#/charts"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-laptop",
         color: "info",
         footer: true
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-moon-o",
         color: "warning",
         footer: true
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-bell",
         color: "danger",
         footer: true
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-cogs",
         color: "primary",
         variant: "1"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-laptop",
         color: "info",
         variant: "1"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-moon-o",
         color: "warning",
         variant: "1"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-bell",
         color: "danger",
         variant: "1"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-cogs",
         color: "primary",
         variant: "2"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-laptop",
         color: "info",
         variant: "2"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-moon-o",
         color: "warning",
         variant: "2"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: "12",
         sm: "6",
         lg: "3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget02__WEBPACK_IMPORTED_MODULE_3__["default"], {
         header: "$1.999,50",
         mainText: "Income",
         icon: "fa fa-bell",
         color: "danger",
         variant: "2"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: 12,
         sm: 6,
         md: 3
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget03__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget03__WEBPACK_IMPORTED_MODULE_4__["default"], {
         dataBox: function dataBox() {
           return {
             variant: 'facebook',
@@ -918,17 +938,17 @@ function (_Component) {
             feeds: '459'
           };
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "chart-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__["Line"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__["Line"], {
         data: makeSocialBoxData(0),
         options: socialChartOpts,
         height: 90
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: 12,
         sm: 6,
         md: 3
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget03__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget03__WEBPACK_IMPORTED_MODULE_4__["default"], {
         dataBox: function dataBox() {
           return {
             variant: 'twitter',
@@ -936,17 +956,17 @@ function (_Component) {
             tweets: '1.792'
           };
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "chart-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__["Line"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__["Line"], {
         data: makeSocialBoxData(1),
         options: socialChartOpts,
         height: 90
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: 12,
         sm: 6,
         md: 3
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget03__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget03__WEBPACK_IMPORTED_MODULE_4__["default"], {
         dataBox: function dataBox() {
           return {
             variant: 'linkedin',
@@ -954,17 +974,17 @@ function (_Component) {
             feeds: '292'
           };
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "chart-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__["Line"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__["Line"], {
         data: makeSocialBoxData(2),
         options: socialChartOpts,
         height: 90
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         xs: 12,
         sm: 6,
         md: 3
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget03__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget03__WEBPACK_IMPORTED_MODULE_4__["default"], {
         dataBox: function dataBox() {
           return {
             variant: 'google-plus',
@@ -972,136 +992,136 @@ function (_Component) {
             circles: '92'
           };
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "chart-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__["Line"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_6__["Line"], {
         data: makeSocialBoxData(3),
         options: socialChartOpts,
         height: 90
-      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardGroup"], {
+      }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardGroup"], {
         className: "mb-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-people",
         color: "info",
         header: "87.500",
         value: "25"
-      }, "Visitors"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, "Visitors"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-user-follow",
         color: "success",
         header: "385",
         value: "25"
-      }, "New Clients"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, "New Clients"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-basket-loaded",
         color: "warning",
         header: "1238",
         value: "25"
-      }, "Products sold"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, "Products sold"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-pie-chart",
         color: "primary",
         header: "28%",
         value: "25"
-      }, "Returning Visitors"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, "Returning Visitors"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-speedometer",
         color: "danger",
         header: "5:34:11",
         value: "25"
-      }, "Avg. Time")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "Avg. Time")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         sm: "6",
         md: "2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-people",
         color: "info",
         header: "87.500",
         value: "25"
-      }, "Visitors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "Visitors")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         sm: "6",
         md: "2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-user-follow",
         color: "success",
         header: "385",
         value: "25"
-      }, "New Clients")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "New Clients")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         sm: "6",
         md: "2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-basket-loaded",
         color: "warning",
         header: "1238",
         value: "25"
-      }, "Products sold")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "Products sold")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         sm: "6",
         md: "2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-pie-chart",
         color: "primary",
         header: "28%",
         value: "25"
-      }, "Returning Visitors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "Returning Visitors")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         sm: "6",
         md: "2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-speedometer",
         color: "danger",
         header: "5:34:11",
         value: "25"
-      }, "Avg. Time")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "Avg. Time")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         sm: "6",
         md: "2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-speech",
         color: "info",
         header: "972",
         value: "25"
-      }, "Comments"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "Comments"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         sm: "6",
         md: "2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-people",
         color: "info",
         header: "87.500",
         value: "25",
         invert: true
-      }, "Visitors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "Visitors")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         sm: "6",
         md: "2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-user-follow",
         color: "success",
         header: "385",
         value: "25",
         invert: true
-      }, "New Clients")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "New Clients")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         sm: "6",
         md: "2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-basket-loaded",
         color: "warning",
         header: "1238",
         value: "25",
         invert: true
-      }, "Products sold")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "Products sold")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         sm: "6",
         md: "2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-pie-chart",
         color: "primary",
         header: "28%",
         value: "25",
         invert: true
-      }, "Returning Visitors")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "Returning Visitors")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         sm: "6",
         md: "2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-speedometer",
         color: "danger",
         header: "5:34:11",
         value: "25",
         invert: true
-      }, "Avg. Time")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+      }, "Avg. Time")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         sm: "6",
         md: "2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Widget04__WEBPACK_IMPORTED_MODULE_5__["default"], {
         icon: "icon-speech",
         color: "info",
         header: "972",
