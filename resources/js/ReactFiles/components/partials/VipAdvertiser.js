@@ -40,7 +40,7 @@ export default function VipAdvertiser() {
                     {PhoneNumbers
                         ? PhoneNumbers.map((item, index) => (
                               <div
-                                  className="col-12 col-md-4 lead d-inline-block p-1"
+                                  className="col-6 col-md-4 lead d-inline-block p-1"
                                   key={index}
                               >
                                   <h1 className="p-1 m-0 bg-vip-advertisers-sim text-center shadow-lg rounded white-space-nowrap font2">

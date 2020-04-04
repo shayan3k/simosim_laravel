@@ -1,5 +1,6 @@
 @import "variables";
 @import "config";
+@import "fontConfig";
 //GLOBAL CLASSES
 * {
     font-family: "Vazir", sans-serif;
@@ -16,68 +17,6 @@ body {
 }
 #app {
     min-height: 100%;
-}
-
-//FONT CONFIG
-@font-face {
-    font-family: Vazir;
-    src: url("./vazir-font/Vazir.eot");
-    src: url("./vazir-font/Vazir.eot?#iefix") format("embedded-opentype"),
-        url("./vazir-font/Vazir.woff2") format("woff2"),
-        url("./vazir-font/Vazir.woff") format("woff"),
-        url("./vazir-font/Vazir.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: Vazir;
-    src: url("./vazir-font/Vazir-Bold.eot");
-    src: url("./vazir-font/Vazir-Bold.eot?#iefix") format("embedded-opentype"),
-        url("./vazir-font/Vazir-Bold.woff2") format("woff2"),
-        url("./vazir-font/Vazir-Bold.woff") format("woff"),
-        url("./vazir-font/Vazir-Bold.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: Vazir;
-    src: url("./vazir-font/Vazir-Black.eot");
-    src: url("./vazir-font/Vazir-Black.eot?#iefix") format("embedded-opentype"),
-        url("./vazir-font/Vazir-Black.woff2") format("woff2"),
-        url("./vazir-font/Vazir-Black.woff") format("woff"),
-        url("./vazir-font/Vazir-Black.ttf") format("truetype");
-    font-weight: 900;
-    font-style: normal;
-}
-@font-face {
-    font-family: Vazir;
-    src: url("./vazir-font/Vazir-Medium.eot");
-    src: url("./vazir-font/Vazir-Medium.eot?#iefix") format("embedded-opentype"),
-        url("./vazir-font/Vazir-Medium.woff2") format("woff2"),
-        url("./vazir-font/Vazir-Medium.woff") format("woff"),
-        url("./vazir-font/Vazir-Medium.ttf") format("truetype");
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: Vazir;
-    src: url("./vazir-font/Vazir-Light.eot");
-    src: url("./vazir-font/Vazir-Light.eot?#iefix") format("embedded-opentype"),
-        url("./vazir-font/Vazir-Light.woff2") format("woff2"),
-        url("./vazir-font/Vazir-Light.woff") format("woff"),
-        url("./vazir-font/Vazir-Light.ttf") format("truetype");
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: Vazir;
-    src: url("./vazir-font/Vazir-Thin.eot");
-    src: url("./vazir-font/Vazir-Thin.eot?#iefix") format("embedded-opentype"),
-        url("./vazir-font/Vazir-Thin.woff2") format("woff2"),
-        url("./vazir-font/Vazir-Thin.woff") format("woff"),
-        url("./vazir-font/Vazir-Thin.ttf") format("truetype");
-    font-weight: 100;
-    font-style: normal;
 }
 
 //MAIN STYLEING SECTION
@@ -319,11 +258,11 @@ body {
 .advertisment {
     position: relative;
     width: 8.5rem !important;
-    height: 13rem !important;
-    min-height: 8.5rem !important;
-    min-height: 13rem !important;
-    max-height: 8.5rem !important;
-    max-height: 13rem !important;
+    height: 10rem !important;
+    min-height: 10rem !important;
+    min-width: 8.5rem !important;
+    max-height: 10rem !important;
+    max-width: 8.5rem !important;
     text-align: center;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
@@ -887,12 +826,10 @@ ul.social-network li {
 
     .advertisment {
         width: 8.5rem !important;
-        height: 15rem !important;
+        height: 10rem !important;
         min-height: 10rem !important;
-        min-height: 15rem !important;
+        min-width: 8.5rem !important;
         max-height: 10rem !important;
-        max-height: 15rem !important;
+        max-width: 8.5rem !important;
     }
-
-
 }

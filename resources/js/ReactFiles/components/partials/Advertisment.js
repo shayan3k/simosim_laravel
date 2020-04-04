@@ -96,7 +96,7 @@ export default function Advertisment(props) {
 
     return (
         <div
-            className="card flip-card advertisment py-0 shadow position-relative bg-transparent position-relative"
+            className="card m-0 flip-card advertisment py-0 shadow position-relative bg-transparent position-relative"
             onClick={handleAdvertismentClick}
         >
             {flagRender()}

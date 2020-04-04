@@ -109,26 +109,6 @@
 
 /* Portrait phones and smaller */
 
-* {
-  font-family: "Vazir", sans-serif;
-  text-align: right;
-  scroll-behavior: smooth !important;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-#root {
-  overflow-x: hidden !important;
-  background-color: #eaedf1;
-}
-
-#app {
-  min-height: 100%;
-}
-
 @font-face {
   font-family: Vazir;
   src: url(/fonts/Vazir.eot?b6faff7226f80b28db79ef827830fb38);
@@ -175,6 +155,26 @@ body {
   src: url(/fonts/Vazir-Thin.eot?7e0b9340aea53f9db98ce040fe56453c) format("embedded-opentype"), url(/fonts/Vazir-Thin.woff2?3b179ca5d604407d95fd0464f2e12db5) format("woff2"), url(/fonts/Vazir-Thin.woff?287cae74c3e005ca1379a70a071fe419) format("woff"), url(/fonts/Vazir-Thin.ttf?9bc6d4dc99d339145b4d68956687cb79) format("truetype");
   font-weight: 100;
   font-style: normal;
+}
+
+* {
+  font-family: "Vazir", sans-serif;
+  text-align: right;
+  scroll-behavior: smooth !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  overflow-x: hidden !important;
+  background-color: #eaedf1;
+}
+
+#app {
+  min-height: 100%;
 }
 
 .mainAdsToggler {
@@ -396,11 +396,11 @@ body {
 .advertisment {
   position: relative;
   width: 8.5rem !important;
-  height: 13rem !important;
-  min-height: 8.5rem !important;
-  min-height: 13rem !important;
-  max-height: 8.5rem !important;
-  max-height: 13rem !important;
+  height: 10rem !important;
+  min-height: 10rem !important;
+  min-width: 8.5rem !important;
+  max-height: 10rem !important;
+  max-width: 8.5rem !important;
   text-align: center;
   perspective: 1000px;
   /* Remove this if you don't want the 3D effect */
@@ -931,11 +931,11 @@ ul.social-network li {
 
   .advertisment {
     width: 8.5rem !important;
-    height: 15rem !important;
+    height: 10rem !important;
     min-height: 10rem !important;
-    min-height: 15rem !important;
+    min-width: 8.5rem !important;
     max-height: 10rem !important;
-    max-height: 15rem !important;
+    max-width: 8.5rem !important;
   }
 }
 

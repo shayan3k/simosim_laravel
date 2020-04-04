@@ -103,26 +103,6 @@
 /* Portrait tablets and small desktops */
 /* Landscape phones and portrait tablets */
 /* Portrait phones and smaller */
-* {
-  font-family: "Vazir", sans-serif;
-  text-align: right;
-  scroll-behavior: smooth !important;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-#root {
-  overflow-x: hidden !important;
-  background-color: #eaedf1;
-}
-
-#app {
-  min-height: 100%;
-}
-
 @font-face {
   font-family: Vazir;
   src: url("./vazir-font/Vazir.eot");
@@ -169,6 +149,26 @@ body {
   src: url("./vazir-font/Vazir-Thin.eot?#iefix") format("embedded-opentype"), url("./vazir-font/Vazir-Thin.woff2") format("woff2"), url("./vazir-font/Vazir-Thin.woff") format("woff"), url("./vazir-font/Vazir-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
+}
+
+* {
+  font-family: "Vazir", sans-serif;
+  text-align: right;
+  scroll-behavior: smooth !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  overflow-x: hidden !important;
+  background-color: #eaedf1;
+}
+
+#app {
+  min-height: 100%;
 }
 
 .mainAdsToggler {
@@ -423,11 +423,11 @@ body {
 .advertisment {
   position: relative;
   width: 8.5rem !important;
-  height: 13rem !important;
-  min-height: 8.5rem !important;
-  min-height: 13rem !important;
-  max-height: 8.5rem !important;
-  max-height: 13rem !important;
+  height: 10rem !important;
+  min-height: 10rem !important;
+  min-width: 8.5rem !important;
+  max-height: 10rem !important;
+  max-width: 8.5rem !important;
   text-align: center;
   -webkit-perspective: 1000px;
           perspective: 1000px;
@@ -982,11 +982,11 @@ ul.social-network li {
   }
   .advertisment {
     width: 8.5rem !important;
-    height: 15rem !important;
+    height: 10rem !important;
     min-height: 10rem !important;
-    min-height: 15rem !important;
+    min-width: 8.5rem !important;
     max-height: 10rem !important;
-    max-height: 15rem !important;
+    max-width: 8.5rem !important;
   }
 }
 /*# sourceMappingURL=app.css.map */
