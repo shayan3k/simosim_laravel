@@ -43,7 +43,7 @@ function Navbar() {
     };
     return (
         <nav className="container-fluid row px-0 w-100 myNavbar" id="myNavbar">
-            <div className="container row px-0 mx-auto d-flex justify-content-between align-items-center flex-nowrap ">
+            <div className="container px-2 px-md-0 row mx-auto d-flex justify-content-between align-items-center flex-nowrap ">
                 <ul className="navbar-brand pl-0">
                     <li className="nav-item navbar-item-active mr-auto c-white">
                         <i

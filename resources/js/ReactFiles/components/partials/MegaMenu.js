@@ -316,7 +316,6 @@ export default function MegaMenu() {
                     <div className="font1-2 d-flex justify-content-end align-items-center bg-links">
                         {secureStorage.getItem("is_admin") == adminSecretKey ? (
                             <span className="px-3 font4">
-                                {" "}
                                 خوش آمدید
                                 <span className="font3 px-2">
                                     {secureStorage.getItem("name")}
@@ -324,7 +323,7 @@ export default function MegaMenu() {
                             </span>
                         ) : (
                             <Link
-                                className="d-flex justify-content-center align-items-center bg-links"
+                                className="d-flex justify-content-center align-items-center bg-links font1"
                                 to="/login"
                                 style={{ textDecoration: "none" }}
                             >

@@ -55,11 +55,10 @@ export default function Advertisment(props) {
     }, [props]);
 
     const flagRender = () => {
-        if (sale === "فوری")
-            return <div className="card-flag font3-4">فوری</div>;
+        if (sale === "فوری") return <div className="card-flag font1">فوری</div>;
         else if (value === "طلایی")
             return (
-                <div className="card-crown font3-4">
+                <div className="card-crown font1">
                     <img
                         className="w-100 h-100"
                         src={GoldCrown}
@@ -69,7 +68,7 @@ export default function Advertisment(props) {
             );
         else if (value === "نقره ای")
             return (
-                <div className="card-crown font3-4">
+                <div className="card-crown font1">
                     <img
                         className="w-100 h-100"
                         src={SilverCrown}
@@ -79,12 +78,12 @@ export default function Advertisment(props) {
             );
         else if (value === "برنز")
             return (
-                <div className="card-crown font3-4">
+                <div className="card-crown font1">
                     <img className="w-100 h-100" src={BronzCrown} alt="crown" />
                 </div>
             );
         else {
-            return <div className="card-flag font3-4">Not found</div>;
+            return <div className="card-flag font1">Not found</div>;
         }
     };
 
@@ -97,7 +96,7 @@ export default function Advertisment(props) {
 
     return (
         <div
-            className="card flip-card w-100 h-100 advertisment py-0 shadow position-relative bg-transparent position-relative"
+            className="card flip-card advertisment py-0 shadow position-relative bg-transparent position-relative"
             onClick={handleAdvertismentClick}
         >
             {flagRender()}

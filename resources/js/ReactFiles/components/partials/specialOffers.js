@@ -55,7 +55,7 @@ function SpecialOffers(props) {
             },
             ,
             {
-                breakpoint: 468,
+                breakpoint: 300,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
