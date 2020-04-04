@@ -14,40 +14,40 @@ export default function MegaMenu() {
     const [rightel, setRightel] = useState();
     const [talia, setTalia] = useState();
     const [samanTel, setSamanTel] = useState();
-    const logedIn = useStoreState(state => state.auth.logedIn);
-    const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);
+    const logedIn = useStoreState((state) => state.auth.logedIn);
+    const setLogedIn = useStoreActions((actions) => actions.auth.setLogedIn);
     const setPhoneNumber = useStoreActions(
-        actions => actions.auth.setPhoneNumber
+        (actions) => actions.auth.setPhoneNumber
     );
-    const setNiceName = useStoreActions(actions => actions.auth.setNiceName);
+    const setNiceName = useStoreActions((actions) => actions.auth.setNiceName);
 
     const [AnimationHamraheAval, setAnimationHamraheAval] = useState(
         new TimelineLite({
-            paused: true
+            paused: true,
         })
     );
 
     const [AnimationIrancell, setAnimationIrancell] = useState(
         new TimelineLite({
-            paused: true
+            paused: true,
         })
     );
 
     const [AnimationRightel, setAnimationRightel] = useState(
         new TimelineLite({
-            paused: true
+            paused: true,
         })
     );
 
     const [AnimationTalia, setAnimationTalia] = useState(
         new TimelineLite({
-            paused: true
+            paused: true,
         })
     );
 
     const [AnimationSamanTel, setAnimationSamanTel] = useState(
         new TimelineLite({
-            paused: true
+            paused: true,
         })
     );
 
@@ -64,14 +64,14 @@ export default function MegaMenu() {
         let elements = document.querySelectorAll(".login-btn");
 
         JWTLogout()
-            .then(res => {
+            .then((res) => {
                 setLogedIn(false);
                 setPhoneNumber("");
                 setNiceName("");
                 console.log("Loged out");
                 console.log(res);
             })
-            .catch(e => {
+            .catch((e) => {
                 setLogedIn(false);
                 setPhoneNumber("");
                 setNiceName("");
@@ -87,7 +87,7 @@ export default function MegaMenu() {
         samanTelConfig();
         taliaConfig();
 
-        window.addEventListener("click", e => {
+        window.addEventListener("click", (e) => {
             if (document.getElementById("mega-menu")) {
                 if (document.getElementById("mega-menu").contains(e.target)) {
                 } else {
@@ -115,7 +115,7 @@ export default function MegaMenu() {
     };
     const hamraheAvalConfig = () => {
         AnimationHamraheAval.to("#hamraheAvalMenu", 0.2, {
-            css: { display: "" }
+            css: { display: "" },
         })
             .fromTo(
                 " .megaMenuContent .default-btn",
@@ -126,15 +126,15 @@ export default function MegaMenu() {
             .to("#hamraheAval", 0, {
                 css: {
                     background: "red",
-                    color: "white"
-                }
+                    color: "white",
+                },
             });
 
         hamraheAval
             ? AnimationHamraheAval.play()
             : AnimationHamraheAval.reverse();
     };
-    const handleHamraheAvalBtn = item => {
+    const handleHamraheAvalBtn = (item) => {
         setHamraheAval(!hamraheAval);
         setIrancell(false);
         setRightel(false);
@@ -143,7 +143,7 @@ export default function MegaMenu() {
     };
     const irancellConfig = () => {
         AnimationIrancell.to("#irancellMenu", 0.2, {
-            css: { display: "" }
+            css: { display: "" },
         })
             .fromTo(
                 ".megaMenuContent .default-btn",
@@ -154,13 +154,13 @@ export default function MegaMenu() {
             .to("#irancell", 0, {
                 css: {
                     background: "red",
-                    color: "white"
-                }
+                    color: "white",
+                },
             });
 
         irancell ? AnimationIrancell.play() : AnimationIrancell.reverse();
     };
-    const handleIrancellBtn = item => {
+    const handleIrancellBtn = (item) => {
         setHamraheAval(false);
         setIrancell(!irancell);
         setRightel(false);
@@ -169,7 +169,7 @@ export default function MegaMenu() {
     };
     const rightelConfig = () => {
         AnimationRightel.to("#rightelMenu", 0.2, {
-            css: { display: "" }
+            css: { display: "" },
         })
             .fromTo(
                 ".megaMenuContent .default-btn",
@@ -180,8 +180,8 @@ export default function MegaMenu() {
             .to("#rightel", 0, {
                 css: {
                     background: "red",
-                    color: "white"
-                }
+                    color: "white",
+                },
             });
 
         hamraheAval ? AnimationRightel.play() : AnimationRightel.reverse();
@@ -195,7 +195,7 @@ export default function MegaMenu() {
     };
     const taliaConfig = () => {
         AnimationTalia.to("#taliaMenu", 0.2, {
-            css: { display: "" }
+            css: { display: "" },
         })
             .fromTo(
                 ".megaMenuContent .default-btn",
@@ -206,8 +206,8 @@ export default function MegaMenu() {
             .to("#talia", 0, {
                 css: {
                     background: "red",
-                    color: "white"
-                }
+                    color: "white",
+                },
             });
 
         talia ? AnimationTalia.play() : AnimationTalia.reverse();
@@ -221,7 +221,7 @@ export default function MegaMenu() {
     };
     const samanTelConfig = () => {
         AnimationSamanTel.to("#samanTelMenu", 0.2, {
-            css: { display: "" }
+            css: { display: "" },
         })
             .fromTo(
                 ".megaMenuContent .default-btn",
@@ -232,8 +232,8 @@ export default function MegaMenu() {
             .to("#samanTel", 0, {
                 css: {
                     background: "red",
-                    color: "white"
-                }
+                    color: "white",
+                },
             });
 
         samanTel ? AnimationSamanTel.play() : AnimationSamanTel.reverse();
@@ -264,10 +264,10 @@ export default function MegaMenu() {
                                             className="login-btn p-0 m-0"
                                             onClick={() => handleLogoutBtn()}
                                         >
-                                            <i className="fas fa-sign-out-alt fa-2x bg-links"></i>
+                                            <i className="fas fa-sign-out-alt fa-1x bg-links"></i>
                                         </span>
                                         <Link
-                                            className="login-btn bg-links px-3 font2"
+                                            className="login-btn bg-links px-3 font3"
                                             to="/admin"
                                             style={{ textDecoration: "none" }}
                                         >
@@ -275,7 +275,7 @@ export default function MegaMenu() {
                                         </Link>
                                         |
                                         <Link
-                                            className="login-btn d-inline-block bg-links  px-3 font2"
+                                            className="login-btn d-inline-block bg-links  px-3 font3"
                                             to="/dashboard"
                                             style={{ textDecoration: "none" }}
                                         >
@@ -288,10 +288,10 @@ export default function MegaMenu() {
                                             className="login-btn p-0 m-0"
                                             onClick={() => handleLogoutBtn()}
                                         >
-                                            <i className="fas fa-sign-out-alt fa-2x bg-links"></i>
+                                            <i className="fas fa-sign-out-alt fa-1x bg-links"></i>
                                         </span>
                                         <Link
-                                            className="login-btn font2 d-inline-block bg-links  px-3 font2"
+                                            className="login-btn font3 d-inline-block bg-links  px-3 font3"
                                             to="/dashboard"
                                             style={{ textDecoration: "none" }}
                                         >
@@ -306,30 +306,28 @@ export default function MegaMenu() {
                                 to="/login"
                                 style={{ textDecoration: "none" }}
                             >
-                                <i className="fas fa-sign-in-alt fa-rotate-180 fa-2x"></i>
-                                <span className="px-3  font2">
-                                    ورود/ثبت نام
-                                </span>
+                                <i className="fas fa-sign-in-alt fa-rotate-180 fa-1x"></i>
+                                <span className="px-3 font3">ورود/ثبت نام</span>
                             </Link>
                         )}
                     </div>
-                    <div className="font1-2 d-flex justify-content-end align-items-center bg-links">
+                    <div className="font3-2 d-flex justify-content-end align-items-center bg-links">
                         {secureStorage.getItem("is_admin") == adminSecretKey ? (
-                            <span className="px-3 font4">
+                            <span className="px-3 font3">
                                 خوش آمدید
-                                <span className="font3 px-2">
+                                <span className="font5 px-2">
                                     {secureStorage.getItem("name")}
                                 </span>
                             </span>
                         ) : (
                             <Link
-                                className="d-flex justify-content-center align-items-center bg-links font1"
+                                className="d-flex justify-content-center align-items-center bg-links font3"
                                 to="/login"
                                 style={{ textDecoration: "none" }}
                             >
                                 خوش آمدید
                                 <span
-                                    className="font1 px-2"
+                                    className="font3 px-2"
                                     style={{ color: "lightblue" }}
                                 >
                                     سیم سیم

@@ -41,65 +41,6 @@
     background-color: $bg-admin-advertisers !important;
 }
 
-//FONT CLASSES;
-.white-space-nowrap {
-    white-space: nowrap !important;
-}
-.font-0 {
-    font-size: 1.3rem !important;
-}
-
-.font1 {
-    font-size: 1.1rem !important;
-}
-
-.font1-2 {
-    font-size: 1rem !important;
-    font-weight: 500;
-}
-
-.font2 {
-    font-size: 0.9rem !important;
-}
-.font2-3 {
-    font-size: 0.8rem !important;
-}
-.font3 {
-    font-size: 0.7rem !important;
-}
-
-.font3-4 {
-    font-size: 6.5rem !important;
-}
-
-.font4 {
-    font-size: 0.6rem !important;
-}
-
-.font4-5 {
-    font-size: 0.55rem !important;
-}
-
-.font5 {
-    font-size: 0.5rem !important;
-}
-
-.font6 {
-    font-size: 0.4rem !important;
-}
-
-.font7 {
-    font-size: 0.3rem !important;
-}
-
-.font-1 {
-    font-size: 2.2rem !important;
-}
-
-.font-2 {
-    font-size: 3.3rem !important;
-}
-
 //link  no style
 
 .bg-links {
@@ -107,7 +48,68 @@
         color: $bg-links;
     }
 }
-
 .noClick {
     pointer-events: none !important;
+}
+.white-space-nowrap {
+    white-space: nowrap !important;
+}
+//FONT CLASSES;
+
+.font0 {
+    font-size: 0.4em !important;
+}
+
+.font1 {
+    font-size: 0.6em !important;
+}
+
+.font2 {
+    font-size: 0.7em !important;
+}
+.font3 {
+    font-size: 0.8em !important;
+}
+.font4 {
+    font-size: 0.9em !important;
+}
+.font5 {
+    font-size: 1em !important;
+}
+
+.font6 {
+    font-size: 1.1em !important;
+}
+
+.font7 {
+    font-size: 1.2em !important;
+}
+
+.font8 {
+    font-size: 1.3em !important;
+}
+
+.font9 {
+    font-size: 1.4em !important;
+}
+
+////////// Media Break Points
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
 }

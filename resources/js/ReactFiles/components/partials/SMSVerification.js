@@ -7,26 +7,26 @@ export default function SMSVerification() {
     const baseUrl = process.env.MIX_BASEURL;
     const registerUrl = process.env.MIX_REGISTERURL;
 
-    const smsToken = useStoreState(state => state.register.smsToken);
-    const phonenumber = useStoreState(state => state.register.phonenumber);
-    const name = useStoreState(state => state.register.name);
-    const password = useStoreState(state => state.register.password);
+    const smsToken = useStoreState((state) => state.register.smsToken);
+    const phonenumber = useStoreState((state) => state.register.phonenumber);
+    const name = useStoreState((state) => state.register.name);
+    const password = useStoreState((state) => state.register.password);
 
     const setSmsToken = useStoreActions(
-        actions => actions.register.setSmsToken
+        (actions) => actions.register.setSmsToken
     );
     const setPhonenumber = useStoreActions(
-        actions => actions.register.setPhonenumber
+        (actions) => actions.register.setPhonenumber
     );
-    const setName = useStoreActions(actions => actions.register.setName);
+    const setName = useStoreActions((actions) => actions.register.setName);
     const setPassword = useStoreActions(
-        actions => actions.register.setPassword
+        (actions) => actions.register.setPassword
     );
-    const setError = useStoreActions(actions => actions.message.setError);
-    const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);
+    const setError = useStoreActions((actions) => actions.message.setError);
+    const setLogedIn = useStoreActions((actions) => actions.auth.setLogedIn);
 
     const [smsTokenLocal, setSmsTokenLocal] = useState("");
-    const handleSubmitBtn = e => {
+    const handleSubmitBtn = (e) => {
         e.preventDefault();
         if (smsTokenLocal == smsToken) {
             axios({
@@ -36,19 +36,19 @@ export default function SMSVerification() {
                     smsToken: smsToken,
                     phonenumber: phonenumber,
                     name: name,
-                    password: password
-                }
+                    password: password,
+                },
             })
-                .then(res => {
+                .then((res) => {
                     console.log(res);
                     setError({
                         msg: res.data.message,
-                        status: "success"
+                        status: "success",
                     });
 
                     let loginData = {
                         phonenumber: phonenumber,
-                        password: password
+                        password: password,
                     };
 
                     setSmsToken("");
@@ -56,19 +56,19 @@ export default function SMSVerification() {
                     setPhonenumber("");
                     setName("");
 
-                    JWTLogin(loginData).then(data => {
+                    JWTLogin(loginData).then((data) => {
                         if (data.status === 200) {
                             setLogedIn(true);
                         } else {
                             setError({
                                 msg: data.message,
-                                status: "danger"
+                                status: "danger",
                             });
                         }
                         console.log(data);
                     });
                 })
-                .catch(e => console.log(e.response));
+                .catch((e) => console.log(e.response));
         }
         console.log("smsToken = " + smsToken);
     };
@@ -78,14 +78,14 @@ export default function SMSVerification() {
         <div className="alert alert-info">
             <form onSubmit={handleSubmitBtn}>
                 <div className="input-group">
-                    <div className="ml-auto py-4">
+                    <div className="ml-auto py-4 font3">
                         رمز موقت ارسال شده به گوشی خود را برای تکمیل ثبتنام وارد
                         کنید
                     </div>
                 </div>
 
                 <div className="input-group row">
-                    <div className="col-2 px-2  ml-auto">
+                    <div className="col-2 px-2  ml-auto font3">
                         <button type="submit" className="btn btn-light">
                             تایید
                         </button>
@@ -93,9 +93,9 @@ export default function SMSVerification() {
                     <input
                         type="text"
                         maxLength="5"
-                        className="col-3 form-control"
+                        className="col-3 form-control font3"
                         value={smsTokenLocal}
-                        onChange={e => setSmsTokenLocal(e.target.value)}
+                        onChange={(e) => setSmsTokenLocal(e.target.value)}
                     />
                 </div>
             </form>

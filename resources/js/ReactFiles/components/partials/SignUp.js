@@ -3,35 +3,35 @@ import { useStoreState, useStoreActions } from "easy-peasy";
 import Axios from "axios";
 import { Link } from "react-router-dom";
 
-const validateEmail = email => {
+const validateEmail = (email) => {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 };
 
 function SignUp() {
     //  More Persistant States
-    const setError = useStoreActions(actions => actions.message.setError);
+    const setError = useStoreActions((actions) => actions.message.setError);
     const setSmsToken = useStoreActions(
-        actions => actions.register.setSmsToken
+        (actions) => actions.register.setSmsToken
     );
     const setPhonenumberGlob = useStoreActions(
-        actions => actions.register.setPhonenumber
+        (actions) => actions.register.setPhonenumber
     );
-    const setNameGlob = useStoreActions(actions => actions.register.setName);
+    const setNameGlob = useStoreActions((actions) => actions.register.setName);
     const setPasswordGlob = useStoreActions(
-        actions => actions.register.setPassword
+        (actions) => actions.register.setPassword
     );
 
     //Local States
-    const [PhoneNumber, setPhoneNumber] = useState("09127170126");
-    const [Name, setName] = useState("شایان");
-    const [Password, setPassword] = useState("password");
+    const [PhoneNumber, setPhoneNumber] = useState("");
+    const [Name, setName] = useState("");
+    const [Password, setPassword] = useState("");
     const [CheckBox, setCheckBox] = useState(true);
-    const [VerifyPassword, setVerifyPassword] = useState("password");
+    const [VerifyPassword, setVerifyPassword] = useState("");
 
     const baseUrl = process.env.MIX_BASEURL;
     // const registerSmsUrl = process.env.MIX_REGISTER_SMS;
-    const registerSmsUrl = "/auth/register/sms";
+    const registerSmsUrl = process.env.MIX_REGISTER_SMS;
 
     //Function for resting fields after successfull signup
     const handleResetfields = () => {
@@ -49,7 +49,7 @@ function SignUp() {
         (document.getElementById("submitBtn").style.cssText =
             "opacity: 1;pointer - events : none;");
 
-    const handleSubmitButton = e => {
+    const handleSubmitButton = (e) => {
         e.preventDefault();
         disableSignUpBtn();
 
@@ -84,16 +84,16 @@ function SignUp() {
         let data = {
             phonenumber: PhoneNumber,
             name: Name,
-            password: Password
+            password: Password,
         };
         console.log(data);
         if (!flag) {
             Axios.post(baseUrl + registerSmsUrl, data)
-                .then(res => {
+                .then((res) => {
                     console.log(res);
                     setError({
                         msg: res.data.message,
-                        status: "success"
+                        status: "success",
                     });
                     handleResetfields();
                     setSmsToken(res.data.smsToken);
@@ -102,17 +102,17 @@ function SignUp() {
                     setPasswordGlob(Password);
                     enableSignUpBtn();
                 })
-                .catch(e => {
+                .catch((e) => {
                     if (e.response.status == 500) {
                         setError({
                             msg:
                                 "امکان ایجاد اکانت برای این شماره در حال حاظر وجود ندارد",
-                            status: "danger"
+                            status: "danger",
                         });
                     } else
                         setError({
                             msg: e.response.data.message,
-                            status: "danger"
+                            status: "danger",
                         });
                     console.log(e.response);
                     enableSignUpBtn();
@@ -120,18 +120,18 @@ function SignUp() {
         } else {
             setError({
                 msg,
-                status: "danger"
+                status: "danger",
             });
             enableSignUpBtn();
         }
     };
 
-    const handlePhoneNumberOnChange = e => {
+    const handlePhoneNumberOnChange = (e) => {
         var data = e.target.value.replace(/[^0-9]+/g, "");
         setPhoneNumber(data);
     };
 
-    const handleNameOnChange = e => {
+    const handleNameOnChange = (e) => {
         var data = e.target.value.replace(/[^\u0600-\u06FF\s]/g, "");
         setName(data);
     };
@@ -142,10 +142,10 @@ function SignUp() {
                 className="col-md-6 order-2 order-md-1"
                 onSubmit={handleSubmitButton}
             >
-                <h3 className="my-4">ثبت اکانت جدید</h3>
+                <h3 className="my-4 font4">ثبت اکانت جدید</h3>
                 <div className="input-group col-10 col-md-9 ml-auto p-0 my-3">
                     <input
-                        className="form-control"
+                        className="form-control font3"
                         id="username"
                         name="username"
                         placeholder="شماره موبایل خود را وارد کنید"
@@ -157,7 +157,7 @@ function SignUp() {
                 </div>
                 <div className="input-group col-10 col-md-9 ml-auto p-0 my-3">
                     <input
-                        className="form-control"
+                        className="form-control font3"
                         id="name"
                         name="name"
                         placeholder="نام"
@@ -170,24 +170,24 @@ function SignUp() {
 
                 <div className="input-group col-10 col-md-9 ml-auto p-0 my-3">
                     <input
-                        className="form-control"
+                        className="form-control font3"
                         id="password"
                         name="password"
                         placeholder="رمز ورود"
                         type="password"
                         value={Password}
-                        onChange={e => setPassword(e.target.value)}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
                 <div className="input-group col-10 col-md-9 ml-auto p-0 my-3">
                     <input
-                        className="form-control"
+                        className="form-control font3"
                         id="password2"
                         name="password2"
                         placeholder="تکرار رمز ورود"
                         type="password"
                         value={VerifyPassword}
-                        onChange={e => setVerifyPassword(e.target.value)}
+                        onChange={(e) => setVerifyPassword(e.target.value)}
                     />
                 </div>
 
@@ -204,12 +204,12 @@ function SignUp() {
                         className="col-1 form-check-input"
                         id="checkBox"
                         checked={CheckBox}
-                        onChange={e => setCheckBox(e.target.checked)}
+                        onChange={(e) => setCheckBox(e.target.checked)}
                     />
                 </div>
 
                 <button
-                    className="btn btn-primary btn-lg my-3 "
+                    className="btn btn-primary btn-lg my-3 font4"
                     id="submitBtn"
                     type="submit"
                 >

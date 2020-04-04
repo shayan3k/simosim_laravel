@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment-jalaali";
 import persianJs from "persianjs";
-import Skeleton from "react-loading-skeleton";
 
 export default function TimeAndDate() {
     const [counter, setCounter] = useState(false);
@@ -32,7 +31,7 @@ export default function TimeAndDate() {
             "چهارشنبه",
             "پنج شنبه",
             "جمعه",
-            "شنبه"
+            "شنبه",
         ];
         dayOfWeek = dayOfWeek[new Date().getDay()];
 
@@ -48,26 +47,20 @@ export default function TimeAndDate() {
             "آذر",
             "دی",
             "بهمن",
-            "اسفند"
+            "اسفند",
         ];
         month = month[m.jMonth()];
 
-        setClock(
-            persianJs(m.format("HH:mm"))
-                .englishNumber()
-                .toString()
-        );
+        setClock(persianJs(m.format("HH:mm")).englishNumber().toString());
 
         setDate(
             dayOfWeek +
                 " " +
-                persianJs(m.jDate())
-                    .englishNumber()
-                    .toString() +
+                persianJs(m.jDate()).englishNumber().toString() +
                 " " +
                 month
         );
     };
 
-    return date.length && clock.length ? date + " | " + clock : <Skeleton />;
+    return <h4 className="font3 d-inline-block">{date + " | " + clock}</h4>;
 }

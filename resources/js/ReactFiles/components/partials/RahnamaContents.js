@@ -8,7 +8,7 @@ function RahnamaContents() {
                     <div className="card-header" id="headingOne">
                         <h5 className="mb-0">
                             <button
-                                className="btn btn-link"
+                                className="btn btn-link font3"
                                 data-toggle="collapse"
                                 data-target="#collapseOne"
                                 aria-expanded="true"
@@ -25,7 +25,7 @@ function RahnamaContents() {
                         aria-labelledby="headingOne"
                         data-parent="#accordion"
                     >
-                        <div className="card-body">
+                        <div className="card-body font2">
                             روی کارت فروشنده ی مورر نظر خود کلیک کرده،کارت
                             میچرخد و به راحتی به شماره فروشنده دسترسی خواهید
                             داشت
@@ -36,7 +36,7 @@ function RahnamaContents() {
                     <div className="card-header" id="headingTwo">
                         <h5 className="mb-0">
                             <button
-                                className="btn btn-link collapsed"
+                                className="btn btn-link collapsed font3"
                                 data-toggle="collapse"
                                 data-target="#collapseTwo"
                                 aria-expanded="false"
@@ -52,7 +52,7 @@ function RahnamaContents() {
                         aria-labelledby="headingTwo"
                         data-parent="#accordion"
                     >
-                        <div className="card-body">
+                        <div className="card-body font2">
                             در بخش جستجو تمام آیکن های مورد نظر خود اعم از قیمت
                             ، استان ارزشمندی و ... را کامل پر کنید و سپس کلید
                             جستجو را لمس کنید.
@@ -63,7 +63,7 @@ function RahnamaContents() {
                     <div className="card-header" id="headingThree">
                         <h5 className="mb-0">
                             <button
-                                className="btn btn-link collapsed"
+                                className="btn btn-link collapsed font3"
                                 data-toggle="collapse"
                                 data-target="#collapseThree"
                                 aria-expanded="false"
@@ -80,7 +80,7 @@ function RahnamaContents() {
                         aria-labelledby="headingThree"
                         data-parent="#accordion"
                     >
-                        <div className="card-body">
+                        <div className="card-body font3">
                             فروشندگان شخصی میتوانند به سیمکارت خود اصطلاحا چوب
                             حراج زده و گزینه ی به بالاترین قیمت پیشنهادی را
                             انتخاب کنند تا به قیمت اصلی سیمکارت خود برسند و با
@@ -92,7 +92,7 @@ function RahnamaContents() {
                     <div className="card-header" id="headingThree">
                         <h5 className="mb-0">
                             <button
-                                className="btn btn-link collapsed"
+                                className="btn btn-link collapsed font3"
                                 data-toggle="collapse"
                                 data-target="#collapseFour"
                                 aria-expanded="false"
@@ -104,7 +104,7 @@ function RahnamaContents() {
                     </div>
                     <div
                         id="collapseFour"
-                        className="collapse"
+                        className="collapse font2"
                         aria-labelledby="headingThree"
                         data-parent="#accordion"
                     >
@@ -118,7 +118,7 @@ function RahnamaContents() {
                     <div className="card-header" id="headingThree">
                         <h5 className="mb-0">
                             <button
-                                className="btn btn-link collapsed"
+                                className="btn btn-link collapsed font3"
                                 data-toggle="collapse"
                                 data-target="#collapseFive"
                                 aria-expanded="false"
@@ -134,7 +134,7 @@ function RahnamaContents() {
                         aria-labelledby="headingThree"
                         data-parent="#accordion"
                     >
-                        <div className="card-body">
+                        <div className="card-body font2">
                             سمت چپ بالای صفحه میتوانید گزینه ی ثبت نام را انتخاب
                             کرده و با تکمیل مراحل ، ثبت نام خود را انجام دهید.
                         </div>
@@ -144,7 +144,7 @@ function RahnamaContents() {
                     <div className="card-header" id="headingThree">
                         <h5 className="mb-0">
                             <button
-                                className="btn btn-link collapsed"
+                                className="btn btn-link collapsed font3"
                                 data-toggle="collapse"
                                 data-target="#collpaseSix"
                                 aria-expanded="false"
@@ -160,7 +160,7 @@ function RahnamaContents() {
                         aria-labelledby="headingThree"
                         data-parent="#accordion"
                     >
-                        <div className="card-body">
+                        <div className="card-body font2">
                             بسته به نوع سیمکارت و قیمت و ارزش واقعی هر سیمکارت
                             متفاوت است اما برای تضمین فروش میتوانید از گزینه ی
                             بروز رسانی استفاده کنید.
@@ -171,7 +171,7 @@ function RahnamaContents() {
                     <div className="card-header" id="headingThree">
                         <h5 className="mb-0">
                             <button
-                                className="btn btn-link collapsed"
+                                className="btn btn-link collapsed font3"
                                 data-toggle="collapse"
                                 data-target="#collpaseSeven"
                                 aria-expanded="false"
@@ -188,7 +188,7 @@ function RahnamaContents() {
                         aria-labelledby="headingThree"
                         data-parent="#accordion"
                     >
-                        <div className="card-body">
+                        <div className="card-body font2">
                             خیر این سایت به هیچ عنوان از مراودات بین فروشنده و
                             خریدار سودی نمیبرد تنها هدف این سایت جلب رضایت هم
                             میهنان عزیز و خدمت به شما بزرگواران است
@@ -200,7 +200,7 @@ function RahnamaContents() {
                     <div className="card-header" id="headingThree">
                         <h5 className="mb-0">
                             <button
-                                className="btn btn-link collapsed"
+                                className="btn btn-link collapsed font3"
                                 data-toggle="collapse"
                                 data-target="#collpaseEight"
                                 aria-expanded="false"
@@ -217,7 +217,7 @@ function RahnamaContents() {
                         aria-labelledby="headingThree"
                         data-parent="#accordion"
                     >
-                        <div className="card-body">
+                        <div className="card-body font2">
                             خیر این سایت به هیچ عنوان از مراودات بین فروشنده و
                             خریدار سودی نمیبرد تنها هدف این سایت جلب رضایت هم
                             میهنان عزیز و خدمت به شما بزرگواران است
@@ -229,7 +229,7 @@ function RahnamaContents() {
                     <div className="card-header" id="headingThree">
                         <h5 className="mb-0">
                             <button
-                                className="btn btn-link collapsed"
+                                className="btn btn-link collapsed font3"
                                 data-toggle="collapse"
                                 data-target="#collpaseNine"
                                 aria-expanded="false"
@@ -245,7 +245,7 @@ function RahnamaContents() {
                         aria-labelledby="headingThree"
                         data-parent="#accordion"
                     >
-                        <div className="card-body">
+                        <div className="card-body font2">
                             داشبورد به ما امکان اصلاح و حذف آگهی و همچنین امکان
                             تغییر رمز عبور از طریق پیامک را میدهد.
                         </div>
@@ -256,7 +256,7 @@ function RahnamaContents() {
                     <div className="card-header" id="headingThree">
                         <h5 className="mb-0">
                             <button
-                                className="btn btn-link collapsed"
+                                className="btn btn-link collapsed font3"
                                 data-toggle="collapse"
                                 data-target="#collpaseTen"
                                 aria-expanded="false"
@@ -273,7 +273,7 @@ function RahnamaContents() {
                         aria-labelledby="headingThree"
                         data-parent="#accordion"
                     >
-                        <div className="card-body">
+                        <div className="card-body font2">
                             اصولا خط رُند به خطی گفته میشود که از نظر ارقام و
                             اعداد و موسیقی لفظی به گونه ای روان و سلیس باشد که
                             در ذهن افراد بماند که امروزه در حوزه های مختلف

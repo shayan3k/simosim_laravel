@@ -12,10 +12,10 @@ function Advertisers() {
     useEffect(() => {
         axios
             .get(baseUrl + AdvertisersUrl)
-            .then(res => {
+            .then((res) => {
                 setAdvertisers(res.data);
             })
-            .catch(err => console.log(err.response));
+            .catch((err) => console.log(err.response));
     }, []);
     return (
         <div className="container mx-auto py-0 AdvertisersToggler">
@@ -46,7 +46,7 @@ function Advertisers() {
                         : ""}
                 </div>
                 <div className="col-lg-6 m-0 p-0 order-1 order-lg-2 row p-2 py-4 m-0 mx-auto">
-                    <div className="vip-advertiser col-12 d-flex justify-content-center align-content-center py-2 font1">
+                    <div className="vip-advertiser col-12 d-flex justify-content-center align-content-center py-2">
                         <VipAdvertiser />
                     </div>
                 </div>

@@ -13,7 +13,7 @@ export default function NewAdvertisment(props) {
 
     //  More Persistant States
 
-    const setError = useStoreActions(actions => actions.message.setError);
+    const setError = useStoreActions((actions) => actions.message.setError);
 
     //Local States
     const [Selects, setSelects] = useState("");
@@ -35,20 +35,20 @@ export default function NewAdvertisment(props) {
     const SelectConfig = () => {
         const Selects = customSelect("select");
         setSelects(Selects);
-        Selects[0].select.addEventListener("change", e => {
+        Selects[0].select.addEventListener("change", (e) => {
             handleLocationOnChange(e);
         });
 
-        Selects[1].select.addEventListener("change", e => {
+        Selects[1].select.addEventListener("change", (e) => {
             handleRondOnChange(e);
         });
 
-        Selects[2].select.addEventListener("change", e => {
+        Selects[2].select.addEventListener("change", (e) => {
             handleStatusOnChange(e);
         });
     };
 
-    const handlePhoneNumberOnChange = e => {
+    const handlePhoneNumberOnChange = (e) => {
         // var data = e.target.value
         //   .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, "")
         //   .trim();
@@ -59,19 +59,19 @@ export default function NewAdvertisment(props) {
             setCode(data.slice(4, 5));
         } else setCode("");
     };
-    const handleLocationOnChange = e => {
+    const handleLocationOnChange = (e) => {
         setLocation(e.target.value);
         console.log(e.target.value);
     };
-    const handleRondOnChange = e => {
+    const handleRondOnChange = (e) => {
         setRond(e.target.value);
         console.log(e.target.value);
     };
-    const handleStatusOnChange = e => {
+    const handleStatusOnChange = (e) => {
         setSimStatus(e.target.value);
         console.log(e.target.value);
     };
-    const handlePriceOnChange = e => {
+    const handlePriceOnChange = (e) => {
         var data = e.target.value.replace(/[^0-9]+/g, "");
         setPrice(data);
 
@@ -86,20 +86,20 @@ export default function NewAdvertisment(props) {
 
         console.log(data);
     };
-    const handleSecondPriceOnChange = e => {
+    const handleSecondPriceOnChange = (e) => {
         var data = e.target.value.replace(/[^0-9]+/g, "");
         setSecondPrice(data);
 
         console.log(e.target.value);
     };
-    const handleTextOnChange = e => {
+    const handleTextOnChange = (e) => {
         var data = e.target.value.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>]/, "");
 
         setText(data);
         console.log(data);
     };
 
-    const handleFormSubmition = e => {
+    const handleFormSubmition = (e) => {
         e.preventDefault();
         let flag = false;
         let msg = "";
@@ -154,32 +154,32 @@ export default function NewAdvertisment(props) {
                 price: Price,
                 sale: Sale ? "فوری" : "",
                 secondprice: Sale ? SecondPrice : 0,
-                modifed: new Date().toISOString()
+                modifed: new Date().toISOString(),
             };
 
             Axios.post(baseUrl + newAdUrl, data, JWTHeader())
-                .then(e => {
+                .then((e) => {
                     console.log(e);
 
                     setError({
                         msg:
                             "سیمکارت شما با موفقیت ثبت شد. تا دقایقی دیگر آگهی ثبت شده نمایش داده میشود",
-                        status: "success"
+                        status: "success",
                     });
                 })
 
-                .catch(e => {
+                .catch((e) => {
                     console.log(e.response.data.message);
                     setError({
                         msg: e.response.data.message,
-                        status: "danger"
+                        status: "danger",
                     });
                 });
             console.log(data);
         } else {
             setError({
                 msg,
-                status: "danger"
+                status: "danger",
             });
         }
     };
@@ -225,10 +225,10 @@ export default function NewAdvertisment(props) {
 
                 <div className="col-12 col-md-8 order-1 order-md-2 bg-white p-1 px-3 py-4 ">
                     <div className="m-0 p-0 w-100 d-flex justify-content-between align-items-center">
-                        <span>ایتم خود را گیدا کنبید</span>
+                        <h1 className="font3">ایتم خود را گیدا کنبید</h1>
 
                         <div className="default-btn btn-search-option px-1 col-3">
-                            <h6 className="font2"> ثبت آگهی جدید</h6>
+                            <h1 className="font3"> ثبت آگهی جدید</h1>
                             <i className="fa fa-spinner"></i>
                         </div>
                     </div>
@@ -246,7 +246,7 @@ export default function NewAdvertisment(props) {
                                 <div className="input-group">
                                     <input
                                         type="string"
-                                        className="form-control"
+                                        className="form-control font3"
                                         placeholder="شماره تلفن خط فروشی"
                                         value={PhoneNumber}
                                         maxLength="11"
@@ -254,7 +254,7 @@ export default function NewAdvertisment(props) {
                                     />
                                 </div>
                                 {Code ? (
-                                    <div className="lead font3 c-light-red">
+                                    <div className="lead font2 c-light-red">
                                         کد {Code}
                                     </div>
                                 ) : (
@@ -269,7 +269,7 @@ export default function NewAdvertisment(props) {
                                     </div>
 
                                     <select
-                                        className="select-custom w-100"
+                                        className="select-custom font3 w-100"
                                         id="Location"
                                     >
                                         <option value="" defaultValue>
@@ -348,21 +348,21 @@ export default function NewAdvertisment(props) {
                                     </select>
                                 </div>
                                 {Rond ? (
-                                    <div className="lead font4 c-light-red">
+                                    <div className="lead font2 c-light-red">
                                         نوع رند توسط کارشناس قبل از تایید پست چک
                                         میشه
                                     </div>
                                 ) : (
                                     ""
                                 )}
-                                <div className="input-group mt-3 d-flex justify-content-center align-content-end">
+                                <div className="input-group mt-3 d-flex justify-content-center align-content-end font3">
                                     <p className="mt-auto m-0 mr-5 mr-md-3">
                                         تومان
                                     </p>
 
                                     <input
                                         type="text"
-                                        className="form-control flex-auto"
+                                        className="form-control flex-auto font3"
                                         placeholder="قیمت به تومان"
                                         value={Price}
                                         onChange={handlePriceOnChange}
@@ -377,7 +377,7 @@ export default function NewAdvertisment(props) {
                                         </span>
                                     </div>
                                     <select
-                                        className="select-custom w-100"
+                                        className="select-custom w-100 font3"
                                         id="status"
                                     >
                                         <option defaultValue value="">
@@ -391,7 +391,7 @@ export default function NewAdvertisment(props) {
                             </div>
                             <div className="col-12 col-md-7 order-md-1 py-3">
                                 <textarea
-                                    className="form-control w-100 mh-100px"
+                                    className="form-control w-100 mh-100px font3"
                                     id="exampleFormControlTextarea1"
                                     placeholder="متن تبلیغ"
                                     value={Text}
@@ -400,7 +400,7 @@ export default function NewAdvertisment(props) {
                                 ></textarea>
                                 <div className="col-12 form-check row m-0 p-0 py-2 px-3">
                                     <label
-                                        className="col-10 form-check-label font2"
+                                        className="col-10 form-check-label font3"
                                         htmlFor="checkBox"
                                     >
                                         فروش فوری؟
@@ -410,7 +410,7 @@ export default function NewAdvertisment(props) {
                                         className="col-2 form-check-input"
                                         data-toggle="collapse"
                                         data-target="#collapsediv1"
-                                        onChange={e => {
+                                        onChange={(e) => {
                                             setSale(e.target.checked);
                                             console.log(e.target.checked);
                                         }}
@@ -422,14 +422,14 @@ export default function NewAdvertisment(props) {
                                     id="collapsediv1"
                                     className="collapse div1"
                                 >
-                                    <div className="input-group m-0 p-0 d-flex justify-content-center align-content-end">
+                                    <div className="input-group m-0 p-0 d-flex justify-content-center align-content-end font3">
                                         <p className="mt-auto m-0 mr-5 mr-md-3 d-inline-block">
                                             تومان
                                         </p>
 
                                         <input
                                             type="text"
-                                            className="form-control flex-auto d-inline-block"
+                                            className="form-control flex-auto d-inline-block font3"
                                             placeholder="قیمت به تومان"
                                             value={SecondPrice}
                                             onChange={handleSecondPriceOnChange}
@@ -447,7 +447,7 @@ export default function NewAdvertisment(props) {
                                         className="default-btn btn-search px-5 mx-4"
                                         onClick={handleResetButton}
                                     >
-                                        <h6>ریست</h6>
+                                        <h6 className="font3">ریست</h6>
                                         <i className="fa fa-spinner"></i>
                                     </a>
 
@@ -455,7 +455,7 @@ export default function NewAdvertisment(props) {
                                         className="default-btn btn-search px-5 mx-4"
                                         type="submit"
                                     >
-                                        <h6>ثبت</h6>
+                                        <h6 className="font3">ثبت</h6>
                                         <i className="fa fa-spinner"></i>
                                     </button>
                                 </div>

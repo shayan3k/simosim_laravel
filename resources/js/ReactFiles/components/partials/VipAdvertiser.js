@@ -17,9 +17,7 @@ export default function VipAdvertiser() {
     useEffect(() => {
         axios
             .get(baseUrl + vipAdvertiser)
-            .then(res => {
-                console.log("th", res.data);
-
+            .then((res) => {
                 setTitle(res.data.title);
                 setShopName(res.data.shopname);
                 setPhoneNumbers(res.data.phonenumbers);
@@ -27,16 +25,16 @@ export default function VipAdvertiser() {
                 setText(res.data.text);
                 setContactNumber(res.data.contactnumber);
             })
-            .catch(e => console.log(e.response));
+            .catch((e) => console.log(e.response));
     }, []);
 
     return (
         <div className="card w-100 h-100 position-relative vip-advertiser-card">
-            <div className="card-header card-header-vip-advertiser d-flex justify-content-end align-content-center px-1 py-4">
-                <h6 className="font1 my-auto pr-1">{Title}</h6>
+            <div className="card-header card-header-vip-advertiser px-1 py-4  text-center">
+                <h6 className="my-auto pr-1 font0">{Title}</h6>
             </div>
-            <div className="card-body font2 card-body-vip-advertiser px-0">
-                <h4 className="text-center">{ShopName}</h4>
+            <div className="card-body card-body-vip-advertiser px-0">
+                <h4 className="text-center font1">{ShopName}</h4>
                 <hr />
                 <div className="row p-0 m-0">
                     {PhoneNumbers
@@ -45,22 +43,25 @@ export default function VipAdvertiser() {
                                   className="col-12 col-md-4 lead d-inline-block p-1"
                                   key={index}
                               >
-                                  <div className="p-1 m-0 bg-vip-advertisers-sim text-center shadow-lg rounded white-space-nowrap">
+                                  <h1 className="p-1 m-0 bg-vip-advertisers-sim text-center shadow-lg rounded white-space-nowrap font2">
                                       {persianJs(item)
                                           .englishNumber()
                                           .toString()}
-                                  </div>
+                                  </h1>
                               </div>
                           ))
                         : ""}
                 </div>
             </div>
             <div className="card-footer card-footer-vip-advertiser">
-                <h4 className="py-4 text-center" style={{ fontWeight: 1000 }}>
+                <h4
+                    className="py-4 text-center font2"
+                    style={{ fontWeight: 1000 }}
+                >
                     {Text}
                 </h4>
                 <hr />
-                <p className="text-right pt-1 font-1">{AdvertiserName}</p>
+                <p className="text-right pt-1 font2">{AdvertiserName}</p>
                 <div className="row">
                     {contactnumber
                         ? contactnumber.map((item, index) => (
@@ -69,7 +70,7 @@ export default function VipAdvertiser() {
                                   key={index}
                                   key={index}
                               >
-                                  <div className="p-1 m-0  bg-vip-advertisers-sim-owner text-center shadow-lg  white-space-nowrap font0">
+                                  <div className="p-1 m-0  bg-vip-advertisers-sim-owner text-center shadow-lg  white-space-nowrap font2">
                                       {persianJs(item)
                                           .englishNumber()
                                           .toString()}

@@ -25,7 +25,7 @@ export default function Advertisment(props) {
     const [sale, setSale] = useState(props.sale);
     const [targetElement, setTargetElement] = useState("");
 
-    const handleAdvertismentClick = e => {
+    const handleAdvertismentClick = (e) => {
         setTargetElement(e.currentTarget);
         console.log(e.target);
         setToggle(!toggle);
@@ -55,10 +55,10 @@ export default function Advertisment(props) {
     }, [props]);
 
     const flagRender = () => {
-        if (sale === "فوری") return <div className="card-flag font1">فوری</div>;
+        if (sale === "فوری") return <div className="card-flag font3">فوری</div>;
         else if (value === "طلایی")
             return (
-                <div className="card-crown font1">
+                <div className="card-crown font3">
                     <img
                         className="w-100 h-100"
                         src={GoldCrown}
@@ -68,7 +68,7 @@ export default function Advertisment(props) {
             );
         else if (value === "نقره ای")
             return (
-                <div className="card-crown font1">
+                <div className="card-crown font3">
                     <img
                         className="w-100 h-100"
                         src={SilverCrown}
@@ -78,12 +78,12 @@ export default function Advertisment(props) {
             );
         else if (value === "برنز")
             return (
-                <div className="card-crown font1">
+                <div className="card-crown font3">
                     <img className="w-100 h-100" src={BronzCrown} alt="crown" />
                 </div>
             );
         else {
-            return <div className="card-flag font1">Not found</div>;
+            return <div className="card-flag font3">Not found</div>;
         }
     };
 
@@ -103,15 +103,13 @@ export default function Advertisment(props) {
 
             <div className="card-body flip-card-front w-100 h-100 mh-100 d-flex justify-content-between align-items-center flex-column p-1 ">
                 <div className="card-inner-width w-100">
-                    <h3 className="ad-number font1-2 text-right pt-0">
-                        {persianJs(phoneNumber)
-                            .englishNumber()
-                            .toString()}
+                    <h3 className="ad-number font5 text-right pt-0">
+                        {persianJs(phoneNumber).englishNumber().toString()}
                     </h3>
                     <hr className="py-0 my-0" />
                 </div>
                 <div className="card-inner-width">
-                    <h6 className="card-title font3 text-center  p-0  m-0 py-1">
+                    <h6 className="card-title font2 text-center  p-0  m-0 py-1">
                         {status} | {location}
                     </h6>
 
@@ -123,7 +121,7 @@ export default function Advertisment(props) {
                                     .toString()}
                                 تومان
                             </p>
-                            <p className="card-text line-through font3 line text-center p-0 m-0 pb-1">
+                            <p className="card-text line-through font1 line text-center p-0 m-0 pb-1">
                                 {persianJs(price * 1000)
                                     .englishNumber()
                                     .toString()}
@@ -144,7 +142,7 @@ export default function Advertisment(props) {
                 <div className="mt-auto card-inner-width  mb-0">
                     <hr className="my-1 " />
                     <div className="m-0 p-0 d-flex justify-content-between align-items-end">
-                        <span className="lead font3 h-100">
+                        <span className="lead font1 h-100">
                             <ReactTimeAgo
                                 date={props.updated_at ? props.updated_at : ""}
                                 locale="fa"
@@ -157,19 +155,19 @@ export default function Advertisment(props) {
             <div className="flip-card-back d-flex justify-content-center align-items-center flex-column">
                 <div className="card-body w-100 d-flex justify-content-center align-items-center flex-column  ">
                     <div className="flip-card-background"></div>
-                    <h1 className="font1 text-center p-2">
+                    <h1 className="text-center p-2 font4">
                         {persianJs(sellerPhoneNumber)
                             .englishNumber()
                             .toString()}
                     </h1>
-                    <p className="font2 text-center p-2">{sellerName}</p>
+                    <p className="font3 text-center p-2">{sellerName}</p>
 
                     {secureStorage.getItem("phonenumber") ===
                     sellerPhoneNumber ? (
                         <>
                             <button
                                 className="btn btn-danger btn-sm p-1 my-1"
-                                onClick={e => {
+                                onClick={(e) => {
                                     props.handleDeleteBtn(
                                         e,
                                         id,
@@ -182,7 +180,7 @@ export default function Advertisment(props) {
                             </button>
                             <button
                                 className="btn btn-warning btn-sm p-1 my-1"
-                                onClick={e =>
+                                onClick={(e) =>
                                     props.handleBeRoozResani(
                                         e,
                                         id,

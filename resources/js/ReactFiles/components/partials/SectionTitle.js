@@ -12,11 +12,11 @@ function SectionTitle(props) {
             ease: Power4.easeOut,
             height: "0",
             visibility: "hidden",
-            overflow: "hidden"
+            overflow: "hidden",
         });
     }, []);
 
-    const handleSectioTitleCollapse = e => {
+    const handleSectioTitleCollapse = (e) => {
         e.preventDefault();
         setToggle(!toggle);
         toggle ? tl.reverse() : tl.play();
@@ -27,7 +27,7 @@ function SectionTitle(props) {
             <div className="col-8 pl-0 col-md-8 d-flex justify-content-start align-items-center p-0 pb-1 pr-1">
                 <img src={props.Banner} alt="logo" className="w-100 h-100" />
             </div>
-            <div className="col-4 btn sectionTitle btn-light font1 p-0 py-1 border-bottom">
+            <div className="col-4 btn sectionTitle btn-light font7 p-0 py-1 border-bottom">
                 {props.collapse ? (
                     <SectionTitleCollapse
                         handleSectioTitleCollapse={handleSectioTitleCollapse}

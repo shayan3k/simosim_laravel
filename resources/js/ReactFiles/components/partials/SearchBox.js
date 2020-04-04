@@ -11,21 +11,21 @@ import BannerSm3 from "../images/banner-sm-3.gif";
 function SearchBox() {
     const [Selects, setSelects] = useState("");
     const [phonenumberLocal, setPhonenumberLocal] = useState("");
-    const phonenumber = useStoreState(state => state.searchBox.phonenumber);
+    const phonenumber = useStoreState((state) => state.searchBox.phonenumber);
 
     const setPhonenumber = useStoreActions(
-        actions => actions.searchBox.setPhonenumber
+        (actions) => actions.searchBox.setPhonenumber
     );
-    const setStatus = useStoreActions(actions => actions.searchBox.setStatus);
-    const setValue = useStoreActions(actions => actions.searchBox.setValue);
-    const setRond = useStoreActions(actions => actions.searchBox.setRond);
-    const setCode = useStoreActions(actions => actions.searchBox.setCode);
-    const setSale = useStoreActions(actions => actions.searchBox.setSale);
+    const setStatus = useStoreActions((actions) => actions.searchBox.setStatus);
+    const setValue = useStoreActions((actions) => actions.searchBox.setValue);
+    const setRond = useStoreActions((actions) => actions.searchBox.setRond);
+    const setCode = useStoreActions((actions) => actions.searchBox.setCode);
+    const setSale = useStoreActions((actions) => actions.searchBox.setSale);
     const setLocation = useStoreActions(
-        actions => actions.searchBox.setLocation
+        (actions) => actions.searchBox.setLocation
     );
     const setPriceRange = useStoreActions(
-        actions => actions.searchBox.setPriceRange
+        (actions) => actions.searchBox.setPriceRange
     );
 
     useEffect(() => {
@@ -36,27 +36,27 @@ function SearchBox() {
         const Selects = customSelect("select");
         setSelects(Selects);
 
-        Selects[0].select.addEventListener("change", e => {
+        Selects[0].select.addEventListener("change", (e) => {
             setCode(e.target.value);
         });
 
-        Selects[1].select.addEventListener("change", e => {
+        Selects[1].select.addEventListener("change", (e) => {
             setLocation(e.target.value);
         });
 
-        Selects[2].select.addEventListener("change", e => {
+        Selects[2].select.addEventListener("change", (e) => {
             setPriceRange(e.target.value);
         });
 
-        Selects[3].select.addEventListener("change", e => {
+        Selects[3].select.addEventListener("change", (e) => {
             setStatus(e.target.value);
         });
 
-        Selects[4].select.addEventListener("change", e => {
+        Selects[4].select.addEventListener("change", (e) => {
             setValue(e.target.value);
         });
 
-        Selects[5].select.addEventListener("change", e => {
+        Selects[5].select.addEventListener("change", (e) => {
             setRond(e.target.value);
         });
     };
@@ -88,7 +88,7 @@ function SearchBox() {
                     <div className="m-0 p-0 w-100 d-flex justify-content-between align-items-center">
                         <span className="searchbox-brand">
                             <Link
-                                className="font2 searchbox-brand-text"
+                                className="font3 searchbox-brand-text"
                                 to="/rahnama"
                             >
                                 چگونه از جستجو استفاده کنم؟
@@ -96,7 +96,7 @@ function SearchBox() {
                         </span>
 
                         <span className="searchbox-title">
-                            <span className="font2 searchbox-title-text">
+                            <span className="font3 searchbox-title-text">
                                 سیمکارت جستجو
                             </span>
                         </span>
@@ -110,20 +110,20 @@ function SearchBox() {
                                 phonenumberLocal.length == 7 ? (
                                     ""
                                 ) : (
-                                    <div className="alert alert-warning col-md-5 col-sm-12 d-flex justify-content-end align-items-center">
+                                    <h1 className="alert alert-warning col-md-5 col-sm-12 d-flex justify-content-end align-items-center font2">
                                         تعداد شماره های وارد شده کافی نیست
-                                    </div>
+                                    </h1>
                                 )}
 
                                 <div className="col-md-5 col-sm-7 py-3 px-5 input-group ml-auto d-flex justify-content-end align-items-center">
-                                    <span className="font2">
+                                    <span className="font3">
                                         {persianJs("0912")
                                             .englishNumber()
                                             .toString()}
                                     </span>
                                     <input
                                         type="text"
-                                        className="font1 form-control searchBox-phonenumber text-center"
+                                        className="font3 form-control searchBox-phonenumber text-center"
                                         name="phonenumber"
                                         id="phonenumber"
                                         placeholder="شماره خط"
@@ -136,7 +136,7 @@ function SearchBox() {
                                                       .toString()
                                                 : ""
                                         }
-                                        onChange={e => {
+                                        onChange={(e) => {
                                             setPhonenumber("");
                                             setPhonenumberLocal(
                                                 persianJs(e.target.value)
@@ -168,7 +168,7 @@ function SearchBox() {
                                             <i className="fas fa-caret-down fa-1x"></i>
                                         </span>
                                     </div>
-                                    <select className="select-custom w-100">
+                                    <select className="select-custom w-100 font3">
                                         <option defaultValue value="">
                                             کد سیمکارت
                                         </option>
@@ -191,7 +191,7 @@ function SearchBox() {
                                         </span>
                                     </div>
                                     <select
-                                        className="select-custom w-100"
+                                        className="select-custom w-100 font3"
                                         id="Location"
                                     >
                                         <option value="" defaultValue>
@@ -255,7 +255,7 @@ function SearchBox() {
                                             <i className="fas fa-caret-down fa-1x"></i>
                                         </span>
                                     </div>
-                                    <select className="select-custom w-100">
+                                    <select className="select-custom w-100 font3">
                                         <option defaultValue value="">
                                             بازه قیمتی
                                         </option>
@@ -279,7 +279,7 @@ function SearchBox() {
                                             <i className="fas fa-caret-down fa-1x"></i>
                                         </span>
                                     </div>
-                                    <select className="select-custom w-100">
+                                    <select className="select-custom w-100 font3">
                                         <option defaultValue value="">
                                             وضعیت
                                         </option>
@@ -297,7 +297,7 @@ function SearchBox() {
                                         </span>
                                     </div>
 
-                                    <select className="select-custom w-100">
+                                    <select className="select-custom w-100 font3">
                                         <option defaultValue value="">
                                             ارزشمندی
                                         </option>
@@ -312,7 +312,7 @@ function SearchBox() {
                                             <i className="fas fa-caret-down fa-1x"></i>
                                         </span>
                                     </div>
-                                    <select className="select-custom w-100 bg-dark">
+                                    <select className="select-custom w-100 bg-dark font3">
                                         <option defaultValue value="">
                                             نوع رند
                                         </option>
@@ -330,12 +330,12 @@ function SearchBox() {
                                         className="form-check-input"
                                         type="checkbox"
                                         defaultValue={false}
-                                        onChange={e =>
+                                        onChange={(e) =>
                                             setSale(e.target.checked)
                                         }
                                     />
                                     <label
-                                        className="form-check-label"
+                                        className="form-check-label font3"
                                         htmlFor="defaultCheck1"
                                     >
                                         فروش ویژه
