@@ -36,24 +36,21 @@ function App() {
         actions => actions.navbar.setNavbarData
     );
 
-    console.log("BASE URL is" + process.env.MIX_BASEURL);
-
     const islogedIn = () => {
-        console.log("Authenticating ... ");
+        // console.log("Authenticating ... ");
         JWTCheck()
             .then(res => {
-                console.log(res);
                 if (res.statusText === "OK") {
                     setLogedIn(true);
                     setPhoneNumber(res.phonenumber);
                     setNiceName(res.name);
-                    console.log("AUTHORIZED in APP", res);
+                    // console.log("AUTHORIZED in APP", res);
                 } else {
-                    console.log("NOT AUTHORIZED in appp");
+                    // console.log("NOT AUTHORIZED in appp");
                 }
             })
             .catch(e => {
-                console.log("NOT AUTHORIZED in APP", e);
+                // console.log("NOT AUTHORIZED in APP", e);
                 secureStorage.clear();
                 setLogedIn(false);
                 setPhoneNumber("");
@@ -67,10 +64,11 @@ function App() {
             headers: JWTHeader().headers
         })
             .then(res => {
-                console.log(res.data);
                 setNavbarData(res.data);
             })
-            .catch(e => console.log(e));
+            .catch(e => {
+                // console.log(e);
+            });
     };
 
     useEffect(() => {

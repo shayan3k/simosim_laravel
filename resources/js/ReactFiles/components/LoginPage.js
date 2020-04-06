@@ -17,11 +17,11 @@ function LoginPage() {
 
             <section className="section-contents container mx-auto">
                 <Message />
+                <SMSVerification />
                 <div className="row mx-0 px-0 ">
                     <SignUp />
                     <Login />
                 </div>
-                <SMSVerification />
             </section>
             <FooterSeperator />
             <Footer />

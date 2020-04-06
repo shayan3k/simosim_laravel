@@ -7,26 +7,26 @@ export default function SMSVerification() {
     const baseUrl = process.env.MIX_BASEURL;
     const registerUrl = process.env.MIX_REGISTERURL;
 
-    const smsToken = useStoreState((state) => state.register.smsToken);
-    const phonenumber = useStoreState((state) => state.register.phonenumber);
-    const name = useStoreState((state) => state.register.name);
-    const password = useStoreState((state) => state.register.password);
+    const smsToken = useStoreState(state => state.register.smsToken);
+    const phonenumber = useStoreState(state => state.register.phonenumber);
+    const name = useStoreState(state => state.register.name);
+    const password = useStoreState(state => state.register.password);
 
     const setSmsToken = useStoreActions(
-        (actions) => actions.register.setSmsToken
+        actions => actions.register.setSmsToken
     );
     const setPhonenumber = useStoreActions(
-        (actions) => actions.register.setPhonenumber
+        actions => actions.register.setPhonenumber
     );
-    const setName = useStoreActions((actions) => actions.register.setName);
+    const setName = useStoreActions(actions => actions.register.setName);
     const setPassword = useStoreActions(
-        (actions) => actions.register.setPassword
+        actions => actions.register.setPassword
     );
-    const setError = useStoreActions((actions) => actions.message.setError);
-    const setLogedIn = useStoreActions((actions) => actions.auth.setLogedIn);
+    const setError = useStoreActions(actions => actions.message.setError);
+    const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);
 
     const [smsTokenLocal, setSmsTokenLocal] = useState("");
-    const handleSubmitBtn = (e) => {
+    const handleSubmitBtn = e => {
         e.preventDefault();
         if (smsTokenLocal == smsToken) {
             axios({
@@ -36,19 +36,19 @@ export default function SMSVerification() {
                     smsToken: smsToken,
                     phonenumber: phonenumber,
                     name: name,
-                    password: password,
-                },
+                    password: password
+                }
             })
-                .then((res) => {
+                .then(res => {
                     console.log(res);
                     setError({
                         msg: res.data.message,
-                        status: "success",
+                        status: "success"
                     });
 
                     let loginData = {
                         phonenumber: phonenumber,
-                        password: password,
+                        password: password
                     };
 
                     setSmsToken("");
@@ -56,19 +56,24 @@ export default function SMSVerification() {
                     setPhonenumber("");
                     setName("");
 
-                    JWTLogin(loginData).then((data) => {
+                    JWTLogin(loginData).then(data => {
                         if (data.status === 200) {
                             setLogedIn(true);
                         } else {
                             setError({
                                 msg: data.message,
-                                status: "danger",
+                                status: "danger"
                             });
                         }
                         console.log(data);
                     });
                 })
-                .catch((e) => console.log(e.response));
+                .catch(e => console.log(e.response));
+        } else {
+            setError({
+                msg: "کد وارد شده صحیح نمی باشد",
+                status: "danger"
+            });
         }
         console.log("smsToken = " + smsToken);
     };
@@ -95,7 +100,7 @@ export default function SMSVerification() {
                         maxLength="5"
                         className="col-3 form-control font3"
                         value={smsTokenLocal}
-                        onChange={(e) => setSmsTokenLocal(e.target.value)}
+                        onChange={e => setSmsTokenLocal(e.target.value)}
                     />
                 </div>
             </form>

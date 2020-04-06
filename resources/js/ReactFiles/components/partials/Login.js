@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import { JWTLogin } from "../services/Auth";
-import { Link } from "react-router-dom";
+import ResetPasswordForm from "./ResetPasswordForm";
 
 function Login() {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
-    const setLogedIn = useStoreActions((actions) => actions.auth.setLogedIn);
-    const setError = useStoreActions((actions) => actions.message.setError);
+    const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);
+    const setError = useStoreActions(actions => actions.message.setError);
 
     const disableLoginBtn = () =>
         (document.getElementById("loginbtn").style.cssText =
@@ -17,22 +17,22 @@ function Login() {
         (document.getElementById("loginbtn").style.cssText =
             "opacity: 1;pointer - events : none;");
 
-    const loginRequest = async (e) => {
+    const loginRequest = async e => {
         e.preventDefault();
         disableLoginBtn();
 
         let loginData = {
             phonenumber: username,
-            password: password,
+            password: password
         };
 
-        JWTLogin(loginData).then((data) => {
+        JWTLogin(loginData).then(data => {
             if (data.status === 200) {
                 setLogedIn(true);
             } else {
                 setError({
                     msg: data.message,
-                    status: "danger",
+                    status: "danger"
                 });
             }
             enableLoginBtn();
@@ -40,12 +40,12 @@ function Login() {
         });
     };
 
-    const handleUserNameOnChange = (e) => {
+    const handleUserNameOnChange = e => {
         var data = e.target.value.replace(/[^0-9]+/g, "");
         setUsername(data);
     };
 
-    const handlePasswordOnChange = (e) => {
+    const handlePasswordOnChange = e => {
         setPassword(e.target.value);
     };
 
@@ -76,16 +76,52 @@ function Login() {
                     className="btn btn-primary btn-lg my-3 font4"
                     type="button"
                     id="loginbtn"
-                    onClick={(e) => loginRequest(e)}
+                    onClick={e => loginRequest(e)}
                 >
                     ورود
                 </button>
                 <div className="py-5">
-                    <Link to="/resetpassword">
-                        <h1 className="font3 d-inline-block font2">
-                            رمز خود را فراموش کردید؟
-                        </h1>
-                    </Link>
+                    <button
+                        type="button"
+                        class="btn-reset-password d-inline-block font2"
+                        data-toggle="modal"
+                        data-target="#exampleModal"
+                    >
+                        رمز خود را فراموش کردید؟
+                    </button>
+
+                    <div
+                        class="modal fade"
+                        id="exampleModal"
+                        tabindex="-1"
+                        role="dialog"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5
+                                        class="modal-title"
+                                        id="exampleModalLabel"
+                                    >
+                                        رمز عبور خود را فراموش کردید؟
+                                    </h5>
+                                    <button
+                                        type="button"
+                                        class="close"
+                                        data-dismiss="modal"
+                                        aria-label="Close"
+                                    >
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <ResetPasswordForm />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </form>
         </>

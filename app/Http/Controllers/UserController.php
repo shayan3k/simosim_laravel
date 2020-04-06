@@ -2,47 +2,86 @@
 
 namespace App\Http\Controllers;
 
-use App\Advertisment;
 use App\User;
+use Ghasedak\GhasedakApi;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
 
+    private $smsToken = '';
     /**
-     * Show all users to admin
+     * Create a new User
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function showAllAdmin(Request $request)
+    public function register(Request $request)
     {
-        $is_admin = Auth::guard()->user()->is_admin;
+        if ($request->phonenumber != '' || $request->name != '' || $request->password != '') {
 
-        if ($is_admin == 1) {
-
-
-            $users = User::orderBy('created_at')->paginate(15);
-            $newArray = [];
-
-            foreach ($users as $user) {
-
-                array_push($newArray, [
-                    'id' => $user->id,
-                    'name' => $user->name,
-                    'phonenumber' => $user->phonenumber,
-                    'is_admin' => $user->is_admin ? true : false,
-                    'active' => $user->active ? true : false,
-                    'phonenumber_verified_at' => $user->phonenumber_verified_at,
-                    'created_at' => $user->created_at,
-                    'updated_at' => $user->updated_at
-
-                ]);
-            }
-            return response()->json($newArray, 200);
+            $user = new User();
+            $user->name = $request->name;
+            $user->phonenumber = $request->phonenumber;
+            $user->phonenumber_verified_at =  null;
+            $user->password  = Hash::make($request->password);
+            $user->remember_token = $request->smsToken;
+            $user->active = true;
+            $user->is_admin = false;
+            $user->save();
+        } else {
+            return response()->json(['message' => "phoneNumber , password , name are empty"], 500);
         }
 
-        return response()->json('Permission Error', 400);
+
+
+        return response()->json(['message' => "Successfully Registered!"], 200);
+    }
+
+
+    /**
+     * send sms for registeration
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function sendRegisterSMS(Request $request)
+    {
+
+
+        $this->smsToken = rand(10000, 99999);
+
+        $message = ":کد " . $this->smsToken;
+        $lineNumber = "10008566";
+        $receptor = $request->phonenumber;
+        $api = new GhasedakApi(env('GHASEDAK_APIKEY'));
+        $api->SendSimple($receptor, $message, $lineNumber);
+
+        return response()->json(['message' => "خیلی خوب. لطفا کد ارسالی به موبایلتون را وارد کنید", 'smsToken' => $this->smsToken], 200);
+    }
+
+
+
+
+    /**
+     * send sms forgetpassword
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function sendForgetPasswordSMS(Request $request)
+    {
+
+        $this->smsToken = rand(10000, 99999);
+        $message = ":کد " . $this->smsToken;
+        $lineNumber = "10008566";
+        $receptor = $request->phonenumber;
+        $api = new GhasedakApi(env('GHASEDAK_APIKEY'));
+        $api->SendSimple($receptor, $message, $lineNumber);
+
+        $user = User::where('phonenumber', $request->phonenumber)->first();
+        $user->remember_token = $this->smsToken;
+        $user->save();
+
+        return response()->json(['message' => "خیلی خوب. لطفا کد ارسالی به موبایلتون را وارد کنید", 'smsToken' => $this->smsToken], 200);
     }
 
 
@@ -50,57 +89,31 @@ class UserController extends Controller
 
 
     /**
-     * Delete a user for admin
+     * send sms forgetpassword
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function activeUserToggleAdmin(Request $request)
+    public function changePassword(Request $request)
     {
-        $is_admin = Auth::guard()->user()->is_admin;
 
-        //if user changes his permission
-        if (Auth::guard()->user()->id == $request->id)
-            return response()->json('you can not change your information', 400);
+        $user = User::where('phonenumber', $request->phonenumber)->first();
 
-        if ($is_admin == 1) {
+        if ($user && $user->remember_token == $request->token) {
+
+            $newPassword = rand(11111111, 99999999);
+            $message = ":رمز عبور جدید " . $newPassword;
+            $lineNumber = "10008566";
+            $receptor = $request->phonenumber;
+            $api = new GhasedakApi(env('GHASEDAK_APIKEY'));
+            $api->SendSimple($receptor, $message, $lineNumber);
 
 
-            $user = User::findOrFail($request->id);
-            $user->active = !$user->active;
+            $user->password  = Hash::make($newPassword);
             $user->save();
 
-
-            return response()->json('Ok', 200);
+            return response()->json(['message' => "خیلی خوب. لطفا کد ارسالی به موبایلتون را وارد کنید", 'smsToken' => $this->smsToken], 200);
         }
 
-        return response()->json('Permission Error', 400);
-    }
-
-
-
-
-
-    /**
-     * Delete a user for admin
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function deleteUsersAllPostsAdmin(Request $request)
-    {
-        $is_admin = Auth::guard()->user()->is_admin;
-
-        if ($is_admin == 1) {
-
-            $allAdvertisments = Advertisment::where(['user_id' => $request->id, 'published' => true])->get();
-
-            foreach ($allAdvertisments as $advertisment) {
-                $advertisment->published = false;
-                $advertisment->save();
-            }
-
-            return response()->json('Ok', 200);
-        }
-
-        return response()->json('Permission Error', 400);
+        return response()->json(['message' => "متاسفانه در حال حاضر امکان انجام این عملیات نمی باشد", 'user' => $user], 400);
     }
 }

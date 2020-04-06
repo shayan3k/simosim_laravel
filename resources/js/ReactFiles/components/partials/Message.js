@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
 function Message() {
-    const msg = useStoreState((state) => state.message.msg);
-    const status = useStoreState((state) => state.message.status);
-    const setMsg = useStoreActions((actions) => actions.message.setMsg);
-    const setStatus = useStoreActions((actions) => actions.message.setStatus);
+    const msg = useStoreState(state => state.message.msg);
+    const status = useStoreState(state => state.message.status);
+    const setMsg = useStoreActions(actions => actions.message.setMsg);
+    const setStatus = useStoreActions(actions => actions.message.setStatus);
 
     const resetVariables = () => {
         setMsg("");

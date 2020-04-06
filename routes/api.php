@@ -26,8 +26,10 @@ Route::group([
 
 ], function ($router) {
 
-    Route::post('register', 'RegisterUserController@register');
-    Route::post('register/sms', 'RegisterUserController@sendsms');
+    Route::post('register', 'UserController@register');
+    Route::post('register/sms-register', 'UserController@sendRegisterSMS');
+    Route::post('register/sms-forget', 'UserController@sendForgetPasswordSMS');
+    Route::post('/register/change-password', 'UserController@changePassword');
 
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
@@ -53,9 +55,9 @@ Route::get('/advertisments-admin', 'AdvertismentController@showAllAdmin');
 Route::delete('/advertisments-admin', 'AdvertismentController@deleteAdmin')->middleware('auth:api');
 Route::post('/advertisments-admin', 'AdvertismentController@updateAdmin')->middleware('auth:api');
 
-Route::get('/users-admin', 'UserController@showAllAdmin')->middleware('auth:api');;
-Route::post('/users-active-admin', 'UserController@activeUserToggleAdmin')->middleware('auth:api');;
-Route::post('/users-post-delete-admin', 'UserController@deleteUsersAllPostsAdmin')->middleware('auth:api');;
+Route::get('/users-admin', 'AdminUserController@showAllAdmin')->middleware('auth:api');;
+Route::post('/users-active-admin', 'AdminUserController@activeUserToggleAdmin')->middleware('auth:api');;
+Route::post('/users-post-delete-admin', 'AdminUserController@deleteUsersAllPostsAdmin')->middleware('auth:api');;
 
 
 Route::get('/advertisers', 'AdvertiserController@show');

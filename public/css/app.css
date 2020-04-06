@@ -340,6 +340,13 @@ body {
   cursor: pointer !important;
 }
 
+.btn-reset-password {
+  background: transparent;
+  outline: 0;
+  border: none;
+  color: blue;
+}
+
 .navbar3-items {
   cursor: pointer !important;
 }
