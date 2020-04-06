@@ -37,21 +37,15 @@ function SignUp() {
         setVerifyPassword("");
     };
 
-    const disableSignUpBtn = () =>
-        (document.getElementById("submitBtn").style.cssText =
-            "opacity: .3;pointer - events : none;");
-    const enableSignUpBtn = () =>
-        (document.getElementById("submitBtn").style.cssText =
-            "opacity: 1;pointer - events : none;");
-
     const handleSubmitButton = e => {
         e.preventDefault();
-        disableSignUpBtn();
+
+        document.getElementById("signupSubmitBtn").style.cssText =
+            "opacity: .3;pointer - events : none;";
 
         let flag = false;
         let msg = "";
 
-        // console.log(PhoneNumber.slice(0, 2));
         if (PhoneNumber.length !== 11 || PhoneNumber.slice(0, 2) !== "09") {
             msg += "<li>شماره تماس وارد شده اشتباه است</li>";
             flag = true;
@@ -96,7 +90,6 @@ function SignUp() {
                     setPhonenumberGlob(PhoneNumber);
                     setNameGlob(Name);
                     setPasswordGlob(Password);
-                    enableSignUpBtn();
                 })
                 .catch(e => {
                     if (e.response.status == 500) {
@@ -105,13 +98,16 @@ function SignUp() {
                                 "امکان ایجاد اکانت برای این شماره در حال حاظر وجود ندارد",
                             status: "danger"
                         });
+                        document.getElementById(
+                            "signupSubmitBtn"
+                        ).style.cssText = "";
                     } else
                         setError({
                             msg: e.response.data.message,
                             status: "danger"
                         });
-                    // console.log(e.response);
-                    enableSignUpBtn();
+                    document.getElementById("signupSubmitBtn").style.cssText =
+                        "";
                 });
         } else {
             setError({
@@ -206,7 +202,7 @@ function SignUp() {
 
                 <button
                     className="btn btn-primary btn-lg my-3 font4"
-                    id="submitBtn"
+                    id="signupSubmitBtn"
                     type="submit"
                 >
                     ثبت نام

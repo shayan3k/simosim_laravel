@@ -32,10 +32,13 @@ export const JWTLogin = async data => {
             };
         })
         .catch(err => {
-            // console.log("The Error", err);
+            console.log("The Error", err.response.status);
             return {
                 status: err.response.status,
-                message: err
+                message:
+                    err.response.status == 401
+                        ? "شماره همراه و یا رمز عبور اشتباه است"
+                        : "متاسفانه امکان ایجاد اکانت جدید نمی باشد"
             };
         });
 };

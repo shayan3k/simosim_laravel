@@ -90,6 +90,8 @@ export default function NewAdvertisment(props) {
 
     const handleFormSubmition = e => {
         e.preventDefault();
+        document.getElementById("newAdvertismentSubmitBtn").style.cssText =
+            "opacity: .3;pointer-events : none;";
         let flag = false;
         let msg = "";
 
@@ -156,6 +158,9 @@ export default function NewAdvertisment(props) {
                         status: "success"
                     });
                     props.setRefresher(!props.refresher);
+                    document.getElementById(
+                        "newAdvertismentSubmitBtn"
+                    ).style.cssText = "";
                 })
 
                 .catch(e => {
@@ -164,6 +169,9 @@ export default function NewAdvertisment(props) {
                         msg: e.response.data.message,
                         status: "danger"
                     });
+                    document.getElementById(
+                        "newAdvertismentSubmitBtn"
+                    ).style.cssText = "";
                 });
             // console.log(data);
         } else {
@@ -171,6 +179,8 @@ export default function NewAdvertisment(props) {
                 msg,
                 status: "danger"
             });
+            document.getElementById("newAdvertismentSubmitBtn").style.cssText =
+                "";
         }
     };
 
@@ -443,6 +453,7 @@ export default function NewAdvertisment(props) {
 
                                     <button
                                         className="default-btn btn-search px-5 mx-4"
+                                        id="newAdvertismentSubmitBtn"
                                         type="submit"
                                     >
                                         <h6 className="font3">ثبت</h6>

@@ -10,16 +10,10 @@ function Login() {
     const setLogedIn = useStoreActions(actions => actions.auth.setLogedIn);
     const setError = useStoreActions(actions => actions.message.setError);
 
-    const disableLoginBtn = () =>
-        (document.getElementById("loginbtn").style.cssText =
-            "opacity: .3;pointer - events : none;");
-    const enableLoginBtn = () =>
-        (document.getElementById("loginbtn").style.cssText =
-            "opacity: 1;pointer - events : none;");
-
     const loginRequest = async e => {
         e.preventDefault();
-        disableLoginBtn();
+        document.getElementById("loginSubmitBtn").style.cssText =
+            "opacity: .3;pointer - events : none;";
 
         let loginData = {
             phonenumber: username,
@@ -34,9 +28,8 @@ function Login() {
                     msg: data.message,
                     status: "danger"
                 });
+                document.getElementById("loginSubmitBtn").style.cssText = "";
             }
-            enableLoginBtn();
-            // console.log(data);
         });
     };
 
@@ -75,7 +68,7 @@ function Login() {
                 <button
                     className="btn btn-primary btn-lg my-3 font4"
                     type="button"
-                    id="loginbtn"
+                    id="loginSubmitBtn"
                     onClick={e => loginRequest(e)}
                 >
                     ورود
