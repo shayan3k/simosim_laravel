@@ -75,19 +75,22 @@ function SpecialOffers(props) {
     // const advertismentBerozresaniUser = "/advertisments-berozresani-user";
 
     useEffect(() => {
+        listUpdate();
+    }, []);
+
+    const listUpdate = async () => {
         axios
             .get(baseUrl + props.uri)
             .then(response => {
                 setPosts(response.data);
-                console.log("sepecial offers ", response.data);
+                // console.log("sepecial offers ", response.data);
             })
             .catch(error => {
-                console.log(error.response);
+                // console.log(error.response);
             });
-    }, []);
+    };
 
-    const handleDeleteBtn = (e, id, sellerPhoneNumber) => {
-        console.log("id is ", id);
+    const handleDeleteBtn = id => {
         axios({
             url: baseUrl + advertismentDeleteUser,
             method: "POST",
@@ -95,14 +98,14 @@ function SpecialOffers(props) {
             data: { id: id }
         })
             .then(res => {
-                console.log(res, posts, "done");
                 listUpdate();
             })
-            .catch(e => console.log(e.response));
+            .catch(e => {
+                console.log("Item can not delete the item at this time");
+            });
     };
 
-    const handleBeRoozResani = (e, id, sellerPhoneNumber) => {
-        console.log("id is ", id);
+    const handleBeRoozResaniBtn = id => {
         axios({
             url: baseUrl + advertismentBerozresaniUser,
             method: "POST",
@@ -110,10 +113,32 @@ function SpecialOffers(props) {
             data: { id: id }
         })
             .then(res => {
-                console.log(res, posts, "done");
                 listUpdate();
             })
-            .catch(e => console.log(e.response));
+            .catch(e => {
+                console.log(
+                    "Item can not beroz the item at this time",
+                    e.response
+                );
+            });
+    };
+
+    const handleSoldBtn = id => {
+        axios({
+            url: baseUrl + advertismentSoldUser,
+            method: "POST",
+            headers: JWTHeader().headers,
+            data: { id: id }
+        })
+            .then(res => {
+                listUpdate();
+            })
+            .catch(e => {
+                console.log(
+                    "Item can not update the item at this time",
+                    e.response
+                );
+            });
     };
 
     return (
@@ -165,7 +190,8 @@ function SpecialOffers(props) {
                                 secondPrice={item.secondprice}
                                 updated_at={item.updated_at}
                                 handleDeleteBtn={handleDeleteBtn}
-                                handleBeRoozResani={handleBeRoozResani}
+                                handleBeRoozResaniBtn={handleBeRoozResaniBtn}
+                                handleSoldBtn={handleSoldBtn}
                             />
                         </div>
                     );

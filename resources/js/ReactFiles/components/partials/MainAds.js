@@ -6,7 +6,7 @@ import { JWTHeader } from "../services/Auth";
 import secureStorage from "../services/Storage";
 import axios from "axios";
 
-function MainAds(props) {
+function MainAds() {
     const baseUrl = process.env.MIX_BASEURL;
     const showAdvertisments = process.env.MIX_MAIN_ADVERTISMENTS;
     const advertismentDeleteUser = process.env.MIX_ADVERTISMENT_DELETE_USER;
@@ -17,14 +17,14 @@ function MainAds(props) {
     // const advertismentDeleteUser = "/advertisments-delete-user";
     // const advertismentBerozresaniUser = "/advertisments-berozresani-user";
 
-    const Phonenumber = useStoreState((state) => state.searchBox.phonenumber);
-    const Status = useStoreState((state) => state.searchBox.status);
-    const Value = useStoreState((state) => state.searchBox.value);
-    const Rond = useStoreState((state) => state.searchBox.rond);
-    const Code = useStoreState((state) => state.searchBox.code);
-    const Location = useStoreState((state) => state.searchBox.location);
-    const Sale = useStoreState((state) => state.searchBox.sale);
-    const PriceRange = useStoreState((state) => state.searchBox.priceRange);
+    const Phonenumber = useStoreState(state => state.searchBox.phonenumber);
+    const Status = useStoreState(state => state.searchBox.status);
+    const Value = useStoreState(state => state.searchBox.value);
+    const Rond = useStoreState(state => state.searchBox.rond);
+    const Code = useStoreState(state => state.searchBox.code);
+    const Location = useStoreState(state => state.searchBox.location);
+    const Sale = useStoreState(state => state.searchBox.sale);
+    const PriceRange = useStoreState(state => state.searchBox.priceRange);
 
     const [posts, setPosts] = useState([]);
     const [currnetPage, setCurrentPage] = useState(1);
@@ -48,7 +48,7 @@ function MainAds(props) {
         Location,
         PriceRange,
         Sale,
-        currnetPage,
+        currnetPage
     ]);
 
     const listUpdate = async () => {
@@ -61,55 +61,73 @@ function MainAds(props) {
             rond: Rond,
             status: Status,
             sale: Sale,
-            priceRange: PriceRange,
+            priceRange: PriceRange
         };
         axios({
             method: "POST",
             url: baseUrl + showAdvertisments,
-            data: data,
+            data: data
         })
-            .then(async (response) => {
+            .then(async response => {
                 await setPosts(response.data);
-                console.log("Secondary response", response, data);
+                // console.log("Secondary response", response, data);
             })
-            .catch((err) => {
-                console.log(err);
-                console.log("Error search", err.response, data);
+            .catch(err => {
+                // console.log(err);
+                // console.log("Error search", err.response, data);
             });
     };
-    const handleDeleteBtn = (e, id, sellerPhoneNumber) => {
-        console.log("id is ", id);
+
+    const handleDeleteBtn = id => {
         axios({
             url: baseUrl + advertismentDeleteUser,
             method: "POST",
             headers: JWTHeader().headers,
-            data: { id: id },
+            data: { id: id }
         })
-            .then((res) => {
-                console.log(res, posts, "done");
+            .then(res => {
                 listUpdate();
             })
-            .catch((e) => console.log(e.response));
+            .catch(e => {
+                console.log("Item can not delete the item at this time");
+            });
     };
 
-    const handleBeRoozResani = (e, id, sellerPhoneNumber) => {
-        console.log("id is ", id);
+    const handleBeRoozResaniBtn = id => {
         axios({
             url: baseUrl + advertismentBerozresaniUser,
             method: "POST",
             headers: JWTHeader().headers,
-            data: { id: id },
+            data: { id: id }
         })
-            .then((res) => {
-                console.log(res, posts, "done");
+            .then(res => {
                 listUpdate();
             })
-            .catch((e) => console.log(e.response));
+            .catch(e => {
+                console.log(
+                    "Item can not beroz the item at this time",
+                    e.response
+                );
+            });
     };
 
-    useEffect(() => {
-        console.log(posts);
-    }, [posts]);
+    const handleSoldBtn = id => {
+        axios({
+            url: baseUrl + advertismentSoldUser,
+            method: "POST",
+            headers: JWTHeader().headers,
+            data: { id: id }
+        })
+            .then(res => {
+                listUpdate();
+            })
+            .catch(e => {
+                console.log(
+                    "Item can not update the item at this time",
+                    e.response
+                );
+            });
+    };
 
     return (
         <div className="container my-0 mainAdsToggler bg-custom">
@@ -118,7 +136,7 @@ function MainAds(props) {
                     <li className="page-item">
                         <a
                             className="btn page-link"
-                            onClick={(e) => handlePrevOnClick(e)}
+                            onClick={e => handlePrevOnClick(e)}
                             style={
                                 currnetPage == 1
                                     ? { pointerEvents: "none" }
@@ -134,7 +152,7 @@ function MainAds(props) {
                     <li className="page-item">
                         <a
                             className="btn page-link"
-                            onClick={(e) => handleNextOnClick(e)}
+                            onClick={e => handleNextOnClick(e)}
                         >
                             صفحه بعد
                         </a>
@@ -144,7 +162,10 @@ function MainAds(props) {
             <div className="d-flex justify-content-between align-items-stretch flex-wrap p-0 m-0">
                 {posts.map((item, index) => {
                     return (
-                        <div className="p-1 d-flex justify-content-center align-items-center">
+                        <div
+                            className="p-1 d-flex justify-content-center align-items-center"
+                            key={index}
+                        >
                             <Advertisment
                                 phoneNumber={item.phonenumber}
                                 status={item.simstatus}
@@ -162,7 +183,8 @@ function MainAds(props) {
                                 id={item.id}
                                 updated_at={item.updated_at}
                                 handleDeleteBtn={handleDeleteBtn}
-                                handleBeRoozResani={handleBeRoozResani}
+                                handleBeRoozResaniBtn={handleBeRoozResaniBtn}
+                                handleSoldBtn={handleSoldBtn}
                             />
                         </div>
                     );
@@ -173,7 +195,7 @@ function MainAds(props) {
                     <li className="page-item">
                         <a
                             className="btn page-link"
-                            onClick={(e) => handlePrevOnClick(e)}
+                            onClick={e => handlePrevOnClick(e)}
                             style={
                                 currnetPage == 1
                                     ? { pointerEvents: "none" }
@@ -189,7 +211,7 @@ function MainAds(props) {
                     <li className="page-item">
                         <a
                             className="btn page-link"
-                            onClick={(e) => handleNextOnClick(e)}
+                            onClick={e => handleNextOnClick(e)}
                         >
                             صفحه بعد
                         </a>

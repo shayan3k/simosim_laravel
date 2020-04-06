@@ -40,7 +40,7 @@ export default function SMSVerification() {
                 }
             })
                 .then(res => {
-                    console.log(res);
+                    // console.log(res);
                     setError({
                         msg: res.data.message,
                         status: "success"
@@ -65,20 +65,21 @@ export default function SMSVerification() {
                                 status: "danger"
                             });
                         }
-                        console.log(data);
+                        // console.log(data);
                     });
                 })
-                .catch(e => console.log(e.response));
+                .catch(e => {
+                    console.log(e.response);
+                });
         } else {
             setError({
                 msg: "کد وارد شده صحیح نمی باشد",
                 status: "danger"
             });
         }
-        console.log("smsToken = " + smsToken);
+        // console.log("smsToken = " + smsToken);
     };
 
-    console.log();
     return smsToken && phonenumber && password && name ? (
         <div className="alert alert-info">
             <form onSubmit={handleSubmitBtn}>

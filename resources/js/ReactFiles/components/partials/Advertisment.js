@@ -25,9 +25,8 @@ export default function Advertisment(props) {
     const [sale, setSale] = useState(props.sale);
     const [targetElement, setTargetElement] = useState("");
 
-    const handleAdvertismentClick = (e) => {
+    const handleAdvertismentClick = e => {
         setTargetElement(e.currentTarget);
-        console.log(e.target);
         setToggle(!toggle);
     };
 
@@ -96,15 +95,17 @@ export default function Advertisment(props) {
 
     return (
         <div
-            className="card m-0 flip-card advertisment py-0 shadow position-relative bg-transparent position-relative"
+            className="card m-0 flip-card advertisment py-0 shadow bg-transparent"
             onClick={handleAdvertismentClick}
         >
-            {flagRender()}
-
             <div className="card-body flip-card-front w-100 h-100 mh-100 d-flex justify-content-between align-items-center flex-column p-1 ">
+                {flagRender()}
+
                 <div className="card-inner-width w-100">
                     <h3 className="ad-number font5 text-right pt-0">
-                        {persianJs(phoneNumber).englishNumber().toString()}
+                        {persianJs(phoneNumber)
+                            .englishNumber()
+                            .toString()}
                     </h3>
                     <hr className="py-0 my-0" />
                 </div>
@@ -154,7 +155,6 @@ export default function Advertisment(props) {
             </div>
             <div className="flip-card-back d-flex justify-content-center align-items-center flex-column">
                 <div className="card-body w-100 d-flex justify-content-center align-items-center flex-column  ">
-                    <div className="flip-card-background"></div>
                     <h1 className="text-center p-2 font4">
                         {persianJs(sellerPhoneNumber)
                             .englishNumber()
@@ -164,33 +164,52 @@ export default function Advertisment(props) {
 
                     {secureStorage.getItem("phonenumber") ===
                     sellerPhoneNumber ? (
-                        <>
-                            <button
-                                className="btn btn-danger btn-sm p-1 my-1"
-                                onClick={(e) => {
-                                    props.handleDeleteBtn(
-                                        e,
-                                        id,
-                                        sellerPhoneNumber
-                                    );
-                                    console.log(props.id);
-                                }}
-                            >
-                                پاک کردن
-                            </button>
-                            <button
-                                className="btn btn-warning btn-sm p-1 my-1"
-                                onClick={(e) =>
-                                    props.handleBeRoozResani(
-                                        e,
-                                        id,
-                                        sellerPhoneNumber
-                                    )
-                                }
-                            >
-                                به روز رسانی
-                            </button>
-                        </>
+                        <div className="advertisment-btn-wrapper">
+                            {props.handleDeleteBtn ? (
+                                <button
+                                    className="btn-advertisment-delete p-1 m-1"
+                                    onClick={e => props.handleDeleteBtn(id)}
+                                >
+                                    <i className="fas fa-trash-alt"></i>
+                                </button>
+                            ) : (
+                                ""
+                            )}
+
+                            {props.handleBeRoozResaniBtn ? (
+                                <button
+                                    className="btn-advertisment-berozresani p-1 m-1"
+                                    onClick={e =>
+                                        props.handleBeRoozResaniBtn(id)
+                                    }
+                                >
+                                    <i className="fas fa-poo-storm"></i>
+                                </button>
+                            ) : (
+                                ""
+                            )}
+                            {props.handleSoldBtn ? (
+                                <button
+                                    className="btn-advertisment-sold p-1 m-1"
+                                    onClick={e => props.handleSoldBtn(id)}
+                                >
+                                    <i className="fas fa-dollar-sign"></i>
+                                </button>
+                            ) : (
+                                ""
+                            )}
+
+                            {props.handleRetriveBtn ? (
+                                <button
+                                    className="btn-advertisment-sold p-1 m-1"
+                                    onClick={e => props.handleRetriveBtn(id)}
+                                >
+                                    <i className="fas fa-trash-restore fa-2x"></i>{" "}
+                                </button>
+                            ) : (
+                                ""
+                            )}
+                        </div>
                     ) : (
                         ""
                     )}

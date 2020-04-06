@@ -27,6 +27,7 @@ class CreateAdvertismentsTable extends Migration
             $table->string('simstatus');
             $table->string('sale')->nullable;
             $table->boolean('published');
+            $table->boolean('sold');
             $table->timestamps();
             $table->integer('user_id');
         });

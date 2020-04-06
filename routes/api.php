@@ -44,11 +44,13 @@ Route::get('/advertisments-silver', 'AdvertismentController@showSilver');
 Route::get('/advertisments-bronze', 'AdvertismentController@showBronze');
 Route::get('/advertisments-live', 'AdvertismentController@showMeLive')->middleware('auth:api');
 Route::get('/advertisments-sold', 'AdvertismentController@showMeSold')->middleware('auth:api');
+Route::get('/advertisments-waiting', 'AdvertismentController@showMeWaiting')->middleware('auth:api');
 
 Route::post('/advertisments', 'AdvertismentController@create')->middleware('auth:api');
 Route::post('/advertisments-delete-user', 'AdvertismentController@deleteAdvertismentUser')->middleware('auth:api');
 Route::post('/advertisments-berozresani-user', 'AdvertismentController@berozresaniAdvertismentUser')->middleware('auth:api');
-
+Route::post('/advertisments-sold-user', 'AdvertismentController@soldAdvertismentUser')->middleware('auth:api');
+Route::post('/advertisments-retrive-user', 'AdvertismentController@retriveAdvertismentUser')->middleware('auth:api');
 
 
 Route::get('/advertisments-admin', 'AdvertismentController@showAllAdmin');

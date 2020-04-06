@@ -12,10 +12,12 @@ function Advertisers() {
     useEffect(() => {
         axios
             .get(baseUrl + AdvertisersUrl)
-            .then((res) => {
+            .then(res => {
                 setAdvertisers(res.data);
             })
-            .catch((err) => console.log(err.response));
+            .catch(err => {
+                // console.log(err.response);
+            });
     }, []);
     return (
         <div className="container mx-auto py-0 AdvertisersToggler">

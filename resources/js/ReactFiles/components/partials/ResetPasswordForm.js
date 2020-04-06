@@ -36,7 +36,7 @@ export default function ResetPasswordForm() {
             }
         })
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 setToggler(!toggler);
                 setMsg(
                     "تا دقاقی دیگر کد احراض حویت به شماره موبایلتون ارسال خواهد شد"
@@ -44,7 +44,7 @@ export default function ResetPasswordForm() {
                 setStatus("success");
             })
             .catch(e => {
-                console.log(e.response);
+                // console.log(e.response);
                 setMsg(e.response.data.message);
                 setStatus("danger");
             });
@@ -64,7 +64,7 @@ export default function ResetPasswordForm() {
             }
         })
             .then(res => {
-                console.log(res);
+                // console.log(res);
 
                 setMsg(
                     "رمز شما با موفقیت تغییر یافت.تا دقایقی دیگر رمز جدید را از طریق پیام کوتاه دریافت خواهید کرد"
@@ -73,7 +73,7 @@ export default function ResetPasswordForm() {
                 setHidden(true);
             })
             .catch(e => {
-                console.log(e.response);
+                // console.log(e.response);
                 setMsg(e.response.data.message);
                 setStatus("danger");
             });

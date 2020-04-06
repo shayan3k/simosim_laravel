@@ -4,19 +4,13 @@ import { JWTHeader } from "../services/Auth";
 import axios from "axios";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
-function DashboardAdvertisment(props) {
+function DashboardAdvertismentWaiting(props) {
     const baseUrl = process.env.MIX_BASEURL;
-    const myAdvertisments = process.env.MIX_ADVERTISMENT_LIVE;
+    const myAdvertisments = process.env.MIX_ADVERTISMENT_WAITING;
     const advertismentDeleteUser = process.env.MIX_ADVERTISMENT_DELETE_USER;
-    const advertismentBerozresaniUser =
-        process.env.MIX_ADVERTISMENT_BEROZRESANI_USER;
-    const advertismentSoldUser = process.env.MIX_ADVERTISMENT_SOLD_USER;
 
     const dashboardAdvertismentState = useStoreState(
         state => state.listUpdate.dashboardAdvertisment
-    );
-    const setDashboardAdvertismentState = useStoreActions(
-        actions => actions.listUpdate.setDashboardAdvertisment
     );
 
     const itemPerPage = 15;
@@ -43,7 +37,7 @@ function DashboardAdvertisment(props) {
         })
             .then(async response => {
                 await setPosts(response.data);
-                console.log("dashboard advertisments respond", response.data);
+                console.log("waiting advertisments", response.data);
             })
             .catch(err => {
                 console.log("dashboardAdvertisments", err.response);
@@ -64,38 +58,8 @@ function DashboardAdvertisment(props) {
             });
     };
 
-    const handleBeRoozResaniBtn = id => {
-        axios({
-            url: baseUrl + advertismentBerozresaniUser,
-            method: "POST",
-            headers: JWTHeader().headers,
-            data: { id: id }
-        })
-            .then(res => {
-                props.setRefresher(!props.refresher);
-            })
-            .catch(e => {
-                console.log("Item can not beroz the item at this time");
-            });
-    };
-
-    const handleSoldBtn = id => {
-        axios({
-            url: baseUrl + advertismentSoldUser,
-            method: "POST",
-            headers: JWTHeader().headers,
-            data: { id: id }
-        })
-            .then(res => {
-                props.setRefresher(!props.refresher);
-            })
-            .catch(e => {
-                console.log("Item can not update the item at this time");
-            });
-    };
-
     return (
-        <div className="container bg-white my-0 DashboardAdvertismentLive bg-custom">
+        <div className="container bg-white my-0 DashboardAdvertismentWaiting bg-custom">
             <nav aria-label="Page navigation">
                 <ul className="pagination py-2 px-1">
                     <li className="page-item ml-auto">
@@ -156,8 +120,6 @@ function DashboardAdvertisment(props) {
                                 id={item.id}
                                 updated_at={item.updated_at}
                                 handleDeleteBtn={handleDeleteBtn}
-                                handleBeRoozResaniBtn={handleBeRoozResaniBtn}
-                                handleSoldBtn={handleSoldBtn}
                             />
                         </div>
                     ))
@@ -167,4 +129,4 @@ function DashboardAdvertisment(props) {
     );
 }
 
-export default DashboardAdvertisment;
+export default DashboardAdvertismentWaiting;

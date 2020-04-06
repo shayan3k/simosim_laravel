@@ -13,7 +13,7 @@ const meRoute = process.env.MIX_AUTH_ME;
 // const meRoute = "/auth/me";
 
 export const JWTLogin = async data => {
-    console.log(data);
+    // console.log(data);
     return axios
         .post(baseUrl + loginRoute, data)
         .then(res => {
@@ -24,15 +24,15 @@ export const JWTLogin = async data => {
                 "is_admin",
                 res.data.is_admin ? "true" : "false"
             );
-            console.log("IS_ADMIN", res.data.is_admin ? "true" : "false");
-            console.log("jwt TOKEN SET", secureStorage.getItem("jwt"));
+            // console.log("IS_ADMIN", res.data.is_admin ? "true" : "false");
+            // console.log("jwt TOKEN SET", secureStorage.getItem("jwt"));
             return {
                 status: res.status,
                 message: "خوش آمدید"
             };
         })
         .catch(err => {
-            console.log("The Error", err);
+            // console.log("The Error", err);
             return {
                 status: err.response.status,
                 message: err
@@ -66,7 +66,7 @@ export const JWTValidate = async () => {
                     "is_admin",
                     res.data.is_admin ? "true" : "false"
                 );
-                console.log("Authenticated in AUTH", res);
+                // console.log("Authenticated in AUTH", res);
                 return resolve({
                     statusText: res.statusText,
                     name: res.data.name,
@@ -74,14 +74,14 @@ export const JWTValidate = async () => {
                 });
             })
             .catch(err => {
-                console.log("NOT Authenticated in AUTH", err.response);
+                // console.log("NOT Authenticated in AUTH", err.response);
                 return reject(err);
             });
     });
 };
 
 export const JWTCheck = async () => {
-    console.log("JWT CHECK");
+    // console.log("JWT CHECK");
 
     return new Promise((resolve, reject) => {
         return axios({
@@ -99,7 +99,7 @@ export const JWTCheck = async () => {
                     "is_admin",
                     res.data.is_admin ? "true" : "false"
                 );
-                console.log("Authenticated in AUTH", res);
+                // console.log("Authenticated in AUTH", res);
                 return resolve({
                     statusText: res.statusText,
                     name: res.data.name,
@@ -107,7 +107,7 @@ export const JWTCheck = async () => {
                 });
             })
             .catch(err => {
-                console.log("NOT Authenticated in AUTH", err.response);
+                // console.log("NOT Authenticated in AUTH", err.response);
                 return reject(err);
             });
     });
@@ -119,7 +119,6 @@ export const JWTHeader = () => {
 
     return {
         headers: {
-            // "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json",
             Authorization: authHeader
         }

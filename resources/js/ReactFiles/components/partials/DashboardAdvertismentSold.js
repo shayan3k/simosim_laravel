@@ -4,16 +4,11 @@ import { JWTHeader } from "../services/Auth";
 import axios from "axios";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
-function DashboardAdvertisment(props) {
+function DashboardAdvertismentSold(props) {
     const baseUrl = process.env.MIX_BASEURL;
     const myAdvertisments = process.env.MIX_ADVERTISMENT_SOLD;
-    const advertismentDeleteUser = process.env.MIX_ADVERTISMENT_DELETE_USER;
-    const advertismentBerozresaniUser =
-        process.env.MIX_ADVERTISMENT_BEROZRESANI_USER;
 
-    // const myAdvertisments = "/advertisments-sold";
-    // const advertismentDeleteUser = "/advertisments-delete-user";
-    // const advertismentBerozresaniUser = "/advertisments-berozresani-user";
+    const retriveAdvertismentUrl = process.env.MIX_ADVERTISMENT_RETRIVE_USER;
 
     const dashboardAdvertismentState = useStoreState(
         state => state.listUpdate.dashboardAdvertisment
@@ -36,7 +31,7 @@ function DashboardAdvertisment(props) {
 
     useEffect(() => {
         listUpdate();
-    }, [currnetPage, dashboardAdvertismentState]);
+    }, [currnetPage, dashboardAdvertismentState, props]);
 
     const listUpdate = async () => {
         axios({
@@ -46,53 +41,35 @@ function DashboardAdvertisment(props) {
         })
             .then(async response => {
                 await setPosts(response.data);
-                console.log("dashboard advertisments respond", response.data);
+                console.log("sold", response.data);
             })
             .catch(err => {
-                console.log("dashboardAdvertisments", err.response);
+                // console.log("dashboardAdvertisments", err.response);
             });
     };
-    const handleDeleteBtn = (e, id, sellerPhoneNumber) => {
-        console.log("id is ", id);
+
+    const handleRetriveBtn = id => {
         axios({
-            url: baseUrl + advertismentDeleteUser,
+            url: baseUrl + retriveAdvertismentUrl,
             method: "POST",
             headers: JWTHeader().headers,
             data: { id: id }
         })
             .then(res => {
-                console.log(res, posts, "done");
-                // setDashboardAdvertismentState(!dashboardAdvertismentState);
+                props.setRefresher(!props.refresher);
             })
-            .catch(e => console.log(e.response));
+            .catch(e => {
+                console.log("Item can not update the item at this time");
+            });
     };
-
-    const handleBeRoozResani = (e, id, sellerPhoneNumber) => {
-        console.log("id is ", id);
-        axios({
-            url: baseUrl + advertismentBerozresaniUser,
-            method: "POST",
-            headers: JWTHeader().headers,
-            data: { id: id }
-        })
-            .then(res => {
-                console.log(res, posts, "done");
-                listUpdate();
-            })
-            .catch(e => console.log(e.response));
-    };
-
-    useEffect(() => {
-        console.log(posts);
-    }, [posts]);
 
     return (
         <div className="container bg-white my-0 DashboardAdvertismentSold bg-custom">
             <nav aria-label="Page navigation">
-                <ul class="pagination py-2 px-1">
-                    <li class="page-item ml-auto">
+                <ul className="pagination py-2 px-1">
+                    <li className="page-item ml-auto">
                         <a
-                            class="btn page-link"
+                            className="btn page-link"
                             onClick={e => handlePrevOnClick(e)}
                             style={
                                 currnetPage == 1
@@ -103,12 +80,12 @@ function DashboardAdvertisment(props) {
                             صفحه قبل
                         </a>
                     </li>
-                    <li class="page-item">
-                        <a class="btn btn-danger">{currnetPage}</a>
+                    <li className="page-item">
+                        <a className="btn btn-danger">{currnetPage}</a>
                     </li>
-                    <li class="page-item">
+                    <li className="page-item">
                         <a
-                            class="btn page-link"
+                            className="btn page-link"
                             onClick={e => handleNextOnClick(e)}
                             style={
                                 posts.length != itemPerPage
@@ -147,8 +124,7 @@ function DashboardAdvertisment(props) {
                                 sellerName={item.sellername}
                                 id={item.id}
                                 updated_at={item.updated_at}
-                                handleDeleteBtn={handleDeleteBtn}
-                                handleBeRoozResani={handleBeRoozResani}
+                                handleRetriveBtn={handleRetriveBtn}
                             />
                         </div>
                     ))
@@ -158,4 +134,4 @@ function DashboardAdvertisment(props) {
     );
 }
 
-export default DashboardAdvertisment;
+export default DashboardAdvertismentSold;

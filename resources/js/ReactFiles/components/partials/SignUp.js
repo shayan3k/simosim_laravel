@@ -3,11 +3,6 @@ import { useStoreState, useStoreActions } from "easy-peasy";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const validateEmail = email => {
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-};
-
 function SignUp() {
     //  More Persistant States
     const setError = useStoreActions(actions => actions.message.setError);
@@ -56,7 +51,7 @@ function SignUp() {
         let flag = false;
         let msg = "";
 
-        console.log(PhoneNumber.slice(0, 2));
+        // console.log(PhoneNumber.slice(0, 2));
         if (PhoneNumber.length !== 11 || PhoneNumber.slice(0, 2) !== "09") {
             msg += "<li>شماره تماس وارد شده اشتباه است</li>";
             flag = true;
@@ -86,12 +81,12 @@ function SignUp() {
             name: Name,
             password: Password
         };
-        console.log(data);
+        // console.log(data);
         if (!flag) {
             axios
                 .post(baseUrl + registerSmsUrl, data)
                 .then(res => {
-                    console.log(res);
+                    // console.log(res);
                     setError({
                         msg: res.data.message,
                         status: "success"
@@ -115,7 +110,7 @@ function SignUp() {
                             msg: e.response.data.message,
                             status: "danger"
                         });
-                    console.log(e.response);
+                    // console.log(e.response);
                     enableSignUpBtn();
                 });
         } else {
@@ -198,7 +193,7 @@ function SignUp() {
                         htmlFor="checkBox"
                     >
                         <Link to="/ghavanin">قوانین</Link> را مطالعه کردم و قبول
-                        دارم{" "}
+                        دارم
                     </label>
                     <input
                         type="checkbox"

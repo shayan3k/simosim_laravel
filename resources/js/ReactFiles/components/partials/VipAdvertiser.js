@@ -5,7 +5,6 @@ import persianJs from "persianjs";
 export default function VipAdvertiser() {
     const baseUrl = process.env.MIX_BASEURL;
     const vipAdvertiser = process.env.MIX_VIP_ADVERTISER;
-    // const vipAdvertiser = "/vipadvertisers";
 
     const [Title, setTitle] = useState();
     const [ShopName, setShopName] = useState();
@@ -17,7 +16,7 @@ export default function VipAdvertiser() {
     useEffect(() => {
         axios
             .get(baseUrl + vipAdvertiser)
-            .then((res) => {
+            .then(res => {
                 setTitle(res.data.title);
                 setShopName(res.data.shopname);
                 setPhoneNumbers(res.data.phonenumbers);
@@ -25,7 +24,9 @@ export default function VipAdvertiser() {
                 setText(res.data.text);
                 setContactNumber(res.data.contactnumber);
             })
-            .catch((e) => console.log(e.response));
+            .catch(e => {
+                // console.log(e.response);
+            });
     }, []);
 
     return (

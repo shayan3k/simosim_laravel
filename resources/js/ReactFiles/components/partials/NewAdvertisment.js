@@ -13,7 +13,7 @@ export default function NewAdvertisment(props) {
 
     //  More Persistant States
 
-    const setError = useStoreActions((actions) => actions.message.setError);
+    const setError = useStoreActions(actions => actions.message.setError);
 
     //Local States
     const [Selects, setSelects] = useState("");
@@ -35,43 +35,36 @@ export default function NewAdvertisment(props) {
     const SelectConfig = () => {
         const Selects = customSelect("select");
         setSelects(Selects);
-        Selects[0].select.addEventListener("change", (e) => {
+        Selects[0].select.addEventListener("change", e => {
             handleLocationOnChange(e);
         });
 
-        Selects[1].select.addEventListener("change", (e) => {
+        Selects[1].select.addEventListener("change", e => {
             handleRondOnChange(e);
         });
 
-        Selects[2].select.addEventListener("change", (e) => {
+        Selects[2].select.addEventListener("change", e => {
             handleStatusOnChange(e);
         });
     };
 
-    const handlePhoneNumberOnChange = (e) => {
-        // var data = e.target.value
-        //   .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, "")
-        //   .trim();
-
+    const handlePhoneNumberOnChange = e => {
         var data = e.target.value.replace(/[^0-9]+/g, "");
         setPhoneNumber(data);
         if (data.length === 11 && data.slice(0, 4) === "0912") {
             setCode(data.slice(4, 5));
         } else setCode("");
     };
-    const handleLocationOnChange = (e) => {
+    const handleLocationOnChange = e => {
         setLocation(e.target.value);
-        console.log(e.target.value);
     };
-    const handleRondOnChange = (e) => {
+    const handleRondOnChange = e => {
         setRond(e.target.value);
-        console.log(e.target.value);
     };
-    const handleStatusOnChange = (e) => {
+    const handleStatusOnChange = e => {
         setSimStatus(e.target.value);
-        console.log(e.target.value);
     };
-    const handlePriceOnChange = (e) => {
+    const handlePriceOnChange = e => {
         var data = e.target.value.replace(/[^0-9]+/g, "");
         setPrice(data);
 
@@ -84,29 +77,25 @@ export default function NewAdvertisment(props) {
             setValue("طلایی");
         }
 
-        console.log(data);
+        // console.log(data);
     };
-    const handleSecondPriceOnChange = (e) => {
+    const handleSecondPriceOnChange = e => {
         var data = e.target.value.replace(/[^0-9]+/g, "");
         setSecondPrice(data);
-
-        console.log(e.target.value);
     };
-    const handleTextOnChange = (e) => {
+    const handleTextOnChange = e => {
         var data = e.target.value.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>]/, "");
-
         setText(data);
-        console.log(data);
     };
 
-    const handleFormSubmition = (e) => {
+    const handleFormSubmition = e => {
         e.preventDefault();
         let flag = false;
         let msg = "";
 
-        console.log(PhoneNumber, Location, Operator, SimStatus, Price, Text);
+        // console.log(PhoneNumber, Location, Operator, SimStatus, Price, Text);
 
-        console.log(PhoneNumber.slice(0, 2));
+        // console.log(PhoneNumber.slice(0, 2));
         if (PhoneNumber.length !== 11 || PhoneNumber.slice(0, 4) !== "0912") {
             msg += "<li>شماره اشتباه</li>";
             flag = true;
@@ -154,32 +143,33 @@ export default function NewAdvertisment(props) {
                 price: Price,
                 sale: Sale ? "فوری" : "",
                 secondprice: Sale ? SecondPrice : 0,
-                modifed: new Date().toISOString(),
+                modifed: new Date().toISOString()
             };
 
             Axios.post(baseUrl + newAdUrl, data, JWTHeader())
-                .then((e) => {
-                    console.log(e);
+                .then(e => {
+                    // console.log(e);
 
                     setError({
                         msg:
                             "سیمکارت شما با موفقیت ثبت شد. تا دقایقی دیگر آگهی ثبت شده نمایش داده میشود",
-                        status: "success",
+                        status: "success"
                     });
+                    props.setRefresher(!props.refresher);
                 })
 
-                .catch((e) => {
-                    console.log(e.response.data.message);
+                .catch(e => {
+                    // console.log(e.response.data.message);
                     setError({
                         msg: e.response.data.message,
-                        status: "danger",
+                        status: "danger"
                     });
                 });
-            console.log(data);
+            // console.log(data);
         } else {
             setError({
                 msg,
-                status: "danger",
+                status: "danger"
             });
         }
     };
@@ -395,7 +385,7 @@ export default function NewAdvertisment(props) {
                                     id="exampleFormControlTextarea1"
                                     placeholder="متن تبلیغ"
                                     value={Text}
-                                    maxLength="100"
+                                    maxLength="70"
                                     onChange={handleTextOnChange}
                                 ></textarea>
                                 <div className="col-12 form-check row m-0 p-0 py-2 px-3">
@@ -410,9 +400,9 @@ export default function NewAdvertisment(props) {
                                         className="col-2 form-check-input"
                                         data-toggle="collapse"
                                         data-target="#collapsediv1"
-                                        onChange={(e) => {
+                                        onChange={e => {
                                             setSale(e.target.checked);
-                                            console.log(e.target.checked);
+                                            // console.log(e.target.checked);
                                         }}
                                     />
                                 </div>

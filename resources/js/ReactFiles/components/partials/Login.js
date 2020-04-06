@@ -36,7 +36,7 @@ function Login() {
                 });
             }
             enableLoginBtn();
-            console.log(data);
+            // console.log(data);
         });
     };
 

@@ -20,6 +20,7 @@ $factory->define(Advertisment::class, function (Faker $faker) {
         "simstatus" => $faker->randomElement(['صفر', 'تقریبا صفر', 'کارکرده']),
         "sale" => "",
         'published' => true,
+        'sold' => false,
         'created_at' => date('Y-m-d H:i:s'),
         'updated_at' => date('Y-m-d H:i:s'),
     ];
