@@ -42,64 +42,62 @@ export default function MegaMenu() {
         >
             <div className="w-100 m-0 p-2 d-flex justify-content-between align-items-center">
                 <div className="px-1 d-inline">
-                    {isLoaded || !secureStorage.getItem("jwt") ? (
-                        logedIn ? (
-                            <div className="d-flex justify-content-between align-items-center">
-                                {secureStorage.getItem("is_admin") ==
-                                adminSecretKey ? (
-                                    <>
-                                        <span
-                                            className="login-btn p-0 m-0"
-                                            onClick={() => handleLogoutBtn()}
-                                        >
-                                            <i className="fas fa-sign-out-alt fa-1x bg-links"></i>
-                                        </span>
-                                        <Link
-                                            className="login-btn bg-links px-3 font3"
-                                            to="/admin"
-                                            style={{ textDecoration: "none" }}
-                                        >
-                                            ادمین
-                                        </Link>
-                                        |
-                                        <Link
-                                            className="login-btn d-inline-block bg-links  px-3 font3"
-                                            to="/dashboard"
-                                            style={{ textDecoration: "none" }}
-                                        >
-                                            داشبورد
-                                        </Link>
-                                    </>
-                                ) : (
-                                    <>
-                                        <span
-                                            className="login-btn p-0 m-0"
-                                            onClick={() => handleLogoutBtn()}
-                                        >
-                                            <i className="fas fa-sign-out-alt fa-1x bg-links"></i>
-                                        </span>
-                                        <Link
-                                            className="login-btn font3 d-inline-block bg-links  px-3 font3"
-                                            to="/dashboard"
-                                            style={{ textDecoration: "none" }}
-                                        >
-                                            داشبورد
-                                        </Link>
-                                    </>
-                                )}
-                            </div>
-                        ) : (
-                            <Link
-                                className="login-btn d-flex justify-content-center align-items-center bg-links"
-                                to="/login"
-                                style={{ textDecoration: "none" }}
-                            >
-                                <i className="fas fa-sign-in-alt fa-rotate-180 fa-1x"></i>
-                                <span className="px-3 font3">ورود/ثبت نام</span>
-                            </Link>
-                        )
-                    ) : (
+                    {logedIn == "notset" ? (
                         <Loading />
+                    ) : logedIn == "true" ? (
+                        <div className="d-flex justify-content-between align-items-center">
+                            {secureStorage.getItem("is_admin") ==
+                            adminSecretKey ? (
+                                <>
+                                    <span
+                                        className="login-btn p-0 m-0"
+                                        onClick={() => handleLogoutBtn()}
+                                    >
+                                        <i className="fas fa-sign-out-alt fa-1x bg-links"></i>
+                                    </span>
+                                    <Link
+                                        className="login-btn bg-links px-3 font3"
+                                        to="/admin"
+                                        style={{ textDecoration: "none" }}
+                                    >
+                                        ادمین
+                                    </Link>
+                                    |
+                                    <Link
+                                        className="login-btn d-inline-block bg-links  px-3 font3"
+                                        to="/dashboard"
+                                        style={{ textDecoration: "none" }}
+                                    >
+                                        داشبورد
+                                    </Link>
+                                </>
+                            ) : (
+                                <>
+                                    <span
+                                        className="login-btn p-0 m-0"
+                                        onClick={() => handleLogoutBtn()}
+                                    >
+                                        <i className="fas fa-sign-out-alt fa-1x bg-links"></i>
+                                    </span>
+                                    <Link
+                                        className="login-btn font3 d-inline-block bg-links  px-3 font3"
+                                        to="/dashboard"
+                                        style={{ textDecoration: "none" }}
+                                    >
+                                        داشبورد
+                                    </Link>
+                                </>
+                            )}
+                        </div>
+                    ) : (
+                        <Link
+                            className="login-btn d-flex justify-content-center align-items-center bg-links"
+                            to="/login"
+                            style={{ textDecoration: "none" }}
+                        >
+                            <i className="fas fa-sign-in-alt fa-rotate-180 fa-1x"></i>
+                            <span className="px-3 font3">ورود/ثبت نام</span>
+                        </Link>
                     )}
                 </div>
                 <div className="font3-2 d-flex justify-content-end align-items-center bg-links">

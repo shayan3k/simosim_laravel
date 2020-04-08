@@ -16,7 +16,7 @@ JavascriptTimeAgo.locale(fa);
 
 const store = createStore({
     auth: {
-        logedIn: false,
+        logedIn: "notset",
         Phonenumber: null,
         Nicename: null,
 

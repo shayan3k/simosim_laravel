@@ -14,14 +14,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 
 Route::group([
 
-    'middleware' => 'api',
+    'middleware' => ['api', 'cors'],
     'prefix' => 'auth'
 
 ], function ($router) {
@@ -37,43 +33,40 @@ Route::group([
     Route::post('me', 'AuthController@me');
 });
 
-Route::post('/advertisments-all', 'AdvertismentController@showAll');
-Route::get('/advertisments-sale', 'AdvertismentController@showSale');
-Route::get('/advertisments-gold', 'AdvertismentController@showGold');
-Route::get('/advertisments-silver', 'AdvertismentController@showSilver');
-Route::get('/advertisments-bronze', 'AdvertismentController@showBronze');
-Route::get('/advertisments-live', 'AdvertismentController@showMeLive')->middleware('auth:api');
-Route::get('/advertisments-sold', 'AdvertismentController@showMeSold')->middleware('auth:api');
-Route::get('/advertisments-waiting', 'AdvertismentController@showMeWaiting')->middleware('auth:api');
+Route::post('/advertisments-all', 'AdvertismentController@showAll')->middleware(['cors']);
+Route::get('/advertisments-sale', 'AdvertismentController@showSale')->middleware(['cors']);
+Route::get('/advertisments-gold', 'AdvertismentController@showGold')->middleware(['cors']);
+Route::get('/advertisments-silver', 'AdvertismentController@showSilver')->middleware(['cors']);
+Route::get('/advertisments-bronze', 'AdvertismentController@showBronze')->middleware(['cors']);
+Route::get('/advertisments-live', 'AdvertismentController@showMeLive')->middleware(['auth:api', 'cors']);
+Route::get('/advertisments-sold', 'AdvertismentController@showMeSold')->middleware(['auth:api', 'cors']);
+Route::get('/advertisments-waiting', 'AdvertismentController@showMeWaiting')->middleware(['auth:api', 'cors']);
 
-Route::post('/advertisments', 'AdvertismentController@create')->middleware('auth:api');
-Route::post('/advertisments-delete-user', 'AdvertismentController@deleteAdvertismentUser')->middleware('auth:api');
-Route::post('/advertisments-berozresani-user', 'AdvertismentController@berozresaniAdvertismentUser')->middleware('auth:api');
-Route::post('/advertisments-sold-user', 'AdvertismentController@soldAdvertismentUser')->middleware('auth:api');
-Route::post('/advertisments-retrive-user', 'AdvertismentController@retriveAdvertismentUser')->middleware('auth:api');
-
-
-Route::get('/advertisments-admin', 'AdvertismentController@showAllAdmin');
-Route::delete('/advertisments-admin', 'AdvertismentController@deleteAdmin')->middleware('auth:api');
-Route::post('/advertisments-admin', 'AdvertismentController@updateAdmin')->middleware('auth:api');
-
-Route::get('/users-admin', 'AdminUserController@showAllAdmin')->middleware('auth:api');;
-Route::post('/users-active-admin', 'AdminUserController@activeUserToggleAdmin')->middleware('auth:api');;
-Route::post('/users-post-delete-admin', 'AdminUserController@deleteUsersAllPostsAdmin')->middleware('auth:api');;
+Route::post('/advertisments', 'AdvertismentController@create')->middleware(['auth:api', 'cors']);
+Route::post('/advertisments-delete-user', 'AdvertismentController@deleteAdvertismentUser')->middleware(['auth:api', 'cors']);
+Route::post('/advertisments-berozresani-user', 'AdvertismentController@berozresaniAdvertismentUser')->middleware(['auth:api', 'cors']);
+Route::post('/advertisments-sold-user', 'AdvertismentController@soldAdvertismentUser')->middleware(['auth:api', 'cors']);
+Route::post('/advertisments-retrive-user', 'AdvertismentController@retriveAdvertismentUser')->middleware(['auth:api', 'cors']);
 
 
-Route::get('/advertisers', 'AdvertiserController@show');
-Route::post('/advertisers', 'AdvertiserController@update')->middleware('auth:api');
-Route::post('/advertisers/create', 'AdvertiserController@create')->middleware('auth:api');
-Route::delete('/advertisers', 'AdvertiserController@delete')->middleware('auth:api');
+Route::get('/advertisments-admin', 'AdvertismentController@showAllAdmin')->middleware(['cors']);
+Route::delete('/advertisments-admin', 'AdvertismentController@deleteAdmin')->middleware(['auth:api', 'cors']);
+Route::post('/advertisments-admin', 'AdvertismentController@updateAdmin')->middleware(['auth:api', 'cors']);
 
-Route::get('/vipadvertisers', 'VipadvertiserController@show');
-Route::post('/vipadvertisers', 'VipadvertiserController@update')->middleware('auth:api');
+Route::get('/users-admin', 'AdminUserController@showAllAdmin')->middleware(['auth:api', 'cors']);;
+Route::post('/users-active-admin', 'AdminUserController@activeUserToggleAdmin')->middleware(['auth:api', 'cors']);;
+Route::post('/users-post-delete-admin', 'AdminUserController@deleteUsersAllPostsAdmin')->middleware(['auth:api', 'cors']);;
+
+
+Route::get('/advertisers', 'AdvertiserController@show')->middleware(['cors']);
+Route::post('/advertisers', 'AdvertiserController@update')->middleware(['auth:api', 'cors']);
+Route::post('/advertisers/create', 'AdvertiserController@create')->middleware(['auth:api', 'cors']);
+Route::delete('/advertisers', 'AdvertiserController@delete')->middleware(['auth:api', 'cors']);
+
+Route::get('/vipadvertisers', 'VipadvertiserController@show')->middleware(['cors']);
+Route::post('/vipadvertisers', 'VipadvertiserController@update')->middleware(['auth:api', 'cors']);
 
 Route::get('/navbar', function () {
-
-
-
 
     if (Auth::guard()->user()) {
         return [

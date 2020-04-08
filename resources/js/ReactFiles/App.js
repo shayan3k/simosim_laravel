@@ -41,7 +41,7 @@ function App() {
         JWTCheck()
             .then(res => {
                 if (res.statusText === "OK") {
-                    setLogedIn(true);
+                    setLogedIn("true");
                     setPhoneNumber(res.phonenumber);
                     setNiceName(res.name);
                     // console.log("AUTHORIZED in APP", res);
@@ -52,7 +52,7 @@ function App() {
             .catch(e => {
                 // console.log("NOT AUTHORIZED in APP", e);
                 secureStorage.clear();
-                setLogedIn(false);
+                setLogedIn("false");
                 setPhoneNumber("");
                 setNiceName("");
             });
