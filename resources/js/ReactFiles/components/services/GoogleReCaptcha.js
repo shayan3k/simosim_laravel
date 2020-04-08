@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     GoogleReCaptcha as GoogleReCaptchaService,
     GoogleReCaptchaProvider
@@ -6,10 +6,12 @@ import {
 import secureStorage from "./Storage";
 
 export default function GoogleReCaptcha(props) {
-    const reCaptchaKey = process.env.MIX_RECAPTCHAKEY;
-    // const reCaptchaKey = "6LdOuNwUAAAAALberFJy70eJUzs57cqqirKkaIM7";
+    const reCaptchaKey = process.env.MIX_GOOGLE_SITEKEY;
 
     const [safe, setSafe] = useState(false);
+    useEffect(() => {
+        console.log(safe);
+    }, [safe]);
 
     return (
         <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey} language="fa">
@@ -19,7 +21,11 @@ export default function GoogleReCaptcha(props) {
                     setSafe(true);
                 }}
             />
-            {safe ? props.children : ""}
+            {safe ? (
+                props.children
+            ) : (
+                <h1 className="text-left font6">Loading...</h1>
+            )}
         </GoogleReCaptchaProvider>
     );
 }
