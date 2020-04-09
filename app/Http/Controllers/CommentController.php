@@ -40,9 +40,9 @@ class CommentController extends Controller
             //get the model data
             $advertisment = Advertisment::findOrFail($request->id);
             //get the relevant comments for a model
-            $comments = $comment->where('commentable_id', $advertisment->id)->orderBy('created_at', 'desc')->get();
+            $comments = $comment->where(['commentable_id' =>  $advertisment->id, 'approved' => true])->orderBy('created_at', 'desc')->get();
             //generate the success response
-            return count($comments)  ? response(['data' => $comments], 200) : response(['message' => 'no comments for this advertisment'], 200);
+            return count($comments)  ? response(['data' => $comments], 200) : response(['message' => 'no comments for this advertisment'], 201);
         }
         //generate the error response
         return response(['message' => 'bad request'], 400);

@@ -4,6 +4,7 @@ import GoldCrown from "../images/gold.png";
 import SilverCrown from "../images/silver.png";
 import BronzCrown from "../images/bronz.png";
 import SingleAdvertismentComment from "./SingleAdvertismentComment";
+import secureStorage from "../services/Storage";
 
 export default function SingleAdvertismentConent(props) {
     const FlagRenderer = () => {
@@ -65,41 +66,47 @@ export default function SingleAdvertismentConent(props) {
                             : "loading..."}
                     </h3>
                 </div>
-                <div>
-                    <hr />
-                    <div className="d-flex justify-content-between align-content-center">
-                        <button
-                            className="btn-advertisment-delete p-1 m-1"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="پاک کردن"
-                            onClick={e => props.handleDeleteBtn(id)}
-                        >
-                            <i className="fas fa-trash-alt fa-2x"></i>
-                        </button>
 
-                        <button
-                            className="btn-advertisment-berozresani p-1 m-1"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="به روز رسانی"
-                            onClick={e => props.handleBeRoozResaniBtn(id)}
-                        >
-                            <i className="fas fa-poo-storm fa-2x"></i>
-                        </button>
+                {props.sellerphonenumber ==
+                secureStorage.getItem("phonenumber") ? (
+                    <div>
+                        <hr />
+                        <div className="d-flex justify-content-between align-content-center">
+                            <button
+                                className="btn-advertisment-delete p-1 m-1"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="پاک کردن"
+                                onClick={e => props.handleDeleteBtn(id)}
+                            >
+                                <i className="fas fa-trash-alt fa-2x"></i>
+                            </button>
 
-                        <button
-                            className="btn-advertisment-sold p-1 m-1"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="فروخته شد"
-                            onClick={e => props.handleSoldBtn(id)}
-                        >
-                            <i className="fas fa-dollar-sign fa-2x"></i>
-                        </button>
+                            <button
+                                className="btn-advertisment-berozresani p-1 m-1"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="به روز رسانی"
+                                onClick={e => props.handleBeRoozResaniBtn(id)}
+                            >
+                                <i className="fas fa-poo-storm fa-2x"></i>
+                            </button>
+
+                            <button
+                                className="btn-advertisment-sold p-1 m-1"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="فروخته شد"
+                                onClick={e => props.handleSoldBtn(id)}
+                            >
+                                <i className="fas fa-dollar-sign fa-2x"></i>
+                            </button>
+                        </div>
+                        <hr className="d-md-none" />
                     </div>
-                    <hr className="d-md-none" />
-                </div>
+                ) : (
+                    ""
+                )}
             </div>
             <div className="col-12 col-md-7">
                 <ul className="advertisment-details text-right row m-0 p-0 w-100">

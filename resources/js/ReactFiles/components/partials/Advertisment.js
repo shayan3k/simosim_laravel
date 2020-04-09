@@ -105,9 +105,11 @@ export default function Advertisment(props) {
                 <div className="card-inner-width w-100">
                     <h3 className="ad-number font5 text-right pt-0">
                         <Link to={"/" + phoneNumber}>
-                            {persianJs(phoneNumber)
-                                .englishNumber()
-                                .toString()}
+                            {phoneNumber
+                                ? persianJs(phoneNumber)
+                                      .englishNumber()
+                                      .toString()
+                                : ""}
                         </Link>
                     </h3>
                     <hr className="py-0 my-0" />
@@ -120,23 +122,29 @@ export default function Advertisment(props) {
                     {sale ? (
                         <>
                             <p className="card-text font2 text-center p-0 m-0">
-                                {persianJs(secondPrice * 1000)
-                                    .englishNumber()
-                                    .toString()}
+                                {secondPrice
+                                    ? persianJs(secondPrice * 1000)
+                                          .englishNumber()
+                                          .toString()
+                                    : ""}
                                 تومان
                             </p>
                             <p className="card-text line-through font1 line text-center p-0 m-0 pb-1">
-                                {persianJs(price * 1000)
-                                    .englishNumber()
-                                    .toString()}
+                                {price
+                                    ? persianJs(price * 1000)
+                                          .englishNumber()
+                                          .toString()
+                                    : ""}
                                 تومان
                             </p>
                         </>
                     ) : (
                         <p className="card-text font2 text-center p-0 m-0">
-                            {persianJs(price * 1000)
-                                .englishNumber()
-                                .toString()}
+                            {price
+                                ? persianJs(price * 1000)
+                                      .englishNumber()
+                                      .toString()
+                                : ""}
                             تومان
                         </p>
                     )}
@@ -159,9 +167,11 @@ export default function Advertisment(props) {
             <div className="flip-card-back d-flex justify-content-center align-items-center flex-column">
                 <div className="card-body w-100 d-flex justify-content-center align-items-center flex-column  ">
                     <h1 className="text-center p-2 font4">
-                        {persianJs(sellerPhoneNumber)
-                            .englishNumber()
-                            .toString()}
+                        {sellerPhoneNumber
+                            ? persianJs(sellerPhoneNumber)
+                                  .englishNumber()
+                                  .toString()
+                            : ""}
                     </h1>
                     <p className="font3 text-center p-2">{sellerName}</p>
 

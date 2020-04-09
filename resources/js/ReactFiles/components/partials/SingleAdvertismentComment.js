@@ -13,6 +13,8 @@ export default function SingleAdvertismentComment(props) {
 
     const logedIn = useStoreState(state => state.auth.logedIn);
 
+    const [loaded, setLoaded] = useState(false);
+
     const [commentsData, setCommentsData] = useState();
     const [comment, setComment] = useState();
     const [status, setStatus] = useState();
@@ -83,8 +85,12 @@ export default function SingleAdvertismentComment(props) {
             .then(res => {
                 setCommentsData(res.data.data);
                 console.log(res.data.data);
+                setLoaded(true);
             })
-            .catch(e => console.log(e.response));
+            .catch(e => {
+                console.log(e.response);
+                setLoaded(true);
+            });
     };
 
     return (
@@ -110,7 +116,7 @@ export default function SingleAdvertismentComment(props) {
                     />
                 </form>
             ) : (
-                <h1 className="alert alert-info font8">
+                <h1 className="alert alert-info font4">
                     لطفا برای ثبت آگهی <a href="/login">ثبتنام</a> کنید
                 </h1>
             )}
@@ -125,7 +131,7 @@ export default function SingleAdvertismentComment(props) {
 
             <hr />
 
-            <div className="comment-section">
+            <div className="comment-section alert alert-warning">
                 <div className="comment-title mb-5 font6">
                     دیدگاه های شما
                     <i className="fa fa-comments" aria-hidden="true"></i>
@@ -134,9 +140,9 @@ export default function SingleAdvertismentComment(props) {
                     commentsData.map((item, index) => {
                         return (
                             <div className="comment-item" key={index}>
-                                <h2 className="d-inline-block font4 font-weight-bold ml-2">
+                                {/* <h2 className="d-inline-block font4 font-weight-bold ml-2">
                                     در انتظار تایید -
-                                </h2>
+                                </h2> */}
                                 <h2 className="d-inline-block font3 text-left ml-2">
                                     <ReactTimeAgo
                                         date={
@@ -175,8 +181,14 @@ export default function SingleAdvertismentComment(props) {
                             </div>
                         );
                     })
+                ) : loaded ? (
+                    <h1 className="alert alert-warning font3">
+                        دیدگاهی برای این سیمکارت ثبت نشده است
+                    </h1>
                 ) : (
-                    <h1 className="font3">Loading...</h1>
+                    <h1 className="alert alert-warning font3">
+                        دیدگاهی برای این سیمکارت ثبت نشده است
+                    </h1>
                 )}
             </div>
         </div>
