@@ -15,6 +15,7 @@ import LoginPage from "./components/LoginPage";
 import Dashboard from "./components/Dashboard";
 import PageNotFound from "./components/PageNotFound";
 import AdminPage from "./components/AdminPage";
+import AdvertismentPage from "./components/AdvertismentPage";
 import { JWTCheck, JWTHeader } from "./components/services/Auth";
 import secureStorage from "./components/services/Storage";
 import { useStoreState, useStoreActions } from "easy-peasy";
@@ -91,20 +92,22 @@ function App() {
         />
     );
 
-    const AuthenticatedRoute = ({ component: Component, ...rest }) => (
-        <Route
-            {...rest}
-            render={props =>
-                !logedIn ? (
-                    <Suspense fallback={Loading}>
-                        <Component {...props} />
-                    </Suspense>
-                ) : (
-                    <Redirect to="/" />
-                )
-            }
-        />
-    );
+    const AuthenticatedRoute = ({ component: Component, ...rest }) => {
+        return (
+            <Route
+                {...rest}
+                render={props =>
+                    logedIn == "true" ? (
+                        <Redirect to="/" />
+                    ) : (
+                        <Suspense fallback={Loading}>
+                            <Component {...props} />
+                        </Suspense>
+                    )
+                }
+            />
+        );
+    };
 
     const AdminRoute = ({ component: Component, ...rest }) => (
         <Route
@@ -169,6 +172,12 @@ function App() {
                             path="/login"
                             component={LoginPage}
                         />
+
+                        <Route
+                            path="/:queryPhoneNumber(0912[0-9]{7})"
+                            children={<AdvertismentPage />}
+                        />
+
                         <Route component={PageNotFound} />
                     </Switch>
                 </Router>

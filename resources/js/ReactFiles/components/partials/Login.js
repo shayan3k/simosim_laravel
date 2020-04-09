@@ -22,7 +22,7 @@ function Login() {
 
         JWTLogin(loginData).then(data => {
             if (data.status === 200) {
-                setLogedIn(true);
+                setLogedIn("true");
             } else {
                 setError({
                     msg: data.message,

@@ -7,9 +7,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+use Laravelista\Comments\Commenter;
+
+
 class User extends Authenticatable implements JWTSubject
 {
-    use Notifiable;
+    use Notifiable, Commenter;
+
 
     /**
      * Get the comments for the blog post.

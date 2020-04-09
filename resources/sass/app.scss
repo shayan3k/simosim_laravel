@@ -417,6 +417,56 @@ body {
     border: none;
 }
 
+//single-advertisment
+
+.single-phonenumber {
+    background: rgb(185, 226, 230);
+    border-left: 1px solid rgb(93, 93, 250);
+    border-right: 3px solid rgb(93, 93, 250);
+}
+
+.advertisment-details-item {
+    background: rgb(127, 162, 165);
+    border-left: 1px solid rgb(112, 65, 240);
+    border-right: 3px solid rgb(112, 65, 240);
+    list-style-type: none;
+}
+
+.btn-custom-style {
+     display: inline-block;
+     padding: 0.35em 1.2em;
+     border: 0.1em solid #ffffff;
+     margin: 0 0.3em 0.3em 0;
+     border-radius: 0.12em;
+     box-sizing: border-box;
+     text-decoration: none;
+     font-family: "Roboto", sans-serif;
+     font-weight: 300;
+     color: black;
+     text-align: center;
+     transition: all 0.2s;
+
+    &:hover {
+         color: white;
+         background-color: #ffffff44;
+    }
+}
+
+//comment section
+
+.comment-delete-btn {
+    color: rgb(214, 0, 0);
+    border: none;
+    outline: none;
+    background: transparent;
+
+    &:hover,
+    &:focus {
+        color: rgb(214, 0, 0);
+        text-decoration: underline;
+    }
+}
+
 ///////////////////
 .section-contents {
     margin-top: 60px;

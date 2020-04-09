@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import persianJs from "persianjs";
 import GoldCrown from "../images/gold.png";
 import SilverCrown from "../images/silver.png";
@@ -103,9 +104,11 @@ export default function Advertisment(props) {
 
                 <div className="card-inner-width w-100">
                     <h3 className="ad-number font5 text-right pt-0">
-                        {persianJs(phoneNumber)
-                            .englishNumber()
-                            .toString()}
+                        <Link to={"/" + phoneNumber}>
+                            {persianJs(phoneNumber)
+                                .englishNumber()
+                                .toString()}
+                        </Link>
                     </h3>
                     <hr className="py-0 my-0" />
                 </div>
@@ -168,6 +171,9 @@ export default function Advertisment(props) {
                             {props.handleDeleteBtn ? (
                                 <button
                                     className="btn-advertisment-delete p-1 m-1"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="پاک کردن"
                                     onClick={e => props.handleDeleteBtn(id)}
                                 >
                                     <i className="fas fa-trash-alt"></i>
@@ -179,6 +185,9 @@ export default function Advertisment(props) {
                             {props.handleBeRoozResaniBtn ? (
                                 <button
                                     className="btn-advertisment-berozresani p-1 m-1"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="به روز رسانی"
                                     onClick={e =>
                                         props.handleBeRoozResaniBtn(id)
                                     }
@@ -191,6 +200,9 @@ export default function Advertisment(props) {
                             {props.handleSoldBtn ? (
                                 <button
                                     className="btn-advertisment-sold p-1 m-1"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="فروخته شد"
                                     onClick={e => props.handleSoldBtn(id)}
                                 >
                                     <i className="fas fa-dollar-sign"></i>
@@ -202,6 +214,9 @@ export default function Advertisment(props) {
                             {props.handleRetriveBtn ? (
                                 <button
                                     className="btn-advertisment-sold p-1 m-1"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="بازیابی آگهی"
                                     onClick={e => props.handleRetriveBtn(id)}
                                 >
                                     <i className="fas fa-trash-restore fa-2x"></i>{" "}

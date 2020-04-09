@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-
 Route::group([
 
     'middleware' => ['api', 'cors'],
@@ -65,6 +64,13 @@ Route::delete('/advertisers', 'AdvertiserController@delete')->middleware(['auth:
 
 Route::get('/vipadvertisers', 'VipadvertiserController@show')->middleware(['cors']);
 Route::post('/vipadvertisers', 'VipadvertiserController@update')->middleware(['auth:api', 'cors']);
+
+
+Route::get('/comments/show', 'CommentController@show');
+Route::post('/comments/store', 'CommentController@store');
+Route::post('/comments/update', 'CommentController@update');
+Route::delete('/comments/delete', 'CommentController@destroy');
+
 
 Route::get('/navbar', function () {
 

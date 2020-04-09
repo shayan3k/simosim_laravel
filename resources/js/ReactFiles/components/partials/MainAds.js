@@ -13,10 +13,6 @@ function MainAds() {
     const advertismentBerozresaniUser =
         process.env.MIX_ADVERTISMENT_BEROZRESANI_USER;
 
-    // const showAdvertisments = "/advertisments-all";
-    // const advertismentDeleteUser = "/advertisments-delete-user";
-    // const advertismentBerozresaniUser = "/advertisments-berozresani-user";
-
     const Phonenumber = useStoreState(state => state.searchBox.phonenumber);
     const Status = useStoreState(state => state.searchBox.status);
     const Value = useStoreState(state => state.searchBox.value);

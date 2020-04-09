@@ -99,6 +99,10 @@
   font-size: 1.4em !important;
 }
 
+.font10 {
+  font-size: 2em !important;
+}
+
 /* Large desktops and laptops */
 
 /* Landscape tablets and medium desktops */
@@ -557,6 +561,52 @@ body {
   background: none;
   outline: 0;
   border: none;
+}
+
+.single-phonenumber {
+  background: #b9e2e6;
+  border-left: 1px solid #5d5dfa;
+  border-right: 3px solid #5d5dfa;
+}
+
+.advertisment-details-item {
+  background: #7fa2a5;
+  border-left: 1px solid #7041f0;
+  border-right: 3px solid #7041f0;
+  list-style-type: none;
+}
+
+.btn-custom-style {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: black;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.btn-custom-style:hover {
+  color: white;
+  background-color: #ffffff44;
+}
+
+.comment-delete-btn {
+  color: #d60000;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.comment-delete-btn:hover,
+.comment-delete-btn:focus {
+  color: #d60000;
+  text-decoration: underline;
 }
 
 .section-contents {

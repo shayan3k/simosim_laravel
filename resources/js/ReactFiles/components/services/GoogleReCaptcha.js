@@ -8,7 +8,7 @@ import secureStorage from "./Storage";
 export default function GoogleReCaptcha(props) {
     const reCaptchaKey = process.env.MIX_GOOGLE_SITEKEY;
 
-    const [safe, setSafe] = useState(false);
+    const [safe, setSafe] = useState(true);
     useEffect(() => {
         console.log(safe);
     }, [safe]);
