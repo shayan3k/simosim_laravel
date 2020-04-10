@@ -15,9 +15,6 @@ function DashboardAdvertisment(props) {
     const dashboardAdvertismentState = useStoreState(
         state => state.listUpdate.dashboardAdvertisment
     );
-    const setDashboardAdvertismentState = useStoreActions(
-        actions => actions.listUpdate.setDashboardAdvertisment
-    );
 
     const itemPerPage = 15;
     const [posts, setPosts] = useState([]);

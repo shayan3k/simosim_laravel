@@ -24,7 +24,7 @@ function Message(props) {
     };
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "alert alert-".concat(props.status),
+    className: "alert alert-".concat(props.status, " ") + (props.className ? props.className : ""),
     dangerouslySetInnerHTML: {
       __html: props.title
     }
@@ -68,7 +68,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function User(props) {
-  var baseUrl = "http://simosim.herokuapp.com/api";
+  var baseUrl = "http://127.0.0.1:8000/api";
   var userActiveTogglerUrl = "/users-active-admin";
   var deleteUserAllPostsUrl = "/users-post-delete-admin"; // const userActiveTogglerUrl = "/users-active-admin";
   // const deleteUserAllPostsUrl = "/users-post-delete-admin";
@@ -183,7 +183,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function index() {
-  var baseUrl = "http://simosim.herokuapp.com/api";
+  var baseUrl = "http://127.0.0.1:8000/api";
   var userAdminUrl = "/users-admin"; // const userAdminUrl = "/users-admin";
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),

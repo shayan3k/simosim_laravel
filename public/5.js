@@ -33,7 +33,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Advertisment(props) {
-  var baseUrl = "http://simosim.herokuapp.com/api";
+  var baseUrl = "http://127.0.0.1:8000/api";
   var AdvertismentDeleteAdmin = "/advertisments-admin"; // const AdvertismentDeleteAdmin = "/advertisments-admin";
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
@@ -172,17 +172,19 @@ function Advertisment(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container row m-0 p-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-4 input-group"
+    className: "col-6 col-md-4 input-group"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-control"
-  }, id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-md-4 input-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-control"
   }, sellerPhoneNumber)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-4 input-group m-0"
+    className: "col-6 col-md-4 input-group m-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-control"
   }, sellerName)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-4 input-group m-0"
+    className: "col-6 col-md-4 input-group m-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     name: "location",
     id: "location",
@@ -252,7 +254,7 @@ function Advertisment(props) {
   }, "\u0647\u0645\u062F\u0627\u0646"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "\u06CC\u0632\u062F"
   }, "\u06CC\u0632\u062F"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-12 input-group m-0"
+    className: "col-6 col-md-4 input-group m-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     className: "form-control",
@@ -262,7 +264,9 @@ function Advertisment(props) {
       return setPhoneNumber(e.target.value);
     },
     placeholder: "Phone Number"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-md-4 input-group m-0"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     name: "status",
     id: "status",
     className: "form-control",
@@ -276,7 +280,9 @@ function Advertisment(props) {
     value: "\u062A\u0642\u0631\u06CC\u0628\u0627 \u0635\u0641\u0631"
   }, "\u062A\u0642\u0631\u06CC\u0628\u0627 \u0635\u0641\u0631"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "\u06A9\u0627\u0631\u06A9\u0631\u062F\u0647"
-  }, "\u06A9\u0627\u0631\u06A9\u0631\u062F\u0647")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, "\u06A9\u0627\u0631\u06A9\u0631\u062F\u0647"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-md-4 input-group m-0"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     className: "form-control",
     value: code,
@@ -285,7 +291,9 @@ function Advertisment(props) {
       return setCode(e.target.value);
     },
     placeholder: "Code"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-md-4 input-group m-0"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     name: "rond",
     id: "rond",
     className: "form-control",
@@ -300,12 +308,10 @@ function Advertisment(props) {
   }, "\u0646\u06CC\u0645\u0647 \u0631\u0646\u062F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "\u0645\u0639\u0645\u0648\u0644\u06CC"
   }, "\u0645\u0639\u0645\u0648\u0644\u06CC"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-12 row input-groupm-0"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-6 m-0 p-0 d-flex justify-content-end align-items-center"
+    className: "col-12 col-md-4 input-group"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
-    className: "col-7 form-control",
+    className: "form-control",
     value: price,
     onChange: function onChange(e) {
       return setPrice(e.target.value);
@@ -314,10 +320,10 @@ function Advertisment(props) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "d-flex justify-content-start align-items-center"
   }, ".000 \u062A\u0648\u0645\u0627\u0646")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-6 m-0 p-0 d-flex justify-content-end align-items-center"
+    className: "col-12 col-md-4 input-group"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
-    className: "col-7 form-control",
+    className: "form-control",
     value: secondPrice,
     onChange: function onChange(e) {
       return setSecondPrice(e.target.value);
@@ -325,8 +331,8 @@ function Advertisment(props) {
     placeholder: "Second Price"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "d-flex justify-content-start align-items-center"
-  }, ".000 \u062A\u0648\u0645\u0627\u0646"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-12 input-groupm-0"
+  }, ".000 \u062A\u0648\u0645\u0627\u0646")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-md-12 input-group m-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     name: "value",
     id: "value",
@@ -342,20 +348,7 @@ function Advertisment(props) {
   }, "\u0646\u0642\u0631\u0647 \u0627\u06CC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "\u0628\u0631\u0646\u0632"
   }, "\u0628\u0631\u0646\u0632"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-8 input-groupm-0"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-    type: "text",
-    className: "form-control",
-    value: text,
-    onChange: function onChange(e) {
-      return setText(e.target.value);
-    },
-    placeholder: "Price",
-    rows: "5"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-4 row input-groupm-0"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-6 input-group my-3"
+    className: "col-3 col-md-6 input-group d-flex justify-content-center align-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "checkbox",
     className: "w-50 d-inline",
@@ -367,7 +360,7 @@ function Advertisment(props) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "saleCheckBox" + props.id
   }, "Sale")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-6 input-group my-3"
+    className: "col-3 col-md-6 input-group d-flex justify-content-center align-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "checkbox",
     className: "d-inline",
@@ -379,24 +372,38 @@ function Advertisment(props) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     htmlFor: "publishedCheckBox" + props.id
   }, "Published")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-12 input-group my-3"
+    className: "col-12 input-group m-0"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+    type: "text",
+    className: "form-control",
+    value: text,
+    onChange: function onChange(e) {
+      return setText(e.target.value);
+    },
+    placeholder: "Price",
+    rows: "5"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-md-3 input-group mt-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-danger mx-1",
     onClick: function onClick(e) {
       return handleDeleteBtn(e);
     }
-  }, "Delete"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, "Delete")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-md-3 input-group  mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-warning mx-1",
     onClick: function onClick(e) {
       return handleUpdateBtn(e);
     }
-  }, "Update"))), message ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Message__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "Update")), message ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Message__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: message,
     status: messageStatus,
+    className: "col-12",
     setMessage: function setMessage(text) {
       return _setMessage(text);
     }
-  }) : "");
+  }) : "", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null));
 }
 
 /***/ }),
@@ -416,9 +423,9 @@ __webpack_require__.r(__webpack_exports__);
 
 function SearchPanel(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container"
+    className: "container-fluid row p-0 m-0  mt-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group"
+    className: "col-6 col-md-4  p-0 m-0 input-group"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     name: "location",
     id: "location",
@@ -489,7 +496,9 @@ function SearchPanel(props) {
     value: "\u0647\u0645\u062F\u0627\u0646"
   }, "\u0647\u0645\u062F\u0627\u0646"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "\u06CC\u0632\u062F"
-  }, "\u06CC\u0632\u062F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, "\u06CC\u0632\u062F"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-md-4  p-0 m-0 input-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     className: "form-control",
     maxLength: "11",
@@ -498,7 +507,9 @@ function SearchPanel(props) {
       return props.setPhonenumber(e.target.value);
     },
     placeholder: "Phone Number"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-md-4  p-0 m-0 input-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     name: "status",
     id: "status",
     className: "form-control",
@@ -516,7 +527,7 @@ function SearchPanel(props) {
   }, "\u062A\u0642\u0631\u06CC\u0628\u0627 \u0635\u0641\u0631"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "\u06A9\u0627\u0631\u06A9\u0631\u062F\u0647"
   }, "\u06A9\u0627\u0631\u06A9\u0631\u062F\u0647"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group"
+    className: "col-6 col-md-4  p-0 m-0 input-group"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     className: "form-control",
@@ -526,7 +537,9 @@ function SearchPanel(props) {
     },
     maxLength: "1",
     placeholder: "Code"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-md-4  p-0 m-0 input-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     name: "rond",
     id: "rond",
     className: "form-control",
@@ -542,7 +555,9 @@ function SearchPanel(props) {
     value: "\u0646\u06CC\u0645\u0647 \u0631\u0646\u062F"
   }, "\u0646\u06CC\u0645\u0647 \u0631\u0646\u062F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "\u0645\u0639\u0645\u0648\u0644\u06CC"
-  }, "\u0645\u0639\u0645\u0648\u0644\u06CC")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  }, "\u0645\u0639\u0645\u0648\u0644\u06CC"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-6 col-md-4  p-0 m-0 input-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     name: "value",
     id: "value",
     className: "form-control",
@@ -559,7 +574,7 @@ function SearchPanel(props) {
   }, "\u0646\u0642\u0631\u0647 \u0627\u06CC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "\u0628\u0631\u0646\u0632"
   }, "\u0628\u0631\u0646\u0632"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group"
+    className: "col-6 col-md-4  p-0 m-0 input-group"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
     className: "form-control w-75",
@@ -570,7 +585,7 @@ function SearchPanel(props) {
     },
     placeholder: "Seller Phone Number"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "input-group"
+    className: "col-3 col-md-4  p-0 m-0 input-group d-felx justify-content-center align-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "mx-4"
   }, "Sale"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -580,7 +595,9 @@ function SearchPanel(props) {
       if (e.target.checked) props.setSale("فوری");else props.setSale("");
     },
     defaultChecked: props.sale == "فوری" ? true : false
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-3 col-md-4  p-0 m-0 input-group  d-felx justify-content-center align-content-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "mx-4"
   }, "Published"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "checkbox",
@@ -589,7 +606,9 @@ function SearchPanel(props) {
       props.setPublished(e.target.checked);
     },
     defaultChecked: props.published
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-12 p-0 m-0 mt-2 mb-3 input-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-dark ml-auto",
     onClick: function onClick(e) {
       return props.handleSearchBtn(e);
@@ -634,7 +653,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function index() {
-  var baseUrl = "http://simosim.herokuapp.com/api";
+  var baseUrl = "http://127.0.0.1:8000/api";
   var advertismentsAllAdmin = "/advertisments-admin"; // const advertismentsAllAdmin = "/advertisments-admin";
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
@@ -822,9 +841,9 @@ function index() {
       return _handleSearchBtn(e);
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-    "aria-label": "Page navigation example"
+    "aria-label": "Page navigation"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    "class": "pagination"
+    "class": "ml-auto pagination"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     "class": "page-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -847,7 +866,7 @@ function index() {
       return handleNextOnClick(e);
     }
   }, "Next")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row p-0 m-0"
+    className: "row p-0 m-0 mt-3"
   }, advertisments.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "col-12 p-1  my-4 d-flex justify-content-center align-items-center"
@@ -899,7 +918,7 @@ function Message(props) {
     };
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "alert alert-".concat(props.status),
+    className: "alert alert-".concat(props.status, " ") + (props.className ? props.className : ""),
     dangerouslySetInnerHTML: {
       __html: props.title
     }

@@ -96,7 +96,6 @@ export const JWTCheck = async () => {
             }
         })
             .then(res => {
-                console.log(res.data);
                 secureStorage.setItem("name", res.data.name);
                 secureStorage.setItem("phonenumber", res.data.phonenumber);
                 secureStorage.setItem("user_id", res.data.id);

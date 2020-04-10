@@ -10,7 +10,10 @@ export default function Message(props) {
     }, []);
     return (
         <div
-            className={`alert alert-${props.status}`}
+            className={
+                `alert alert-${props.status} ` +
+                (props.className ? props.className : "")
+            }
             dangerouslySetInnerHTML={{ __html: props.title }}
         />
     );

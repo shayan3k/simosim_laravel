@@ -151,8 +151,8 @@ export default function index() {
                 handleSearchBtn={e => handleSearchBtn(e)}
             />
 
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
+            <nav aria-label="Page navigation">
+                <ul class="ml-auto pagination">
                     <li class="page-item">
                         <a
                             class="btn page-link"
@@ -180,7 +180,7 @@ export default function index() {
                 </ul>
             </nav>
             <hr />
-            <div className="row p-0 m-0">
+            <div className="row p-0 m-0 mt-3">
                 {advertisments.map(item => {
                     return (
                         <div className="col-12 p-1  my-4 d-flex justify-content-center align-items-center">

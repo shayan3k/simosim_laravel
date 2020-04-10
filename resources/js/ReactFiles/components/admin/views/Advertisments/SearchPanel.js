@@ -2,8 +2,8 @@ import React from "react";
 
 export default function SearchPanel(props) {
     return (
-        <div className="container">
-            <div className="input-group">
+        <div className="container-fluid row p-0 m-0  mt-3">
+            <div className="col-6 col-md-4  p-0 m-0 input-group">
                 <select
                     name="location"
                     id="location"
@@ -47,7 +47,8 @@ export default function SearchPanel(props) {
                     <option value="همدان">همدان</option>
                     <option value="یزد">یزد</option>
                 </select>
-
+            </div>
+            <div className="col-6 col-md-4  p-0 m-0 input-group">
                 <input
                     type="text"
                     className="form-control"
@@ -56,7 +57,8 @@ export default function SearchPanel(props) {
                     onChange={e => props.setPhonenumber(e.target.value)}
                     placeholder="Phone Number"
                 />
-
+            </div>
+            <div className="col-6 col-md-4  p-0 m-0 input-group">
                 <select
                     name="status"
                     id="status"
@@ -73,8 +75,7 @@ export default function SearchPanel(props) {
                     <option value="کارکرده">کارکرده</option>
                 </select>
             </div>
-
-            <div className="input-group">
+            <div className="col-6 col-md-4  p-0 m-0 input-group">
                 <input
                     type="text"
                     className="form-control"
@@ -83,6 +84,8 @@ export default function SearchPanel(props) {
                     maxLength="1"
                     placeholder="Code"
                 />
+            </div>
+            <div className="col-6 col-md-4  p-0 m-0 input-group">
                 <select
                     name="rond"
                     id="rond"
@@ -95,6 +98,8 @@ export default function SearchPanel(props) {
                     <option value="نیمه رند">نیمه رند</option>
                     <option value="معمولی">معمولی</option>
                 </select>
+            </div>
+            <div className="col-6 col-md-4  p-0 m-0 input-group">
                 <select
                     name="value"
                     id="value"
@@ -108,7 +113,7 @@ export default function SearchPanel(props) {
                     <option value="برنز">برنز</option>
                 </select>
             </div>
-            <div className="input-group">
+            <div className="col-6 col-md-4  p-0 m-0 input-group">
                 <input
                     type="text"
                     className="form-control w-75"
@@ -118,8 +123,7 @@ export default function SearchPanel(props) {
                     placeholder="Seller Phone Number"
                 />
             </div>
-
-            <div className="input-group">
+            <div className="col-3 col-md-4  p-0 m-0 input-group d-felx justify-content-center align-content-center">
                 <span className="mx-4">Sale</span>
                 <input
                     type="checkbox"
@@ -130,7 +134,8 @@ export default function SearchPanel(props) {
                     }}
                     defaultChecked={props.sale == "فوری" ? true : false}
                 />
-
+            </div>
+            <div className="col-3 col-md-4  p-0 m-0 input-group  d-felx justify-content-center align-content-center">
                 <span className="mx-4">Published</span>
                 <input
                     type="checkbox"
@@ -140,7 +145,8 @@ export default function SearchPanel(props) {
                     }}
                     defaultChecked={props.published}
                 />
-
+            </div>
+            <div className="col-12 p-0 m-0 mt-2 mb-3 input-group">
                 <button
                     className="btn btn-dark ml-auto"
                     onClick={e => props.handleSearchBtn(e)}

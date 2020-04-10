@@ -31,6 +31,55 @@ class CommentController extends Controller
         }
     }
 
+
+
+
+    /**
+     * show comments related to an advertisment.
+     */
+    public function showAllAdmin(Request $request, Comment $comment)
+    {
+
+        $user = Auth::user();
+
+        if ($user->is_admin == 1) {
+            if (isset($request->page)) {
+                //get all comments
+                $comments = $comment->orderBy('created_at', 'desc')->paginate('10', ['*'], 'page', $request->page);
+                //generate the success response
+                $response_data = [];
+
+                foreach ($comments as $comment) {
+
+                    $item = Advertisment::find($comment->commentable_id);
+                    array_push(
+                        $response_data,
+
+                        [
+                            'id' =>  $comment->id,
+                            'text' => $comment->comment,
+                            'approved' => $comment->approved,
+                            'created_at' => $comment->created_at,
+                            'updated_at' => $comment->updated_at,
+                            'advertiement' => $item ? $item : null,
+                            'commenter' => $comment->commenter,
+
+                        ]
+                    );
+                }
+
+                return count($response_data)  ? response(['data' => $response_data], 200) : response(['message' => 'no comments for this advertisment'], 201);
+            }
+            return response(['message0' => $request->page], 400);
+        }
+        //generate the error response
+        return response(['message1' => $user], 400);
+    }
+
+
+
+
+
     /**
      * show comments related to an advertisment.
      */
@@ -90,27 +139,31 @@ class CommentController extends Controller
 
         if (isset($request->comment_id)) {
             //check if user is authorized
-            // if (!Auth::check())
-            //     return response(['message' => 'not authorized'], 400);
+            if (!Auth::check())
+                return response(['message' => 'not authorized'], 400);
 
             //get comment and user data
             $comment = $comment->where('id', $request->comment_id)->first();
             $user_id = Auth::check() ? Auth::user()->id : '1';
 
             //if user is not authorized for this comment
-            // if ($comment->commenter_id !=  $user_id)
-            //     return response(['message' => 'not authorized'], 400);
+            if ($comment->commenter_id ==  $user_id || Auth::user()->is_admin == 1) {
 
-            //config the class props
-            $comment->comment = 'this is an updated comment !';
-            $comment->save();
+                //config the class props
+                $comment->comment = isset($request->text) ? htmlspecialchars(strip_tags($request->text)) : $comment->comment;
 
-            //return the sucess response
-            return response([
-                'comment_id' => $request->comment_id,
-                'comment' => $request->message ? $request->message : 'comment message for now',
+                $comment->approved = isset($request->approved) ? $request->approved : $comment->approved;
 
-            ], 200);
+                $comment->save();
+
+                //return the sucess response
+                return response([
+                    'comment_id' => $request->comment_id,
+                    'comment' => $request->message ? $request->message : 'comment message for now',
+
+                ], 200);
+            }
+            return response(['message' => 'not authorized'], 400);
         }
         //return the error response
         return response(['message' => 'bad request'], 400);
@@ -131,16 +184,17 @@ class CommentController extends Controller
             $user_id = Auth::check() ? Auth::user()->id : '1';
 
             //if user is not authorized for this comment
-            if ($comment->commenter_id !=  $user_id)
-                return response(['message' => 'not authorized'], 400);
+            if ($comment->commenter_id ==  $user_id || Auth::user()->is_admin == 1) {
 
-            //config the class props
-            $comment->delete();
+                //config the class props
+                $comment->delete();
 
-            //return the sucess response
-            return response([
-                'message' => 'Deleted'
-            ], 200);
+                //return the sucess response
+                return response([
+                    'message' => 'Deleted'
+                ], 200);
+            }
+            return response(['message' => 'not authorized'], 400);
         }
         //return the error response
         return response(['message' => 'bad request'], 400);

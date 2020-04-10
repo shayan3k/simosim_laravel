@@ -1,12 +1,73 @@
 import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import persianJs from "persianjs";
 import GoldCrown from "../images/gold.png";
 import SilverCrown from "../images/silver.png";
 import BronzCrown from "../images/bronz.png";
 import SingleAdvertismentComment from "./SingleAdvertismentComment";
 import secureStorage from "../services/Storage";
+import { JWTHeader } from "../services/Auth";
 
 export default function SingleAdvertismentConent(props) {
+    const baseUrl = process.env.MIX_BASEURL;
+    const advertismentDeleteUser = process.env.MIX_ADVERTISMENT_DELETE_USER;
+    const advertismentBerozresaniUser =
+        process.env.MIX_ADVERTISMENT_BEROZRESANI_USER;
+    const advertismentSoldUser = process.env.MIX_ADVERTISMENT_SOLD_USER;
+
+    const [redirectSate, setRedirect] = useState(false);
+
+    const handleDeleteBtn = id => {
+        axios({
+            url: baseUrl + advertismentDeleteUser,
+            method: "POST",
+            headers: JWTHeader().headers,
+            data: { id: id }
+        })
+            .then(res => {
+                setRedirect(true);
+            })
+            .catch(e => {
+                console.log("Item can not delete the item at this time");
+            });
+    };
+
+    const handleBeRoozResaniBtn = id => {
+        axios({
+            url: baseUrl + advertismentBerozresaniUser,
+            method: "POST",
+            headers: JWTHeader().headers,
+            data: { id: id }
+        })
+            .then(res => {
+                setRedirect(true);
+            })
+            .catch(e => {
+                console.log(
+                    "Item can not beroz the item at this time",
+                    e.response
+                );
+            });
+    };
+
+    const handleSoldBtn = id => {
+        axios({
+            url: baseUrl + advertismentSoldUser,
+            method: "POST",
+            headers: JWTHeader().headers,
+            data: { id: id }
+        })
+            .then(res => {
+                setRedirect(true);
+            })
+            .catch(e => {
+                console.log(
+                    "Item can not update the item at this time",
+                    e.response
+                );
+            });
+    };
+
     const FlagRenderer = () => {
         if (props.sale === "فوری")
             return <div className="card-flag font3 mt-3">فوری</div>;
@@ -44,7 +105,9 @@ export default function SingleAdvertismentConent(props) {
             return <div className="card-flag font3">Not found</div>;
         }
     };
-    return (
+    return redirectSate ? (
+        <Redirect to="/dashboard" />
+    ) : (
         <div className={props.className}>
             <div className="col-12 col-md-5 d-flex flex-column justify-content-between align-content-center">
                 <div>
@@ -77,7 +140,7 @@ export default function SingleAdvertismentConent(props) {
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="پاک کردن"
-                                onClick={e => props.handleDeleteBtn(id)}
+                                onClick={e => handleDeleteBtn(props.id)}
                             >
                                 <i className="fas fa-trash-alt fa-2x"></i>
                             </button>
@@ -87,7 +150,7 @@ export default function SingleAdvertismentConent(props) {
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="به روز رسانی"
-                                onClick={e => props.handleBeRoozResaniBtn(id)}
+                                onClick={e => handleBeRoozResaniBtn(props.id)}
                             >
                                 <i className="fas fa-poo-storm fa-2x"></i>
                             </button>
@@ -97,7 +160,7 @@ export default function SingleAdvertismentConent(props) {
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="فروخته شد"
-                                onClick={e => props.handleSoldBtn(id)}
+                                onClick={e => handleSoldBtn(props.id)}
                             >
                                 <i className="fas fa-dollar-sign fa-2x"></i>
                             </button>
@@ -127,7 +190,7 @@ export default function SingleAdvertismentConent(props) {
                     </li>
 
                     <li className="col-6 col-md-12 advertisment-details-item font5 p-1 py-2 my-2 text-white">
-                        قیمت دوم :{" "}
+                        قیمت شکسته شده :
                         {props.secondaryprice
                             ? props.secondaryprice
                             : "loading..."}

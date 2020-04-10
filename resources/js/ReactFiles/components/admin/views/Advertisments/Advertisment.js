@@ -85,15 +85,17 @@ export default function Advertisment(props) {
 
     return (
         <div className="container row m-0 p-0">
-            <div className="col-4 input-group">
+            <div className="col-6 col-md-4 input-group">
                 <div className="form-control">{id}</div>
+            </div>
+            <div className="col-6 col-md-4 input-group">
                 <div className="form-control">{sellerPhoneNumber}</div>
             </div>
-            <div className="col-4 input-group m-0">
+            <div className="col-6 col-md-4 input-group m-0">
                 <div className="form-control">{sellerName}</div>
             </div>
 
-            <div className="col-4 input-group m-0">
+            <div className="col-6 col-md-4 input-group m-0">
                 <select
                     name="location"
                     id="location"
@@ -137,7 +139,7 @@ export default function Advertisment(props) {
                     <option value="یزد">یزد</option>
                 </select>
             </div>
-            <div className="col-12 input-group m-0">
+            <div className="col-6 col-md-4 input-group m-0">
                 <input
                     type="text"
                     className="form-control"
@@ -146,6 +148,8 @@ export default function Advertisment(props) {
                     onChange={e => setPhoneNumber(e.target.value)}
                     placeholder="Phone Number"
                 />
+            </div>
+            <div className="col-6 col-md-4 input-group m-0">
                 <select
                     name="status"
                     id="status"
@@ -157,6 +161,8 @@ export default function Advertisment(props) {
                     <option value="تقریبا صفر">تقریبا صفر</option>
                     <option value="کارکرده">کارکرده</option>
                 </select>
+            </div>
+            <div className="col-6 col-md-4 input-group m-0">
                 <input
                     type="text"
                     className="form-control"
@@ -165,6 +171,8 @@ export default function Advertisment(props) {
                     onChange={e => setCode(e.target.value)}
                     placeholder="Code"
                 />
+            </div>
+            <div className="col-6 col-md-4 input-group m-0">
                 <select
                     name="rond"
                     id="rond"
@@ -178,34 +186,33 @@ export default function Advertisment(props) {
                 </select>
             </div>
 
-            <div className="col-12 row input-groupm-0">
-                <div className="col-6 m-0 p-0 d-flex justify-content-end align-items-center">
-                    <input
-                        type="text"
-                        className="col-7 form-control"
-                        value={price}
-                        onChange={e => setPrice(e.target.value)}
-                        placeholder="Price"
-                    />
-                    <span className="d-flex justify-content-start align-items-center">
-                        .000 تومان
-                    </span>
-                </div>
-                <div className="col-6 m-0 p-0 d-flex justify-content-end align-items-center">
-                    <input
-                        type="text"
-                        className="col-7 form-control"
-                        value={secondPrice}
-                        onChange={e => setSecondPrice(e.target.value)}
-                        placeholder="Second Price"
-                    />
-                    <span className="d-flex justify-content-start align-items-center">
-                        .000 تومان
-                    </span>
-                </div>
+            <div className="col-12 col-md-4 input-group">
+                <input
+                    type="text"
+                    className="form-control"
+                    value={price}
+                    onChange={e => setPrice(e.target.value)}
+                    placeholder="Price"
+                />
+                <span className="d-flex justify-content-start align-items-center">
+                    .000 تومان
+                </span>
             </div>
 
-            <div className="col-12 input-groupm-0">
+            <div className="col-12 col-md-4 input-group">
+                <input
+                    type="text"
+                    className="form-control"
+                    value={secondPrice}
+                    onChange={e => setSecondPrice(e.target.value)}
+                    placeholder="Second Price"
+                />
+                <span className="d-flex justify-content-start align-items-center">
+                    .000 تومان
+                </span>
+            </div>
+
+            <div className="col-6 col-md-12 input-group m-0">
                 <select
                     name="value"
                     id="value"
@@ -219,7 +226,35 @@ export default function Advertisment(props) {
                 </select>
             </div>
 
-            <div className="col-8 input-groupm-0">
+            <div className="col-3 col-md-6 input-group d-flex justify-content-center align-content-center">
+                <input
+                    type="checkbox"
+                    className="w-50 d-inline"
+                    id={"saleCheckBox" + props.id}
+                    onChange={e => {
+                        if (e.target.checked) setSale("فوری");
+                        else setSale("");
+                    }}
+                    defaultChecked={sale == "فوری" ? true : false}
+                />
+                <label htmlFor={"saleCheckBox" + props.id}>Sale</label>
+            </div>
+            <div className="col-3 col-md-6 input-group d-flex justify-content-center align-content-center">
+                <input
+                    type="checkbox"
+                    className="d-inline"
+                    id={"publishedCheckBox" + props.id}
+                    onChange={e => {
+                        setPublished(e.target.checked);
+                    }}
+                    defaultChecked={published}
+                />
+                <label htmlFor={"publishedCheckBox" + props.id}>
+                    Published
+                </label>
+            </div>
+
+            <div className="col-12 input-group m-0">
                 <textarea
                     type="text"
                     className="form-control"
@@ -230,60 +265,34 @@ export default function Advertisment(props) {
                 />
             </div>
 
-            <div className="col-4 row input-groupm-0">
-                <div className="col-6 input-group my-3">
-                    <input
-                        type="checkbox"
-                        className="w-50 d-inline"
-                        id={"saleCheckBox" + props.id}
-                        onChange={e => {
-                            if (e.target.checked) setSale("فوری");
-                            else setSale("");
-                        }}
-                        defaultChecked={sale == "فوری" ? true : false}
-                    />
-                    <label htmlFor={"saleCheckBox" + props.id}>Sale</label>
-                </div>
-                <div className="col-6 input-group my-3">
-                    <input
-                        type="checkbox"
-                        className="d-inline"
-                        id={"publishedCheckBox" + props.id}
-                        onChange={e => {
-                            setPublished(e.target.checked);
-                        }}
-                        defaultChecked={published}
-                    />
-                    <label htmlFor={"publishedCheckBox" + props.id}>
-                        Published
-                    </label>
-                </div>
-
-                <div className="col-12 input-group my-3">
-                    <button
-                        className="btn btn-danger mx-1"
-                        onClick={e => handleDeleteBtn(e)}
-                    >
-                        Delete
-                    </button>
-                    <button
-                        className="btn btn-warning mx-1"
-                        onClick={e => handleUpdateBtn(e)}
-                    >
-                        Update
-                    </button>
-                </div>
+            <div className="col-6 col-md-3 input-group mt-2">
+                <button
+                    className="btn btn-danger mx-1"
+                    onClick={e => handleDeleteBtn(e)}
+                >
+                    Delete
+                </button>
+            </div>
+            <div className="col-6 col-md-3 input-group  mt-2">
+                <button
+                    className="btn btn-warning mx-1"
+                    onClick={e => handleUpdateBtn(e)}
+                >
+                    Update
+                </button>
             </div>
 
             {message ? (
                 <Message
                     title={message}
                     status={messageStatus}
+                    className="col-12"
                     setMessage={text => setMessage(text)}
                 />
             ) : (
                 ""
             )}
+            <hr />
         </div>
     );
 }

@@ -1,529 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
 
-/***/ "./resources/js/ReactFiles/components/admin/views/Advertisers/Advertiser.js":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/ReactFiles/components/admin/views/Advertisers/Advertiser.js ***!
-  \**********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Advertiser; });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _services_Auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/Auth */ "./resources/js/ReactFiles/components/services/Auth.js");
-/* harmony import */ var _Message__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Message */ "./resources/js/ReactFiles/components/admin/views/Message.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-function Advertiser(props) {
-  var handleDeleteItem = props.handleDeleteItem;
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
-      _useState2 = _slicedToArray(_useState, 2),
-      message = _useState2[0],
-      _setMessage = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
-      _useState4 = _slicedToArray(_useState3, 2),
-      status = _useState4[0],
-      setStatus = _useState4[1];
-
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.item.name),
-      _useState6 = _slicedToArray(_useState5, 2),
-      name = _useState6[0],
-      setName = _useState6[1];
-
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.item.shopname),
-      _useState8 = _slicedToArray(_useState7, 2),
-      shopname = _useState8[0],
-      setShopname = _useState8[1];
-
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.item.phonenumbers),
-      _useState10 = _slicedToArray(_useState9, 2),
-      phonenumbers = _useState10[0],
-      setPhonenumbers = _useState10[1];
-
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.item.contactnumbers),
-      _useState12 = _slicedToArray(_useState11, 2),
-      contactnumbers = _useState12[0],
-      setContactnumbers = _useState12[1];
-
-  var handleDeleteBtn = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(e) {
-      var id, res;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              console.log(props.item.id, e);
-              id = props.item.id;
-              _context.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_4___default()({
-                url: props.baseUrl + props.advertisersUrl,
-                data: {
-                  id: id
-                },
-                headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_2__["JWTHeader"])().headers,
-                method: "DELETE"
-              }).then(function (res) {
-                return console.log(res);
-              })["catch"](function (e) {
-                _setMessage(e.response.data.message);
-
-                setStatus("danger");
-              });
-
-            case 4:
-              res = _context.sent;
-              handleDeleteItem(id);
-
-            case 6:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }));
-
-    return function handleDeleteBtn(_x) {
-      return _ref.apply(this, arguments);
-    };
-  }();
-
-  var handleUpdateBtn = /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-      var id, res;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              id = props.item.id;
-              _context2.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_4___default()({
-                url: props.baseUrl + props.advertisersUrl,
-                data: {
-                  id: id,
-                  name: name,
-                  shopname: shopname,
-                  phonenumbers: phonenumbers,
-                  contactnumbers: contactnumbers
-                },
-                headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_2__["JWTHeader"])().headers,
-                method: "POST"
-              }).then(function (res) {
-                _setMessage("Update was successful");
-
-                setStatus("success");
-              })["catch"](function (e) {
-                _setMessage(e.response.data.message);
-
-                setStatus("danger");
-              });
-
-            case 3:
-              res = _context2.sent;
-
-            case 4:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2);
-    }));
-
-    return function handleUpdateBtn() {
-      return _ref2.apply(this, arguments);
-    };
-  }();
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "border rounded my-4 p-3 bg-admin-advertisers"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-    className: "row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-    htmlFor: "name"
-  }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-    type: "text",
-    className: "form-control",
-    name: "name",
-    id: "name",
-    value: name,
-    onChange: function onChange(e) {
-      return setName(e.target.value);
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-    htmlFor: "shopname"
-  }, "Shop Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-    type: "text",
-    className: "form-control",
-    name: "shopname",
-    id: "shopname",
-    value: shopname,
-    onChange: function onChange(e) {
-      return setShopname(e.target.value);
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "form-group col-12"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-    htmlFor: "phonenumbers"
-  }, "Phone Numbers"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
-    className: "form-control",
-    type: "text",
-    name: "phonenumbers",
-    id: "phonenumbers",
-    value: phonenumbers,
-    onChange: function onChange(e) {
-      return setPhonenumbers(e.target.value);
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "form-group col-12"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-    htmlFor: "contactnumbers"
-  }, "Contact Number"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
-    type: "text",
-    className: "form-control",
-    name: "contactnumbers",
-    id: "contactnumbers",
-    value: contactnumbers,
-    onChange: function onChange(e) {
-      return setContactnumbers(e.target.value);
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    className: "btn btn-outline-danger btn-lg mx-5 ml-auto",
-    onClick: handleDeleteBtn
-  }, "Delete"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    className: "btn btn-outline-primary btn-lg mx-5",
-    onClick: handleUpdateBtn
-  }, "Update")), message ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Message__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    title: message,
-    status: status,
-    setMessage: function setMessage(text) {
-      return _setMessage(text);
-    }
-  }) : "");
-}
-
-/***/ }),
-
-/***/ "./resources/js/ReactFiles/components/admin/views/Advertisers/NewAdvertiser.js":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/ReactFiles/components/admin/views/Advertisers/NewAdvertiser.js ***!
-  \*************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NewAdvertiser; });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _services_Auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/Auth */ "./resources/js/ReactFiles/components/services/Auth.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-function NewAdvertiser(props) {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
-      _useState2 = _slicedToArray(_useState, 2),
-      name = _useState2[0],
-      setName = _useState2[1];
-
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
-      _useState4 = _slicedToArray(_useState3, 2),
-      shopname = _useState4[0],
-      setShopname = _useState4[1];
-
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
-      _useState6 = _slicedToArray(_useState5, 2),
-      phonenumbers = _useState6[0],
-      setPhonenumbers = _useState6[1];
-
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
-      _useState8 = _slicedToArray(_useState7, 2),
-      contactnumbers = _useState8[0],
-      setContactnumbers = _useState8[1];
-
-  var handleOnSubmitBtn = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-      var errorMessage, res;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              errorMessage = "";
-              if (name == "") errorMessage += "<li>Name can not be Empty</li>";
-              if (shopname == "") errorMessage += "<li>Shop Name can not be Empty</li>";
-              if (phonenumbers == "") errorMessage += "<li>Phone Numbers can not be Empty</li>";
-              if (contactnumbers == "") errorMessage += "<li>Contact Numbers can not be Empty</li>";
-
-              if (!(errorMessage == "")) {
-                _context.next = 12;
-                break;
-              }
-
-              //converting string to array for storage
-              console.log(phonenumbers, _typeof(phonenumbers)); // var phonenumbersArray = phonenumbers.split(",");
-              // phonenumbersArray = Object.values(phonenumbersArray);
-              // console.log(phonenumbersArray, typeof phonenumbersArray);
-
-              _context.next = 9;
-              return axios__WEBPACK_IMPORTED_MODULE_3___default()({
-                url: props.baseUrl + props.advertisersNewUrl,
-                data: {
-                  name: name,
-                  shopname: shopname,
-                  phonenumbers: phonenumbers,
-                  contactnumbers: contactnumbers
-                },
-                headers: Object(_services_Auth__WEBPACK_IMPORTED_MODULE_2__["JWTHeader"])().headers,
-                method: "POST"
-              }).then(function (res) {
-                props.setMessage("Item has been created");
-                props.setStatus("success");
-                console.log(res);
-                props.handleNewAdvertiser(res.data);
-              })["catch"](function (e) {
-                props.setMessage(e);
-                props.setStatus("danger");
-                console.log(e.response);
-              });
-
-            case 9:
-              res = _context.sent;
-              _context.next = 15;
-              break;
-
-            case 12:
-              props.setMessage(errorMessage);
-              props.setStatus("danger");
-              console.log("ekfnbeljgbfelkjgb", errorMessage);
-
-            case 15:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }));
-
-    return function handleOnSubmitBtn() {
-      return _ref.apply(this, arguments);
-    };
-  }();
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "border rounded my-4 p-3 bg-info"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-    className: "row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-    htmlFor: "name"
-  }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-    type: "text",
-    className: "form-control",
-    name: "name",
-    id: "name",
-    value: name,
-    onChange: function onChange(e) {
-      return setName(e.target.value);
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-    htmlFor: "shopname"
-  }, "Shop Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-    type: "text",
-    className: "form-control",
-    name: "shopname",
-    id: "shopname",
-    value: shopname,
-    onChange: function onChange(e) {
-      return setShopname(e.target.value);
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "form-group col-12"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-    htmlFor: "phonenumbers"
-  }, "Phone Numbers"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
-    className: "form-control",
-    type: "text",
-    name: "phonenumbers",
-    id: "phonenumbers",
-    value: phonenumbers,
-    onChange: function onChange(e) {
-      return setPhonenumbers(e.target.value);
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "form-group col-12"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-    htmlFor: "contactnumbers"
-  }, "Contact Numbers"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
-    type: "text",
-    className: "form-control",
-    name: "contactnumbers",
-    id: "contactnumbers",
-    value: contactnumbers,
-    onChange: function onChange(e) {
-      return setContactnumbers(e.target.value);
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "btn btn-outline-dark btn-lg mx-5",
-    onClick: handleOnSubmitBtn
-  }, "Create New")));
-}
-
-/***/ }),
-
-/***/ "./resources/js/ReactFiles/components/admin/views/Advertisers/index.js":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/ReactFiles/components/admin/views/Advertisers/index.js ***!
-  \*****************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return index; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _services_Auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/Auth */ "./resources/js/ReactFiles/components/services/Auth.js");
-/* harmony import */ var _Advertiser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Advertiser */ "./resources/js/ReactFiles/components/admin/views/Advertisers/Advertiser.js");
-/* harmony import */ var _NewAdvertiser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NewAdvertiser */ "./resources/js/ReactFiles/components/admin/views/Advertisers/NewAdvertiser.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-function index() {
-  var baseUrl = "http://simosim.herokuapp.com/api";
-  var advertisersUrl = "/advertisers";
-  var advertisersNewUrl = "/advertisers/create"; // const advertisersUrl = "/advertisers";
-  // const advertisersNewUrl = "/advertisers/create";
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      _useState2 = _slicedToArray(_useState, 2),
-      advertisers = _useState2[0],
-      setAdvertisers = _useState2[1];
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    axios__WEBPACK_IMPORTED_MODULE_4___default.a.get(baseUrl + advertisersUrl).then(function (res) {
-      //set the values
-      setAdvertisers(res.data);
-      console.log(res.data);
-    })["catch"](function (e) {
-      return console.log(e);
-    });
-  }, []);
-
-  var handleNewAdvertiser = function handleNewAdvertiser(data) {
-    setAdvertisers([].concat(_toConsumableArray(advertisers), [data]));
-    console.log("jbsfjbsfjb", [].concat(_toConsumableArray(advertisers), [data]));
-  };
-
-  var handleDeleteItem = function handleDeleteItem(id) {
-    var data = advertisers.filter(function (item) {
-      return item.id != id;
-    });
-    setAdvertisers(data);
-    console.log(data, id);
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container bg-advertisers"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "my-3 py-4"
-  }, "ADVERTISERS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), advertisers ? advertisers.map(function (item) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Advertiser__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      key: item.id,
-      item: item,
-      baseUrl: baseUrl,
-      advertisersUrl: advertisersUrl,
-      handleDeleteItem: handleDeleteItem
-    });
-  }) : "", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewAdvertiser__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    baseUrl: baseUrl,
-    advertisersNewUrl: advertisersNewUrl,
-    handleNewAdvertiser: handleNewAdvertiser
-  })));
-}
-
-/***/ }),
-
 /***/ "./resources/js/ReactFiles/components/admin/views/Message.js":
 /*!*******************************************************************!*\
   !*** ./resources/js/ReactFiles/components/admin/views/Message.js ***!
@@ -548,11 +24,236 @@ function Message(props) {
     };
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "alert alert-".concat(props.status),
+    className: "alert alert-".concat(props.status, " ") + (props.className ? props.className : ""),
     dangerouslySetInnerHTML: {
       __html: props.title
     }
   });
+}
+
+/***/ }),
+
+/***/ "./resources/js/ReactFiles/components/admin/views/VIPAdvertiser/index.js":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/ReactFiles/components/admin/views/VIPAdvertiser/index.js ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return index; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services_Auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/Auth */ "./resources/js/ReactFiles/components/services/Auth.js");
+/* harmony import */ var _Message__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Message */ "./resources/js/ReactFiles/components/admin/views/Message.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+function index() {
+  var baseUrl = "http://simosim.herokuapp.com/api";
+  var VIPAdvertiserUrl = "/vipadvertisers"; // const VIPAdvertiserUrl = "/vipadvertisers";
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      title = _useState2[0],
+      setTitle = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      advertisername = _useState4[0],
+      setAdvertisername = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState6 = _slicedToArray(_useState5, 2),
+      text = _useState6[0],
+      setText = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState8 = _slicedToArray(_useState7, 2),
+      shopname = _useState8[0],
+      setShopname = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState10 = _slicedToArray(_useState9, 2),
+      phonenumbers = _useState10[0],
+      setPhonenumbers = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState12 = _slicedToArray(_useState11, 2),
+      contactnumber = _useState12[0],
+      setContactnumber = _useState12[1];
+
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState14 = _slicedToArray(_useState13, 2),
+      message = _useState14[0],
+      _setMessage = _useState14[1];
+
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState16 = _slicedToArray(_useState15, 2),
+      status = _useState16[0],
+      setStatus = _useState16[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(baseUrl + VIPAdvertiserUrl).then(function (res) {
+      //set the values
+      setTitle(res.data.title);
+      setAdvertisername(res.data.advertisername);
+      setText(res.data.text);
+      setShopname(res.data.shopname);
+      setPhonenumbers(res.data.phonenumbers);
+      setContactnumber(res.data.contactnumber);
+    })["catch"](function (e) {
+      return console.log(e);
+    });
+  }, []);
+
+  var handleOnSubmit = function handleOnSubmit(e) {
+    e.preventDefault();
+    var status = "info";
+    axios__WEBPACK_IMPORTED_MODULE_3___default.a.post(baseUrl + VIPAdvertiserUrl, {
+      title: title,
+      advertisername: advertisername,
+      text: text,
+      shopname: shopname,
+      phonenumbers: phonenumbers,
+      contactnumber: contactnumber
+    }, Object(_services_Auth__WEBPACK_IMPORTED_MODULE_1__["JWTHeader"])()).then(function (res) {
+      setStatus("success");
+
+      _setMessage("Great, Changes have been saved !");
+
+      console.log(res);
+    })["catch"](function (e) {
+      console.log(e);
+      setStatus("danger");
+
+      _setMessage("Something went Wrong!");
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container-fluid bg-advertisers"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "my-3 py-4"
+  }, "VIP-ADVERTISER"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    className: "pt-2 pb-4 my-4",
+    onSubmit: function onSubmit(e) {
+      return handleOnSubmit(e);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "title",
+    className: "text-left"
+  }, "Title:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+    type: "text",
+    className: "form-control",
+    name: "title",
+    id: "title",
+    rows: "5",
+    value: title,
+    onChange: function onChange(e) {
+      setTitle(e.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "advertisername",
+    className: "text-left"
+  }, "Advertiser Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    className: "form-control",
+    name: "advertisername",
+    id: "advertisername",
+    value: advertisername,
+    onChange: function onChange(e) {
+      setAdvertisername(e.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "text",
+    className: "text-left"
+  }, "Text"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+    type: "text",
+    className: "form-control",
+    name: "text",
+    id: "text",
+    rows: "5",
+    value: text,
+    onChange: function onChange(e) {
+      setText(e.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "shopname",
+    className: "text-left"
+  }, "Shop Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    className: "form-control",
+    name: "shopname",
+    id: "shopname",
+    value: shopname,
+    onChange: function onChange(e) {
+      setShopname(e.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "phonenumbers",
+    className: "text-left"
+  }, "Phone Numbers"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+    type: "text",
+    className: "form-control",
+    name: "phonenumbers",
+    id: "phonenumbers",
+    rows: "10",
+    value: phonenumbers,
+    onChange: function onChange(e) {
+      setPhonenumbers(e.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "contactnumber",
+    className: "text-left"
+  }, "Contact Numbers"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+    type: "text",
+    className: "form-control",
+    name: "contactnumber",
+    id: "contactnumber",
+    rows: "5",
+    value: contactnumber,
+    onChange: function onChange(e) {
+      setContactnumber(e.target.value);
+    }
+  })), message ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Message__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: message,
+    status: status,
+    setMessage: function setMessage(text) {
+      return _setMessage(text);
+    }
+  }) : "", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "submit",
+    className: "btn btn-outline-primary"
+  }, "Update"))));
 }
 
 /***/ })

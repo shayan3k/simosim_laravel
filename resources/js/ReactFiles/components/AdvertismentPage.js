@@ -20,8 +20,8 @@ export default function AdvertismentPage() {
             <Seperator />
             <MegaMenu />
             <SectionTitle
-                title="ایجاد آگهی جدید"
-                collapse="DashboardNewAdvertisment"
+                title="سیمکارت همراه اول"
+                collapse="singleAdvertisment1"
                 Banner={BannerLg1}
             />
             <SingleAdvertisment phonenumber={phonenumber} />

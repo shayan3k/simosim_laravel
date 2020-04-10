@@ -28,6 +28,11 @@ export default {
             name: "VIP Advertiser",
             url: "/admin/vipadvertiser",
             class: "text-left"
+        },
+        {
+            name: "Comments",
+            url: "/admin/comments",
+            class: "text-left"
         }
     ]
 };

@@ -9,9 +9,11 @@ import axios from "axios";
 function MainAds() {
     const baseUrl = process.env.MIX_BASEURL;
     const showAdvertisments = process.env.MIX_MAIN_ADVERTISMENTS;
+
     const advertismentDeleteUser = process.env.MIX_ADVERTISMENT_DELETE_USER;
     const advertismentBerozresaniUser =
         process.env.MIX_ADVERTISMENT_BEROZRESANI_USER;
+    const advertismentSoldUser = process.env.MIX_ADVERTISMENT_SOLD_USER;
 
     const Phonenumber = useStoreState(state => state.searchBox.phonenumber);
     const Status = useStoreState(state => state.searchBox.status);

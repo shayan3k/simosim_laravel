@@ -72,6 +72,7 @@ Route::post('/comments/update', 'CommentController@update');
 Route::delete('/comments/delete', 'CommentController@destroy');
 
 
+
 Route::get('/navbar', function () {
 
     if (Auth::guard()->user()) {
@@ -92,3 +93,8 @@ Route::get('/navbar', function () {
         ['post_title' => 'خانه', 'url' => '/'],
     ];
 });
+
+
+
+Route::get('/comments/show-admin', 'CommentController@showAllAdmin');
+Route::post('/comments/approve-admin', 'CommentController@approveAdmin');

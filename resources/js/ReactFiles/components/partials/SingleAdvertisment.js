@@ -25,7 +25,6 @@ export default function SingleAdvertisment() {
 
     useEffect(() => {
         getItemData();
-        console.log("excuted");
     }, []);
 
     const getItemData = async () => {
@@ -38,14 +37,15 @@ export default function SingleAdvertisment() {
             data: data
         })
             .then(response => {
-                console.log("recieved");
-
+                console.log(response);
                 setId(response.data[0].id);
                 setPhonenumber(response.data[0].phonenumber);
                 setLocation(response.data[0].location);
                 setText(response.data[0].text);
                 setPrice(response.data[0].price);
-                setSecondaryprice(response.data[0].secondprice);
+                response.data[0].secondprice
+                    ? setSecondaryprice(response.data[0].secondprice)
+                    : 0;
                 setCode(response.data[0].code);
                 setValue(response.data[0].value);
                 setSimstatus(response.data[0].simstatus);
@@ -76,7 +76,7 @@ export default function SingleAdvertisment() {
     };
 
     return (
-        <div className="container mx-auto row m-0 p-0">
+        <div className="singleAdvertisment container mx-auto row m-0 p-0 bg-default">
             <SingleAdvertismentSidebar className="bg-transparent row col-12 col-md-4 order-2 order-md-1 p-0 m-0 pr-1" />
             <SingleAdvertismentContent
                 className="col-12 col-md-8 row m-0 p-0 order-1 order-md-2"

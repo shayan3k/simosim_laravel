@@ -33,7 +33,7 @@ export default function SingleAdvertismentComment(props) {
             }
         })
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 setMsg(
                     "نظر شما با موفقیت ثبت و تا دقایقی دیگر نمایش داده می شود"
                 );
@@ -42,12 +42,12 @@ export default function SingleAdvertismentComment(props) {
                 getdata();
             })
             .catch(e => {
-                console.log(e.response);
+                // console.log(e.response);
                 setMsg("در حال حاضر امکان برقراری ارتباط با سرور نمی باشد");
                 setStatus("danger");
             });
 
-        console.log(props.id, commentsData);
+        // console.log(props.id, commentsData);
     };
 
     const handleDeleteBtn = id => {
@@ -60,14 +60,14 @@ export default function SingleAdvertismentComment(props) {
             }
         })
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 setMsg("نظر شما با موفقیت پاک شد");
                 setStatus("success");
 
                 getdata();
             })
             .catch(e => {
-                console.log(e.response);
+                // console.log(e.response);
                 setMsg("در حال حاضر امکان برقراری ارتباط با سرور نمی باشد");
                 setStatus("danger");
             });
@@ -84,11 +84,11 @@ export default function SingleAdvertismentComment(props) {
         })
             .then(res => {
                 setCommentsData(res.data.data);
-                console.log(res.data.data);
+                // console.log(res.data.data);
                 setLoaded(true);
             })
             .catch(e => {
-                console.log(e.response);
+                // console.log(e.response);
                 setLoaded(true);
             });
     };
@@ -104,9 +104,10 @@ export default function SingleAdvertismentComment(props) {
                         name="comment-form"
                         id="comment-form-text"
                         className="form-control w-100"
-                        placeholder="لطفا با فونت فارسی بنویسید"
+                        placeholder="لطفا با حروف فارسی بنویسید"
+                        maxLength="200"
                         cols="30"
-                        rows="7"
+                        rows="12"
                         onChange={e => setComment(e.target.value)}
                     ></textarea>
                     <input
@@ -160,9 +161,9 @@ export default function SingleAdvertismentComment(props) {
                                 <p className="font3">{item.comment}</p>
 
                                 <p>
-                                    <a href="#" className="font3 m-1">
+                                    {/* <a href="#" className="font3 m-1">
                                         پاسخ دادن
-                                    </a>
+                                    </a> */}
                                     {secureStorage.getItem("user_id") ==
                                     item.commenter.id ? (
                                         <button
