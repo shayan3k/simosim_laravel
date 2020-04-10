@@ -66,7 +66,7 @@ Route::get('/vipadvertisers', 'VipadvertiserController@show')->middleware(['cors
 Route::post('/vipadvertisers', 'VipadvertiserController@update')->middleware(['auth:api', 'cors']);
 
 
-Route::get('/comments/show', 'CommentController@show')->middleware(['auth:api', 'cors']);
+Route::get('/comments/show', 'CommentController@show');
 Route::post('/comments/store', 'CommentController@store')->middleware(['auth:api', 'cors']);
 Route::post('/comments/update', 'CommentController@update')->middleware(['auth:api', 'cors']);
 Route::delete('/comments/delete', 'CommentController@destroy')->middleware(['auth:api', 'cors']);
