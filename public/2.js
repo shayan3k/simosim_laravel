@@ -111,7 +111,8 @@ function Comments(props) {
       setMessageStatus("success");
       props.setListUpdate(!props.listUpdate);
     })["catch"](function (e) {
-      // console.log(e.response);
+      console.log(e.response);
+
       _setMessage(e.response.data.message);
 
       setMessageStatus("danger");

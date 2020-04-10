@@ -66,11 +66,12 @@ Route::get('/vipadvertisers', 'VipadvertiserController@show')->middleware(['cors
 Route::post('/vipadvertisers', 'VipadvertiserController@update')->middleware(['auth:api', 'cors']);
 
 
-Route::get('/comments/show', 'CommentController@show');
-Route::post('/comments/store', 'CommentController@store');
-Route::post('/comments/update', 'CommentController@update');
-Route::delete('/comments/delete', 'CommentController@destroy');
+Route::get('/comments/show', 'CommentController@show')->middleware(['auth:api', 'cors']);
+Route::post('/comments/store', 'CommentController@store')->middleware(['auth:api', 'cors']);
+Route::post('/comments/update', 'CommentController@update')->middleware(['auth:api', 'cors']);
+Route::delete('/comments/delete', 'CommentController@destroy')->middleware(['auth:api', 'cors']);
 
+Route::get('/comments/show-admin', 'CommentController@showAllAdmin')->middleware(['auth:api', 'cors']);
 
 
 Route::get('/navbar', function () {
@@ -93,8 +94,3 @@ Route::get('/navbar', function () {
         ['post_title' => 'خانه', 'url' => '/'],
     ];
 });
-
-
-
-Route::get('/comments/show-admin', 'CommentController@showAllAdmin');
-Route::post('/comments/approve-admin', 'CommentController@approveAdmin');

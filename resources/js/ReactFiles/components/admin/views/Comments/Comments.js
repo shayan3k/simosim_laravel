@@ -58,7 +58,7 @@ export default function Comments(props) {
                 props.setListUpdate(!props.listUpdate);
             })
             .catch(e => {
-                // console.log(e.response);
+                console.log(e.response);
                 setMessage(e.response.data.message);
                 setMessageStatus("danger");
             });
