@@ -11,21 +11,21 @@ import BannerSm3 from "../images/banner-sm-3.gif";
 function SearchBox() {
     const [Selects, setSelects] = useState("");
     const [phonenumberLocal, setPhonenumberLocal] = useState("");
-    const phonenumber = useStoreState((state) => state.searchBox.phonenumber);
+    const phonenumber = useStoreState(state => state.searchBox.phonenumber);
 
     const setPhonenumber = useStoreActions(
-        (actions) => actions.searchBox.setPhonenumber
+        actions => actions.searchBox.setPhonenumber
     );
-    const setStatus = useStoreActions((actions) => actions.searchBox.setStatus);
-    const setValue = useStoreActions((actions) => actions.searchBox.setValue);
-    const setRond = useStoreActions((actions) => actions.searchBox.setRond);
-    const setCode = useStoreActions((actions) => actions.searchBox.setCode);
-    const setSale = useStoreActions((actions) => actions.searchBox.setSale);
+    const setStatus = useStoreActions(actions => actions.searchBox.setStatus);
+    const setValue = useStoreActions(actions => actions.searchBox.setValue);
+    const setRond = useStoreActions(actions => actions.searchBox.setRond);
+    const setCode = useStoreActions(actions => actions.searchBox.setCode);
+    const setSale = useStoreActions(actions => actions.searchBox.setSale);
     const setLocation = useStoreActions(
-        (actions) => actions.searchBox.setLocation
+        actions => actions.searchBox.setLocation
     );
     const setPriceRange = useStoreActions(
-        (actions) => actions.searchBox.setPriceRange
+        actions => actions.searchBox.setPriceRange
     );
 
     useEffect(() => {
@@ -36,27 +36,27 @@ function SearchBox() {
         const Selects = customSelect("select");
         setSelects(Selects);
 
-        Selects[0].select.addEventListener("change", (e) => {
+        Selects[0].select.addEventListener("change", e => {
             setCode(e.target.value);
         });
 
-        Selects[1].select.addEventListener("change", (e) => {
+        Selects[1].select.addEventListener("change", e => {
             setLocation(e.target.value);
         });
 
-        Selects[2].select.addEventListener("change", (e) => {
+        Selects[2].select.addEventListener("change", e => {
             setPriceRange(e.target.value);
         });
 
-        Selects[3].select.addEventListener("change", (e) => {
+        Selects[3].select.addEventListener("change", e => {
             setStatus(e.target.value);
         });
 
-        Selects[4].select.addEventListener("change", (e) => {
+        Selects[4].select.addEventListener("change", e => {
             setValue(e.target.value);
         });
 
-        Selects[5].select.addEventListener("change", (e) => {
+        Selects[5].select.addEventListener("change", e => {
             setRond(e.target.value);
         });
     };
@@ -96,8 +96,14 @@ function SearchBox() {
                         </span>
 
                         <span className="searchbox-title">
-                            <span className="font3 searchbox-title-text">
-                                سیمکارت جستجو
+                            <span className="font5 searchbox-title-text d-inline d-flex">
+                                <span className="mr-4">پنل جستجو</span>
+
+                                <a href="#" id="bars">
+                                    <span class="bar bar1"></span>
+                                    <span class="bar bar2"></span>
+                                    <span class="bar bar3"></span>
+                                </a>
                             </span>
                         </span>
                     </div>
@@ -136,7 +142,7 @@ function SearchBox() {
                                                       .toString()
                                                 : ""
                                         }
-                                        onChange={(e) => {
+                                        onChange={e => {
                                             setPhonenumber("");
                                             setPhonenumberLocal(
                                                 persianJs(e.target.value)
@@ -330,7 +336,7 @@ function SearchBox() {
                                         className="form-check-input"
                                         type="checkbox"
                                         defaultValue={false}
-                                        onChange={(e) =>
+                                        onChange={e =>
                                             setSale(e.target.checked)
                                         }
                                     />

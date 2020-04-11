@@ -1,0 +1,22 @@
+.cutout-card-container {
+    display: grid;
+}
+
+.cutout-card-wrapper {
+    position: relative;
+    perspective: 40em;
+    display: grid;
+    transform-style: preserve-3d;
+}
+
+.cutout-card {
+    grid-area: 1 / 1;
+    transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+    background: rgba(249, 198, 26, 0.88);
+    backface-visibility: hidden;
+    box-shadow: 0 10px 30px -3px rgba(0, 0, 0, 0.1);
+    transition: all 740ms;
+}
+.cutout-card-fixed {
+    transform: translateX(0) rotateY(0) rotateX(0) !important;
+}

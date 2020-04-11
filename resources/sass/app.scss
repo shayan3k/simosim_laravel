@@ -1,6 +1,8 @@
 @import "variables";
 @import "config";
 @import "fontConfig";
+@import "cutout";
+
 //GLOBAL CLASSES
 * {
     font-family: "Vazir", sans-serif;
@@ -746,6 +748,37 @@ ul.social-network li {
     width: 4rem !important;
 }
 
+#bars {
+    width: 1rem;
+    height: 1rem;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+
+    .bar {
+        width: 100%;
+        height: 2px;
+        background: black;
+        border-radius: 25px;
+    }
+
+    .bar1 {
+        animation: 1280ms ease-in 0ms infinite reverse both running barAnimation;
+    }
+
+    .bar2 {
+        animation: 1280ms ease-in 320ms infinite reverse both running
+            barAnimation;
+    }
+
+    .bar3 {
+        animation: 1280ms ease-in 640ms infinite reverse both running
+            barAnimation;
+    }
+}
+
 .btn-custom {
     border-bottom: 1px solid black !important;
     width: 130px !important;
@@ -909,5 +942,19 @@ ul.social-network li {
         min-width: 8.5rem !important;
         max-height: 11rem !important;
         max-width: 8.5rem !important;
+    }
+}
+
+//keyframes
+
+@keyframes barAnimation {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
     }
 }

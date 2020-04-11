@@ -155,6 +155,41 @@
   font-style: normal;
 }
 
+.cutout-card-container {
+  display: -ms-grid;
+  display: grid;
+}
+
+.cutout-card-wrapper {
+  position: relative;
+  -webkit-perspective: 40em;
+          perspective: 40em;
+  display: -ms-grid;
+  display: grid;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.cutout-card {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1 / 1;
+  -webkit-transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+          transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+  background: rgba(249, 198, 26, 0.88);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-box-shadow: 0 10px 30px -3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 30px -3px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 740ms;
+  transition: all 740ms;
+}
+
+.cutout-card-fixed {
+  -webkit-transform: translateX(0) rotateY(0) rotateX(0) !important;
+          transform: translateX(0) rotateY(0) rotateX(0) !important;
+}
+
 * {
   font-family: "Vazir", sans-serif;
   text-align: right;
@@ -916,6 +951,44 @@ ul.social-network li {
   width: 4rem !important;
 }
 
+#bars {
+  width: 1rem;
+  height: 1rem;
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#bars .bar {
+  width: 100%;
+  height: 2px;
+  background: black;
+  border-radius: 25px;
+}
+
+#bars .bar1 {
+  animation: 1280ms ease-in 0ms infinite reverse both running barAnimation;
+}
+
+#bars .bar2 {
+  animation: 1280ms ease-in 320ms infinite reverse both running barAnimation;
+}
+
+#bars .bar3 {
+  animation: 1280ms ease-in 640ms infinite reverse both running barAnimation;
+}
+
 .btn-custom {
   border-bottom: 1px solid black !important;
   width: 130px !important;
@@ -1060,6 +1133,30 @@ ul.social-network li {
     min-width: 8.5rem !important;
     max-height: 11rem !important;
     max-width: 8.5rem !important;
+  }
+}
+
+@-webkit-keyframes barAnimation {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes barAnimation {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
   }
 }
 /*# sourceMappingURL=app.css.map */
