@@ -53,6 +53,7 @@ const store = createStore({
         location: "",
         sale: false,
         priceRange: "",
+        totalFetchedPosts: 0,
 
         setPhonenumber: action((state, payload) => {
             state.phonenumber = payload;
@@ -77,6 +78,9 @@ const store = createStore({
         }),
         setPriceRange: action((state, payload) => {
             state.priceRange = payload;
+        }),
+        setTotalFetchedPosts: action((state, payload) => {
+            state.totalFetchedPosts = payload;
         })
     },
     listUpdate: {

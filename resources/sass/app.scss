@@ -2,6 +2,7 @@
 @import "config";
 @import "fontConfig";
 @import "cutout";
+@import "~pretty-checkbox/src/pretty-checkbox.scss";
 
 //GLOBAL CLASSES
 * {
@@ -369,8 +370,6 @@ body {
 
 /* Style the back side */
 
-.flip-card {
-}
 .flip-card-front {
     background: #eee;
     position: relative;
@@ -896,6 +895,11 @@ ul.social-network li {
     font-size: 2rem !important;
 }
 
+.simcard-sm {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
 .mask-advertisers {
     position: absolute;
     width: 100%;
@@ -908,6 +912,25 @@ ul.social-network li {
 //
 .ghavaninCollapse {
     background-color: $bg-ghavanin-contents;
+}
+
+//LoadingPage
+canvas {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(238, 238, 238);
+}
+.loadingPage {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 3em;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
 }
 
 ////////// Media Break Points

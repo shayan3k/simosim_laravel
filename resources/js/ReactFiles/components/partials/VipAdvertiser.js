@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import persianJs from "persianjs";
 import { Controller, Scene } from "react-scrollmagic";
-
+import SimcardSvg from "../images/sim1.svg";
 export default function VipAdvertiser() {
     const baseUrl = process.env.MIX_BASEURL;
     const vipAdvertiser = process.env.MIX_VIP_ADVERTISER;
@@ -39,11 +39,19 @@ export default function VipAdvertiser() {
                     triggerHook={"onCenter"}
                     classToggle={"cutout-card-fixed"}
                     reverse={true}
-                    indicators={true}
+                    indicators={false}
                 >
                     <div className="card cutout-card w-100 h-100 position-relative vip-advertiser-card">
                         <div className="card-header card-header-vip-advertiser px-1 py-4  text-center">
-                            <h6 className="my-auto pr-1 font0">{Title}</h6>
+                            <h6 className="my-auto px-1 font0 d-flex justify-content-between align-content-center">
+                                <img
+                                    src={SimcardSvg}
+                                    className="simcard-sm"
+                                    alt="سیمکارت"
+                                />
+
+                                {Title}
+                            </h6>
                         </div>
                         <div className="card-body card-body-vip-advertiser px-0">
                             <h4 className="text-center font1">{ShopName}</h4>
@@ -84,7 +92,7 @@ export default function VipAdvertiser() {
                                               key={index}
                                               key={index}
                                           >
-                                              <div className="p-1 m-0  bg-vip-advertisers-sim-owner text-center shadow-lg  white-space-nowrap font2">
+                                              <div className="p-1 m-0  bg-vip-advertisers-sim-owner text-center shadow-lg  white-space-nowrap font6 font-weight-bold">
                                                   {persianJs(item)
                                                       .englishNumber()
                                                       .toString()}

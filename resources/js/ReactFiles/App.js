@@ -15,6 +15,7 @@ import LoginPage from "./components/LoginPage";
 import Dashboard from "./components/Dashboard";
 import PageNotFound from "./components/PageNotFound";
 import AdminPage from "./components/AdminPage";
+import LoadingPage from "./components/LoadingPage";
 import AdvertismentPage from "./components/AdvertismentPage";
 import { JWTCheck, JWTHeader } from "./components/services/Auth";
 import secureStorage from "./components/services/Storage";
@@ -131,55 +132,63 @@ function App() {
         <>
             <GoogleReCaptcha>
                 <Router>
-                    <Switch>
-                        <Route exact path="/">
-                            <Suspense fallback={Loading}>
-                                <Shop />
-                            </Suspense>
-                        </Route>
-                        <Route exact path="/rahnama">
-                            <Suspense fallback={Loading}>
-                                <Rahnama />
-                            </Suspense>
-                        </Route>
-                        <Route exact path="/contact-us">
-                            <Suspense fallback={Loading}>
-                                <ContactUs />
-                            </Suspense>
-                        </Route>
-                        <Route exact path="/about-us">
-                            <Suspense fallback={Loading}>
-                                <AboutUs />
-                            </Suspense>
-                        </Route>
-                        <Route path="/admin">
-                            <AdminRoute component={AdminPage} />
-                        </Route>
-                        <Route exact path="/ghavanin">
-                            <Suspense fallback={Loading}>
-                                <Ghavanin />
-                            </Suspense>
-                        </Route>
+                    {logedIn == "notset" ? (
+                        <Switch>
+                            <Route>
+                                <LoadingPage />
+                            </Route>
+                        </Switch>
+                    ) : (
+                        <Switch>
+                            <Route exact path="/">
+                                <Suspense fallback={Loading}>
+                                    <Shop />
+                                </Suspense>
+                            </Route>
+                            <Route exact path="/rahnama">
+                                <Suspense fallback={Loading}>
+                                    <Rahnama />
+                                </Suspense>
+                            </Route>
+                            <Route exact path="/contact-us">
+                                <Suspense fallback={Loading}>
+                                    <ContactUs />
+                                </Suspense>
+                            </Route>
+                            <Route exact path="/about-us">
+                                <Suspense fallback={Loading}>
+                                    <AboutUs />
+                                </Suspense>
+                            </Route>
+                            <Route path="/admin">
+                                <AdminRoute component={AdminPage} />
+                            </Route>
+                            <Route exact path="/ghavanin">
+                                <Suspense fallback={Loading}>
+                                    <Ghavanin />
+                                </Suspense>
+                            </Route>
 
-                        <PrivateRoute
-                            exact
-                            path="/dashboard"
-                            component={Dashboard}
-                        />
+                            <PrivateRoute
+                                exact
+                                path="/dashboard"
+                                component={Dashboard}
+                            />
 
-                        <AuthenticatedRoute
-                            exact
-                            path="/login"
-                            component={LoginPage}
-                        />
+                            <AuthenticatedRoute
+                                exact
+                                path="/login"
+                                component={LoginPage}
+                            />
 
-                        <Route
-                            path="/:queryPhoneNumber(0912[0-9]{7})"
-                            children={<AdvertismentPage />}
-                        />
+                            <Route
+                                path="/:queryPhoneNumber(0912[0-9]{7})"
+                                children={<AdvertismentPage />}
+                            />
 
-                        <Route component={PageNotFound} />
-                    </Switch>
+                            <Route component={PageNotFound} />
+                        </Switch>
+                    )}
                 </Router>
             </GoogleReCaptcha>
         </>

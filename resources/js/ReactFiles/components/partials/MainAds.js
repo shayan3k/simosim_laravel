@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Advertisment from "./Advertisment";
-import AdvertismentApply from "./AdvertismentApply";
-import { useStoreState } from "easy-peasy";
+import { useStoreState, useStoreActions } from "easy-peasy";
 import { JWTHeader } from "../services/Auth";
-import secureStorage from "../services/Storage";
 import axios from "axios";
 
 function MainAds() {
@@ -23,6 +21,10 @@ function MainAds() {
     const Location = useStoreState(state => state.searchBox.location);
     const Sale = useStoreState(state => state.searchBox.sale);
     const PriceRange = useStoreState(state => state.searchBox.priceRange);
+
+    const setTotalFetchedPosts = useStoreActions(
+        actions => actions.searchBox.setTotalFetchedPosts
+    );
 
     const [posts, setPosts] = useState([]);
     const [currnetPage, setCurrentPage] = useState(1);
@@ -67,12 +69,13 @@ function MainAds() {
             data: data
         })
             .then(async response => {
-                await setPosts(response.data);
-                // console.log("Secondary response", response, data);
+                await setPosts(response.data.data);
+                setTotalFetchedPosts(response.data.total);
+                console.log("Secondary response", response, data);
             })
             .catch(err => {
                 // console.log(err);
-                // console.log("Error search", err.response, data);
+                console.log("Error search", err.response, data);
             });
     };
 
@@ -130,7 +133,7 @@ function MainAds() {
     return (
         <div className="container my-0 mainAdsToggler bg-custom">
             <nav aria-label="Page navigation">
-                <ul className="pagination py-2 px-1 d-flex justify-content-center align-content-center">
+                <ul className="pagination py-2 px-1 d-flex justify-content-end align-content-center">
                     <li className="page-item">
                         <a
                             className="btn page-link"
@@ -189,7 +192,7 @@ function MainAds() {
                 })}
             </div>
             <nav aria-label="Page navigation">
-                <ul className="pagination py-2 px-1 d-flex justify-content-center align-content-center">
+                <ul className="pagination py-2 px-1 d-flex justify-content-end align-content-center">
                     <li className="page-item">
                         <a
                             className="btn page-link"

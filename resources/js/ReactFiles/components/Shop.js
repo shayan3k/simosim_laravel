@@ -35,7 +35,7 @@ export default function Shop() {
             <Logo />
             <Seperator />
             <MegaMenu />
-            {/* <SectionTitle
+            <SectionTitle
                 title="فروشهای فوری"
                 collapse="specialOffersToggler"
                 Banner={BannerLg2}
@@ -44,19 +44,15 @@ export default function Shop() {
                 uri={postsUriSale}
                 sale={true}
                 flagController="فوری"
-            /> */}
+            />
             <SectionTitle
                 title="جستجو"
                 collapse="searchBox"
                 Banner={BannerLg3}
             />
             <SearchBox />
-            <SectionTitle
-                title="سیم کارت یافت شده"
-                collapse="mainAdsToggler"
-                Banner={BannerLg4}
-            />
-            {/* <MainAds />
+
+            <MainAds />
             <Ad2 Banner1={BannerLg5} Banner2={BannerLg6} />
             <SectionTitle
                 title="پیشنهادهای هفته"
@@ -81,7 +77,7 @@ export default function Shop() {
                     sale={false}
                     flagController="برنز"
                 />
-            </div> */}
+            </div>
             <SectionTitle
                 title="فروشندگان برتر هفته"
                 collapse="AdvertisersToggler"

@@ -11,7 +11,6 @@ import BannerSm3 from "../images/banner-sm-3.gif";
 function SearchBox() {
     const [Selects, setSelects] = useState("");
     const [phonenumberLocal, setPhonenumberLocal] = useState("");
-    const phonenumber = useStoreState(state => state.searchBox.phonenumber);
 
     const setPhonenumber = useStoreActions(
         actions => actions.searchBox.setPhonenumber
@@ -26,6 +25,10 @@ function SearchBox() {
     );
     const setPriceRange = useStoreActions(
         actions => actions.searchBox.setPriceRange
+    );
+
+    const totalFetchedPosts = useStoreState(
+        state => state.searchBox.totalFetchedPosts
     );
 
     useEffect(() => {
@@ -62,7 +65,7 @@ function SearchBox() {
     };
 
     return (
-        <div className="container mx-auto searchBox">
+        <div className="container mx-auto searchBox" id="searchBox">
             <div className="row bg-transparent">
                 <div className="bg-transparent row col-12 col-md-4 order-2 order-md-1 p-0 m-0 pr-1">
                     <img
@@ -97,7 +100,9 @@ function SearchBox() {
 
                         <span className="searchbox-title">
                             <span className="font5 searchbox-title-text d-inline d-flex">
-                                <span className="mr-4">پنل جستجو</span>
+                                <span className="mr-4 text-under">
+                                    جستجو <i class="fas fa-search"></i>
+                                </span>
 
                                 <a href="#" id="bars">
                                     <span class="bar bar1"></span>
@@ -332,22 +337,33 @@ function SearchBox() {
                             </div>
                             <div className="col-12 py-3">
                                 <div className="form-check">
-                                    <input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        defaultValue={false}
-                                        onChange={e =>
-                                            setSale(e.target.checked)
-                                        }
-                                    />
-                                    <label
-                                        className="form-check-label font3"
-                                        htmlFor="defaultCheck1"
-                                    >
-                                        فروش ویژه
-                                    </label>
+                                    <div class="pretty p-switch">
+                                        <input
+                                            type="checkbox"
+                                            defaultValue={false}
+                                            onChange={e =>
+                                                setSale(e.target.checked)
+                                            }
+                                        />
+                                        <div class="state">
+                                            <label> فروش ویژه</label>{" "}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div className="alert alert-warning w-100 text-right font3 my-1">
+                            <p className="font-weight-bold font5">! عالی</p>
+
+                            <p>
+                                <h1 className="font5 d-inline-block">
+                                    !سیمکارت برای شما یافت شد
+                                </h1>
+                                <h1 className="ml-1 font7 font-weight-bolder d-inline-block">
+                                    {totalFetchedPosts}
+                                </h1>
+                            </p>
                         </div>
                     </div>
                 </div>

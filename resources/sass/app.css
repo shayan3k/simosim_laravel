@@ -174,8 +174,8 @@
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: 1 / 1;
-  -webkit-transform: translateX(10px) rotateY(25deg) rotateX(10deg);
-          transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+  -webkit-transform: translateX(7px) rotateY(15deg) rotateX(7deg);
+          transform: translateX(7px) rotateY(15deg) rotateX(7deg);
   background: rgba(249, 198, 26, 0.88);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -1100,6 +1100,11 @@ ul.social-network li {
 .vip-advertiser {
   height: 100% !important;
   font-size: 2rem !important;
+}
+
+.simcard-sm {
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .mask-advertisers {

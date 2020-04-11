@@ -183,23 +183,20 @@ function SignUp() {
                     />
                 </div>
 
-                <div className="form-check row m-0 p-0 ">
-                    <label
-                        className="col-11 form-check-label font2"
-                        htmlFor="checkBox"
-                    >
-                        <Link to="/ghavanin">قوانین</Link> را مطالعه کردم و قبول
-                        دارم
-                    </label>
+                <div class="pretty p-default p-curve p-thick  m-0 p-0 d-block col-10  ml-auto d-flex justify-content-end align-items-center">
                     <input
                         type="checkbox"
-                        className="col-1 form-check-input"
                         id="checkBox"
                         checked={CheckBox}
                         onChange={e => setCheckBox(e.target.checked)}
                     />
+                    <div class="state p-success-o form-check-label font2">
+                        <label htmlFor="checkBox">
+                            <Link to="/ghavanin">قوانین</Link> را مطالعه کردم و
+                            قبول دارم
+                        </label>
+                    </div>
                 </div>
-
                 <button
                     className="btn btn-primary btn-lg my-3 font4"
                     id="signupSubmitBtn"

@@ -102,16 +102,16 @@ export default function MegaMenu() {
                 </div>
                 <div className="font3-2 d-flex justify-content-end align-items-center bg-links">
                     {secureStorage.getItem("is_admin") == adminSecretKey ? (
-                        <span className="px-3 font3">
+                        <Link to="/#searchBox" className="px-3 font3">
                             خوش آمدید
                             <span className="font5 px-2">
                                 {secureStorage.getItem("name")}
                             </span>
-                        </span>
+                        </Link>
                     ) : (
                         <Link
                             className="d-flex justify-content-center align-items-center bg-links font3"
-                            to="/login"
+                            to="/#searchBox"
                             style={{ textDecoration: "none" }}
                         >
                             خوش آمدید

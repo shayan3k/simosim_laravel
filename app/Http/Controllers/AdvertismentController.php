@@ -88,7 +88,7 @@ class AdvertismentController extends Controller
             array_push($data, $new);
         }
 
-        return response()->json($data, 200);
+        return response()->json(['data' => $data, 'total' => $advertisments->total()], 200);
     }
     /**
      * Show on sale Advertisments.

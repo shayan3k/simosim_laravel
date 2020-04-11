@@ -51,6 +51,7 @@
         "moment-jalaali": "^0.9.2",
         "node-sass": "^4.12.0",
         "persianjs": "^0.4.0",
+        "pretty-checkbox": "^3.0.3",
         "prop-types": "^15.7.2",
         "qs": "^6.9.3",
         "react-app-polyfill": "^1.0.1",
@@ -63,10 +64,12 @@
         "react-router-dom": "^5.1.2",
         "react-scrollmagic": "^2.2.0",
         "react-slick": "^0.25.2",
+        "react-three-fiber": "^4.0.28",
         "react-time-ago": "^5.0.7",
         "reactstrap": "^8.0.0",
         "secure-web-storage": "^1.0.2",
         "simple-line-icons": "^2.4.1",
-        "slick-carousel": "^1.8.1"
+        "slick-carousel": "^1.8.1",
+        "three": "^0.115.0"
     }
 }
