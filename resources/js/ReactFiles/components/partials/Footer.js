@@ -8,13 +8,13 @@ export default function Footer() {
             2,
             {
                 css: { transform: "translate(10px , 10px) rotate(-45deg)" },
-                opacity: 1,
+                opacity: 1
             },
             {
                 css: {
                     transform: "translate(-10px , -10px)  rotate(-45deg)",
-                    opacity: 0,
-                },
+                    opacity: 0
+                }
             }
         );
     }, []);
@@ -38,8 +38,6 @@ export default function Footer() {
                         <hr className="col-12 clearfix w-100 d-md-none pb-3" />
 
                         <div className="col-6 col-md-3 mb-md-0 mb-3">
-                            <h5 className="text-uppercase font6">لینکها</h5>
-
                             <ul className="list-unstyled">
                                 <li>
                                     <a href="#!" className="font4">
@@ -64,8 +62,6 @@ export default function Footer() {
                             </ul>
                         </div>
                         <div className="col-6 col-md-3 mb-md-0 mb-3">
-                            <h5 className="text-uppercase font6">لینکها</h5>
-
                             <ul className="list-unstyled">
                                 <li>
                                     <a href="#!" className="font4">
@@ -88,7 +84,7 @@ export default function Footer() {
                     </div>
                     <hr />
                 </div>
-                <div className="row m-0 p-0 w-100 d-flex justify-content-center align-content-center">
+                <div className="container mx-auto row m-0 p-0 w-100">
                     <div className="col-12 col-md-6 text-right">
                         <h6 className="text-white font4">
                             سیمکارت خود را آگهی کنید

@@ -101,7 +101,8 @@ function SearchBox() {
                         <span className="searchbox-title">
                             <span className="font5 searchbox-title-text d-inline d-flex">
                                 <span className="mr-4 text-under">
-                                    جستجو <i class="fas fa-search"></i>
+                                    سیمکارت خود را جستجو کنید
+                                    <i class="fas fa-search"></i>
                                 </span>
 
                                 <a href="#" id="bars">
@@ -354,8 +355,6 @@ function SearchBox() {
                         </div>
 
                         <div className="alert alert-warning w-100 text-right font3 my-1">
-                            <p className="font-weight-bold font5">! عالی</p>
-
                             <p>
                                 <h1 className="font5 d-inline-block">
                                     !سیمکارت برای شما یافت شد

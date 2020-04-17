@@ -46,7 +46,7 @@ export default function Shop() {
                 flagController="فوری"
             />
             <SectionTitle
-                title="جستجو"
+                title="جستجو سیمکارت"
                 collapse="searchBox"
                 Banner={BannerLg3}
             />

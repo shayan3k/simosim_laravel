@@ -1,6 +1,6 @@
 import React from "react";
 import BanngerLogo from "../images/banner-logo.jpg";
-import LogoImg from "../images/banner-logo.jpg";
+import LogoImg from "../images/logo.png";
 
 function Logo() {
     return (
