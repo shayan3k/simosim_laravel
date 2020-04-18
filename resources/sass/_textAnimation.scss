@@ -1,0 +1,86 @@
+#text-animation-text-container {
+    color: #999;
+    text-transform: uppercase;
+    font: 12px;
+    font-weight: bold;
+    padding-top: 5px;
+
+    #flip {
+        height: 50px;
+        overflow: hidden;
+    }
+
+    #flip > div > div {
+        color: #fff;
+        padding: 5px 12px;
+        height: 45px;
+        margin-bottom: 45px;
+        display: inline-block;
+    }
+
+    #flip div:first-child {
+        animation: show 5s linear infinite;
+    }
+
+    #flip div div {
+        background: rgb(129, 160, 246);
+    }
+    #flip div:first-child div {
+        background: #ccf152;
+    }
+    #flip div:last-child div {
+        background: rgb(212, 115, 224);
+    }
+
+    @keyframes show {
+        0% {
+            margin-top: -250px;
+        }
+        5% {
+            margin-top: -168px;
+        }
+        33% {
+            margin-top: -168px;
+        }
+        38% {
+            margin-top: -85px;
+        }
+        66% {
+            margin-top: -85px;
+        }
+        71% {
+            margin-top: 0px;
+        }
+        99.99% {
+            margin-top: 0px;
+        }
+        100% {
+            margin-top: -250px;
+        }
+    }
+}
+
+#text-animation-vip-advertiser-title {
+    background: 50% 100% / 50% 50% no-repeat
+        radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+    animation: reveal 3000ms ease-in-out forwards 200ms,
+        glow 2500ms linear infinite 2000ms;
+
+    @keyframes reveal {
+        80% {
+            letter-spacing: 8px;
+        }
+        100% {
+            background-size: 300% 300%;
+        }
+    }
+    @keyframes glow {
+        40% {
+            text-shadow: 0 0 8px #fff;
+        }
+    }
+}

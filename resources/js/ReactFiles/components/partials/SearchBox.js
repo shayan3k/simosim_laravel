@@ -101,7 +101,6 @@ function SearchBox() {
                         <span className="searchbox-title">
                             <span className="font5 searchbox-title-text d-inline d-flex">
                                 <span className="mr-4 text-under">
-                                    سیمکارت خود را جستجو کنید
                                     <i class="fas fa-search"></i>
                                 </span>
 

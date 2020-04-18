@@ -43,13 +43,10 @@ export default function VipAdvertiser() {
                 >
                     <div className="card cutout-card w-100 h-100 position-relative vip-advertiser-card">
                         <div className="card-header card-header-vip-advertiser px-1 py-4  text-center">
-                            <h6 className="my-auto px-1 font0 d-flex justify-content-between align-content-center">
-                                <img
-                                    src={SimcardSvg}
-                                    className="simcard-sm"
-                                    alt="سیمکارت"
-                                />
-
+                            <h6
+                                className="my-auto px-1 font4 vip-advertiser-title"
+                                id="text-animation-vip-advertiser-title"
+                            >
                                 {Title}
                             </h6>
                         </div>
@@ -75,10 +72,29 @@ export default function VipAdvertiser() {
                         </div>
                         <div className="card-footer card-footer-vip-advertiser">
                             <h4
-                                className="py-4 text-center font2"
+                                className="text-center font2"
                                 style={{ fontWeight: 1000 }}
                             >
-                                {Text}
+                                {/* {Text} */}
+
+                                <div
+                                    id="text-animation-text-container"
+                                    className=" text-center"
+                                >
+                                    باید پر بشه
+                                    <div id="flip" className=" text-center">
+                                        <div className=" text-center">
+                                            <div> باید پر بشه</div>
+                                        </div>
+                                        <div className=" text-center">
+                                            <div>باید پر بشه</div>
+                                        </div>
+                                        <div className=" text-center">
+                                            <div> باید پر بشه</div>
+                                        </div>
+                                    </div>
+                                    باید پر بشه
+                                </div>
                             </h4>
                             <hr />
                             <p className="text-right pt-1 font2">
