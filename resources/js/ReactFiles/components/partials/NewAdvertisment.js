@@ -398,23 +398,21 @@ export default function NewAdvertisment(props) {
                                     maxLength="70"
                                     onChange={handleTextOnChange}
                                 ></textarea>
-                                <div className="col-12 form-check row m-0 p-0 py-2 px-3">
-                                    <label
-                                        className="col-10 form-check-label font3"
-                                        htmlFor="checkBox"
-                                    >
-                                        فروش فوری؟
-                                    </label>
-                                    <input
-                                        type="checkbox"
-                                        className="col-2 form-check-input"
-                                        data-toggle="collapse"
-                                        data-target="#collapsediv1"
-                                        onChange={e => {
-                                            setSale(e.target.checked);
-                                            // console.log(e.target.checked);
-                                        }}
-                                    />
+                                <div className="col-12 my-3 my-md-4">
+                                    <div class="pretty p-switch">
+                                        <input
+                                            type="checkbox"
+                                            defaultValue={false}
+                                            data-toggle="collapse"
+                                            data-target="#collapsediv1"
+                                            onChange={e => {
+                                                setSale(e.target.checked);
+                                            }}
+                                        />
+                                        <div class="state">
+                                            <label> فروش ویژه</label>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div
@@ -444,7 +442,7 @@ export default function NewAdvertisment(props) {
                             <div className="col-12 order-md-3">
                                 <div className="d-flex justify-content-end align-items-center">
                                     <a
-                                        className="default-btn btn-search px-5 mx-4"
+                                        className="default-btn btn-search px-5 mx-1 mx-md-4"
                                         onClick={handleResetButton}
                                     >
                                         <h6 className="font3">ریست</h6>
@@ -452,7 +450,7 @@ export default function NewAdvertisment(props) {
                                     </a>
 
                                     <button
-                                        className="default-btn btn-search px-5 mx-4"
+                                        className="default-btn btn-search px-5 mx-1 mx-md-4"
                                         id="newAdvertismentSubmitBtn"
                                         type="submit"
                                     >

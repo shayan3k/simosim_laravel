@@ -131,7 +131,10 @@ function MainAds() {
     };
 
     return (
-        <div className="container my-0 mainAdsToggler bg-custom">
+        <div
+            className="container my-0 mainAdsToggler bg-custom"
+            id="mainAdSection"
+        >
             <nav aria-label="Page navigation">
                 <ul className="pagination py-2 px-1 d-flex justify-content-end align-content-center">
                     <li className="page-item">

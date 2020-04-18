@@ -8,7 +8,6 @@ import secureStorage from "../services/Storage";
 
 export default function MegaMenu() {
     const adminSecretKey = process.env.MIX_ADMIN_SECRET_KEY;
-    // const adminSecretKey = "true";
 
     const [isLoaded, setIsLoaded] = useState(true);
 
@@ -33,6 +32,11 @@ export default function MegaMenu() {
                 setNiceName("");
                 setIsLoaded(false);
             });
+    };
+
+    const scrollToElement = elementId => {
+        location.href = "#";
+        location.href = elementId;
     };
 
     return (
@@ -96,34 +100,30 @@ export default function MegaMenu() {
                             style={{ textDecoration: "none" }}
                         >
                             <i className="fas fa-sign-in-alt fa-rotate-180 fa-1x"></i>
-                            <span className="px-3 font3">ورود/ثبت نام</span>
+                            <span className="px-3 font3 text-nowrap">
+                                ورود/ثبت نام
+                            </span>
                         </Link>
                     )}
                 </div>
                 <div className="font3-2 d-flex justify-content-end align-items-center bg-links">
-                    {secureStorage.getItem("is_admin") == adminSecretKey ? (
-                        <Link to="/#searchBox" className="px-3 font3">
-                            خوش آمدید
-                            <span className="font5 px-2">
-                                {secureStorage.getItem("name")}
-                            </span>
-                        </Link>
-                    ) : (
-                        <Link
-                            className="d-flex justify-content-center align-items-center bg-links font3"
-                            to="/#searchBox"
-                            style={{ textDecoration: "none" }}
-                        >
-                            خوش آمدید
-                            <span
-                                className="font3 px-2"
-                                style={{ color: "lightblue" }}
-                            >
-                                سیم سیم
-                            </span>
-                            به
-                        </Link>
-                    )}
+                    <Link
+                        to="/"
+                        onClick={e => scrollToElement("#mainAdSection")}
+                        className="btn btn-mega-menu-links"
+                    >
+                        خرید
+                    </Link>
+                    <Link to="/dashboard" className="btn btn-mega-menu-links">
+                        فروش
+                    </Link>
+                    <Link
+                        to="/"
+                        onClick={e => scrollToElement("#searchBox")}
+                        className="btn btn-mega-menu-links"
+                    >
+                        جستجو
+                    </Link>
                 </div>
             </div>
         </div>
