@@ -71,6 +71,6 @@
         "secure-web-storage": "^1.0.2",
         "simple-line-icons": "^2.4.1",
         "slick-carousel": "^1.8.1",
-        "three": "^0.115.0"
+        "three": "^0.125.0"
     }
 }
